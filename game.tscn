@@ -1,25 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://doq5oisvladyg"]
+[gd_scene load_steps=2 format=3 uid="uid://dxr3tijaa52p5"]
 
-[ext_resource type="Script" path="res://cloud.gd" id="1_0pl0v"]
-[ext_resource type="Texture2D" uid="uid://b8q6c8r6rgno2" path="res://icon.svg" id="2_5nmmb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_upinu"]
-size = Vector2(165, 82)
+[ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_suklf"]
 
 [node name="Game" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 2
 offset_right = 1179.0
 offset_bottom = 664.0
+color = Color(0.971098, 0.973803, 0.930098, 1)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_0pl0v")
-
-[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(562, 469)
-scale = Vector2(1.30078, 0.621094)
-texture = ExtResource("2_5nmmb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(562.5, 470)
-shape = SubResource("RectangleShape2D_upinu")
+[node name="Player" parent="." instance=ExtResource("1_suklf")]
+position = Vector2(584, 122)
+scale = Vector2(3.64, 1)
