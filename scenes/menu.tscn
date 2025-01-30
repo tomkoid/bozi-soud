@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=2 format=3 uid="uid://cu3uhb23wp1gb"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_dqhv3"]
 
 [node name="Menu" type="Node2D"]
+script = ExtResource("1_dqhv3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 99.0
@@ -16,3 +19,5 @@ offset_top = 194.0
 offset_right = 349.0
 offset_bottom = 255.0
 text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
