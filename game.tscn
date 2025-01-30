@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=2 format=3 uid="uid://doq5oisvladyg"]
 
-[ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_suklf"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1_suklf"]
 
 [node name="Game" type="Node2D"]
 
@@ -11,5 +11,5 @@ offset_bottom = 664.0
 color = Color(0.971098, 0.973803, 0.930098, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_suklf")]
-position = Vector2(584, 122)
+position = Vector2(584, 486)
 scale = Vector2(3.64, 1)
