@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b277k7mqjh11t"]
 
 [ext_resource type="Script" path="res://cloud.gd" id="1_cfy0q"]
-[ext_resource type="Texture2D" uid="uid://cskem6n3njfpw" path="res://sprites/mrak_sprite.png" id="2_yncmm"]
+[ext_resource type="Texture2D" uid="uid://cskem6n3njfpw" path="res://sprites/mrak_sprite.png" id="2_2c2nc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upinu"]
 size = Vector2(201, 52.25)
@@ -13,7 +13,7 @@ script = ExtResource("1_cfy0q")
 texture_filter = 1
 position = Vector2(12.24, -60.76)
 scale = Vector2(3, 3)
-texture = ExtResource("2_yncmm")
+texture = ExtResource("2_2c2nc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(13, -5)
