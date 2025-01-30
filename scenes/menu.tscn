@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cu3uhb23wp1gb"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 99.0
+offset_top = 75.0
+offset_right = 430.0
+offset_bottom = 229.0
+theme_override_font_sizes/normal_font_size = 66
+text = "Bozi soud"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 159.0
+offset_top = 194.0
+offset_right = 349.0
+offset_bottom = 255.0
+text = "Play"
