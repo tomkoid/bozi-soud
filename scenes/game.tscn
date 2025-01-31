@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
-[ext_resource type="PackedScene" path="res://scenes/test_bounce.tscn" id="2_q87t1"]
+[ext_resource type="PackedScene" uid="uid://ytu2cjov1q3t" path="res://scenes/test_bounce.tscn" id="2_q87t1"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
-[ext_resource type="PackedScene" uid="uid://cfh2n6tk362s5" path="res://scenes/fall_guy.tscn" id="4_f6bl3"]
+[ext_resource type="PackedScene" uid="uid://d2p41s4kcad3g" path="res://scenes/fall_guy.tscn" id="4_f6bl3"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
 
 [node name="Game" type="Node2D"]
@@ -27,7 +27,7 @@ rotation = 0.0872665
 scale = Vector2(-1.3, 1.3)
 
 [node name="PlatformRight" parent="." instance=ExtResource("3_m4de3")]
-position = Vector2(966, 246)
+position = Vector2(1080, 246)
 
 [node name="Ui" parent="." instance=ExtResource("5_3th8g")]
 

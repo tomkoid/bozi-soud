@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ka5w0vmbaw1e"]
 
-[ext_resource type="Texture2D" uid="uid://cvlavfmefva0d" path="res://assets/sprites/platforma sprite.png" id="1_fcnph"]
+[ext_resource type="Texture2D" uid="uid://dlibs6tane0fx" path="res://assets/sprites/platrform_sprite.png" id="1_o0neg"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1e1ih"]
 a = Vector2(-148, 48)
@@ -17,7 +17,7 @@ metadata/_edit_group_ = true
 texture_filter = 1
 rotation = -3.14159
 scale = Vector2(0.7, -0.7)
-texture = ExtResource("1_fcnph")
+texture = ExtResource("1_o0neg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("SegmentShape2D_1e1ih")

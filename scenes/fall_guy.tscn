@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfh2n6tk362s5"]
+[gd_scene load_steps=8 format=3 uid="uid://d2p41s4kcad3g"]
 
 [ext_resource type="Texture2D" uid="uid://dwb2lb55euped" path="res://assets/sprites/purple_boy.png" id="1_58j6v"]
 [ext_resource type="Script" path="res://scenes/fall_guy.gd" id="1_qeo4k"]
