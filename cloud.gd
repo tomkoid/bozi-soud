@@ -3,6 +3,7 @@ extends CharacterBody2D
 const max_speed = 800
 const accel = 1000
 const friction = 2500
+const JUMP_VELOCITY = -2000
 
 var input = Vector2.ZERO
 
@@ -27,3 +28,7 @@ func player_movement(delta):
 		velocity = velocity.limit_length(max_speed)
 
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area):
+	$"../CharacterBody2D".velocity.y = JUMP_VELOCITY

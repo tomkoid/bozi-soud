@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=3 format=3 uid="uid://dxr3tijaa52p5"]
 
-[ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_suklf"]
+[ext_resource type="PackedScene" uid="uid://cda3kdene5in1" path="res://scenes/player.tscn" id="1_suklf"]
+[ext_resource type="PackedScene" uid="uid://ytu2cjov1q3t" path="res://scenes/test_bounce.tscn" id="2_3qbha"]
 
 [node name="Game" type="Node2D"]
 
@@ -12,3 +13,6 @@ color = Color(0.971098, 0.973803, 0.930098, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_suklf")]
 position = Vector2(578, 497)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_3qbha")]
+position = Vector2(602, 228)
