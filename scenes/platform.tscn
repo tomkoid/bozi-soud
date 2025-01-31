@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://454hrnxunjdd"]
+[gd_scene load_steps=3 format=3 uid="uid://ka5w0vmbaw1e"]
 
 [ext_resource type="Texture2D" uid="uid://b8q6c8r6rgno2" path="res://icon.svg" id="1_d7lrm"]
 
@@ -6,10 +6,12 @@
 size = Vector2(320, 60)
 
 [node name="Area2D" type="Area2D"]
+texture_filter = 1
 scale = Vector2(1.2, 1.2)
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(23, 21)
 scale = Vector2(2.34375, 0.421875)
 texture = ExtResource("1_d7lrm")

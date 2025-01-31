@@ -3,7 +3,7 @@ extends CharacterBody2D
 const max_speed = 800
 const accel = 1000
 const friction = 2500
-const JUMP_VELOCITY = -2000
+const JUMP_VELOCITY = -1500
 
 var input = Vector2.ZERO
 
@@ -31,4 +31,4 @@ func player_movement(delta):
 
 
 func _on_area_2d_area_entered(area):
-	$"../CharacterBody2D".velocity.y = JUMP_VELOCITY
+	$"../Enemy".velocity.y = JUMP_VELOCITY

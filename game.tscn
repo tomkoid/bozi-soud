@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=4 format=3 uid="uid://dxr3tijaa52p5"]
 
-[ext_resource type="PackedScene" uid="uid://cda3kdene5in1" path="res://scenes/player.tscn" id="1_suklf"]
-[ext_resource type="PackedScene" uid="uid://ytu2cjov1q3t" path="res://scenes/test_bounce.tscn" id="2_3qbha"]
-[ext_resource type="PackedScene" uid="uid://454hrnxunjdd" path="res://scenes/platform.tscn" id="3_mlona"]
-[ext_resource type="PackedScene" uid="uid://g2pyn42wfrfs" path="res://scenes/platform_fliped.tscn" id="4_040qr"]
+[ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_suklf"]
+[ext_resource type="PackedScene" path="res://scenes/test_bounce.tscn" id="2_3qbha"]
+[ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_mlona"]
 
 [node name="Game" type="Node2D"]
 
@@ -16,11 +15,13 @@ color = Color(0.971098, 0.973803, 0.930098, 1)
 [node name="Player" parent="." instance=ExtResource("1_suklf")]
 position = Vector2(578, 497)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_3qbha")]
+[node name="Enemy" parent="." instance=ExtResource("2_3qbha")]
 position = Vector2(602, 228)
 
-[node name="Area2D" parent="." instance=ExtResource("3_mlona")]
-position = Vector2(966, 246)
+[node name="PlatformLeft" parent="." instance=ExtResource("3_mlona")]
+position = Vector2(180, 246)
+rotation = 3.14159
+scale = Vector2(1.2, -1.2)
 
-[node name="Area2D2" parent="." instance=ExtResource("4_040qr")]
-position = Vector2(159, 240)
+[node name="PlatformRight" parent="." instance=ExtResource("3_mlona")]
+position = Vector2(966, 246)
