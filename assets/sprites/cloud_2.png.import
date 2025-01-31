@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8yf547sxt5nj"
-path="res://.godot/imported/mrak_sprite_2.png-60348495958ce5c8dc132d23120c1cea.ctex"
+uid="uid://go0ntif0q6pt"
+path="res://.godot/imported/cloud_2.png-2e7e7d052f2f6e1620f5936b9630a35f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mrak_sprite_2.png"
-dest_files=["res://.godot/imported/mrak_sprite_2.png-60348495958ce5c8dc132d23120c1cea.ctex"]
+source_file="res://assets/sprites/cloud_2.png"
+dest_files=["res://.godot/imported/cloud_2.png-2e7e7d052f2f6e1620f5936b9630a35f.ctex"]
 
 [params]
 
