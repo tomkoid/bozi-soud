@@ -1,5 +1,4 @@
 extends Button
 
-func _on_button_pressed() -> void:
+func _on_pressed():
 	get_tree().reload_current_scene()
-	print("retry")

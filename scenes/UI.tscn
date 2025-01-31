@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bylawu76sq0kj"]
+[gd_scene load_steps=2 format=3 uid="uid://dc2coaqu76bfd"]
 
 [ext_resource type="Script" path="res://scenes/UI.gd" id="1_to3uw"]
 
@@ -20,3 +20,5 @@ offset_right = 403.0
 offset_bottom = 144.0
 text = "retry"
 script = ExtResource("1_to3uw")
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
