@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxrt8w15jqk3r"]
+[gd_scene load_steps=7 format=3 uid="uid://d2p41s4kcad3g"]
 
 [ext_resource type="Texture2D" uid="uid://dhcswfnvr3so" path="res://assets/sprites/PurpleBoy.png" id="1_58j6v"]
 
@@ -37,15 +37,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdxh2"]
-height = 32.0
+radius = 5.2
+height = 16.4
 
 [node name="FallGuy" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_vayxy")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(5, 5)
 shape = SubResource("CapsuleShape2D_bdxh2")
