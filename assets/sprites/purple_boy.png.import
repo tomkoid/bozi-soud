@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m53jlpe73m38"
-path="res://.godot/imported/platforma sprite.png-27822af542ec9ae6cc504b20590e5019.ctex"
+uid="uid://dwb2lb55euped"
+path="res://.godot/imported/purple_boy.png-68392ba51960493841f35f4ee612fc92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/platforma sprite.png"
-dest_files=["res://.godot/imported/platforma sprite.png-27822af542ec9ae6cc504b20590e5019.ctex"]
+source_file="res://assets/sprites/purple_boy.png"
+dest_files=["res://.godot/imported/purple_boy.png-68392ba51960493841f35f4ee612fc92.ctex"]
 
 [params]
 
