@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://dxrt8w15jqk3r"]
+[gd_scene load_steps=7 format=3 uid="uid://dxrt8w15jqk3r"]
+
+[ext_resource type="Texture2D" uid="uid://dhcswfnvr3so" path="res://assets/sprites/PurpleBoy.png" id="1_58j6v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwrc6"]
+atlas = ExtResource("1_58j6v")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8a5v"]
+atlas = ExtResource("1_58j6v")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyou0"]
+atlas = ExtResource("1_58j6v")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vayxy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwrc6")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8a5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyou0")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdxh2"]
+height = 32.0
 
 [node name="FallGuy" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vayxy")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_bdxh2")
