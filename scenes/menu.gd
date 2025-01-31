@@ -9,13 +9,13 @@ func _ready() -> void:
 
 func check_vsync_mode(mode: int) -> String:
 	if mode == DisplayServer.VSYNC_DISABLED:
-		return "VSYNC: disabled"
+		return "VSYNC: vypnuto"
 	if mode == DisplayServer.VSYNC_ENABLED:
-		return "VSYNC: enabled"
+		return "VSYNC: zapnuto"
 	if mode == DisplayServer.VSYNC_ADAPTIVE:
-		return "VSYNC: adaptive"
+		return "VSYNC: adaptivní"
 
-	return "VSYNC: unknown"
+	return "VSYNC: neznámý"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

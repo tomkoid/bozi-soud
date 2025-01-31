@@ -11,7 +11,7 @@ offset_top = 75.0
 offset_right = 430.0
 offset_bottom = 229.0
 theme_override_font_sizes/normal_font_size = 66
-text = "Bozi soud"
+text = "Boží soud"
 
 [node name="VsyncButton" type="Button" parent="."]
 offset_left = 762.0
@@ -25,7 +25,7 @@ offset_left = 159.0
 offset_top = 194.0
 offset_right = 349.0
 offset_bottom = 255.0
-text = "Hrat"
+text = "Hrát"
 
 [connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
