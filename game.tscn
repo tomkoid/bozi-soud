@@ -1,16 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl0uo8772ox4p"]
+[gd_scene load_steps=5 format=3 uid="uid://cl0uo8772ox4p"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_suklf"]
 [ext_resource type="PackedScene" uid="uid://ytu2cjov1q3t" path="res://scenes/test_bounce.tscn" id="2_3qbha"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_mlona"]
+[ext_resource type="PackedScene" uid="uid://bylawu76sq0kj" path="res://scenes/UI.tscn" id="4_jnpl6"]
 
 [node name="Game" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 texture_filter = 2
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.971098, 0.973803, 0.930098, 1)
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1154.0
+offset_bottom = 651.0
+color = Color(0.972549, 0.180392, 0.929412, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_suklf")]
 position = Vector2(578, 497)
@@ -25,3 +28,5 @@ scale = Vector2(1.2, -1.2)
 
 [node name="PlatformRight" parent="." instance=ExtResource("3_mlona")]
 position = Vector2(966, 246)
+
+[node name="Ui" parent="." instance=ExtResource("4_jnpl6")]
