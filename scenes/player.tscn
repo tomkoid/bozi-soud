@@ -36,7 +36,9 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_cfy0q")
+metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
