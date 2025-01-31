@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://b277k7mqjh11t"]
 
 [ext_resource type="Script" path="res://cloud.gd" id="1_cfy0q"]
-[ext_resource type="Texture2D" uid="uid://b4fekrmiuh0rf" path="res://assets/sprites/mrak_sprite_1.png" id="2_r2n6p"]
-[ext_resource type="Texture2D" uid="uid://c8qcte3840lcb" path="res://assets/sprites/mrak_sprite_2.png" id="3_bgvf4"]
-[ext_resource type="Texture2D" uid="uid://dvcwv1aswc28k" path="res://assets/sprites/mrak_sprite_3.png" id="4_1r3kk"]
+[ext_resource type="Texture2D" uid="uid://c8xwlq51no47w" path="res://assets/sprites/mrak_sprite_1.png" id="2_r2n6p"]
+[ext_resource type="Texture2D" uid="uid://b8yf547sxt5nj" path="res://assets/sprites/mrak_sprite_2.png" id="3_bgvf4"]
+[ext_resource type="Texture2D" uid="uid://cwl0lfibf0y1o" path="res://assets/sprites/mrak_sprite_3.png" id="4_1r3kk"]
 [ext_resource type="Texture2D" uid="uid://cskem6n3njfpw" path="res://assets/sprites/mrak_sprite.png" id="5_1xdtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upinu"]
-size = Vector2(201, 52.25)
+size = Vector2(64, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8oyh2"]
 animations = [{
@@ -41,7 +41,7 @@ script = ExtResource("1_cfy0q")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player"]]
-position = Vector2(13, -5)
+position = Vector2(-3, 23)
 shape = SubResource("RectangleShape2D_upinu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
