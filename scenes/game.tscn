@@ -61,4 +61,17 @@ unique_name_in_owner = true
 wait_time = 2.0
 autostart = true
 
+[node name="GameHardererTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 973.0
+offset_top = 21.0
+offset_right = 1013.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "---UNKNOWN---"
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
