@@ -1,27 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://ka5w0vmbaw1e"]
 
-[ext_resource type="Texture2D" uid="uid://b8q6c8r6rgno2" path="res://icon.svg" id="1_d7lrm"]
+[ext_resource type="Texture2D" uid="uid://cvlavfmefva0d" path="res://assets/sprites/platforma sprite.png" id="1_fcnph"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4g386"]
-size = Vector2(320, 60)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1e1ih"]
+a = Vector2(-148, 48)
+b = Vector2(201.205, -17)
 
 [node name="platform" type="StaticBody2D"]
 texture_filter = 1
-scale = Vector2(1.2, 1.2)
+position = Vector2(20.545, 0)
+rotation = -0.0872665
+scale = Vector2(1.3, 1.3)
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(23, 21)
-scale = Vector2(2.34375, 0.421875)
-texture = ExtResource("1_d7lrm")
-
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(89.5, 112)
-scale = Vector2(1.35156, 1)
-texture = ExtResource("1_d7lrm")
+rotation = -3.14159
+scale = Vector2(0.7, -0.7)
+texture = ExtResource("1_fcnph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(26, 20)
-shape = SubResource("RectangleShape2D_4g386")
+shape = SubResource("SegmentShape2D_1e1ih")
 one_way_collision = true
