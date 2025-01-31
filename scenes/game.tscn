@@ -15,13 +15,14 @@ offset_bottom = 648.0
 color = Color(0.971098, 0.973803, 0.930098, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_f416g")]
+unique_name_in_owner = true
 position = Vector2(578, 500)
 
 [node name="Enemy" parent="." instance=ExtResource("2_q87t1")]
 position = Vector2(602, 228)
 
 [node name="PlatformLeft" parent="." instance=ExtResource("3_m4de3")]
-position = Vector2(180, 246)
+position = Vector2(70, 246)
 rotation = 0.0872665
 scale = Vector2(-1.3, 1.3)
 
@@ -35,12 +36,6 @@ position = Vector2(966, 246)
 [node name="FallGuy" parent="Guys" instance=ExtResource("4_f6bl3")]
 position = Vector2(0, 172)
 
-[node name="FallGuy2" parent="Guys" instance=ExtResource("4_f6bl3")]
-position = Vector2(180, 75)
-
-[node name="FallGuy3" parent="Guys" instance=ExtResource("4_f6bl3")]
-position = Vector2(28, 59)
-
 [node name="FallGuy4" parent="Guys" instance=ExtResource("4_f6bl3")]
 position = Vector2(90, 76)
 
@@ -52,3 +47,5 @@ position = Vector2(160, 177)
 
 [node name="FallGuy7" parent="Guys" instance=ExtResource("4_f6bl3")]
 position = Vector2(84, 181)
+
+[node name="Node2D" type="Node2D" parent="Guys"]

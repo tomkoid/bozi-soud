@@ -11,6 +11,10 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	if is_on_floor() and $AnimatedSprite2D.animation == "jump":
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("run")
 
 	# Handle jump.
 	if position.x >= jump_pos_x and is_on_floor() and not first_jump:
@@ -25,5 +29,12 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.name == "Player":
 		print("trigger")
+		%Player/AnimatedSprite2D.stop()
+		%Player/AnimatedSprite2D.play("bounce")
 		velocity.y = -1500
+		
+		body.position.y = 510
+		await get_tree().create_timer(0.25).timeout
+		body.position.y = 500
+		
 	pass # Replace with function body.

@@ -34,7 +34,6 @@ func player_movement(delta):
 
 #func _on_area_2d_area_entered(area):
 	#$AnimatedSprite2D.play("bounce")
-	#$"../FallGuy".velocity.y = JUMP_VELOCITY
 	#position.y = 510
 	#await get_tree().create_timer(0.25).timeout
 	#position.y = 500

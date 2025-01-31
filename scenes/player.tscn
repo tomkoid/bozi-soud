@@ -12,9 +12,6 @@ size = Vector2(64, 34)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_1xdtj")
-}, {
-"duration": 1.0,
 "texture": ExtResource("3_bgvf4")
 }, {
 "duration": 1.0,
@@ -22,9 +19,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_bgvf4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_1xdtj")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_1xdtj")
@@ -48,5 +42,5 @@ one_way_collision_margin = 128.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8oyh2")
 animation = &"bounce"
-frame = 5
+frame = 3
 frame_progress = 1.0
