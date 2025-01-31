@@ -2,10 +2,13 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
 
-var jump_pos_x = randi_range(150,300)
+var jump_pos_x = randi_range(0,250)
 var first_jump = false
+var jump_velocity = -400
+
+func _ready() -> void:
+	jump_velocity = randi_range(-200, -800)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -20,21 +23,19 @@ func _physics_process(delta):
 	if position.x >= jump_pos_x and is_on_floor() and not first_jump:
 		first_jump = true
 		$AnimatedSprite2D.play("jump")
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 
 	velocity.x = 1 * SPEED
 	move_and_slide()
 
 
-func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:	
 	if body.name == "Player":
 		print("trigger")
-		%Player/AnimatedSprite2D.stop()
-		%Player/AnimatedSprite2D.play("bounce")
+		$"../../Player/PlayerAS".stop()
+		$"../../Player/PlayerAS".play("bounce")
 		velocity.y = -1500
 		
 		body.position.y = 510
 		await get_tree().create_timer(0.25).timeout
 		body.position.y = 500
-		
-	pass # Replace with function body.
