@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
-[ext_resource type="PackedScene" path="res://scenes/test_bounce.tscn" id="2_q87t1"]
+[ext_resource type="PackedScene" uid="uid://ytu2cjov1q3t" path="res://scenes/test_bounce.tscn" id="2_q87t1"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
 
 [node name="Game" type="Node2D"]
@@ -13,7 +13,7 @@ offset_bottom = 648.0
 color = Color(0.971098, 0.973803, 0.930098, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_f416g")]
-position = Vector2(578, 497)
+position = Vector2(578, 500)
 
 [node name="Enemy" parent="." instance=ExtResource("2_q87t1")]
 position = Vector2(602, 228)
