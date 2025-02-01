@@ -30,3 +30,10 @@ func _on_vsync_button_pressed() -> void:
 	$VsyncButton.text = check_vsync_mode(vsync_index)
 	DisplayServer.window_set_vsync_mode(vsync_index)
 	pass # Replace with function body.
+
+
+func _on_check_button_toggled(toggled_on):
+	if toggled_on == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
