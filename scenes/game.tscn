@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=14 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
-[ext_resource type="PackedScene" uid="uid://dji5ax5eryy33" path="res://scenes/test_bounce.tscn" id="2_q87t1"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
 [ext_resource type="PackedScene" uid="uid://d2p41s4kcad3g" path="res://scenes/fall_guy.tscn" id="4_f6bl3"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
 [ext_resource type="PackedScene" uid="uid://dmnwygan1kmer" path="res://scenes/bad_guy.tscn" id="7_go4ka"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
+[ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
+[ext_resource type="Texture2D" uid="uid://kt2csf0q7x7p" path="res://assets/sprites/cloud_1.png" id="11_gyfp8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
 size = Vector2(1904, 71)
@@ -42,9 +43,6 @@ texture = ExtResource("2_nexhj")
 
 [node name="Player" parent="." instance=ExtResource("1_f416g")]
 position = Vector2(578, 500)
-
-[node name="Enemy" parent="." instance=ExtResource("2_q87t1")]
-position = Vector2(608, 178)
 
 [node name="PlatformLeft" parent="." instance=ExtResource("3_m4de3")]
 position = Vector2(70, 246)
@@ -112,6 +110,18 @@ animation = &"idle"
 autoplay = "idle"
 frame = 1
 frame_progress = 1.0
+
+[node name="Jesus" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(600, 281)
+scale = Vector2(3.21875, 3.21875)
+texture = ExtResource("10_5s47w")
+
+[node name="Cloud1" type="Sprite2D" parent="Jesus"]
+z_index = -5
+position = Vector2(0.932033, 24.5437)
+scale = Vector2(0.31068, 0.31068)
+texture = ExtResource("11_gyfp8")
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
