@@ -1,6 +1,6 @@
 extends Node2D
 
-
+var count = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$TimerLabel.text = str(%GameTimer.wait_time)
@@ -32,3 +32,9 @@ func _on_game_harderer_timer_timeout() -> void:
 		
 	$TimerLabel.text = str(%GameTimer.wait_time)
 	%GameTimer.wait_time = %GameTimer.wait_time - 0.2
+
+
+func _on_area_2d_area_entered(area):
+	count += randi_range(100, 110)
+	$count_label.text = str(count)
+	

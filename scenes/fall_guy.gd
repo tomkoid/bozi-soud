@@ -6,6 +6,7 @@ const SPEED = 300.0
 var jump_pos_x = randi_range(20,200)
 var first_jump = false
 var jump_velocity = -400
+var count = 0
 
 func _ready() -> void:
 	jump_velocity = randi_range(-200, -800)
@@ -35,7 +36,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$"../../Player/PlayerAS".stop()
 		$"../../Player/PlayerAS".play("bounce")
 		velocity.y = -1500
-		
 		body.position.y = 510
 		await get_tree().create_timer(0.25).timeout
 		body.position.y = 500
