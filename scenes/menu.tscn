@@ -15,13 +15,6 @@ theme_override_fonts/normal_font = ExtResource("2_bo2sx")
 theme_override_font_sizes/normal_font_size = 66
 text = "BOZÍ SOUD"
 
-[node name="VsyncButton" type="Button" parent="."]
-offset_left = 762.0
-offset_top = 145.0
-offset_right = 952.0
-offset_bottom = 206.0
-text = "VSYNC: disabled"
-
 [node name="Button" type="Button" parent="."]
 offset_left = 159.0
 offset_top = 194.0
@@ -43,7 +36,6 @@ offset_right = 347.0
 offset_bottom = 396.0
 text = "Ukončit hru"
 
-[connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
