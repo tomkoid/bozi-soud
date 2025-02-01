@@ -1,19 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_dqhv3"]
-[ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/font/VCR_OSD_MONO_1.001.ttf" id="2_bo2sx"]
+[ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/font/AnglicanText.ttf" id="2_ca2gd"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_dqhv3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 99.0
-offset_top = 75.0
-offset_right = 453.0
-offset_bottom = 156.0
-theme_override_fonts/normal_font = ExtResource("2_bo2sx")
+offset_left = 98.0
+offset_top = 78.0
+offset_right = 452.0
+offset_bottom = 165.0
+theme_override_fonts/normal_font = ExtResource("2_ca2gd")
 theme_override_font_sizes/normal_font_size = 66
-text = "BOZÍ SOUD"
+text = "BOŽÍ SOUD"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 159.0

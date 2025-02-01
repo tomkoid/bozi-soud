@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=18 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
+[ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/font/VCR_OSD_MONO_1.001.ttf" id="6_do7aq"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
 [ext_resource type="Texture2D" uid="uid://qlgmrvbh6whx" path="res://assets/sprites/sun-spritesheet.png" id="10_6xhcb"]
@@ -67,12 +68,12 @@ texture = ExtResource("2_nexhj")
 position = Vector2(578, 500)
 
 [node name="PlatformLeft" parent="." instance=ExtResource("3_m4de3")]
-position = Vector2(156, 330)
+position = Vector2(152, 330)
 rotation = 0.0872665
 scale = Vector2(-1.3, 1.3)
 
 [node name="PlatformRight" parent="." instance=ExtResource("3_m4de3")]
-position = Vector2(996, 330)
+position = Vector2(1000, 330)
 
 [node name="UI" parent="." instance=ExtResource("5_3th8g")]
 
@@ -90,9 +91,10 @@ autostart = true
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 973.0
 offset_top = 21.0
-offset_right = 1013.0
-offset_bottom = 44.0
+offset_right = 1134.0
+offset_bottom = 53.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_do7aq")
 theme_override_font_sizes/font_size = 20
 text = "---UNKNOWN---"
 
@@ -114,8 +116,10 @@ offset_top = 474.0
 offset_right = 266.0
 offset_bottom = 537.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_do7aq")
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "0
+ "
 
 [node name="Devil" type="AnimatedSprite2D" parent="."]
 z_index = -1

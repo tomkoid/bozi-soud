@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_ky2qt")
 
 [node name="VsyncButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 762.0
 offset_top = 145.0
 offset_right = 952.0
