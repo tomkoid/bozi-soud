@@ -112,6 +112,7 @@ frame = 1
 frame_progress = 1.0
 
 [node name="Jesus" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.368627)
 z_index = -4
 position = Vector2(600, 281)
 scale = Vector2(3.21875, 3.21875)
