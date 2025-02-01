@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=18 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dmnwygan1kmer" path="res://scenes/bad_guy.tscn" id="7_go4ka"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
+[ext_resource type="Texture2D" uid="uid://qlgmrvbh6whx" path="res://assets/sprites/sun-spritesheet.png" id="10_6xhcb"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="Texture2D" uid="uid://kt2csf0q7x7p" path="res://assets/sprites/cloud_1.png" id="11_gyfp8"]
 
@@ -27,6 +28,28 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm0w6"]
+atlas = ExtResource("10_6xhcb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxn2x"]
+atlas = ExtResource("10_6xhcb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_71rp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm0w6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxn2x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
 }]
 
 [node name="Game" type="Node2D"]
@@ -101,7 +124,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Devil" type="AnimatedSprite2D" parent="."]
 z_index = -1
 position = Vector2(280, 554)
 scale = Vector2(5.875, 5.875)
@@ -110,6 +133,14 @@ animation = &"idle"
 autoplay = "idle"
 frame = 1
 frame_progress = 1.0
+
+[node name="Sun" type="AnimatedSprite2D" parent="."]
+z_index = -3
+position = Vector2(579.89, 73.407)
+scale = Vector2(7.813, 7.813)
+sprite_frames = SubResource("SpriteFrames_71rp8")
+autoplay = "default"
+frame_progress = 0.0383685
 
 [node name="Jesus" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.803922)

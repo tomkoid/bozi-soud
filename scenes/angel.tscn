@@ -62,4 +62,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_welf2")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.531532
+frame_progress = 0.409909
