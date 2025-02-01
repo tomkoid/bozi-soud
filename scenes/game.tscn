@@ -1,13 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=8 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
 [ext_resource type="PackedScene" uid="uid://dji5ax5eryy33" path="res://scenes/test_bounce.tscn" id="2_q87t1"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
-[ext_resource type="PackedScene" uid="uid://d2p41s4kcad3g" path="res://scenes/fall_guy.tscn" id="4_f6bl3"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
-[ext_resource type="PackedScene" uid="uid://dmnwygan1kmer" path="res://scenes/bad_guy.tscn" id="7_go4ka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
 size = Vector2(1904, 71)
@@ -42,12 +40,6 @@ position = Vector2(1080, 246)
 
 [node name="Guys" type="Node2D" parent="."]
 
-[node name="FallGuy" parent="Guys" instance=ExtResource("4_f6bl3")]
-position = Vector2(0, 172)
-
-[node name="BadGuy" parent="Guys" instance=ExtResource("7_go4ka")]
-position = Vector2(42, 178)
-
 [node name="GameTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 2.0
@@ -69,13 +61,13 @@ text = "---UNKNOWN---"
 [node name="TopCountZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCountZone"]
-position = Vector2(605, -200)
+position = Vector2(605, -338)
 shape = SubResource("RectangleShape2D_y53im")
 
 [node name="BottomCountZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCountZone"]
-position = Vector2(580, 768)
+position = Vector2(580, 802)
 shape = SubResource("RectangleShape2D_y53im")
 
 [node name="CountLabel" type="Label" parent="."]

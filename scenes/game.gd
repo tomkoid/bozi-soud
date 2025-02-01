@@ -19,6 +19,8 @@ func _on_game_timer_timeout() -> void:
 	var fg_instance = fall_guy_scene.instantiate()
 	var bg_instance = bad_guy_scene.instantiate()
 	var guys = [fg_instance, bg_instance]
+	fg_instance.set_meta("type", "good")
+	bg_instance.set_meta("type", "bad")
 	fg_instance.position.x = randi_range(-150,0)
 	fg_instance.position.y = 180
 	bg_instance.position.x = randi_range(-150,0)
@@ -36,7 +38,8 @@ func _on_game_harderer_timer_timeout() -> void:
 
 
 func _on_bottom_count_zone_body_entered(body):
-	if body.name == "BadGuy":
+	print(body.get_meta("type"))
+	if body.get_meta("type") == "bad":
 		count += randi_range(100, 110)
 	else:
 		count -= randi_range(100, 110)
@@ -47,7 +50,8 @@ func _on_bottom_count_zone_body_entered(body):
 
 
 func _on_top_count_zone_body_entered(body):
-	if body.name == "FallGuy":
+	print(body.get_meta("type"))
+	if body.get_meta("type") == "good":
 		count += randi_range(100, 110)
 	else:
 		count -= randi_range(100, 110)

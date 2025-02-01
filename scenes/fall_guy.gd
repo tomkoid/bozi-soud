@@ -5,7 +5,7 @@ const SPEED = 300.0
 
 var jump_pos_x = randi_range(20,200)
 var first_jump = false
-var jump_velocity = -400
+var jump_velocity = -300
 var count = 0
 
 func _ready() -> void:
