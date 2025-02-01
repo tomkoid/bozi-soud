@@ -34,7 +34,23 @@ func _on_game_harderer_timer_timeout() -> void:
 	%GameTimer.wait_time = %GameTimer.wait_time - 0.2
 
 
-func _on_area_2d_area_entered(area):
-	count += randi_range(100, 110)
-	$count_label.text = str(count)
+
+func _on_bottom_count_zone_body_entered(body):
+	if body.name == "BadGuy":
+		count += randi_range(100, 110)
+	else:
+		count -= randi_range(100, 110)
+	$CountLabel.text = str(count)
+	body.queue_free()
+	
+	print(body.name)
+
+
+func _on_top_count_zone_body_entered(body):
+	if body.name == "FallGuy":
+		count += randi_range(100, 110)
+	else:
+		count -= randi_range(100, 110)
+	$CountLabel.text = str(count)	
+	body.queue_free()
 	
