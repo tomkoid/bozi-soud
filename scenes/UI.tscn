@@ -1,8 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://dc2coaqu76bfd"]
 
-[ext_resource type="Script" path="res://scenes/UI.gd" id="1_to3uw"]
+[sub_resource type="GDScript" id="GDScript_p0j4u"]
+script/source = "extends Button
 
-[node name="Ui" type="CanvasLayer"]
+func _on_pressed():
+	get_tree().reload_current_scene()
+"
+
+[node name="UI" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -13,12 +18,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 133.0
 offset_top = 80.0
 offset_right = 403.0
 offset_bottom = 144.0
 text = "retry"
-script = ExtResource("1_to3uw")
+script = SubResource("GDScript_p0j4u")
 
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]

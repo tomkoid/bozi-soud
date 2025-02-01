@@ -9,7 +9,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_pressed("reload"):
+		get_tree().reload_current_scene()
 
 var fall_guy_scene = load("res://scenes/fall_guy.tscn")
 var bad_guy_scene = load("res://scenes/bad_guy.tscn")
