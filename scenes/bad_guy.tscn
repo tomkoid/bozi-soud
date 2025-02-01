@@ -41,7 +41,7 @@ scale = Vector2(1.72005, 1.72005)
 sprite_frames = SubResource("SpriteFrames_vayxy")
 animation = &"run"
 autoplay = "run"
-frame_progress = 0.0404929
+frame_progress = 0.0934959
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(25, 25)

@@ -6,7 +6,7 @@
 size = Vector2(630.49, 23.5041)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xn1g"]
-size = Vector2(85.2789, 14.9249)
+size = Vector2(85.4324, 11.7388)
 
 [node name="platform" type="StaticBody2D"]
 texture_filter = 1
@@ -28,8 +28,8 @@ shape = SubResource("RectangleShape2D_5agkj")
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-103.842, 44.096)
-rotation = -0.486947
+position = Vector2(-106.327, 33.566)
+rotation = -0.247837
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_0xn1g")
 one_way_collision = true

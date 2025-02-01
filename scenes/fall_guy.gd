@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
-var jump_pos_x = randi_range(0,250)
+var jump_pos_x = randi_range(20,200)
 var first_jump = false
 var jump_velocity = -400
 
