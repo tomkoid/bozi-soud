@@ -157,6 +157,15 @@ position = Vector2(0.932033, 24.5437)
 scale = Vector2(0.31068, 0.31068)
 texture = ExtResource("11_gyfp8")
 
+[node name="FailCount" type="Label" parent="."]
+offset_left = 65.0
+offset_top = 20.0
+offset_right = 216.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "0"
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
 [connection signal="body_entered" from="TopCountZone" to="." method="_on_top_count_zone_body_entered"]

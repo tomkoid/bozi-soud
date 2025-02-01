@@ -1,6 +1,7 @@
 extends Node2D
 
 var count = 0
+var fail_count = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$TimerLabel.text = str(%GameTimer.wait_time)
@@ -56,7 +57,10 @@ func _on_bottom_count_zone_body_entered(body):
 		count += randi_range(100, 110)
 	else:
 		count -= randi_range(400, 550)
+		fail_count += 1
+		
 	$CountLabel.text = str(count)
+	$FailCount.text = str(fail_count)
 	body.queue_free()
 
 
@@ -65,5 +69,7 @@ func _on_top_count_zone_body_entered(body):
 		count += randi_range(100, 110)
 	else:
 		count -= randi_range(400, 550)
+		fail_count += 1
 	$CountLabel.text = str(count)
+	$FailCount.text = str(fail_count)
 	body.queue_free()
