@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://qlgmrvbh6whx" path="res://assets/sprites/sun-spritesheet.png" id="10_6xhcb"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/angel.tscn" id="11_6e238"]
-[ext_resource type="Texture2D" uid="uid://kt2csf0q7x7p" path="res://assets/sprites/cloud_1.png" id="11_gyfp8"]
+[ext_resource type="Texture2D" uid="uid://3hy5yoojyuph" path="res://assets/sprites/cloud1.png" id="13_2m20h"]
 [ext_resource type="AudioStream" uid="uid://4tmqdlxm1oum" path="res://assets/sounds/ambient/sciagura_in_braccio_a_morte.wav" id="13_aroaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
@@ -156,11 +156,11 @@ position = Vector2(580, 200)
 scale = Vector2(6.625, 6.625)
 texture = ExtResource("10_5s47w")
 
-[node name="Cloud1" type="Sprite2D" parent="Jesus"]
-z_index = -5
-position = Vector2(0.932033, 24.5437)
-scale = Vector2(0.31068, 0.31068)
-texture = ExtResource("11_gyfp8")
+[node name="Cloud2" type="Sprite2D" parent="Jesus"]
+z_index = -4
+position = Vector2(-0.905656, 32.1509)
+scale = Vector2(0.603774, 0.603774)
+texture = ExtResource("13_2m20h")
 
 [node name="FailCount" type="Label" parent="."]
 offset_left = 65.0
