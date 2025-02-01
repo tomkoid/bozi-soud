@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://2uyhvfmjbm8b"]
+
+[ext_resource type="Texture2D" uid="uid://cbx21ruktmyc0" path="res://assets/sprites/andel-spritesheet4.png" id="2_hrt4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdipl"]
+atlas = ExtResource("2_hrt4a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk5dl"]
+atlas = ExtResource("2_hrt4a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fvbt"]
+atlas = ExtResource("2_hrt4a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqecm"]
+atlas = ExtResource("2_hrt4a")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0yyn"]
+atlas = ExtResource("2_hrt4a")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6djl"]
+atlas = ExtResource("2_hrt4a")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_welf2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdipl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk5dl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdipl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fvbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqecm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0yyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqecm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6djl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="Angel" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_welf2")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.531532

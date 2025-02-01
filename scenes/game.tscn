@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=13 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
+[ext_resource type="PackedScene" uid="uid://2uyhvfmjbm8b" path="res://scenes/angel.tscn" id="10_nmssa"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="Texture2D" uid="uid://kt2csf0q7x7p" path="res://assets/sprites/cloud_1.png" id="11_gyfp8"]
 
@@ -115,6 +116,10 @@ z_index = -5
 position = Vector2(0.932033, 24.5437)
 scale = Vector2(0.31068, 0.31068)
 texture = ExtResource("11_gyfp8")
+
+[node name="Angel" parent="." instance=ExtResource("10_nmssa")]
+position = Vector2(850, 106)
+scale = Vector2(3, 3)
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
