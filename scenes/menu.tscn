@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=3 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_dqhv3"]
+[ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/font/VCR_OSD_MONO_1.001.ttf" id="2_bo2sx"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_dqhv3")
@@ -8,10 +9,11 @@ script = ExtResource("1_dqhv3")
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 99.0
 offset_top = 75.0
-offset_right = 430.0
-offset_bottom = 229.0
+offset_right = 453.0
+offset_bottom = 156.0
+theme_override_fonts/normal_font = ExtResource("2_bo2sx")
 theme_override_font_sizes/normal_font_size = 66
-text = "Boží soud"
+text = "BOZÍ SOUD"
 
 [node name="VsyncButton" type="Button" parent="."]
 offset_left = 762.0
@@ -27,5 +29,21 @@ offset_right = 349.0
 offset_bottom = 255.0
 text = "Hrát"
 
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 163.0
+offset_top = 267.0
+offset_right = 347.0
+offset_bottom = 330.0
+text = "Nastavení"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 163.0
+offset_top = 341.0
+offset_right = 347.0
+offset_bottom = 396.0
+text = "Ukončit hru"
+
 [connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

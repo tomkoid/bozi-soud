@@ -39,3 +39,10 @@ func _on_vsync_button_pressed() -> void:
 	$VsyncButton.text = check_vsync_mode(vsync_index)
 	DisplayServer.window_set_vsync_mode(vsync_index)
 	pass # Replace with function body.
+
+
+func _on_settings_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/settings.tscn")
+	
+func _on_quit_button_pressed():
+	get_tree().quit()
