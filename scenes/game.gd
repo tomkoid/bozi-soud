@@ -18,20 +18,27 @@ var bad_guy_scene = load("res://scenes/bad_guy.tscn")
 func _on_game_timer_timeout() -> void:
 	var instance
 	var guy_type = randi_range(0,1)
+	var guy_spawn_pos = randi_range(0,1) # left, right
 	
 	# good guy
 	if guy_type == 0:
 		instance = fall_guy_scene.instantiate()
 		instance.set_meta("type", "good")
-		instance.position.x = randi_range(-150,0)
 		instance.position.y = 180
 	# bad guy
 	elif guy_type == 1:
 		instance = bad_guy_scene.instantiate()
 		instance.set_meta("type", "bad")
+		instance.position.y = 180
+		
+	if guy_spawn_pos == 0:
 		instance.position.x = randi_range(-150,0)
-		instance.position.y = 170
-	
+		instance.dir = 1
+	elif guy_spawn_pos == 1:
+		instance.position.x = randi_range(1200,1500)
+		instance.dir = -1
+		instance.get_node("AnimatedSprite2D").flip_h = true
+#	
 	$Guys.add_child(instance)
 
 

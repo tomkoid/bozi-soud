@@ -7,6 +7,7 @@ var jump_pos_x = randi_range(20,200)
 var first_jump = false
 var jump_velocity = -300
 var count = 0
+@export var dir = 1
 
 func _ready() -> void:
 	jump_velocity = randi_range(-200, -800)
@@ -26,7 +27,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("jump")
 		velocity.y = jump_velocity
 
-	velocity.x = 1 * SPEED
+	velocity.x = dir * SPEED
 	move_and_slide()
 
 
