@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=9 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
 [ext_resource type="PackedScene" uid="uid://dji5ax5eryy33" path="res://scenes/test_bounce.tscn" id="2_q87t1"]
+[ext_resource type="Texture2D" uid="uid://duuvl4bsoxpak" path="res://assets/sprites/paralax-background1.png" id="2_sxi3k"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
 [ext_resource type="PackedScene" uid="uid://d2p41s4kcad3g" path="res://scenes/fall_guy.tscn" id="4_f6bl3"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
@@ -11,11 +12,18 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ptexp")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-texture_filter = 2
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.971098, 0.973803, 0.930098, 1)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(14, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+motion_offset = Vector2(20, 0)
+motion_mirroring = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(628.5, 324)
+scale = Vector2(4.36458, 4)
+texture = ExtResource("2_sxi3k")
 
 [node name="Player" parent="." instance=ExtResource("1_f416g")]
 unique_name_in_owner = true
