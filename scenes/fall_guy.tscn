@@ -1,40 +1,57 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2p41s4kcad3g"]
+[gd_scene load_steps=10 format=3 uid="uid://d2p41s4kcad3g"]
 
-[ext_resource type="Texture2D" uid="uid://dwb2lb55euped" path="res://assets/sprites/purple_boy.png" id="1_58j6v"]
 [ext_resource type="Script" path="res://scenes/fall_guy.gd" id="1_qeo4k"]
+[ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="2_hj3ig"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cwrc6"]
-atlas = ExtResource("1_58j6v")
-region = Rect2(0, 32, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_grc63"]
+atlas = ExtResource("2_hj3ig")
+region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q8a5v"]
-atlas = ExtResource("1_58j6v")
-region = Rect2(0, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qqci"]
+atlas = ExtResource("2_hj3ig")
+region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fyou0"]
-atlas = ExtResource("1_58j6v")
-region = Rect2(16, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qloiw"]
+atlas = ExtResource("2_hj3ig")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2tos"]
+atlas = ExtResource("2_hj3ig")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlbm3"]
+atlas = ExtResource("2_hj3ig")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vayxy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cwrc6")
+"texture": SubResource("AtlasTexture_grc63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qqci")
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q8a5v")
+"texture": SubResource("AtlasTexture_qloiw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fyou0")
+"texture": SubResource("AtlasTexture_s2tos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlbm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2tos")
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 4.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdxh2"]
@@ -46,11 +63,11 @@ script = ExtResource("1_qeo4k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(5, 5)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_vayxy")
-animation = &"run"
+animation = &"jump"
 autoplay = "run"
-frame_progress = 0.138939
+frame_progress = 0.58098
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(25, 25)
