@@ -47,7 +47,7 @@ func _on_bottom_count_zone_body_entered(body):
 	if body.get_meta("type") == "bad":
 		count += randi_range(100, 110)
 	else:
-		count -= randi_range(100, 110)
+		count -= randi_range(400, 550)
 	$CountLabel.text = str(count)
 	body.queue_free()
 
@@ -56,6 +56,6 @@ func _on_top_count_zone_body_entered(body):
 	if body.get_meta("type") == "good":
 		count += randi_range(100, 110)
 	else:
-		count -= randi_range(100, 110)
+		count -= randi_range(400, 550)
 	$CountLabel.text = str(count)
 	body.queue_free()
