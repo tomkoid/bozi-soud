@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=19 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/angel.tscn" id="11_6e238"]
 [ext_resource type="Texture2D" uid="uid://kt2csf0q7x7p" path="res://assets/sprites/cloud_1.png" id="11_gyfp8"]
+[ext_resource type="AudioStream" uid="uid://4tmqdlxm1oum" path="res://assets/sounds/ambient/sciagura_in_braccio_a_morte.wav" id="13_aroaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
 size = Vector2(1904, 71)
@@ -87,6 +88,10 @@ autostart = true
 [node name="GameHardererTimer" type="Timer" parent="."]
 wait_time = 6.0
 autostart = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_aroaw")
+autoplay = true
 
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 973.0
