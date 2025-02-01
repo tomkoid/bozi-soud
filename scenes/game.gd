@@ -12,6 +12,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
+	
+	if fail_count == 10:
+		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 
 var fall_guy_scene = load("res://scenes/fall_guy.tscn")
 var bad_guy_scene = load("res://scenes/bad_guy.tscn")
@@ -73,3 +76,6 @@ func _on_top_count_zone_body_entered(body):
 	$CountLabel.text = str(count)
 	$FailCount.text = str(fail_count)
 	body.queue_free()
+
+
+	
