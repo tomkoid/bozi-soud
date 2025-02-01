@@ -12,13 +12,18 @@ func _process(delta: float) -> void:
 	pass
 
 var fall_guy_scene = load("res://scenes/fall_guy.tscn")
+var bad_guy_scene = load("res://scenes/bad_guy.tscn")
 
 func _on_game_timer_timeout() -> void:
 	print("hey")
 	var fg_instance = fall_guy_scene.instantiate()
+	var bg_instance = bad_guy_scene.instantiate()
+	var guys = [fg_instance, bg_instance]
 	fg_instance.position.x = randi_range(-150,0)
 	fg_instance.position.y = 180
-	$Guys.add_child(fg_instance)
+	bg_instance.position.x = randi_range(-150,0)
+	bg_instance.position.y = 170
+	$Guys.add_child(guys[randi() % guys.size()])
 
 
 func _on_game_harderer_timer_timeout() -> void:
