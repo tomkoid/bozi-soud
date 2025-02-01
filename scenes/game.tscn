@@ -1,13 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=14 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
+[ext_resource type="PackedScene" uid="uid://d2p41s4kcad3g" path="res://scenes/fall_guy.tscn" id="4_f6bl3"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
+[ext_resource type="PackedScene" uid="uid://dmnwygan1kmer" path="res://scenes/bad_guy.tscn" id="7_go4ka"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
-[ext_resource type="PackedScene" uid="uid://2uyhvfmjbm8b" path="res://scenes/angel.tscn" id="10_nmssa"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="Texture2D" uid="uid://kt2csf0q7x7p" path="res://assets/sprites/cloud_1.png" id="11_gyfp8"]
 
@@ -54,6 +55,12 @@ position = Vector2(1080, 246)
 [node name="UI" parent="." instance=ExtResource("5_3th8g")]
 
 [node name="Guys" type="Node2D" parent="."]
+
+[node name="FallGuy" parent="Guys" instance=ExtResource("4_f6bl3")]
+position = Vector2(0, 172)
+
+[node name="BadGuy" parent="Guys" instance=ExtResource("7_go4ka")]
+position = Vector2(42, 178)
 
 [node name="GameTimer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -105,10 +112,10 @@ frame = 1
 frame_progress = 1.0
 
 [node name="Jesus" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.556863)
-z_index = -4
-position = Vector2(578, 287)
-scale = Vector2(4.26562, 4.26562)
+modulate = Color(1, 1, 1, 0.803922)
+z_index = -2
+position = Vector2(580, 200)
+scale = Vector2(6.625, 6.625)
 texture = ExtResource("10_5s47w")
 
 [node name="Cloud1" type="Sprite2D" parent="Jesus"]
@@ -116,10 +123,6 @@ z_index = -5
 position = Vector2(0.932033, 24.5437)
 scale = Vector2(0.31068, 0.31068)
 texture = ExtResource("11_gyfp8")
-
-[node name="Angel" parent="." instance=ExtResource("10_nmssa")]
-position = Vector2(850, 106)
-scale = Vector2(3, 3)
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
