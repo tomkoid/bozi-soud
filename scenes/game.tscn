@@ -22,7 +22,6 @@ scale = Vector2(4.36458, 4)
 texture = ExtResource("2_nexhj")
 
 [node name="Player" parent="." instance=ExtResource("1_f416g")]
-unique_name_in_owner = true
 position = Vector2(578, 500)
 
 [node name="Enemy" parent="." instance=ExtResource("2_q87t1")]
@@ -66,6 +65,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="GameHardererTimer" type="Timer" parent="."]
+wait_time = 6.0
 autostart = true
 
 [node name="TimerLabel" type="Label" parent="."]
