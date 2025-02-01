@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://2uyhvfmjbm8b"]
+[gd_scene load_steps=9 format=3 uid="uid://buyx0jwbc55xc"]
 
 [ext_resource type="Texture2D" uid="uid://cbx21ruktmyc0" path="res://assets/sprites/andel-spritesheet4.png" id="2_hrt4a"]
 
@@ -62,4 +62,5 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_welf2")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.409909
+frame = 1
+frame_progress = 0.848533
