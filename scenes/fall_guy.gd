@@ -10,7 +10,10 @@ var count = 0
 @export var dir = 1
 
 func _ready() -> void:
-	jump_velocity = randi_range(-200, -800)
+	if dir == 1:
+		jump_velocity = randi_range(-200, -800)
+	elif dir == -1:
+		jump_velocity = randi_range(1000, 1600)
 
 func _physics_process(delta):
 	# Add the gravity.
