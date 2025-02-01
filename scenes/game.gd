@@ -15,17 +15,23 @@ var fall_guy_scene = load("res://scenes/fall_guy.tscn")
 var bad_guy_scene = load("res://scenes/bad_guy.tscn")
 
 func _on_game_timer_timeout() -> void:
-	print("hey")
-	var fg_instance = fall_guy_scene.instantiate()
-	var bg_instance = bad_guy_scene.instantiate()
-	var guys = [fg_instance, bg_instance]
-	fg_instance.set_meta("type", "good")
-	bg_instance.set_meta("type", "bad")
-	fg_instance.position.x = randi_range(-150,0)
-	fg_instance.position.y = 180
-	bg_instance.position.x = randi_range(-150,0)
-	bg_instance.position.y = 170
-	$Guys.add_child(guys[randi() % guys.size()])
+	var instance
+	var guy_type = randi_range(0,1)
+	
+	# good guy
+	if guy_type == 0:
+		instance = fall_guy_scene.instantiate()
+		instance.set_meta("type", "good")
+		instance.position.x = randi_range(-150,0)
+		instance.position.y = 180
+	# bad guy
+	elif guy_type == 1:
+		instance = bad_guy_scene.instantiate()
+		instance.set_meta("type", "bad")
+		instance.position.x = randi_range(-150,0)
+		instance.position.y = 170
+	
+	$Guys.add_child(instance)
 
 
 func _on_game_harderer_timer_timeout() -> void:
