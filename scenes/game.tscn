@@ -112,10 +112,10 @@ frame = 1
 frame_progress = 1.0
 
 [node name="Jesus" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.368627)
+modulate = Color(1, 1, 1, 0.556863)
 z_index = -4
-position = Vector2(600, 281)
-scale = Vector2(3.21875, 3.21875)
+position = Vector2(578, 287)
+scale = Vector2(4.26562, 4.26562)
 texture = ExtResource("10_5s47w")
 
 [node name="Cloud1" type="Sprite2D" parent="Jesus"]
