@@ -44,23 +44,18 @@ func _on_game_harderer_timer_timeout() -> void:
 
 
 func _on_bottom_count_zone_body_entered(body):
-	print(body.get_meta("type"))
 	if body.get_meta("type") == "bad":
 		count += randi_range(100, 110)
 	else:
 		count -= randi_range(100, 110)
 	$CountLabel.text = str(count)
 	body.queue_free()
-	
-	print(body.name)
 
 
 func _on_top_count_zone_body_entered(body):
-	print(body.get_meta("type"))
 	if body.get_meta("type") == "good":
 		count += randi_range(100, 110)
 	else:
 		count -= randi_range(100, 110)
-	$CountLabel.text = str(count)	
+	$CountLabel.text = str(count)
 	body.queue_free()
-	
