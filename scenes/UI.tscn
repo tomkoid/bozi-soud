@@ -34,6 +34,7 @@ region = Rect2(0, 0, 16, 16)
 [node name="UI" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,6 +53,7 @@ text = "retry"
 script = SubResource("GDScript_p0j4u")
 
 [node name="TextureButton" type="TextureButton" parent="Control"]
+z_index = 10
 layout_mode = 0
 offset_left = 1066.0
 offset_top = 27.0
@@ -63,6 +65,7 @@ texture_pressed = SubResource("AtlasTexture_tl6v2")
 texture_hover = SubResource("AtlasTexture_qjbvh")
 
 [node name="VBOX" type="VBoxContainer" parent="Control"]
+z_index = 10
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
@@ -70,6 +73,7 @@ offset_right = 374.0
 offset_bottom = 137.0
 
 [node name="Control" type="Control" parent="Control/VBOX"]
+z_index = 10
 layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/VBOX/Control"]
@@ -89,14 +93,17 @@ theme_override_font_sizes/font_size = 50
 text = "0"
 
 [node name="Control2" type="Control" parent="Control/VBOX"]
+z_index = 10
 layout_mode = 2
 
 [node name="Sprite2D2" type="Sprite2D" parent="Control/VBOX/Control2"]
+z_index = 10
 position = Vector2(72, 49)
 scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_hhed8")
 
 [node name="MoneyLabel" type="Label" parent="Control/VBOX/Control2"]
+z_index = 10
 layout_mode = 2
 offset_left = 120.0
 offset_top = 27.0
