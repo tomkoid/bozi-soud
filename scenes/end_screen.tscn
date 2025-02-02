@@ -1,19 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctqwgvoo3fbxr"]
+[gd_scene load_steps=6 format=3 uid="uid://ctqwgvoo3fbxr"]
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_21o4t"]
 [ext_resource type="Script" path="res://scenes/end_screen.gd" id="2_oudwk"]
+[ext_resource type="StyleBox" uid="uid://x7g8a11xam5q" path="res://scenes/button_hover.tres" id="2_qolap"]
+[ext_resource type="StyleBox" uid="uid://bxfva2igcs5k7" path="res://scenes/normal_button.tres" id="3_shkxw"]
 
-[node name="EndScreen" type="Control"]
+[sub_resource type="Theme" id="Theme_5fm1g"]
+Button/styles/hover = ExtResource("2_qolap")
+Button/styles/normal = ExtResource("3_shkxw")
+
+[node name="EndScreen" type="CanvasLayer"]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
 offset_left = -759.0
 offset_top = -420.0
 offset_right = 1686.0
@@ -21,23 +20,43 @@ offset_bottom = 841.0
 color = Color(0, 0, 0, 0.470588)
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 70.0
-offset_top = 97.0
-offset_right = 1109.0
-offset_bottom = 483.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -457.5
+offset_top = -251.0
+offset_right = 457.5
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.909804, 0.654902, 0.137255, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -10
 theme_override_fonts/font = ExtResource("1_21o4t")
-theme_override_font_sizes/font_size = 300
-text = "you failed!!!"
+theme_override_font_sizes/font_size = 250
+text = "Prohrál jsi!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 process_mode = 3
-layout_mode = 0
-offset_left = 417.0
-offset_top = 476.0
-offset_right = 1027.0
-offset_bottom = 592.0
-text = "reloadddd"
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.0
+offset_top = 77.0
+offset_right = 305.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5fm1g")
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "Nová hra"
 script = ExtResource("2_oudwk")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -90,7 +90,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="GameHardererTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
 
 [node name="GameResetFail" type="Timer" parent="."]
@@ -171,7 +171,6 @@ parameters/looping = false
 [node name="EndScreen" parent="." instance=ExtResource("15_h0ic7")]
 unique_name_in_owner = true
 visible = false
-z_index = 4
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_867yn")]
 unique_name_in_owner = true
