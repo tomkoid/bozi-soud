@@ -172,6 +172,7 @@ visible = false
 z_index = 2
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_867yn")]
+unique_name_in_owner = true
 visible = false
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
