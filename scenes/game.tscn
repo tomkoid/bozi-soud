@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=20 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
+[ext_resource type="AudioStream" uid="uid://c7yk8wq4di6bg" path="res://assets/sounds/sound_effects/boing.mp3" id="4_pum5f"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
 [ext_resource type="AudioStream" uid="uid://br0fiul3ep4k2" path="res://assets/sounds/ambient/classical.mp3" id="6_7wxn4"]
 [ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/font/VCR_OSD_MONO_1.001.ttf" id="6_do7aq"]
@@ -170,6 +171,10 @@ offset_bottom = 87.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "0"
+
+[node name="BoingEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pum5f")
+volume_db = 4.19
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]

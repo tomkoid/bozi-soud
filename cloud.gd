@@ -25,12 +25,12 @@ func player_movement(delta):
 			#velocity -= velocity.normalized() * (friction * delta)
 		#else:
 			#velocity = Vector2.ZERO
-	#else:
+	#else:		count += randi_range(100, 110)
+
 		#velocity += (input * accel * delta)
 		#velocity = velocity.limit_length(max_speed)
 
 	move_and_slide()
-
 
 #func _on_area_2d_area_entered(area):
 	#$AnimatedSprite2D.play("bounce")

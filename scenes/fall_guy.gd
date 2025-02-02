@@ -9,6 +9,7 @@ var jump_velocity = -300
 var count = 0
 @export var dir = 1
 
+
 func _ready() -> void:
 	jump_velocity = randi_range(-500, -200)
 	
@@ -40,9 +41,11 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		get_node("../../BoingEffect").play()
 		$"../../Player/PlayerAS".stop()
 		$"../../Player/PlayerAS".play("bounce")
 		velocity.y = -1500
 		body.position.y = 510
 		await get_tree().create_timer(0.25).timeout
 		body.position.y = 500
+		
