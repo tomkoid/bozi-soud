@@ -68,7 +68,6 @@ texture = ExtResource("2_nexhj")
 
 [node name="Player" parent="." instance=ExtResource("1_f416g")]
 position = Vector2(578, 500)
-script = null
 
 [node name="PlatformLeft" parent="." instance=ExtResource("3_m4de3")]
 position = Vector2(152, 330)

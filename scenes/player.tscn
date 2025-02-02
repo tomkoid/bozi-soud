@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b277k7mqjh11t"]
+[gd_scene load_steps=7 format=3 uid="uid://b277k7mqjh11t"]
 
+[ext_resource type="Script" path="res://scenes/cloud.gd" id="1_cww2n"]
 [ext_resource type="Texture2D" uid="uid://bhmwxddxu4d7j" path="res://assets/sprites/cloud_sprite2_bounce1.png" id="2_vfgis"]
 [ext_resource type="Texture2D" uid="uid://dc0hjxl0saq0b" path="res://assets/sprites/cloud_sprite2.png" id="2_y24an"]
 [ext_resource type="Texture2D" uid="uid://c477laanj45kl" path="res://assets/sprites/cloud_sprite2_bounce2.png" id="3_4cv4a"]
@@ -32,6 +33,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
+script = ExtResource("1_cww2n")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
