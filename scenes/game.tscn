@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
+[ext_resource type="AudioStream" uid="uid://br0fiul3ep4k2" path="res://assets/sounds/ambient/classical.mp3" id="6_7wxn4"]
 [ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/font/VCR_OSD_MONO_1.001.ttf" id="6_do7aq"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
@@ -12,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/angel.tscn" id="11_6e238"]
 [ext_resource type="Texture2D" uid="uid://3hy5yoojyuph" path="res://assets/sprites/cloud1.png" id="13_2m20h"]
-[ext_resource type="AudioStream" uid="uid://4tmqdlxm1oum" path="res://assets/sounds/ambient/sciagura_in_braccio_a_morte.wav" id="13_aroaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
 size = Vector2(1904, 71)
@@ -90,7 +90,7 @@ wait_time = 6.0
 autostart = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_aroaw")
+stream = ExtResource("6_7wxn4")
 autoplay = true
 
 [node name="TimerLabel" type="Label" parent="."]
