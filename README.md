@@ -10,10 +10,13 @@ Religious game about the day of judgement. WORK IN PROGRESS
 ## Roadmap
 
 - [x] fyzika obláčku
-- [ ] sprity
+- [x] sprity
 	- [x] sprite boha 
 	- [x] sprite pozadí
 	- [x] sprite typku co budou padat
 	- [x] sprite platforem ze kterych budou padat
-- [ ] animace
-- [ ] menu
+- [x] animace
+- [x] menu
+- [ ] pause scene
+- [ ] hezky tlacitka
+
