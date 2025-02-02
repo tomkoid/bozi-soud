@@ -64,8 +64,8 @@ func killzone(body: CharacterBody2D, good_type: String):
 		count -= randi_range(400, 550)
 		fail_count += 1
 	
-	$CountLabel.text = str(count)
-	$FailCount.text = str(fail_count)
+	get_node("UI/Control/MoneyLabel").text = str(count)
+	get_node("UI/Control/FailCount").text = str(fail_count)
 	body.queue_free()
 
 func _on_bottom_count_zone_body_entered(body):

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc2coaqu76bfd"]
+[gd_scene load_steps=3 format=3 uid="uid://dc2coaqu76bfd"]
+
+[ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_wnk3n"]
 
 [sub_resource type="GDScript" id="GDScript_p0j4u"]
 script/source = "extends Button
@@ -26,5 +28,26 @@ offset_right = 403.0
 offset_bottom = 144.0
 text = "retry"
 script = SubResource("GDScript_p0j4u")
+
+[node name="FailCount" type="Label" parent="Control"]
+offset_left = 226.0
+offset_top = 33.0
+offset_right = 377.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="MoneyLabel" type="Label" parent="Control"]
+unique_name_in_owner = true
+offset_left = 32.0
+offset_top = 474.0
+offset_right = 266.0
+offset_bottom = 565.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wnk3n")
+theme_override_font_sizes/font_size = 50
+text = "0
+ "
 
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
