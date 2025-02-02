@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
 [ext_resource type="AudioStream" uid="uid://c7yk8wq4di6bg" path="res://assets/sounds/sound_effects/boing.mp3" id="4_pum5f"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
-[ext_resource type="AudioStream" uid="uid://br0fiul3ep4k2" path="res://assets/sounds/ambient/classical.mp3" id="6_7wxn4"]
 [ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="6_do7aq"]
+[ext_resource type="AudioStream" uid="uid://2l77r2p5jhds" path="res://assets/sounds/ambient/ml_sonata.mp3" id="6_gb1vr"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
 [ext_resource type="Texture2D" uid="uid://qlgmrvbh6whx" path="res://assets/sprites/sun-spritesheet.png" id="10_6xhcb"]
@@ -99,9 +99,8 @@ wait_time = 10.0
 autostart = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_7wxn4")
+stream = ExtResource("6_gb1vr")
 volume_db = -10.375
-pitch_scale = 1.95
 autoplay = true
 parameters/looping = true
 
