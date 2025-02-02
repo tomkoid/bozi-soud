@@ -25,6 +25,7 @@ offset_left = 771.0
 offset_top = 238.0
 offset_right = 938.0
 offset_bottom = 269.0
+button_pressed = true
 text = "Fullscreen"
 
 [connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
