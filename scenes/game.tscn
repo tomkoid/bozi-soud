@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=22 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/angel.tscn" id="11_6e238"]
 [ext_resource type="Texture2D" uid="uid://3hy5yoojyuph" path="res://assets/sprites/cloud1.png" id="13_2m20h"]
 [ext_resource type="PackedScene" uid="uid://ctqwgvoo3fbxr" path="res://scenes/end_screen.tscn" id="15_h0ic7"]
+[ext_resource type="PackedScene" uid="uid://cwwaitliqbm1r" path="res://scenes/pause_menu.tscn" id="16_867yn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
 size = Vector2(1904, 71)
@@ -166,6 +167,18 @@ parameters/looping = false
 
 [node name="EndScreen" parent="." instance=ExtResource("15_h0ic7")]
 visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("16_867yn")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 549.0
+offset_top = 238.0
+offset_right = 549.0
+offset_bottom = 238.0
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]

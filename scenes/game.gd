@@ -18,7 +18,8 @@ func _process(delta: float) -> void:
 		get_tree().paused = true
 	
 	if Input.is_action_just_pressed("escape"):
-		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+		get_node("PauseMenu").show()
+		get_tree().paused = true
 
 var fall_guy_scene = load("res://scenes/fall_guy.tscn")
 var bad_guy_scene = load("res://scenes/bad_guy.tscn")
