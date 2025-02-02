@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctqwgvoo3fbxr"]
+[gd_scene load_steps=3 format=3 uid="uid://ctqwgvoo3fbxr"]
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_21o4t"]
+[ext_resource type="Script" path="res://scenes/end_screen.gd" id="2_oudwk"]
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -27,3 +28,15 @@ offset_bottom = 483.0
 theme_override_fonts/font = ExtResource("1_21o4t")
 theme_override_font_sizes/font_size = 300
 text = "you failed!!!"
+
+[node name="Button" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 417.0
+offset_top = 476.0
+offset_right = 1027.0
+offset_bottom = 592.0
+text = "reloadddd"
+script = ExtResource("2_oudwk")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

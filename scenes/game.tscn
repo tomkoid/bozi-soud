@@ -168,7 +168,9 @@ stream = ExtResource("4_pum5f")
 parameters/looping = false
 
 [node name="EndScreen" parent="." instance=ExtResource("15_h0ic7")]
+unique_name_in_owner = true
 visible = false
+z_index = 2
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_867yn")]
 visible = false
