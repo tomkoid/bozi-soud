@@ -5,7 +5,7 @@ uniform float amount: hint_range(0.0, 5.0);
 
 void fragment() {
 	vec4 color = texture(screen_texture, SCREEN_UV, amount);
-	COLOR = color;                       
+	COLOR = color;
 }
 
 //void light() {
