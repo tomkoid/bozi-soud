@@ -1,23 +1,23 @@
 [gd_scene load_steps=14 format=3 uid="uid://buyx0jwbc55xc"]
 
-[ext_resource type="Texture2D" uid="uid://qsopobtvf746" path="res://assets/sprites/andel-spritesheet animace.png" id="1_du1mi"]
+[ext_resource type="Texture2D" uid="uid://djabaw35fcdnt" path="res://assets/sprites/andel-spritesheet animace2.png" id="1_v1vpg"]
 [ext_resource type="Texture2D" uid="uid://cbx21ruktmyc0" path="res://assets/sprites/andel-spritesheet4.png" id="2_hrt4a"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q1p1u"]
-atlas = ExtResource("1_du1mi")
-region = Rect2(30, 0, 30, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5bc4"]
+atlas = ExtResource("1_v1vpg")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k0ae0"]
-atlas = ExtResource("1_du1mi")
-region = Rect2(60, 0, 30, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d6ge"]
+atlas = ExtResource("1_v1vpg")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rrg8l"]
-atlas = ExtResource("1_du1mi")
-region = Rect2(90, 0, 30, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_u26xy"]
+atlas = ExtResource("1_v1vpg")
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ec1k"]
-atlas = ExtResource("1_du1mi")
-region = Rect2(0, 0, 30, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4exc"]
+atlas = ExtResource("1_v1vpg")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gdipl"]
 atlas = ExtResource("2_hrt4a")
@@ -47,35 +47,26 @@ region = Rect2(160, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q1p1u")
+"texture": SubResource("AtlasTexture_q5bc4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k0ae0")
+"texture": SubResource("AtlasTexture_5d6ge")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rrg8l")
+"texture": SubResource("AtlasTexture_u26xy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k0ae0")
+"texture": SubResource("AtlasTexture_h4exc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rrg8l")
+"texture": SubResource("AtlasTexture_u26xy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k0ae0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rrg8l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k0ae0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2ec1k")
+"texture": SubResource("AtlasTexture_h4exc")
 }],
 "loop": false,
 "name": &"cry",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -111,5 +102,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_welf2")
 animation = &"cry"
 autoplay = "idle"
-frame = 8
 frame_progress = 1.0
