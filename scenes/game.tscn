@@ -174,7 +174,8 @@ text = "0"
 
 [node name="BoingEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pum5f")
-volume_db = 4.19
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
