@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_ptexp"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/platform.tscn" id="3_m4de3"]
-[ext_resource type="AudioStream" uid="uid://c7yk8wq4di6bg" path="res://assets/sounds/sound_effects/boing.mp3" id="4_pum5f"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
 [ext_resource type="AudioStream" uid="uid://br0fiul3ep4k2" path="res://assets/sounds/ambient/classical.mp3" id="6_7wxn4"]
 [ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="6_do7aq"]
@@ -14,8 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/angel.tscn" id="11_6e238"]
 [ext_resource type="Texture2D" uid="uid://3hy5yoojyuph" path="res://assets/sprites/cloud1.png" id="13_2m20h"]
+[ext_resource type="AudioStream" uid="uid://beo6xyaew1eia" path="res://assets/sounds/sound_effects/trampoline.mp3" id="14_sw1s0"]
 [ext_resource type="PackedScene" uid="uid://ctqwgvoo3fbxr" path="res://scenes/end_screen.tscn" id="15_h0ic7"]
-[ext_resource type="PackedScene" uid="uid://cwwaitliqbm1r" path="res://scenes/pause_menu.tscn" id="16_867yn"]
+[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="16_867yn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
 size = Vector2(1904, 71)
@@ -162,7 +162,7 @@ scale = Vector2(0.603774, 0.603774)
 texture = ExtResource("13_2m20h")
 
 [node name="BoingEffect" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_pum5f")
+stream = ExtResource("14_sw1s0")
 parameters/looping = false
 
 [node name="EndScreen" parent="." instance=ExtResource("15_h0ic7")]
