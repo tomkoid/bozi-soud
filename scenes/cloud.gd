@@ -37,3 +37,7 @@ func player_movement(delta):
 	#position.y = 510
 	#await get_tree().create_timer(0.25).timeout
 	#position.y = 500
+
+
+func _on_player_as_animation_finished() -> void:
+	%PlayerAS.play("idle")
