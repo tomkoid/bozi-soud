@@ -6,6 +6,10 @@ func _ready() -> void:
 
 	pass # Replace with function body.
 
+func _physics_process(delta):
+	if Input.is_action_just_pressed("escape"):
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+		
 func check_vsync_mode(mode: int) -> String:
 	if mode == DisplayServer.VSYNC_DISABLED:
 		return "VSYNC: vypnuto"
@@ -33,7 +37,7 @@ func _on_vsync_button_pressed() -> void:
 
 
 func _on_check_button_toggled(toggled_on):
-	if toggled_on == true:
+	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

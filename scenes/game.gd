@@ -15,6 +15,9 @@ func _process(delta: float) -> void:
 	
 	if fail_count == 3:
 		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+	
+	if Input.is_action_just_pressed("escape"):
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 var fall_guy_scene = load("res://scenes/fall_guy.tscn")
 var bad_guy_scene = load("res://scenes/bad_guy.tscn")
@@ -72,3 +75,4 @@ func _on_top_count_zone_body_entered(body):
 
 func _on_game_reset_fail_timeout() -> void:
 	fail_count = 0
+	
