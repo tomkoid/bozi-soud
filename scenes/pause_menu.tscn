@@ -22,10 +22,10 @@ theme_override_font_sizes/font_size = 200
 text = "Paused"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1290.0
-offset_top = -511.0
-offset_right = 1641.0
-offset_bottom = 842.0
+offset_left = -1259.0
+offset_top = -465.0
+offset_right = 1672.0
+offset_bottom = 888.0
 color = Color(0, 0, 0, 0.505882)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -52,11 +52,6 @@ text = "Continue"
 layout_mode = 2
 text = "Restart"
 
-[node name="Settings" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_bph5r")
-text = "Settings"
-
 [node name="Menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bph5r")
@@ -64,5 +59,4 @@ text = "Menu"
 
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

@@ -10,11 +10,10 @@ func _on_button_pressed() -> void:
 	pass # Replace with function body.
 
 
-
-
-
 func _on_settings_button_pressed():
+	Global.prev_scene = get_tree().current_scene.scene_file_path
 	get_tree().change_scene_to_file("res://scenes/settings.tscn")
+	
 	
 func _on_quit_button_pressed():
 	get_tree().quit()

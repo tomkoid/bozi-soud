@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("escape"):
-		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+		get_tree().change_scene_to_file(Global.prev_scene)
 		
 func check_vsync_mode(mode: int) -> String:
 	if mode == DisplayServer.VSYNC_DISABLED:
