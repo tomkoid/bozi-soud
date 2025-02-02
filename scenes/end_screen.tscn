@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ctqwgvoo3fbxr"]
+[gd_scene load_steps=2 format=3 uid="uid://ctqwgvoo3fbxr"]
+
+[ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_21o4t"]
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -8,8 +10,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -759.0
+offset_top = -420.0
+offset_right = 1686.0
+offset_bottom = 841.0
+color = Color(0, 0, 0, 0.470588)
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 22.0
+offset_left = 70.0
+offset_top = 97.0
+offset_right = 1109.0
+offset_bottom = 483.0
+theme_override_fonts/font = ExtResource("1_21o4t")
+theme_override_font_sizes/font_size = 300
 text = "you failed!!!"

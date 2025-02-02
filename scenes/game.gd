@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 		get_tree().reload_current_scene()
 	
 	if fail_count == 3:
-		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+		get_node("EndScreen").show()
+		get_tree().paused = true
 	
 	if Input.is_action_just_pressed("escape"):
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
