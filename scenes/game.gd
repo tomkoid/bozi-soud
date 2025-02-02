@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 		get_tree().reload_current_scene()
 	
 	if fail_count == 3:
+		%UI.hide()
 		get_node("EndScreen").show()
 		get_tree().paused = true
 	
