@@ -28,21 +28,21 @@ func _on_game_timer_timeout() -> void:
 	if guy_type == 0:
 		instance = fall_guy_scene.instantiate()
 		instance.set_meta("type", "good")
-		instance.position.y = 150
+		instance.position.y = 270
 	# bad guy
 	elif guy_type == 1:
 		instance = bad_guy_scene.instantiate()
 		instance.set_meta("type", "bad")
-		instance.position.y = 150
+		instance.position.y = 260
 		
 	if guy_spawn_pos == 0:
 		instance.position.x = randi_range(-150,0)
 		instance.dir = 1
 	elif guy_spawn_pos == 1:
-		instance.position.x = randi_range(1200,1300)
+		instance.position.x = randi_range(1300,1500)
 		instance.dir = -1
 		instance.get_node("AnimatedSprite2D").flip_h = true
-#	
+	
 	$Guys.add_child(instance)
 
 

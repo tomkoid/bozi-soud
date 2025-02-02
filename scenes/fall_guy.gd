@@ -13,9 +13,9 @@ func _ready() -> void:
 	jump_velocity = randi_range(-500, -200)
 	
 	if dir == 1:
-		jump_pos_x = randi_range(50, 250)
+		jump_pos_x = randi_range(50, 200)
 	elif dir == -1:
-		jump_pos_x = randi_range(950, 1150)
+		jump_pos_x = randi_range(950, 1075)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -27,10 +27,12 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("run")
 
 	# Handle jump.
-	if position.x >= jump_pos_x and is_on_floor() and not first_jump:
+	if dir == 1 and position.x >= jump_pos_x and is_on_floor() and not first_jump or dir == -1 and position.x <= jump_pos_x and is_on_floor() and not first_jump:
+		print("jump")
 		first_jump = true
 		$AnimatedSprite2D.play("jump")
 		velocity.y = jump_velocity
+		
 
 	velocity.x = dir * SPEED
 	move_and_slide()
