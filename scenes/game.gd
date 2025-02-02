@@ -59,6 +59,7 @@ func _on_game_harderer_timer_timeout() -> void:
 		
 	$TimerLabel.text = str(%GameTimer.wait_time)
 	%GameTimer.wait_time = %GameTimer.wait_time - 0.1
+	%GameHardererTimer.wait_time = %GameHardererTimer.wait_time + 0.25
 
 func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:

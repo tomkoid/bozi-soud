@@ -90,6 +90,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="GameHardererTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 5.0
 autostart = true
 
@@ -105,7 +106,6 @@ autoplay = true
 parameters/looping = true
 
 [node name="TimerLabel" type="Label" parent="."]
-visible = false
 offset_left = 973.0
 offset_top = 21.0
 offset_right = 1134.0
