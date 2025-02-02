@@ -4,6 +4,7 @@ extends Control
 
 func _on_continue_pressed():
 	$".".hide()
+	%UI.show()
 	get_tree().paused = false
 
 

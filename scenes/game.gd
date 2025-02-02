@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 		get_tree().paused = true
 	
 	if Input.is_action_just_pressed("escape"):
+		%UI.hide()
 		get_node("PauseMenu").show()
 		get_tree().paused = true
 
