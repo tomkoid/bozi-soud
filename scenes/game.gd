@@ -47,11 +47,11 @@ func _on_game_timer_timeout() -> void:
 
 
 func _on_game_harderer_timer_timeout() -> void:
-	if %GameTimer.wait_time <= 0.5:
+	if %GameTimer.wait_time <= 0.3:
 		return
 		
 	$TimerLabel.text = str(%GameTimer.wait_time)
-	%GameTimer.wait_time = %GameTimer.wait_time - 0.2
+	%GameTimer.wait_time = %GameTimer.wait_time - 0.1
 
 
 

@@ -87,7 +87,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="GameHardererTimer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 10.0
 autostart = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
