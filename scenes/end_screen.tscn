@@ -74,6 +74,7 @@ offset_right = 305.0
 offset_bottom = 221.09
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme = SubResource("Theme_5fm1g")
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
