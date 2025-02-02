@@ -19,4 +19,3 @@ Religious game about the day of judgement. WORK IN PROGRESS
 - [x] menu
 - [ ] pause scene
 - [ ] hezky tlacitka
-

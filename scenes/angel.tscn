@@ -1,6 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://buyx0jwbc55xc"]
+[gd_scene load_steps=14 format=3 uid="uid://buyx0jwbc55xc"]
 
+[ext_resource type="Texture2D" uid="uid://qsopobtvf746" path="res://assets/sprites/andel-spritesheet animace.png" id="1_du1mi"]
 [ext_resource type="Texture2D" uid="uid://cbx21ruktmyc0" path="res://assets/sprites/andel-spritesheet4.png" id="2_hrt4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1p1u"]
+atlas = ExtResource("1_du1mi")
+region = Rect2(30, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0ae0"]
+atlas = ExtResource("1_du1mi")
+region = Rect2(60, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrg8l"]
+atlas = ExtResource("1_du1mi")
+region = Rect2(90, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ec1k"]
+atlas = ExtResource("1_du1mi")
+region = Rect2(0, 0, 30, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gdipl"]
 atlas = ExtResource("2_hrt4a")
@@ -28,6 +45,38 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_welf2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1p1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ae0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrg8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ae0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrg8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ae0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrg8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ae0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ec1k")
+}],
+"loop": false,
+"name": &"cry",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gdipl")
@@ -60,7 +109,7 @@ animations = [{
 
 [node name="Angel" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_welf2")
-animation = &"idle"
+animation = &"cry"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.848533
+frame = 8
+frame_progress = 1.0

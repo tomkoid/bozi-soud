@@ -63,6 +63,8 @@ func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:
 		count += randi_range(100, 110)
 	else:
+		$Angel.play("cry")
+		
 		count -= randi_range(400, 550)
 		fail_count += 1
 	
@@ -79,3 +81,6 @@ func _on_top_count_zone_body_entered(body):
 func _on_game_reset_fail_timeout() -> void:
 	fail_count = 0
 	
+
+func _on_angel_animation_finished():
+	$Angel.play("idle")
