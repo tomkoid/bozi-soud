@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_dqhv3"]
-[ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/font/AnglicanText.ttf" id="2_ca2gd"]
+[ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_ca2gd"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_dqhv3")
