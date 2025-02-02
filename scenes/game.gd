@@ -58,7 +58,6 @@ func _on_game_harderer_timer_timeout() -> void:
 func _on_bottom_count_zone_body_entered(body):
 	if body.get_meta("type") == "bad":
 		count += randi_range(100, 110)
-		fail_count = 0
 	else:
 		count -= randi_range(400, 550)
 		fail_count += 1
@@ -71,13 +70,13 @@ func _on_bottom_count_zone_body_entered(body):
 func _on_top_count_zone_body_entered(body):
 	if body.get_meta("type") == "good":
 		count += randi_range(100, 110)
-		fail_count = 0
 	else:
 		count -= randi_range(400, 550)
 		fail_count += 1
+	
 	$CountLabel.text = str(count)
 	$FailCount.text = str(fail_count)
 	body.queue_free()
 
-
-	
+func _on_game_reset_fail_timeout() -> void:
+	fail_count = 0

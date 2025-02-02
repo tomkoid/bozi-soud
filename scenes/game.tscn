@@ -90,6 +90,10 @@ autostart = true
 wait_time = 10.0
 autostart = true
 
+[node name="GameResetFail" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_7wxn4")
 autoplay = true
@@ -179,5 +183,6 @@ parameters/looping = false
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
+[connection signal="timeout" from="GameResetFail" to="." method="_on_game_reset_fail_timeout"]
 [connection signal="body_entered" from="TopCountZone" to="." method="_on_top_count_zone_body_entered"]
 [connection signal="body_entered" from="BottomCountZone" to="." method="_on_bottom_count_zone_body_entered"]
