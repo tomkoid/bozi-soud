@@ -93,6 +93,7 @@ autostart = true
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_7wxn4")
 autoplay = true
+parameters/looping = true
 
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 973.0
@@ -174,8 +175,7 @@ text = "0"
 
 [node name="BoingEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pum5f")
-autoplay = true
-parameters/looping = true
+parameters/looping = false
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
