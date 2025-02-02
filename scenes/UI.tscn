@@ -30,6 +30,7 @@ text = "retry"
 script = SubResource("GDScript_p0j4u")
 
 [node name="FailCount" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 226.0
 offset_top = 33.0
 offset_right = 377.0
@@ -40,6 +41,7 @@ text = "0"
 
 [node name="MoneyLabel" type="Label" parent="Control"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 32.0
 offset_top = 474.0
 offset_right = 266.0
