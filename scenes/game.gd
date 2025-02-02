@@ -53,22 +53,8 @@ func _on_game_harderer_timer_timeout() -> void:
 	$TimerLabel.text = str(%GameTimer.wait_time)
 	%GameTimer.wait_time = %GameTimer.wait_time - 0.1
 
-
-
-func _on_bottom_count_zone_body_entered(body):
-	if body.get_meta("type") == "bad":
-		count += randi_range(100, 110)
-	else:
-		count -= randi_range(400, 550)
-		fail_count += 1
-		
-	$CountLabel.text = str(count)
-	$FailCount.text = str(fail_count)
-	body.queue_free()
-
-
-func _on_top_count_zone_body_entered(body):
-	if body.get_meta("type") == "good":
+func killzone(body: CharacterBody2D, good_type: String):
+	if body.get_meta("type") == good_type:
 		count += randi_range(100, 110)
 	else:
 		count -= randi_range(400, 550)
@@ -77,6 +63,12 @@ func _on_top_count_zone_body_entered(body):
 	$CountLabel.text = str(count)
 	$FailCount.text = str(fail_count)
 	body.queue_free()
+
+func _on_bottom_count_zone_body_entered(body):
+	killzone(body, "bad")
+
+func _on_top_count_zone_body_entered(body):
+	killzone(body, "good")
 
 func _on_game_reset_fail_timeout() -> void:
 	fail_count = 0
