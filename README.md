@@ -14,6 +14,6 @@ Religious game about the day of judgement. WORK IN PROGRESS
 	- [x] sprite boha 
 	- [x] sprite pozadí
 	- [ ] sprite typku co budou padat
-	- [ ] sprite platforem ze kterych budou padat
+	- [x] sprite platforem ze kterych budou padat
 - [ ] animace
 - [ ] menu
