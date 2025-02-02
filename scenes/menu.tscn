@@ -328,17 +328,17 @@ animations = [{
 script = ExtResource("1_dqhv3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 24.0
-offset_top = 74.0
-offset_right = 552.0
-offset_bottom = 205.0
+offset_left = 23.52
+offset_top = 19.835
+offset_right = 523.52
+offset_bottom = 214.48
 theme_override_colors/default_color = Color(0.909804, 0.654902, 0.137255, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_ca2gd")
-theme_override_font_sizes/normal_font_size = 100
-text = "BOŽÍ SOUD"
+theme_override_font_sizes/normal_font_size = 150
+text = "Boží Soud"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
