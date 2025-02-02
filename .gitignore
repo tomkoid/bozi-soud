@@ -15,5 +15,9 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
-# Android builds
+# Builds
 android
+*.apk
+*.apk.idsig
+*.exe
+*.pck
