@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bgdrs10x0o12h"
-path="res://.godot/imported/AnglicanText.ttf-0610fa174df7fd69bf9c234a5284b18c.fontdata"
+path="res://.godot/imported/AnglicanText.ttf-6d0b748debd9f537ca3ab1183bc4f9e6.fontdata"
 
 [deps]
 
-source_file="res://assets/font/AnglicanText.ttf"
-dest_files=["res://.godot/imported/AnglicanText.ttf-0610fa174df7fd69bf9c234a5284b18c.fontdata"]
+source_file="res://assets/fonts/AnglicanText.ttf"
+dest_files=["res://.godot/imported/AnglicanText.ttf-6d0b748debd9f537ca3ab1183bc4f9e6.fontdata"]
 
 [params]
 
