@@ -1,7 +1,123 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=23 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_dqhv3"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_ca2gd"]
+[ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="3_7kjkq"]
+[ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="3_0022x"]
+[ext_resource type="Texture2D" uid="uid://df1r05tlcm114" path="res://assets/sprites/sun-spritesheet1.png" id="5_ptyka"]
+[ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="7_7a4b8"]
+[ext_resource type="Texture2D" uid="uid://ccdko1frhei4y" path="res://assets/sprites/cloud-spritesheet1.png" id="8_s0kkj"]
+[ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="8_t3t68"]
+[ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="9_u0ein"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grc63"]
+atlas = ExtResource("3_0022x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qqci"]
+atlas = ExtResource("3_0022x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qloiw"]
+atlas = ExtResource("3_0022x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2tos"]
+atlas = ExtResource("3_0022x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlbm3"]
+atlas = ExtResource("3_0022x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrkhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grc63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qqci")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qloiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2tos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlbm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2tos")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dryy6"]
+atlas = ExtResource("5_ptyka")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p61pi"]
+atlas = ExtResource("5_ptyka")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3tgu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dryy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p61pi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fao17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7a4b8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t3t68")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi7xg"]
+atlas = ExtResource("8_s0kkj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11h5r"]
+atlas = ExtResource("8_s0kkj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slmbf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi7xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11h5r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_dqhv3")
@@ -11,6 +127,8 @@ offset_left = 98.0
 offset_top = 78.0
 offset_right = 452.0
 offset_bottom = 165.0
+theme_override_colors/default_color = Color(0.909804, 0.654902, 0.137255, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_ca2gd")
 theme_override_font_sizes/normal_font_size = 66
 text = "BOŽÍ SOUD"
@@ -35,6 +153,51 @@ offset_top = 341.0
 offset_right = 347.0
 offset_bottom = 396.0
 text = "Ukončit hru"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(75, 520)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_yrkhk")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.304969
+
+[node name="Jesus" type="Sprite2D" parent="."]
+position = Vector2(739, 317)
+scale = Vector2(7.79688, 7.79688)
+texture = ExtResource("3_7kjkq")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = -4
+position = Vector2(740, 96)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_t3tgu")
+autoplay = "default"
+frame_progress = 0.91244
+
+[node name="Devil" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(1085, 552)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_fao17")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.528667
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+z_index = -4
+position = Vector2(733, 586)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_slmbf")
+autoplay = "default"
+frame_progress = 0.366188
+
+[node name="BackgroundParalax1" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(467, 394)
+scale = Vector2(10, 10)
+texture = ExtResource("9_u0ein")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
