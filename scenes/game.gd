@@ -87,3 +87,4 @@ func _on_game_reset_fail_timeout() -> void:
 
 func _on_angel_animation_finished():
 	$Angel.play("idle")
+	

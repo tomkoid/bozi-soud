@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dc2coaqu76bfd"]
+[gd_scene load_steps=14 format=3 uid="uid://dc2coaqu76bfd"]
 
 [ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_wnk3n"]
 [ext_resource type="Script" path="res://scenes/escape_button.gd" id="2_1rrka"]
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="2_k1ucb"]
 [ext_resource type="Texture2D" uid="uid://crpj1v0vajmno" path="res://assets/sprites/stats-icons.png" id="3_sqnw3"]
+[ext_resource type="Texture2D" uid="uid://cv3wspse2gwda" path="res://assets/sprites/sound_spritesheet1.png" id="5_7fd41"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7aphu"]
 atlas = ExtResource("2_k1ucb")
@@ -24,6 +25,18 @@ region = Rect2(16, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhed8"]
 atlas = ExtResource("3_sqnw3")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwbix"]
+atlas = ExtResource("5_7fd41")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhby1"]
+atlas = ExtResource("5_7fd41")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cupcj"]
+atlas = ExtResource("5_7fd41")
+region = Rect2(16, 0, 16, 16)
 
 [node name="UI" type="CanvasLayer"]
 
@@ -93,4 +106,18 @@ theme_override_fonts/font = ExtResource("1_wnk3n")
 theme_override_font_sizes/font_size = 50
 text = "0"
 
+[node name="SoundMuteToggle" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 966.0
+offset_top = 19.0
+offset_right = 982.0
+offset_bottom = 35.0
+scale = Vector2(5, 5)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_vwbix")
+texture_pressed = SubResource("AtlasTexture_fhby1")
+texture_hover = SubResource("AtlasTexture_cupcj")
+script = ExtResource("2_1rrka")
+
 [connection signal="pressed" from="Control/EscapeButton" to="Control/EscapeButton" method="_on_pressed"]
+[connection signal="pressed" from="Control/SoundMuteToggle" to="Control/EscapeButton" method="_on_sound_mute_toggle_pressed"]
