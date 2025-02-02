@@ -14,7 +14,7 @@ config/name="Boží Soud"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/show_image=false
-config/icon="res://logo2 big.png"
+config/icon="res://jesus-logo.png"
 
 [autoload]
 
