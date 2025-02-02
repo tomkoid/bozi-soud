@@ -28,11 +28,12 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("run")
 
 	# Handle jump.
-	if dir == 1 and position.x >= jump_pos_x and is_on_floor() and not first_jump or dir == -1 and position.x <= jump_pos_x and is_on_floor() and not first_jump:
-		print("jump")
-		first_jump = true
-		$AnimatedSprite2D.play("jump")
-		velocity.y = jump_velocity
+	if is_on_floor() and not first_jump:
+		if (dir == 1 and position.x >= jump_pos_x) or (dir == -1 and position.x <= jump_pos_x):
+			print("jump")
+			first_jump = true
+			$AnimatedSprite2D.play("jump")
+			velocity.y = jump_velocity
 		
 
 	velocity.x = dir * SPEED
