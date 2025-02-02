@@ -148,7 +148,7 @@ frame_progress = 0.0383685
 z_index = -1
 position = Vector2(908, 115)
 scale = Vector2(6.29688, 6.29688)
-frame = 0
+frame_progress = 0.0
 
 [node name="Jesus" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.803922)
@@ -170,7 +170,7 @@ parameters/looping = false
 [node name="EndScreen" parent="." instance=ExtResource("15_h0ic7")]
 unique_name_in_owner = true
 visible = false
-z_index = 2
+z_index = 4
 
 [node name="PauseMenu" parent="." instance=ExtResource("16_867yn")]
 unique_name_in_owner = true

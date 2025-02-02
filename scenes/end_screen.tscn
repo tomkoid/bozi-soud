@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scenes/end_screen.gd" id="2_oudwk"]
 
 [node name="EndScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
