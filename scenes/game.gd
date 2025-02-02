@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
 	
-	if fail_count == 10:
+	if fail_count == 3:
 		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 
 var fall_guy_scene = load("res://scenes/fall_guy.tscn")
@@ -58,6 +58,7 @@ func _on_game_harderer_timer_timeout() -> void:
 func _on_bottom_count_zone_body_entered(body):
 	if body.get_meta("type") == "bad":
 		count += randi_range(100, 110)
+		fail_count = 0
 	else:
 		count -= randi_range(400, 550)
 		fail_count += 1
@@ -70,6 +71,7 @@ func _on_bottom_count_zone_body_entered(body):
 func _on_top_count_zone_body_entered(body):
 	if body.get_meta("type") == "good":
 		count += randi_range(100, 110)
+		fail_count = 0
 	else:
 		count -= randi_range(400, 550)
 		fail_count += 1
