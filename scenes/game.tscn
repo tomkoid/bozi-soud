@@ -62,12 +62,12 @@ script = ExtResource("1_ptexp")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(628.5, 324)
-scale = Vector2(4.36458, 4)
+position = Vector2(614.5, 324)
+scale = Vector2(4.7743, 4)
 texture = ExtResource("2_nexhj")
 
 [node name="Player" parent="." instance=ExtResource("1_f416g")]
-position = Vector2(578, 500)
+position = Vector2(578, 446)
 
 [node name="PlatformLeft" parent="." instance=ExtResource("3_m4de3")]
 position = Vector2(152, 330)
@@ -136,7 +136,7 @@ text = "0
 
 [node name="Devil" type="AnimatedSprite2D" parent="."]
 z_index = -1
-position = Vector2(280, 554)
+position = Vector2(280, 508)
 scale = Vector2(5.875, 5.875)
 sprite_frames = SubResource("SpriteFrames_wti46")
 animation = &"idle"
@@ -154,7 +154,7 @@ frame_progress = 0.0383685
 
 [node name="Angel" parent="." instance=ExtResource("11_6e238")]
 z_index = -1
-position = Vector2(908, 81)
+position = Vector2(908, 115)
 scale = Vector2(6.29688, 6.29688)
 
 [node name="Jesus" type="Sprite2D" parent="."]
