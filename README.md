@@ -17,5 +17,8 @@ Religious game about the day of judgement. WORK IN PROGRESS
 	- [x] sprite platforem ze kterych budou padat
 - [x] animace
 - [x] menu
-- [ ] pause scene
-- [ ] hezky tlacitka
+- [x] pause scene
+- [x] hezky tlacitka
+
+
+yay mame vse hotovo
