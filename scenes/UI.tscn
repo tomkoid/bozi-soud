@@ -1,6 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc2coaqu76bfd"]
-
-[ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_wnk3n"]
+[gd_scene load_steps=2 format=3 uid="uid://dc2coaqu76bfd"]
 
 [sub_resource type="GDScript" id="GDScript_p0j4u"]
 script/source = "extends Button
