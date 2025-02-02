@@ -106,6 +106,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="TimerLabel" type="Label" parent="."]
+visible = false
 offset_left = 973.0
 offset_top = 21.0
 offset_right = 1134.0

@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 	
 	if fail_count == 3:
 		%UI.hide()
+		get_node("EndScreen/ScoreLabel").text += str(count)
 		get_node("EndScreen").show()
 		get_tree().paused = true
 	

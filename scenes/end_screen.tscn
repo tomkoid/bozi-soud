@@ -40,6 +40,27 @@ text = "Prohrál jsi!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ScoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -457.5
+offset_top = -442.95
+offset_right = 457.745
+offset_bottom = -123.285
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.764519, 0.50276, 3.85046e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_font_sizes/font_size = 30
+text = "Skóre: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Button" type="Button" parent="."]
 process_mode = 3
 anchors_preset = 8
@@ -48,9 +69,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -305.0
-offset_top = 77.0
+offset_top = 105.09
 offset_right = 305.0
-offset_bottom = 193.0
+offset_bottom = 221.09
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5fm1g")
