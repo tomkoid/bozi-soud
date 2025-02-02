@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=55 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_dqhv3"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_ca2gd"]
@@ -10,7 +10,41 @@
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="8_t3t68"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="9_u0ein"]
 
-[sub_resource type="Image" id="Image_nlbip"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_octef"]
+bg_color = Color(0.560858, 0.405637, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.380392, 0.380392, 0.380392, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(3, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4ivq"]
+bg_color = Color(0.894941, 0.653105, 7.70092e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.381703, 0.381703, 0.381703, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(3, 2)
+
+[sub_resource type="Theme" id="Theme_y5yyt"]
+Button/styles/hover = SubResource("StyleBoxFlat_octef")
+Button/styles/normal = SubResource("StyleBoxFlat_u4ivq")
+
+[sub_resource type="Image" id="Image_6hbaq"]
 data = {
 "data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 178, 178, 178, 255, 178, 178, 178, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
 "format": "RGBA8",
@@ -313,35 +347,50 @@ offset_right = 552.0
 offset_bottom = 162.0
 theme_override_colors/default_color = Color(0.909804, 0.654902, 0.137255, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/normal_font = ExtResource("2_ca2gd")
 theme_override_font_sizes/normal_font_size = 100
 text = "BOŽÍ SOUD"
 
-[node name="Button" type="Button" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_y5yyt")
+
+[node name="Button" type="Button" parent="Control"]
 offset_left = 122.0
 offset_top = 187.0
 offset_right = 421.0
 offset_bottom = 264.0
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_mc367")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
 text = "Hrát"
 
-[node name="SettingsButton" type="Button" parent="."]
+[node name="SettingsButton" type="Button" parent="Control"]
 offset_left = 123.0
 offset_top = 273.0
 offset_right = 422.0
 offset_bottom = 350.0
 mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
 text = "Nastavení"
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="Control"]
 offset_left = 123.0
 offset_top = 358.0
 offset_right = 423.0
 offset_bottom = 444.0
 mouse_default_cursor_shape = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
 text = "Ukončit hru"
 
@@ -390,6 +439,6 @@ position = Vector2(467, 394)
 scale = Vector2(10, 10)
 texture = ExtResource("9_u0ein")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
