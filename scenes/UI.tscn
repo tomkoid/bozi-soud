@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dc2coaqu76bfd"]
+[gd_scene load_steps=13 format=3 uid="uid://dc2coaqu76bfd"]
 
 [ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_wnk3n"]
 [ext_resource type="Script" path="res://scenes/escape_button.gd" id="2_1rrka"]
@@ -31,10 +31,6 @@ atlas = ExtResource("5_7fd41")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhby1"]
-atlas = ExtResource("5_7fd41")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cupcj"]
 atlas = ExtResource("5_7fd41")
 region = Rect2(16, 0, 16, 16)
 
@@ -113,10 +109,10 @@ offset_top = 19.0
 offset_right = 982.0
 offset_bottom = 35.0
 scale = Vector2(5, 5)
+mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_vwbix")
 texture_pressed = SubResource("AtlasTexture_fhby1")
-texture_hover = SubResource("AtlasTexture_cupcj")
 script = ExtResource("2_1rrka")
 
 [connection signal="pressed" from="Control/EscapeButton" to="Control/EscapeButton" method="_on_pressed"]
