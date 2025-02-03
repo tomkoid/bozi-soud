@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctqwgvoo3fbxr"]
+[gd_scene load_steps=7 format=3 uid="uid://ctqwgvoo3fbxr"]
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_21o4t"]
 [ext_resource type="Script" path="res://scenes/ui/end_screen.gd" id="2_oudwk"]
@@ -8,6 +8,9 @@
 [sub_resource type="Theme" id="Theme_5fm1g"]
 Button/styles/hover = ExtResource("2_qolap")
 Button/styles/normal = ExtResource("3_shkxw")
+Button/styles/pressed = ExtResource("2_qolap")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_216nh"]
 
 [node name="EndScreen" type="CanvasLayer"]
 process_mode = 3
@@ -78,6 +81,7 @@ mouse_default_cursor_shape = 2
 theme = SubResource("Theme_5fm1g")
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_216nh")
 text = "Nová hra"
 script = ExtResource("2_oudwk")
 
