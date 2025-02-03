@@ -2,23 +2,47 @@ extends Node2D
 
 var MAX_DEATH_COUNT = 3
 
-var count = 0
-var fail_count = 0
+@export var stats: Stats
+
+var save_path = "user://game.save"
+
+var game_data = {
+	"best_score": 0
+}
+
+func save():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(game_data)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		game_data = file.get_var(true)
+		
 	$TimerLabel.text = str(%GameTimer.wait_time)
 	refresh_fail_count()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
 	
-	if fail_count == MAX_DEATH_COUNT:
+	if stats.fail_count == MAX_DEATH_COUNT:
+		if game_data.best_score < stats.score or game_data.best_score == 0:
+			game_data.best_score = stats.score
+			save()
+
+			
 		%UI.hide()
-		get_node("EndScreen/ScoreLabel").text += str(count)
+		get_node("EndScreen/ScoreLabel").text += str(stats.score)
+		get_node("EndScreen/BestScoreLabel").text += str(game_data.best_score)
 		get_node("EndScreen").show()
 		get_tree().paused = true
+
+		stats.fail_count = 0
+		stats.score = 0
 	
 	if Input.is_action_just_pressed("escape"):
 		%UI.hide()
@@ -67,29 +91,29 @@ func _on_game_harderer_timer_timeout() -> void:
 
 func refresh_fail_count():
 	var fc_node = get_node("UI/Control/VBOX/Control/FailCount")
-	var text_color = Color(fail_count * 1.0/(MAX_DEATH_COUNT-1),0.0,0.0,1.0)
+	var text_color = Color(stats.fail_count * 1.0/(MAX_DEATH_COUNT-1),0.0,0.0,1.0)
 	fc_node.set("theme_override_colors/default_color", text_color)
 	
 	var prefix: String
 	var suffix: String
 	
-	if fail_count == MAX_DEATH_COUNT-1:
+	if stats.fail_count == MAX_DEATH_COUNT-1:
 		prefix = "[shake rate=40.0 level=5 connected=1]"
 		suffix = "[/shake]"
 	
 	
-	fc_node.text = prefix + str(fail_count) + "/" + str(MAX_DEATH_COUNT) + suffix
+	fc_node.text = prefix + str(stats.fail_count) + "/" + str(MAX_DEATH_COUNT) + suffix
 
 func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:
-		count += randi_range(100, 110)
+		stats.score += randi_range(100, 110)
 	else:
 		$Angel.play("cry")
 		
-		count -= randi_range(400, 550)
-		fail_count += 1
+		stats.score -= randi_range(400, 550)
+		stats.fail_count += 1
 	
-	get_node("UI/Control/VBOX/Control2/MoneyLabel").text = str(count)
+	get_node("UI/Control/VBOX/Control2/MoneyLabel").text = str(stats.score)
 	refresh_fail_count()
 	body.queue_free()
 
@@ -100,7 +124,7 @@ func _on_top_count_zone_body_entered(body):
 	killzone(body, "good")
 
 func _on_game_reset_fail_timeout() -> void:
-	fail_count = 0
+	stats.fail_count = 0
 	refresh_fail_count()
 	
 
