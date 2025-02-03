@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://bn0kknorfe8mv"]
+
+[ext_resource type="Script" path="res://scenes/stats.gd" id="1_8s8pv"]
+
+[resource]
+script = ExtResource("1_8s8pv")
+attack = 100
