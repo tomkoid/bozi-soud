@@ -1,26 +1,26 @@
 [gd_scene load_steps=10 format=3 uid="uid://d2p41s4kcad3g"]
 
-[ext_resource type="Script" path="res://scenes/fall_guy.gd" id="1_qeo4k"]
-[ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="2_hj3ig"]
+[ext_resource type="Script" path="res://scenes/entities/fall_guy.gd" id="1_elr7l"]
+[ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="2_1jpts"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grc63"]
-atlas = ExtResource("2_hj3ig")
+atlas = ExtResource("2_1jpts")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qqci"]
-atlas = ExtResource("2_hj3ig")
+atlas = ExtResource("2_1jpts")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qloiw"]
-atlas = ExtResource("2_hj3ig")
+atlas = ExtResource("2_1jpts")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2tos"]
-atlas = ExtResource("2_hj3ig")
+atlas = ExtResource("2_1jpts")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mlbm3"]
-atlas = ExtResource("2_hj3ig")
+atlas = ExtResource("2_1jpts")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vayxy"]
@@ -59,7 +59,7 @@ radius = 1.08
 height = 3.76
 
 [node name="FallGuy" type="CharacterBody2D"]
-script = ExtResource("1_qeo4k")
+script = ExtResource("1_elr7l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

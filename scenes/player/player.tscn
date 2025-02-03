@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b277k7mqjh11t"]
 
-[ext_resource type="Script" path="res://scenes/cloud.gd" id="1_cww2n"]
+[ext_resource type="Script" path="res://scenes/player/cloud.gd" id="1_cww2n"]
 [ext_resource type="Texture2D" uid="uid://be85ixv2ffr6f" path="res://assets/sprites/cloud-spritesheet2.png" id="2_pviv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upinu"]

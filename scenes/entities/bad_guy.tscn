@@ -1,26 +1,26 @@
 [gd_scene load_steps=10 format=3 uid="uid://dmnwygan1kmer"]
 
-[ext_resource type="Script" path="res://scenes/fall_guy.gd" id="1_ukb8w"]
-[ext_resource type="Texture2D" uid="uid://cqjgpxopt8d6t" path="res://assets/sprites/vrah-spritesheet3.png" id="2_f314a"]
+[ext_resource type="Script" path="res://scenes/entities/fall_guy.gd" id="1_0pkrl"]
+[ext_resource type="Texture2D" uid="uid://cqjgpxopt8d6t" path="res://assets/sprites/vrah-spritesheet3.png" id="2_b15dh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xx8lh"]
-atlas = ExtResource("2_f314a")
+atlas = ExtResource("2_b15dh")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6amu"]
-atlas = ExtResource("2_f314a")
+atlas = ExtResource("2_b15dh")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgxmm"]
-atlas = ExtResource("2_f314a")
+atlas = ExtResource("2_b15dh")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2u6c3"]
-atlas = ExtResource("2_f314a")
+atlas = ExtResource("2_b15dh")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jkvax"]
-atlas = ExtResource("2_f314a")
+atlas = ExtResource("2_b15dh")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vayxy"]
@@ -59,7 +59,7 @@ radius = 1.12
 height = 4.4
 
 [node name="BadGuy" type="CharacterBody2D"]
-script = ExtResource("1_ukb8w")
+script = ExtResource("1_0pkrl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

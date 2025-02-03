@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwwaitliqbm1r"]
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_m1ibt"]
-[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_w11xg"]
-[ext_resource type="StyleBox" uid="uid://x7g8a11xam5q" path="res://scenes/button_hover.tres" id="3_2iba5"]
-[ext_resource type="StyleBox" uid="uid://bxfva2igcs5k7" path="res://scenes/normal_button.tres" id="4_81lf0"]
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_w11xg"]
+[ext_resource type="StyleBox" uid="uid://x7g8a11xam5q" path="res://scenes/misc/button_hover.tres" id="3_2iba5"]
+[ext_resource type="StyleBox" uid="uid://bxfva2igcs5k7" path="res://scenes/misc/normal_button.tres" id="4_81lf0"]
 
 [sub_resource type="Theme" id="Theme_e4oh3"]
 Button/styles/hover = ExtResource("3_2iba5")

@@ -27,8 +27,8 @@ func _process(delta: float) -> void:
 	
 	get_node("UI/Control/VBOX/Control/UntilReset").text = "next reset: " + str(roundi($GameResetFail.time_left)) + "s"
 
-var fall_guy_scene = load("res://scenes/fall_guy.tscn")
-var bad_guy_scene = load("res://scenes/bad_guy.tscn")
+var fall_guy_scene = load("res://scenes/entities/fall_guy.tscn")
+var bad_guy_scene = load("res://scenes/entities/bad_guy.tscn")
 
 func _on_game_timer_timeout() -> void:
 	var instance
