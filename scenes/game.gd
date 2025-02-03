@@ -66,7 +66,19 @@ func _on_game_harderer_timer_timeout() -> void:
 	%GameHardererTimer.wait_time = %GameHardererTimer.wait_time + 0.25
 
 func refresh_fail_count():
-	get_node("UI/Control/VBOX/Control/FailCount").text = str(fail_count) + "/" + str(MAX_DEATH_COUNT)
+	var fc_node = get_node("UI/Control/VBOX/Control/FailCount")
+	var text_color = Color(fail_count * 1.0/(MAX_DEATH_COUNT-1),0.0,0.0,1.0)
+	fc_node.set("theme_override_colors/default_color", text_color)
+	
+	var prefix: String
+	var suffix: String
+	
+	if fail_count == MAX_DEATH_COUNT-1:
+		prefix = "[shake rate=40.0 level=5 connected=1]"
+		suffix = "[/shake]"
+	
+	
+	fc_node.text = prefix + str(fail_count) + "/" + str(MAX_DEATH_COUNT) + suffix
 
 func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:

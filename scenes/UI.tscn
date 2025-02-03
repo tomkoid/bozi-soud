@@ -72,15 +72,16 @@ position = Vector2(72, 135)
 scale = Vector2(3.03125, 3.03125)
 texture = SubResource("AtlasTexture_4motb")
 
-[node name="FailCount" type="Label" parent="Control/VBOX/Control"]
+[node name="FailCount" type="RichTextLabel" parent="Control/VBOX/Control"]
 layout_mode = 2
 offset_left = 120.0
 offset_top = 111.0
 offset_right = 489.0
 offset_bottom = 180.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wnk3n")
-theme_override_font_sizes/font_size = 50
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_wnk3n")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
 text = "0/0"
 
 [node name="UntilReset" type="Label" parent="Control/VBOX/Control"]
