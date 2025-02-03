@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_8s8pv")
-attack = 100
+score = 0
+fail_count = 0
