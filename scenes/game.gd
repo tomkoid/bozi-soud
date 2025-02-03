@@ -3,21 +3,26 @@ extends Node2D
 var MAX_DEATH_COUNT = 3
 
 @export var stats: Stats
-var save = Save.new()
 
-var save_file_path = "user://save/game.tres"
+var save_path = "user://game.save"
+
+var game_data = {
+	"best_score": 0
+}
+
+func save():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(game_data)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	verify_save_directory("user://save")
-	if FileAccess.file_exists(save_file_path):
-		save = ResourceLoader.load(save_file_path).duplicate(true)
-		print(save.best_score)
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		game_data = file.get_var(true)
+		
 	$TimerLabel.text = str(%GameTimer.wait_time)
 	refresh_fail_count()
 
-func verify_save_directory(path: String):
-	DirAccess.make_dir_absolute(path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -25,13 +30,14 @@ func _process(delta: float) -> void:
 		get_tree().reload_current_scene()
 	
 	if stats.fail_count == MAX_DEATH_COUNT:
-		if save.best_score < stats.score or save.best_score == 0:
-			save.best_score = stats.score
-			ResourceSaver.save(save, save_file_path)
+		if game_data.best_score < stats.score or game_data.best_score == 0:
+			game_data.best_score = stats.score
+			save()
+
 			
 		%UI.hide()
 		get_node("EndScreen/ScoreLabel").text += str(stats.score)
-		get_node("EndScreen/BestScoreLabel").text += str(save.best_score)
+		get_node("EndScreen/BestScoreLabel").text += str(game_data.best_score)
 		get_node("EndScreen").show()
 		get_tree().paused = true
 
