@@ -7,7 +7,7 @@ var fail_count = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$TimerLabel.text = str(%GameTimer.wait_time)
-	get_node("UI/Control/VBOX/Control/FailCount").text = "0/" + str(MAX_DEATH_COUNT)
+	refresh_fail_count()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,6 +24,8 @@ func _process(delta: float) -> void:
 		%UI.hide()
 		get_node("PauseMenu").show()
 		get_tree().paused = true
+	
+	get_node("UI/Control/VBOX/Control/UntilReset").text = "next reset: " + str(roundi($GameResetFail.time_left)) + "s"
 
 var fall_guy_scene = load("res://scenes/fall_guy.tscn")
 var bad_guy_scene = load("res://scenes/bad_guy.tscn")
@@ -63,6 +65,9 @@ func _on_game_harderer_timer_timeout() -> void:
 	%GameTimer.wait_time = %GameTimer.wait_time - 0.1
 	%GameHardererTimer.wait_time = %GameHardererTimer.wait_time + 0.25
 
+func refresh_fail_count():
+	get_node("UI/Control/VBOX/Control/FailCount").text = str(fail_count) + "/" + str(MAX_DEATH_COUNT)
+
 func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:
 		count += randi_range(100, 110)
@@ -73,7 +78,7 @@ func killzone(body: CharacterBody2D, good_type: String):
 		fail_count += 1
 	
 	get_node("UI/Control/VBOX/Control2/MoneyLabel").text = str(count)
-	get_node("UI/Control/VBOX/Control/FailCount").text = str(fail_count) + "/" + str(MAX_DEATH_COUNT)
+	refresh_fail_count()
 	body.queue_free()
 
 func _on_bottom_count_zone_body_entered(body):
@@ -84,6 +89,7 @@ func _on_top_count_zone_body_entered(body):
 
 func _on_game_reset_fail_timeout() -> void:
 	fail_count = 0
+	refresh_fail_count()
 	
 
 func _on_angel_animation_finished():

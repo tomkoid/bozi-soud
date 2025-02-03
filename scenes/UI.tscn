@@ -81,7 +81,17 @@ offset_bottom = 180.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_wnk3n")
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "0/0"
+
+[node name="UntilReset" type="Label" parent="Control/VBOX/Control"]
+offset_left = 53.0
+offset_top = 164.0
+offset_right = 422.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wnk3n")
+theme_override_font_sizes/font_size = 20
+text = "next reset:"
 
 [node name="Control2" type="Control" parent="Control/VBOX"]
 layout_mode = 2
