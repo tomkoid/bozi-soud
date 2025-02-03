@@ -1,19 +1,20 @@
 extends Node2D
 
+var MAX_DEATH_COUNT = 3
+
 var count = 0
 var fail_count = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$TimerLabel.text = str(%GameTimer.wait_time)
-	pass # Replace with function body.
-
+	get_node("UI/Control/VBOX/Control/FailCount").text = "0/" + str(MAX_DEATH_COUNT)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
 	
-	if fail_count == 3:
+	if fail_count == MAX_DEATH_COUNT:
 		%UI.hide()
 		get_node("EndScreen/ScoreLabel").text += str(count)
 		get_node("EndScreen").show()
@@ -72,7 +73,7 @@ func killzone(body: CharacterBody2D, good_type: String):
 		fail_count += 1
 	
 	get_node("UI/Control/VBOX/Control2/MoneyLabel").text = str(count)
-	get_node("UI/Control/VBOX/Control/FailCount").text = str(fail_count)
+	get_node("UI/Control/VBOX/Control/FailCount").text = str(fail_count) + "/" + str(MAX_DEATH_COUNT)
 	body.queue_free()
 
 func _on_bottom_count_zone_body_entered(body):
