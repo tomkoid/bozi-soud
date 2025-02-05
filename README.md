@@ -7,7 +7,20 @@ Religious game about the day of judgement. WORK IN PROGRESS
 <br>
 ***Illumination of Jesus Christ***
 
-## Roadmap
+## Roadmap for 2.0 release
+- [] [add collectibles with game buffs and debuffs](https://codeberg.org/dictator/bozi-soud/issues/3)
+- [] [add settings](https://codeberg.org/dictator/bozi-soud/issues/4)
+- [] add accelerometer based player movement 
+- [] add shop with perks 
+- [] add a few maps
+- [] refined UI 
+- [] proper sound design (sound effects, more music tracks, adjustable volume etc.)
+- [] make fall guys bounce diagonally (or pong-like)
+- [] add more fall guys
+- [] add an icon distinguishing good and bad guys 
+
+
+## Roadmap for [1.0 release](https://codeberg.org/dictator/bozi-soud/releases/tag/1.0) (done)
 
 - [x] fyzika obláčku
 - [x] sprity
