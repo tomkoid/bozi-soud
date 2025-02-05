@@ -32,6 +32,3 @@ Religious game about the day of judgement. WORK IN PROGRESS
 - [x] menu
 - [x] pause scene
 - [x] hezky tlacitka
-
-
-yay mame vse hotovo
