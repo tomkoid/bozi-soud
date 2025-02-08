@@ -35,7 +35,6 @@ func _physics_process(delta):
 	# Handle jump.
 	if is_on_floor() and not first_jump:
 		if (dir == 1 and position.x >= jump_pos_x) or (dir == -1 and position.x <= jump_pos_x):
-			print("jump")
 			first_jump = true
 			$AnimatedSprite2D.play("jump")
 			velocity.y = jump_velocity
