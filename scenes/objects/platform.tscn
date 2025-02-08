@@ -5,13 +5,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5agkj"]
 size = Vector2(481.539, 8.67514)
 
-[node name="platform" type="StaticBody2D"]
+[node name="Platform" type="StaticBody2D"]
 texture_filter = 1
 position = Vector2(213, 4)
 rotation = -0.0872665
 scale = Vector2(1.3, 1.3)
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="PlatformSprite" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-3.33339, 2.79704)
 rotation = 0.0872665
