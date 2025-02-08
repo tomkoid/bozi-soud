@@ -18,3 +18,7 @@ func _on_restart_pressed():
 	get_tree().paused = false
 	Global.game_controller.reload_current_scene()
 	
+
+
+func _on_settings_pressed() -> void:
+	Global.game_controller.change_gui_scene("res://scenes/ui/settings.tscn", false, true)

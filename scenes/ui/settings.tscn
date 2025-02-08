@@ -16,18 +16,11 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("2_etyne")
 region = Rect2(16, 0, 16, 16)
 
-[node name="Settings" type="Control"]
+[node name="Settings" type="CanvasLayer"]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_bqfg6")
 
 [node name="VsyncButton" type="Button" parent="."]
-layout_mode = 0
 offset_left = 762.0
 offset_top = 145.0
 offset_right = 952.0
@@ -35,7 +28,6 @@ offset_bottom = 206.0
 text = "VSYNC: disabled"
 
 [node name="CheckButton" type="CheckButton" parent="."]
-layout_mode = 0
 offset_left = 771.0
 offset_top = 238.0
 offset_right = 938.0
@@ -44,7 +36,6 @@ button_pressed = true
 text = "Fullscreen"
 
 [node name="EscapeButton" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 1066.0
 offset_top = 27.0
 offset_right = 1082.0

@@ -1,12 +1,18 @@
-extends Control
+extends CanvasLayer
+
+@onready var pause_menu = get_node("../Game/PauseMenu")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if pause_menu:
+		pause_menu.hide()
 	$VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("escape"):
-		Global.game_controller.change_gui_scene("res://scenes/ui/menu.tscn")
+		if pause_menu:
+			pause_menu.show()
+		Global.game_controller.change_gui_prev()
 		
 func check_vsync_mode(mode: int) -> String:
 	if mode == DisplayServer.VSYNC_DISABLED:

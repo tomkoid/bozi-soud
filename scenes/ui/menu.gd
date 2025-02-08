@@ -10,7 +10,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_settings_button_pressed():
-	Global.game_controller.change_gui_scene("res://scenes/ui/settings.tscn", false, false)
+	Global.game_controller.change_gui_scene("res://scenes/ui/settings.tscn", false, true)
 	
 	
 func _on_quit_button_pressed():
