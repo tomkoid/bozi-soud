@@ -10,7 +10,6 @@ var current_gui_path
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("fucky")
 	Global.game_controller = self
 	change_gui_scene("res://scenes/ui/menu.tscn")
 
