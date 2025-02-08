@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfubsfvmjqgh8"]
+[gd_scene load_steps=7 format=3 uid="uid://bfubsfvmjqgh8"]
 
 [ext_resource type="Script" path="res://scenes/ui/settings.gd" id="1_bqfg6"]
+[ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="2_etyne"]
+[ext_resource type="Script" path="res://scenes/ui/escape_button_Settings.gd" id="3_dhbw2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bav1n"]
+atlas = ExtResource("2_etyne")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2xta"]
+atlas = ExtResource("2_etyne")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62y5m"]
+atlas = ExtResource("2_etyne")
+region = Rect2(16, 0, 16, 16)
 
 [node name="Settings" type="Control"]
 process_mode = 3
@@ -29,5 +43,18 @@ offset_bottom = 269.0
 button_pressed = true
 text = "Fullscreen"
 
+[node name="EscapeButton" type="TextureButton" parent="."]
+offset_left = 1066.0
+offset_top = 27.0
+offset_right = 1082.0
+offset_bottom = 43.0
+scale = Vector2(4, 4)
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_bav1n")
+texture_pressed = SubResource("AtlasTexture_t2xta")
+texture_hover = SubResource("AtlasTexture_62y5m")
+script = ExtResource("3_dhbw2")
+
 [connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
 [connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
