@@ -14,9 +14,9 @@ func _ready() -> void:
 	var guy_type = get_meta("type")
 	
 	if guy_type == "good":
-		jump_velocity = randi_range(-350, -250)
-	if guy_type == "bad":
 		jump_velocity = randi_range(-500, -400)
+	if guy_type == "bad":
+		jump_velocity = randi_range(-350, -250)
 	
 	if dir == 1:
 		jump_pos_x = randi_range(50, 200)
