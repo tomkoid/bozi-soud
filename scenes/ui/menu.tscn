@@ -35,9 +35,6 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_pqe38"]
 image = SubResource("Image_353kf")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c31hi"]
-texture = SubResource("AtlasTexture_seebn")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dsnig"]
 atlas = ExtResource("5_r1hbn")
 region = Rect2(8, 0, 112, 32)
@@ -177,8 +174,6 @@ ColorPicker/constants/margin = 4
 ColorPicker/constants/sv_height = 256
 ColorPicker/constants/sv_width = 256
 ColorPicker/icons/bar_arrow = SubResource("ImageTexture_pqe38")
-ColorPicker/icons/color_hue = SubResource("GradientTexture2D_f63fb")
-ColorPicker/icons/color_okhsl_hue = SubResource("GradientTexture2D_le2qx")
 ColorPicker/icons/expanded_arrow = SubResource("ImageTexture_tnlw5")
 ColorPicker/icons/folded_arrow = SubResource("ImageTexture_mrt00")
 ColorPicker/icons/overbright_indicator = SubResource("ImageTexture_vprdf")
@@ -351,8 +346,6 @@ theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_jhj1i")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jhj1i")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_jhj1i")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_r8q1i")
-theme_override_styles/normal = SubResource("StyleBoxTexture_r8q1i")
 text = "Hrát"
 
 [node name="SettingsButton" type="Button" parent="Control"]
@@ -371,16 +364,6 @@ theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_fonts/font = ExtResource("5_7gioc")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = SubResource("StyleBoxTexture_c31hi")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_c31hi")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_c31hi")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_c31hi")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_c31hi")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_c31hi")
-theme_override_styles/hover = SubResource("StyleBoxTexture_c31hi")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_c31hi")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_c31hi")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_yrvv6")
 theme_override_styles/normal = SubResource("StyleBoxTexture_yrvv6")
 text = "Nastavení"
 
@@ -400,15 +383,6 @@ theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_fonts/font = ExtResource("5_7gioc")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = SubResource("StyleBoxTexture_80yav")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_80yav")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_80yav")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_80yav")
-theme_override_styles/hover = SubResource("StyleBoxTexture_80yav")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_80yav")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_80yav")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ejovb")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ejovb")
 text = "Ukončit hru"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
