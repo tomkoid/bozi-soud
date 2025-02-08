@@ -6,13 +6,11 @@ extends Node2D
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
-	pass # Replace with function body.
+	Global.game_controller.change_gui_scene("res://scenes/level.tscn")
 
 
 func _on_settings_button_pressed():
-	Global.prev_scene = get_tree().current_scene.scene_file_path
-	get_tree().change_scene_to_file("res://scenes/ui/settings.tscn")
+	Global.game_controller.change_gui_scene("res://scenes/ui/settings.tscn", false, false)
 	
 	
 func _on_quit_button_pressed():

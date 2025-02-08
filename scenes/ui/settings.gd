@@ -4,11 +4,9 @@ extends Control
 func _ready() -> void:
 	$VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
 
-	pass # Replace with function body.
-
 func _physics_process(delta):
 	if Input.is_action_just_pressed("escape"):
-		get_tree().change_scene_to_file(Global.prev_scene)
+		Global.game_controller.change_gui_scene("res://scenes/ui/menu.tscn")
 		
 func check_vsync_mode(mode: int) -> String:
 	if mode == DisplayServer.VSYNC_DISABLED:
