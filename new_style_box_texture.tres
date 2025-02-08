@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://c6bcmuxlp8iqm"]
+
+[ext_resource type="Texture2D" uid="uid://pbjnh4k2v8qy" path="res://assets/sprites/scroll-sh3.png" id="1_7pvuh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsjov"]
+atlas = ExtResource("1_7pvuh")
+region = Rect2(8, 32, 112, 32)
+
+[resource]
+texture = SubResource("AtlasTexture_jsjov")
