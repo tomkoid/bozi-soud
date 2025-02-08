@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/ui/settings.gd" id="1_bqfg6"]
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="2_etyne"]
-[ext_resource type="Script" path="res://scenes/ui/escape_button_Settings.gd" id="3_dhbw2"]
+[ext_resource type="Script" path="res://scenes/ui/escape_button_settings.gd" id="3_dhbw2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bav1n"]
 atlas = ExtResource("2_etyne")
