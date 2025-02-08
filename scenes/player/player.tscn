@@ -83,6 +83,7 @@ autoplay = "idle"
 frame_progress = 0.769369
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -75)
 zoom = Vector2(1.1, 1.1)
 limit_left = 0
 limit_right = 1152
