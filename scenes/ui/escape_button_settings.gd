@@ -4,4 +4,4 @@ extends TextureButton
 
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://scenes/ui/menu.tscn")
+	Global.game_controller.change_gui_scene("res://scenes/ui/menu.tscn")

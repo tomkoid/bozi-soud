@@ -1,5 +1,7 @@
 extends Node
 
+var game_controller : GameController
+
 @export var prev_scene = ""
 
 # Called when the node enters the scene tree for the first time.
