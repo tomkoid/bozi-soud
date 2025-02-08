@@ -49,7 +49,12 @@ func _process(delta: float) -> void:
 		get_node("PauseMenu").show()
 		get_tree().paused = true
 	
-	get_node("UI/Control/VBOX/Control/UntilReset").text = "next reset: " + str(roundi($GameResetFail.time_left)) + "s"
+	var until_reset_node = get_node("UI/Control/VBOX/Control/UntilReset")
+	if $GameResetFail.time_left != 0:
+		until_reset_node.show()
+		until_reset_node.text = "next reset: " + str(roundi($GameResetFail.time_left)) + "s"
+	else:
+		until_reset_node.hide()
 
 var fall_guy_scene = load("res://scenes/entities/fall_guy.tscn")
 var bad_guy_scene = load("res://scenes/entities/bad_guy.tscn")
@@ -108,6 +113,9 @@ func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:
 		stats.score += randi_range(100, 110)
 	else:
+		if $GameResetFail.is_stopped():
+			$GameResetFail.start()
+			
 		$Angel.play("cry")
 		
 		stats.score -= randi_range(400, 550)

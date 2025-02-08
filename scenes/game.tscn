@@ -103,7 +103,7 @@ autostart = true
 
 [node name="GameResetFail" type="Timer" parent="."]
 wait_time = 10.0
-autostart = true
+one_shot = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_gb1vr")

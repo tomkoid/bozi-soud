@@ -44,6 +44,7 @@ button_pressed = true
 text = "Fullscreen"
 
 [node name="EscapeButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 1066.0
 offset_top = 27.0
 offset_right = 1082.0
