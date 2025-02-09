@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=26 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
@@ -6,47 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="4_vuo2u"]
 [ext_resource type="FontFile" uid="uid://boxuef2owck6r" path="res://assets/fonts/Jersey15-Regular.ttf" id="5_7gioc"]
 [ext_resource type="Texture2D" uid="uid://df1r05tlcm114" path="res://assets/sprites/sun-spritesheet1.png" id="5_17g22"]
-[ext_resource type="StyleBox" uid="uid://c6bcmuxlp8iqm" path="res://new_style_box_texture.tres" id="5_nick6"]
-[ext_resource type="Texture2D" uid="uid://pbjnh4k2v8qy" path="res://assets/sprites/scroll-sh3.png" id="5_r1hbn"]
+[ext_resource type="StyleBox" uid="uid://bdwb72jog3bdm" path="res://assets/styles/button_hover.tres" id="5_dwbsv"]
 [ext_resource type="Texture2D" uid="uid://ccdko1frhei4y" path="res://assets/sprites/cloud-spritesheet1.png" id="6_1fef0"]
+[ext_resource type="StyleBox" uid="uid://bpi3l4fddkpxl" path="res://assets/styles/button_normal.tres" id="6_wvaxu"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="7_s4v21"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="8_lp7x5"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="9_w2lrk"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7xgd0"]
-atlas = ExtResource("5_r1hbn")
-region = Rect2(8, 32, 112, 32)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jhj1i"]
-texture = SubResource("AtlasTexture_7xgd0")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3lbn"]
-atlas = ExtResource("5_r1hbn")
-region = Rect2(8, 0, 112, 32)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6kd6"]
-texture = SubResource("AtlasTexture_f3lbn")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d1qno"]
-atlas = ExtResource("5_r1hbn")
-region = Rect2(8, 32, 112, 32)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwo84"]
-texture = SubResource("AtlasTexture_d1qno")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dsnig"]
-atlas = ExtResource("5_r1hbn")
-region = Rect2(8, 0, 112, 32)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrvv6"]
-texture = SubResource("AtlasTexture_dsnig")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wq4ga"]
-atlas = ExtResource("5_r1hbn")
-region = Rect2(8, 0, 112, 32)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_it8mo"]
-texture = SubResource("AtlasTexture_wq4ga")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grc63"]
 atlas = ExtResource("3_kkovv")
@@ -194,17 +159,17 @@ theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_fonts/font = ExtResource("5_7gioc")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/hover = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_jhj1i")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_t6kd6")
-theme_override_styles/normal = SubResource("StyleBoxTexture_t6kd6")
+theme_override_styles/focus = ExtResource("5_dwbsv")
+theme_override_styles/disabled_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/disabled = ExtResource("5_dwbsv")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/hover_pressed = ExtResource("5_dwbsv")
+theme_override_styles/hover_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/hover = ExtResource("5_dwbsv")
+theme_override_styles/pressed_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/pressed = ExtResource("5_dwbsv")
+theme_override_styles/normal_mirrored = ExtResource("6_wvaxu")
+theme_override_styles/normal = ExtResource("6_wvaxu")
 text = "Hrát"
 
 [node name="SettingsButton" type="Button" parent="Control"]
@@ -223,17 +188,17 @@ theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_fonts/font = ExtResource("5_7gioc")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = SubResource("StyleBoxTexture_kwo84")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kwo84")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_kwo84")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_kwo84")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kwo84")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_kwo84")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kwo84")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_kwo84")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kwo84")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_yrvv6")
-theme_override_styles/normal = SubResource("StyleBoxTexture_yrvv6")
+theme_override_styles/focus = ExtResource("5_dwbsv")
+theme_override_styles/disabled_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/disabled = ExtResource("5_dwbsv")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/hover_pressed = ExtResource("5_dwbsv")
+theme_override_styles/hover_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/hover = ExtResource("5_dwbsv")
+theme_override_styles/pressed_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/pressed = ExtResource("5_dwbsv")
+theme_override_styles/normal_mirrored = ExtResource("6_wvaxu")
+theme_override_styles/normal = ExtResource("6_wvaxu")
 text = "Nastavení"
 
 [node name="QuitButton" type="Button" parent="Control"]
@@ -252,17 +217,17 @@ theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
 theme_override_fonts/font = ExtResource("5_7gioc")
 theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = ExtResource("5_nick6")
-theme_override_styles/disabled_mirrored = ExtResource("5_nick6")
-theme_override_styles/disabled = ExtResource("5_nick6")
-theme_override_styles/hover_pressed_mirrored = ExtResource("5_nick6")
-theme_override_styles/hover_pressed = ExtResource("5_nick6")
-theme_override_styles/hover_mirrored = ExtResource("5_nick6")
-theme_override_styles/hover = ExtResource("5_nick6")
-theme_override_styles/pressed_mirrored = ExtResource("5_nick6")
-theme_override_styles/pressed = ExtResource("5_nick6")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_it8mo")
-theme_override_styles/normal = SubResource("StyleBoxTexture_it8mo")
+theme_override_styles/focus = ExtResource("5_dwbsv")
+theme_override_styles/disabled_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/disabled = ExtResource("5_dwbsv")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/hover_pressed = ExtResource("5_dwbsv")
+theme_override_styles/hover_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/hover = ExtResource("5_dwbsv")
+theme_override_styles/pressed_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/pressed = ExtResource("5_dwbsv")
+theme_override_styles/normal_mirrored = ExtResource("6_wvaxu")
+theme_override_styles/normal = ExtResource("6_wvaxu")
 text = "Ukončit hru"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
