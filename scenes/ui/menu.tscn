@@ -142,36 +142,6 @@ text = "Boží Soud"
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 87.0
-offset_top = 425.64
-offset_right = 255.0
-offset_bottom = 473.64
-scale = Vector2(3, 3)
-mouse_default_cursor_shape = 2
-theme_override_colors/font_disabled_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_hover_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_focus_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_fonts/font = ExtResource("5_7gioc")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = ExtResource("5_dwbsv")
-theme_override_styles/disabled_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/disabled = ExtResource("5_dwbsv")
-theme_override_styles/hover_pressed_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/hover_pressed = ExtResource("5_dwbsv")
-theme_override_styles/hover_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/hover = ExtResource("5_dwbsv")
-theme_override_styles/pressed_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/pressed = ExtResource("5_dwbsv")
-theme_override_styles/normal_mirrored = ExtResource("6_wvaxu")
-theme_override_styles/normal = ExtResource("6_wvaxu")
-text = "Hrát"
-
 [node name="SettingsButton" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 180.0
@@ -230,6 +200,36 @@ theme_override_styles/normal_mirrored = ExtResource("6_wvaxu")
 theme_override_styles/normal = ExtResource("6_wvaxu")
 text = "Ukončit hru"
 
+[node name="PlayButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 425.64
+offset_right = 255.0
+offset_bottom = 473.64
+scale = Vector2(3, 3)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_disabled_color = Color(0.25098, 0.164706, 0.0117647, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
+theme_override_colors/font_hover_color = Color(0.25098, 0.164706, 0.0117647, 1)
+theme_override_colors/font_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
+theme_override_colors/font_focus_color = Color(0.25098, 0.164706, 0.0117647, 1)
+theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
+theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
+theme_override_fonts/font = ExtResource("5_7gioc")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/focus = ExtResource("5_dwbsv")
+theme_override_styles/disabled_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/disabled = ExtResource("5_dwbsv")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/hover_pressed = ExtResource("5_dwbsv")
+theme_override_styles/hover_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/hover = ExtResource("5_dwbsv")
+theme_override_styles/pressed_mirrored = ExtResource("5_dwbsv")
+theme_override_styles/pressed = ExtResource("5_dwbsv")
+theme_override_styles/normal_mirrored = ExtResource("6_wvaxu")
+theme_override_styles/normal = ExtResource("6_wvaxu")
+text = "Hrát"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(75, 560)
@@ -284,6 +284,6 @@ theme_override_colors/default_color = Color(0.670259, 0.417416, 0, 1)
 bbcode_enabled = true
 text = "By Dictator productions"
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/PlayButton" to="." method="_on_button_pressed"]
