@@ -14,8 +14,3 @@ func _ready() -> void:
 	# DiscordRPC.end_timestamp = int(Time.get_unix_time_from_system()) + 3600 # +1 hour in unix time / "01:00:00 remaining"
 
 	DiscordRPC.refresh() # Always refresh after changing the values!
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

@@ -8,7 +8,7 @@ func _ready() -> void:
 		pause_menu.hide()
 	$VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("escape"):
 		if pause_menu:
 			pause_menu.show()

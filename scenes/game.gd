@@ -58,7 +58,3 @@ func reload_current_scene():
 	new.name = scene_name
 	gui.add_child(new)
 	current_gui = new
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
