@@ -180,7 +180,7 @@ position = Vector2(580, 200)
 scale = Vector2(6.625, 6.625)
 sprite_frames = SubResource("SpriteFrames_avpj5")
 autoplay = "default"
-frame_progress = 0.0708324
+frame_progress = 0.501013
 
 [node name="Cloud2" type="Sprite2D" parent="Jesus"]
 z_index = -4

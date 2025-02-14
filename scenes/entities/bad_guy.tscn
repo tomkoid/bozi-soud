@@ -72,7 +72,8 @@ scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_vayxy")
 animation = &"run"
 autoplay = "run"
-frame_progress = 0.520001
+frame = 1
+frame_progress = 0.131687
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(25, 25)
@@ -87,7 +88,8 @@ scale = Vector2(23.11, 1)
 shape = SubResource("CapsuleShape2D_bdxh2")
 
 [node name="TypeMarker" type="Sprite2D" parent="."]
-position = Vector2(0, -72)
+position = Vector2(3, -78)
+scale = Vector2(1.5, 1.5)
 texture = SubResource("AtlasTexture_akhm0")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -82,6 +82,7 @@ func _on_game_timer_timeout() -> void:
 		instance.position.x = randi_range(1300,1500)
 		instance.dir = -1
 		instance.get_node("AnimatedSprite2D").flip_h = true
+		instance.get_node("TypeMarker").position.x *= -1
 	
 	$Guys.add_child(instance)
 
