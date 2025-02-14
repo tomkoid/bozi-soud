@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=26 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="1_f416g"]
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_ptexp"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/entities/angel.tscn" id="11_6e238"]
 [ext_resource type="Texture2D" uid="uid://3hy5yoojyuph" path="res://assets/sprites/cloud1.png" id="13_2m20h"]
+[ext_resource type="Texture2D" uid="uid://cxhikbvye1lwf" path="res://assets/sprites/jesus-2.png" id="14_atvas"]
 [ext_resource type="PackedScene" uid="uid://ctqwgvoo3fbxr" path="res://scenes/ui/end_screen.tscn" id="15_h0ic7"]
 [ext_resource type="PackedScene" uid="uid://cwwaitliqbm1r" path="res://scenes/ui/pause_menu.tscn" id="16_867yn"]
 
@@ -60,6 +61,20 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 0.2
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_avpj5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_atvas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5s47w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
 }]
 
 [node name="Game" type="Node2D"]
@@ -158,12 +173,14 @@ position = Vector2(908, 115)
 scale = Vector2(6.29688, 6.29688)
 frame_progress = 0.0
 
-[node name="Jesus" type="Sprite2D" parent="."]
+[node name="Jesus" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.803922)
 z_index = -2
 position = Vector2(580, 200)
 scale = Vector2(6.625, 6.625)
-texture = ExtResource("10_5s47w")
+sprite_frames = SubResource("SpriteFrames_avpj5")
+autoplay = "default"
+frame_progress = 0.0708324
 
 [node name="Cloud2" type="Sprite2D" parent="Jesus"]
 z_index = -4
