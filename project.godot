@@ -20,6 +20,7 @@ config/icon="res://jesus-logo.png"
 
 Global="*res://global.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+TransitionScreen="*res://scenes/ui/transition_screen.tscn"
 
 [display]
 
