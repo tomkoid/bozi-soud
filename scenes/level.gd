@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
 	
-	if stats.fail_count == MAX_DEATH_COUNT:
+	if stats.fail_count >= MAX_DEATH_COUNT:
 		if game_data.best_score < stats.score or game_data.best_score == 0:
 			game_data.best_score = stats.score
 			save()
