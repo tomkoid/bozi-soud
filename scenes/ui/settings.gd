@@ -2,12 +2,18 @@ extends CanvasLayer
 
 @onready var pause_menu = get_node("../Game/PauseMenu")
 
+var ready_finished = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if pause_menu:
 		pause_menu.hide()
+		
 	$VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
+	$FullscreenButton.button_pressed = is_fullscreen(DisplayServer.window_get_mode())
 
+	ready_finished = true
+	
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("escape"):
 		if pause_menu:
@@ -24,7 +30,11 @@ func check_vsync_mode(mode: int) -> String:
 
 	return "VSYNC: neznámý"
 
+func is_fullscreen(mode: int) -> bool:
+	if mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		return true
 
+	return false
 
 var vsync_index = 1
 
@@ -39,13 +49,12 @@ func _on_vsync_button_pressed() -> void:
 	DisplayServer.window_set_vsync_mode(vsync_index)
 	pass # Replace with function body.
 
+func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
+	# dont change until ready
+	if not ready_finished:
+		return
 
-func _on_check_button_toggled(toggled_on):
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-
-
-func _on_escape_button_pressed():
-	pass # Replace with function body.

@@ -76,12 +76,11 @@ offset_right = 952.0
 offset_bottom = 206.0
 text = "VSYNC: disabled"
 
-[node name="CheckButton" type="CheckButton" parent="."]
+[node name="FullscreenButton" type="CheckButton" parent="."]
 offset_left = 771.0
 offset_top = 238.0
 offset_right = 938.0
 offset_bottom = 269.0
-button_pressed = true
 text = "Fullscreen"
 
 [node name="EscapeButton" type="TextureButton" parent="."]
@@ -116,5 +115,5 @@ theme_override_font_sizes/font_size = 50
 text = "Sound"
 
 [connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
-[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
