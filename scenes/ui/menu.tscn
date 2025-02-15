@@ -1,14 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=24 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
 [ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="3_kkovv"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="4_vuo2u"]
-[ext_resource type="FontFile" uid="uid://boxuef2owck6r" path="res://assets/fonts/Jersey15-Regular.ttf" id="5_7gioc"]
 [ext_resource type="Texture2D" uid="uid://df1r05tlcm114" path="res://assets/sprites/sun-spritesheet1.png" id="5_17g22"]
-[ext_resource type="StyleBox" uid="uid://bdwb72jog3bdm" path="res://assets/styles/button_hover.tres" id="5_dwbsv"]
 [ext_resource type="Texture2D" uid="uid://ccdko1frhei4y" path="res://assets/sprites/cloud-spritesheet1.png" id="6_1fef0"]
-[ext_resource type="StyleBox" uid="uid://bpi3l4fddkpxl" path="res://assets/styles/button_normal.tres" id="6_wvaxu"]
+[ext_resource type="Theme" uid="uid://cl4on37nchmy6" path="res://assets/styles/button-scroll.tres" id="6_wvaxu"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="7_s4v21"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="8_lp7x5"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="9_w2lrk"]
@@ -144,90 +142,35 @@ anchors_preset = 0
 
 [node name="SettingsButton" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 342.935
-offset_right = 485.0
-offset_bottom = 429.935
+offset_left = 182.0
+offset_top = 338.0
+offset_right = 290.0
+offset_bottom = 370.0
+scale = Vector2(3, 3)
 mouse_default_cursor_shape = 2
-theme_override_colors/font_disabled_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_hover_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_focus_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_fonts/font = ExtResource("5_7gioc")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = ExtResource("5_dwbsv")
-theme_override_styles/disabled_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/disabled = ExtResource("5_dwbsv")
-theme_override_styles/hover_pressed_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/hover_pressed = ExtResource("5_dwbsv")
-theme_override_styles/hover_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/hover = ExtResource("5_dwbsv")
-theme_override_styles/pressed_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/pressed = ExtResource("5_dwbsv")
-theme_override_styles/normal_mirrored = ExtResource("6_wvaxu")
-theme_override_styles/normal = ExtResource("6_wvaxu")
+theme = ExtResource("6_wvaxu")
 text = "Nastavení"
 
 [node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 250.0
-offset_right = 485.0
-offset_bottom = 337.0
+offset_left = 182.0
+offset_top = 235.0
+offset_right = 290.0
+offset_bottom = 267.0
+scale = Vector2(3, 3)
 mouse_default_cursor_shape = 2
-theme_override_colors/font_disabled_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_hover_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_focus_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_fonts/font = ExtResource("5_7gioc")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = ExtResource("5_dwbsv")
-theme_override_styles/disabled_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/disabled = ExtResource("5_dwbsv")
-theme_override_styles/hover_pressed_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/hover_pressed = ExtResource("5_dwbsv")
-theme_override_styles/hover_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/hover = ExtResource("5_dwbsv")
-theme_override_styles/pressed_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/pressed = ExtResource("5_dwbsv")
-theme_override_styles/normal_mirrored = ExtResource("6_wvaxu")
-theme_override_styles/normal = ExtResource("6_wvaxu")
+theme = ExtResource("6_wvaxu")
 text = "Ukončit hru"
 
 [node name="PlayButton" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 425.64
-offset_right = 255.0
-offset_bottom = 473.64
-scale = Vector2(3, 3)
+offset_left = 84.0
+offset_top = 431.0
+offset_right = 192.0
+offset_bottom = 463.0
+scale = Vector2(5, 5)
 mouse_default_cursor_shape = 2
-theme_override_colors/font_disabled_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_hover_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_pressed_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_focus_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_colors/font_outline_color = Color(0.25098, 0.164706, 0.0117647, 1)
-theme_override_fonts/font = ExtResource("5_7gioc")
-theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = ExtResource("5_dwbsv")
-theme_override_styles/disabled_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/disabled = ExtResource("5_dwbsv")
-theme_override_styles/hover_pressed_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/hover_pressed = ExtResource("5_dwbsv")
-theme_override_styles/hover_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/hover = ExtResource("5_dwbsv")
-theme_override_styles/pressed_mirrored = ExtResource("5_dwbsv")
-theme_override_styles/pressed = ExtResource("5_dwbsv")
-theme_override_styles/normal_mirrored = ExtResource("6_wvaxu")
-theme_override_styles/normal = ExtResource("6_wvaxu")
+theme = ExtResource("6_wvaxu")
 text = "Hrát"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
