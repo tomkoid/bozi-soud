@@ -58,3 +58,20 @@ func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_escape_button_pressed():
+	pass # Replace with function body.
+
+#change scale aspect on button
+var display_mode = "keep"
+
+func _on_display_type_pressed():
+	if display_mode == "keep":
+		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_IGNORE
+		display_mode = "ignore"
+		$DisplayType.text = "display type: ignore"
+	elif display_mode == "ignore":
+		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
+		display_mode = "keep"
+		$DisplayType.text = "display type: keep (might look wierd)"

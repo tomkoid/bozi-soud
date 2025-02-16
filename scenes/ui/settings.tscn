@@ -114,6 +114,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Sound"
 
+[node name="DisplayType" type="Button" parent="."]
+offset_left = 781.0
+offset_top = 296.0
+offset_right = 938.0
+offset_bottom = 332.0
+text = "display type: keep"
+
 [connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
+[connection signal="pressed" from="DisplayType" to="." method="_on_display_type_pressed"]
