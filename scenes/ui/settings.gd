@@ -14,6 +14,10 @@ func _ready() -> void:
 
 	ready_finished = true
 	
+	$MasterVolume/HSlider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
+
+
+	
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("escape"):
 		if pause_menu:
@@ -75,3 +79,7 @@ func _on_display_type_pressed():
 		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
 		display_mode = "keep"
 		$DisplayType.text = "display type: keep (might look wierd)"
+
+
+func _on_h_slider_mouse_exited():
+	AudioServer.set_bus_volume_db(0, linear_to_db($MasterVolume/HSlider.value))
