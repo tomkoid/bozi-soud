@@ -114,12 +114,12 @@ offset_right = 317.0
 offset_bottom = 286.0
 text = "Master Volume"
 
-[node name="HSlider" type="HSlider" parent="MasterVolume"]
+[node name="MasterVolumeSlider" type="HSlider" parent="MasterVolume"]
 offset_left = 188.0
-offset_top = 3.0
-offset_right = 348.0
+offset_top = -9.0
+offset_right = 468.0
 offset_bottom = 19.0
-max_value = 1.0
+max_value = 1.5
 step = 0.05
 
 [node name="MusicVolume" type="Label" parent="."]
@@ -129,11 +129,11 @@ offset_right = 317.0
 offset_bottom = 331.0
 text = "Music Volume"
 
-[node name="HSlider" type="HSlider" parent="MusicVolume"]
+[node name="MusicVolumeSlider" type="HSlider" parent="MusicVolume"]
 layout_mode = 0
 offset_left = 188.0
-offset_top = 3.0
-offset_right = 348.0
+offset_top = -9.0
+offset_right = 468.0
 offset_bottom = 19.0
 
 [node name="SoundEffectVolume" type="Label" parent="."]
@@ -143,12 +143,12 @@ offset_right = 316.0
 offset_bottom = 369.0
 text = "Sound Effect Volume"
 
-[node name="HSlider" type="HSlider" parent="SoundEffectVolume"]
+[node name="SoundEffectVolumeSldier" type="HSlider" parent="SoundEffectVolume"]
 layout_mode = 0
-offset_left = 191.0
-offset_top = -10.0
-offset_right = 352.0
-offset_bottom = 36.0
+offset_left = 190.0
+offset_top = -28.0
+offset_right = 470.0
+offset_bottom = 52.0
 tooltip_text = "
 "
 
@@ -162,5 +162,7 @@ text = "display type: keep"
 [connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
-[connection signal="mouse_exited" from="MasterVolume/HSlider" to="." method="_on_h_slider_mouse_exited"]
+[connection signal="mouse_exited" from="MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_slider_mouse_exited"]
+[connection signal="mouse_exited" from="MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_mouse_exited"]
+[connection signal="mouse_exited" from="SoundEffectVolume/SoundEffectVolumeSldier" to="." method="_on_sound_effect_volume_sldier_mouse_exited"]
 [connection signal="pressed" from="DisplayType" to="." method="_on_display_type_pressed"]
