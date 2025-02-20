@@ -1,8 +1,14 @@
 extends Node2D
-
-
+var save_path = "user://game.save"
+var game_data = {
+	"best_score": 0
+}
 # Called when the node enters the scene tree for the first time.
-
+func _ready() -> void:
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		game_data = file.get_var(true)
+	get_node("BestScoreLabel").text += str(game_data.best_score)
 
 
 func _on_button_pressed() -> void:

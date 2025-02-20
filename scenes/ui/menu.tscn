@@ -227,6 +227,16 @@ position = Vector2(576, 324)
 scale = Vector2(6, 6)
 texture = SubResource("CompressedTexture2D_5dcq3")
 
+[node name="BestScoreLabel" type="Label" parent="."]
+offset_left = 230.0
+offset_top = 598.0
+offset_right = 377.0
+offset_bottom = 621.0
+theme_override_colors/font_color = Color(0.980392, 0.729412, 0.278431, 1)
+theme_override_colors/font_outline_color = Color(0.14902, 0.0941176, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Tvé nejlepší skóre: "
+
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_button_pressed"]
