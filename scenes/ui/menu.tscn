@@ -1,15 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=22 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
 [ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="3_kkovv"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="4_vuo2u"]
 [ext_resource type="Texture2D" uid="uid://df1r05tlcm114" path="res://assets/sprites/sun-spritesheet1.png" id="5_17g22"]
-[ext_resource type="Texture2D" uid="uid://ccdko1frhei4y" path="res://assets/sprites/cloud-spritesheet1.png" id="6_1fef0"]
 [ext_resource type="Theme" uid="uid://cl4on37nchmy6" path="res://assets/styles/button-scroll.tres" id="6_wvaxu"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="7_s4v21"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="8_lp7x5"]
-[ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="9_w2lrk"]
+[ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="10_1liem"]
+[ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="10_7j05w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grc63"]
 atlas = ExtResource("3_kkovv")
@@ -84,28 +84,6 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qi7xg"]
-atlas = ExtResource("6_1fef0")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_11h5r"]
-atlas = ExtResource("6_1fef0")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_slmbf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qi7xg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_11h5r")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_fao17"]
 animations = [{
 "frames": [{
@@ -120,18 +98,22 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dcq3"]
+load_path = "res://.godot/imported/background-wip5-window.png-49855e3d1ff51247a1b06379e4cfe546.ctex"
+
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_f4s0f")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 23.52
-offset_top = 11.835
-offset_right = 523.52
-offset_bottom = 206.48
+offset_left = 74.0
+offset_top = 12.0
+offset_right = 574.0
+offset_bottom = 206.645
 theme_override_colors/default_color = Color(0.909804, 0.654902, 0.137255, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = -2
-theme_override_constants/shadow_outline_size = 3
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_outline_size = 6
 theme_override_fonts/normal_font = ExtResource("2_rtghm")
 theme_override_font_sizes/normal_font_size = 150
 text = "Boží Soud"
@@ -141,41 +123,41 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="SettingsButton" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 182.0
-offset_top = 338.0
-offset_right = 290.0
-offset_bottom = 370.0
+layout_mode = 2
+offset_left = 161.0
+offset_top = 328.0
+offset_right = 269.0
+offset_bottom = 360.0
 scale = Vector2(3, 3)
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
 text = "Nastavení"
 
 [node name="QuitButton" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 182.0
-offset_top = 235.0
-offset_right = 290.0
-offset_bottom = 267.0
+layout_mode = 2
+offset_left = 161.0
+offset_top = 223.0
+offset_right = 269.0
+offset_bottom = 255.0
 scale = Vector2(3, 3)
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
 text = "Ukončit hru"
 
 [node name="PlayButton" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 84.0
-offset_top = 431.0
-offset_right = 192.0
-offset_bottom = 463.0
-scale = Vector2(5, 5)
+layout_mode = 2
+offset_left = 111.0
+offset_top = 434.0
+offset_right = 219.0
+offset_bottom = 466.0
+scale = Vector2(4, 4)
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
 text = "Hrát"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Nun" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(75, 560)
+position = Vector2(65.47, 560)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_yrkhk")
 animation = &"run"
@@ -183,25 +165,17 @@ autoplay = "run"
 frame_progress = 0.304969
 
 [node name="Jesus" type="Sprite2D" parent="."]
-position = Vector2(802, 317)
-scale = Vector2(7.79688, 7.79688)
+position = Vector2(812.22, 419.45)
+scale = Vector2(6, 6)
 texture = ExtResource("4_vuo2u")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-z_index = -4
-position = Vector2(802, 96)
-scale = Vector2(15, 15)
+[node name="Sun" type="AnimatedSprite2D" parent="."]
+z_index = -12
+position = Vector2(805, 235)
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_t3tgu")
 autoplay = "default"
 frame_progress = 0.91244
-
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-z_index = -4
-position = Vector2(802, 586)
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_slmbf")
-autoplay = "default"
-frame_progress = 0.366188
 
 [node name="Devil" type="AnimatedSprite2D" parent="."]
 z_index = -1
@@ -212,20 +186,46 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.528667
 
-[node name="BackgroundParalax1" type="Sprite2D" parent="."]
-z_index = -10
-position = Vector2(429, 337)
-scale = Vector2(10, 10)
-texture = ExtResource("9_w2lrk")
+[node name="ComingSoon" type="RichTextLabel" parent="."]
+z_index = 65
+offset_left = 667.0
+offset_top = 481.0
+offset_right = 864.0
+offset_bottom = 541.0
+scale = Vector2(1.555, 1.555)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+bbcode_enabled = true
+text = "More maps coming soon."
 
 [node name="CreatedByLabel" type="RichTextLabel" parent="."]
-offset_left = 216.0
-offset_top = 187.0
-offset_right = 403.0
-offset_bottom = 247.0
-theme_override_colors/default_color = Color(0.670259, 0.417416, 0, 1)
+offset_left = 272.0
+offset_top = 179.0
+offset_right = 459.0
+offset_bottom = 239.0
+theme_override_colors/default_color = Color(0.980392, 0.729412, 0.278431, 1)
+theme_override_colors/font_outline_color = Color(0.14902, 0.0941176, 0, 1)
+theme_override_constants/outline_size = 6
 bbcode_enabled = true
 text = "By Dictator productions"
+
+[node name="Background-wip5-front" type="Sprite2D" parent="."]
+z_index = -9
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("10_7j05w")
+
+[node name="Background-wip5-back" type="Sprite2D" parent="."]
+z_index = -12
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("10_1liem")
+
+[node name="Background-wip5-window" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = SubResource("CompressedTexture2D_5dcq3")
 
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
