@@ -1,14 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctqwgvoo3fbxr"]
+[gd_scene load_steps=5 format=3 uid="uid://ctqwgvoo3fbxr"]
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_21o4t"]
+[ext_resource type="Theme" uid="uid://cl4on37nchmy6" path="res://assets/styles/button-scroll.tres" id="2_gj68p"]
 [ext_resource type="Script" path="res://scenes/ui/end_screen.gd" id="2_oudwk"]
-[ext_resource type="StyleBox" uid="uid://x7g8a11xam5q" path="res://scenes/misc/button_hover.tres" id="2_qolap"]
-[ext_resource type="StyleBox" uid="uid://bxfva2igcs5k7" path="res://scenes/misc/normal_button.tres" id="3_shkxw"]
-
-[sub_resource type="Theme" id="Theme_5fm1g"]
-Button/styles/hover = ExtResource("2_qolap")
-Button/styles/normal = ExtResource("3_shkxw")
-Button/styles/pressed = ExtResource("2_qolap")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_216nh"]
 
@@ -28,10 +22,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -457.5
-offset_top = -251.0
-offset_right = 457.5
-offset_bottom = 71.0
+offset_left = -457.0
+offset_top = -292.0
+offset_right = 458.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.909804, 0.654902, 0.137255, 1)
@@ -50,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -457.5
-offset_top = -442.95
-offset_right = 457.745
-offset_bottom = -123.285
+offset_left = -449.0
+offset_top = -455.0
+offset_right = 466.245
+offset_bottom = -135.335
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.764519, 0.50276, 3.85046e-07, 1)
@@ -71,17 +65,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -544.5
-offset_top = -412.95
-offset_right = 370.745
-offset_bottom = -93.285
+offset_left = -536.0
+offset_top = -425.0
+offset_right = 379.245
+offset_bottom = -105.335
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.764519, 0.50276, 3.85046e-07, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_font_sizes/font_size = 30
-text = "Nejlepší tvé skóre: "
+text = "Tvé nejlepší skóre: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -94,12 +88,12 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -305.0
 offset_top = 105.09
-offset_right = 305.0
-offset_bottom = 221.09
+offset_right = 343.0
+offset_bottom = 233.09
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
-theme = SubResource("Theme_5fm1g")
+theme = ExtResource("2_gj68p")
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_216nh")
