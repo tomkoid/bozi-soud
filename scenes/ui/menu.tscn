@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=23 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="8_lp7x5"]
 [ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="10_1liem"]
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="10_7j05w"]
+[ext_resource type="AudioStream" uid="uid://qutw0cuhadu8" path="res://assets/sounds/ambient/menu_ambient.mp3" id="11_ersov"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grc63"]
 atlas = ExtResource("3_kkovv")
@@ -99,7 +100,6 @@ animations = [{
 }]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dcq3"]
-load_path = "res://.godot/imported/background-wip5-window.png-49855e3d1ff51247a1b06379e4cfe546.ctex"
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_f4s0f")
@@ -236,6 +236,12 @@ theme_override_colors/font_color = Color(0.980392, 0.729412, 0.278431, 1)
 theme_override_colors/font_outline_color = Color(0.14902, 0.0941176, 0, 1)
 theme_override_constants/outline_size = 6
 text = "Tvé nejlepší skóre: "
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_ersov")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
