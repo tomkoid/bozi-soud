@@ -1,9 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=25 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" uid="uid://j3jpagdr86pf" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
 [ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="3_kkovv"]
-[ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="4_vuo2u"]
 [ext_resource type="Texture2D" uid="uid://df1r05tlcm114" path="res://assets/sprites/sun-spritesheet1.png" id="5_17g22"]
 [ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="6_wvaxu"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="7_s4v21"]
@@ -11,7 +10,9 @@
 [ext_resource type="FontFile" uid="uid://boxuef2owck6r" path="res://assets/fonts/Jersey15-Regular.ttf" id="9_juhmg"]
 [ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="10_1liem"]
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="10_7j05w"]
+[ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="11_0tyx3"]
 [ext_resource type="AudioStream" uid="uid://qutw0cuhadu8" path="res://assets/sounds/ambient/menu_ambient.mp3" id="11_ersov"]
+[ext_resource type="Texture2D" uid="uid://bqpake0ia34fj" path="res://assets/sprites/arrow_menu.png" id="12_bb6rx"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dcq3"]
 
@@ -101,6 +102,11 @@ animations = [{
 "name": &"idle",
 "speed": 2.0
 }]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dcq3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fyig4"]
+texture = ExtResource("12_bb6rx")
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_f4s0f")
@@ -206,11 +212,6 @@ animation = &"run"
 autoplay = "run"
 frame_progress = 0.304969
 
-[node name="Jesus" type="Sprite2D" parent="."]
-position = Vector2(812.22, 419.45)
-scale = Vector2(6, 6)
-texture = ExtResource("4_vuo2u")
-
 [node name="Sun" type="AnimatedSprite2D" parent="."]
 z_index = -12
 position = Vector2(805, 235)
@@ -288,6 +289,35 @@ stream = ExtResource("11_ersov")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+
+[node name="BackgroundParalax1" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(818, 435.25)
+scale = Vector2(1.58333, 2.62654)
+texture = ExtResource("11_0tyx3")
+
+[node name="SwitchingLevelsButtonRight" type="Button" parent="."]
+offset_left = 902.0
+offset_top = 384.0
+offset_right = 1030.0
+offset_bottom = 512.0
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_fyig4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fyig4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fyig4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fyig4")
+
+[node name="SwitchingLevelsButtonRight2" type="Button" parent="."]
+offset_left = 720.0
+offset_top = 380.0
+offset_right = 848.0
+offset_bottom = 508.0
+scale = Vector2(-1, 1)
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_fyig4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fyig4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fyig4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fyig4")
 
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
