@@ -133,6 +133,7 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="TimerLabel" type="Label" parent="."]
+visible = false
 offset_left = 973.0
 offset_top = 21.0
 offset_right = 1134.0
@@ -207,6 +208,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="GameSpeedCollect" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(403, 209)
 scale = Vector2(5, 5)
 texture = ExtResource("19_g15ba")
@@ -217,7 +219,19 @@ script = ExtResource("20_ebjjh")
 [node name="Area2D" type="Area2D" parent="GameSpeedCollect"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameSpeedCollect/Area2D"]
-scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_tn7s4")
+
+[node name="GameSlowCollect" type="Sprite2D" parent="."]
+position = Vector2(700, 209)
+scale = Vector2(5, 5)
+texture = ExtResource("19_g15ba")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+script = ExtResource("20_ebjjh")
+
+[node name="Area2D" type="Area2D" parent="GameSlowCollect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameSlowCollect/Area2D"]
 shape = SubResource("CircleShape2D_tn7s4")
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
@@ -227,3 +241,4 @@ shape = SubResource("CircleShape2D_tn7s4")
 [connection signal="body_entered" from="BottomCountZone" to="." method="_on_bottom_count_zone_body_entered"]
 [connection signal="animation_finished" from="Angel" to="." method="_on_angel_animation_finished"]
 [connection signal="body_entered" from="GameSpeedCollect/Area2D" to="GameSpeedCollect" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="GameSlowCollect/Area2D" to="GameSlowCollect" method="_on_area_2d_body_entered"]
