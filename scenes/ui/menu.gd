@@ -56,16 +56,21 @@ func _on_quit_button_pressed():
 
 func _on_switching_levels_button_right_pressed():
 	current_level_id += 1
-	print(level_ids[current_level_id])
 	if current_level_id == 1:
 		$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/background_hell_onlyfortest.png")
 	elif current_level_id == 0:
+		$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/background_paralax_1.png")
+	elif current_level_id > len(level_ids) - 1:
+		current_level_id = 0
 		$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/background_paralax_1.png")
 		
 func _on_switching_levels_button_left_pressed():
 	current_level_id -= 1
-	print(level_ids[current_level_id])
 	if current_level_id == 1:
 		$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/background_hell_onlyfortest.png")
 	elif current_level_id == 0:
 		$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/background_paralax_1.png")
+	elif current_level_id < 0:
+		current_level_id = len(level_ids) - 1
+		$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/" + level_ids[len(level_ids) - 1] + ".png")
+		print("res://assets/sprites/" + level_ids[len(level_ids) - 1])
