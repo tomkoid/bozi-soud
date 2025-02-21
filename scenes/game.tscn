@@ -15,3 +15,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="InfoCheck" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+download_chunk_size = 7986
+use_threads = true
