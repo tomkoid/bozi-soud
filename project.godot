@@ -19,7 +19,7 @@ config/icon="res://jesus-logo.png"
 [autoload]
 
 Global="*res://global.gd"
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+DiscordRPCLoader="res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 TransitionScreen="*res://scenes/ui/transition_screen.tscn"
 
 [display]
@@ -62,4 +62,5 @@ escape={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true

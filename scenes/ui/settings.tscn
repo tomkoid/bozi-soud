@@ -115,6 +115,7 @@ offset_bottom = 286.0
 text = "Master Volume"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="MasterVolume"]
+layout_mode = 0
 offset_left = 188.0
 offset_top = -9.0
 offset_right = 468.0
