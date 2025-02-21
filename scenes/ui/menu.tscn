@@ -186,6 +186,19 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.528667
 
+[node name="NewVer" type="RichTextLabel" parent="."]
+visible = false
+z_index = 65
+offset_left = 470.0
+offset_top = 580.0
+offset_right = 667.0
+offset_bottom = 640.0
+scale = Vector2(1.555, 1.555)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+bbcode_enabled = true
+text = "wrong verdffddfdffd"
+
 [node name="ComingSoon" type="RichTextLabel" parent="."]
 z_index = 65
 offset_left = 667.0

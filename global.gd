@@ -1,6 +1,9 @@
 extends Node
 
 var game_controller : GameController
+var game_version = "1.1"
+
+signal version_bad
 
 @export var prev_scene = ""
 

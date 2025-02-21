@@ -9,7 +9,10 @@ func _ready() -> void:
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		game_data = file.get_var(true)
 	get_node("BestScoreLabel").text += str(game_data.best_score)
+	Global.connect("version_bad", _test)
 
+func _test():
+	print("LETS FUCKING GO")
 
 func _on_button_pressed() -> void:
 	Global.game_controller.change_gui_scene("res://scenes/level.tscn")
