@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf1vlk4w6un8v"]
+[gd_scene load_steps=3 format=3 uid="uid://bf1vlk4w6un8v"]
 
-[ext_resource type="Texture2D" uid="uid://c8gm1h63n3hug" path="res://assets/sprites/type-marker3.png" id="1_gcg61"]
 [ext_resource type="Script" path="res://scenes/game_speed_collect.gd" id="2_utwmb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tn7s4"]
@@ -9,7 +8,6 @@ radius = 8.6209
 [node name="GameSpeedCollect" type="Sprite2D"]
 position = Vector2(403, 209)
 scale = Vector2(5, 5)
-texture = ExtResource("1_gcg61")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("2_utwmb")

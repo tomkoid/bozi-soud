@@ -159,11 +159,22 @@ func _on_new_collect_timer_timeout() -> void:
 	if collect_type == 0:
 		print("fast")
 		instance.set_meta("collect_type", "fast")
-	
+		var FastSprite = Sprite2D.new()
+		FastSprite.texture = load("res://assets/sprites/sound-on.png")
+		instance.add_child(FastSprite)
+			
 	if collect_type == 1:
 		print("slow")
 		instance.set_meta("collect_type", "slow")
-
+		var FastSprite = Sprite2D.new()
+		FastSprite.texture = load("res://assets/sprites/sound-off.png")
+		instance.add_child(FastSprite)
+		
 	$Collectibles.add_child(instance)
-	##await get_tree().create_timer(5.0).timeout
+	#await get_tree().create_timer(7.0).timeout
 	#instance.queue_free()
+	#if $Collectibles/GameSpeedCollect.get_meta("started") == "true":
+		#return
+	#else:
+		#
+	
