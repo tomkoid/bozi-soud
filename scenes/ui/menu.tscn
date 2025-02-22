@@ -1,13 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=24 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
 [ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="3_kkovv"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="4_vuo2u"]
 [ext_resource type="Texture2D" uid="uid://df1r05tlcm114" path="res://assets/sprites/sun-spritesheet1.png" id="5_17g22"]
-[ext_resource type="Theme" uid="uid://cl4on37nchmy6" path="res://assets/styles/button-scroll.tres" id="6_wvaxu"]
+[ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="6_wvaxu"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="7_s4v21"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="8_lp7x5"]
+[ext_resource type="FontFile" uid="uid://boxuef2owck6r" path="res://assets/fonts/Jersey15-Regular.ttf" id="9_juhmg"]
 [ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="10_1liem"]
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="10_7j05w"]
 [ext_resource type="AudioStream" uid="uid://qutw0cuhadu8" path="res://assets/sounds/ambient/menu_ambient.mp3" id="11_ersov"]
@@ -106,9 +107,9 @@ script = ExtResource("1_f4s0f")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 74.0
-offset_top = 12.0
+offset_top = 9.0
 offset_right = 574.0
-offset_bottom = 206.645
+offset_bottom = 203.645
 theme_override_colors/default_color = Color(0.909804, 0.654902, 0.137255, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
@@ -121,13 +122,15 @@ text = "Boží Soud"
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 51.0
+offset_bottom = 47.0
 
 [node name="SettingsButton" type="Button" parent="Control"]
 layout_mode = 2
 offset_left = 161.0
-offset_top = 328.0
+offset_top = 317.0
 offset_right = 269.0
-offset_bottom = 360.0
+offset_bottom = 349.0
 scale = Vector2(3, 3)
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
@@ -136,9 +139,9 @@ text = "Nastavení"
 [node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 2
 offset_left = 161.0
-offset_top = 223.0
+offset_top = 212.0
 offset_right = 269.0
-offset_bottom = 255.0
+offset_bottom = 244.0
 scale = Vector2(3, 3)
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
@@ -147,9 +150,9 @@ text = "Ukončit hru"
 [node name="PlayButton" type="Button" parent="Control"]
 layout_mode = 2
 offset_left = 111.0
-offset_top = 434.0
+offset_top = 423.0
 offset_right = 219.0
-offset_bottom = 466.0
+offset_bottom = 455.0
 scale = Vector2(4, 4)
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
@@ -186,18 +189,22 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.528667
 
-[node name="NewVer" type="RichTextLabel" parent="."]
-visible = false
-z_index = 65
-offset_left = 470.0
-offset_top = 580.0
-offset_right = 667.0
-offset_bottom = 640.0
-scale = Vector2(1.555, 1.555)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-bbcode_enabled = true
-text = "wrong verdffddfdffd"
+[node name="InfoButton" type="LinkButton" parent="."]
+z_index = -5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 260.0
+offset_top = 591.0
+offset_right = 388.0
+offset_bottom = 633.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_juhmg")
+theme_override_font_sizes/font_size = 36
+text = "Stáhnout"
 
 [node name="ComingSoon" type="RichTextLabel" parent="."]
 z_index = 65
@@ -213,9 +220,9 @@ text = "More maps coming soon."
 
 [node name="CreatedByLabel" type="RichTextLabel" parent="."]
 offset_left = 272.0
-offset_top = 179.0
+offset_top = 176.0
 offset_right = 459.0
-offset_bottom = 239.0
+offset_bottom = 236.0
 theme_override_colors/default_color = Color(0.980392, 0.729412, 0.278431, 1)
 theme_override_colors/font_outline_color = Color(0.14902, 0.0941176, 0, 1)
 theme_override_constants/outline_size = 6
@@ -241,10 +248,10 @@ scale = Vector2(6, 6)
 texture = SubResource("CompressedTexture2D_5dcq3")
 
 [node name="BestScoreLabel" type="Label" parent="."]
-offset_left = 230.0
-offset_top = 598.0
-offset_right = 377.0
-offset_bottom = 621.0
+offset_left = 249.0
+offset_top = 554.0
+offset_right = 396.0
+offset_bottom = 577.0
 theme_override_colors/font_color = Color(0.980392, 0.729412, 0.278431, 1)
 theme_override_colors/font_outline_color = Color(0.14902, 0.0941176, 0, 1)
 theme_override_constants/outline_size = 6
@@ -253,7 +260,6 @@ text = "Tvé nejlepší skóre: "
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_ersov")
 autoplay = true
-bus = &"Music"
 parameters/looping = true
 
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]

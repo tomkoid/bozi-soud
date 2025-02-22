@@ -23,7 +23,7 @@ func _on_info_check_request_completed(result: int, response_code: int, headers: 
 	print(data.version)
 	
 	if data.version != null and Global.game_version != data.version:
-		Global.version_bad.emit()
+		Global.version_bad.emit(data)
 
 func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
 	if current_gui != null:
