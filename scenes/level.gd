@@ -159,7 +159,7 @@ func _on_new_collect_timer_timeout() -> void:
 	var collect_type = randi_range(0,1)
 	instance = speed_collect_scene.instantiate()
 	instance.position.y = 100
-	instance.position.x = randi_range(400, 600)
+	instance.position.x = randi_range(450, 700)
 
 	var FastSprite = Sprite2D.new()
 	if collect_type == 0:
