@@ -41,7 +41,7 @@ func _show_new_version_msg(data):
 	$InfoButton.uri = data.redirect_url
 
 func _on_button_pressed() -> void:
-	Global.game_controller.change_gui_scene("res://scenes/level.tscn")
+	Global.game_controller.change_gui_scene("res://scenes/level" + str(current_level_id) + ".tscn")
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 
@@ -77,3 +77,4 @@ func _on_switching_levels_button_left_pressed():
 	elif current_level_id < 0:
 		current_level_id = len(level_ids) - 1
 		$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/" + level_ids[len(level_ids) - 1] + ".png")
+		

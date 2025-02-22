@@ -296,8 +296,8 @@ parameters/looping = true
 
 [node name="MiniBackground" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(818, 435.25)
-scale = Vector2(1.58333, 2.62654)
+position = Vector2(808.5, 434)
+scale = Vector2(1.6493, 2.64197)
 texture = ExtResource("11_0tyx3")
 
 [node name="SwitchingLevelsButtonRight" type="Button" parent="."]
