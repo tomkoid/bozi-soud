@@ -19,4 +19,3 @@ offset_bottom = 40.0
 [node name="InfoCheck" type="HTTPRequest" parent="."]
 unique_name_in_owner = true
 download_chunk_size = 7986
-use_threads = true
