@@ -8,25 +8,13 @@ var prev_gui_scene
 var current_gui
 var current_gui_path
 
-@onready var info_check = $InfoCheck
-var info_api_url = "https://bs.tomkoid.cz/api/v1/info"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.game_controller = self
 	change_gui_scene("res://scenes/ui/menu.tscn")
-	
-	info_check.request_completed.connect(_on_info_check_request_completed)
-	print("info: requesting..")
-	info_check.request(info_api_url)
-	
-func _on_info_check_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
-	print("info: request done.")
-	print("info: request body: ", body.get_string_from_utf8())
-	var data = JSON.parse_string(body.get_string_from_utf8())
-	
-	if data != null and Global.game_version != data.version:
-		Global.version_bad.emit(data)
+
+
 
 func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
 	if current_gui != null:

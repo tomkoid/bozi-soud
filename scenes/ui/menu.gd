@@ -3,6 +3,10 @@ var save_path = "user://game.save"
 var game_data = {
 	"best_score": 0
 }
+
+@onready var info_check = $InfoCheck
+var info_api_url = "https://bs.tomkoid.cz/api/v1/info"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$InfoButton.text = "O projektu"
@@ -11,7 +15,19 @@ func _ready() -> void:
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		game_data = file.get_var(true)
 	get_node("BestScoreLabel").text += str(game_data.best_score)
-	Global.version_bad.connect(_show_new_version_msg)
+	
+	# check info api
+	info_check.request_completed.connect(_on_info_check_request_completed)
+	print("info: requesting..")
+	info_check.request(info_api_url)
+	
+func _on_info_check_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	print("info: request done.")
+	print("info: request body: ", body.get_string_from_utf8())
+	var data = JSON.parse_string(body.get_string_from_utf8())
+	
+	if data != null and Global.game_version != data.version:
+		_show_new_version_msg(data)
 
 func _show_new_version_msg(data):
 	$InfoButton.text = "Stáhnout novou verzi hry " + data.version

@@ -105,6 +105,10 @@ animations = [{
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_f4s0f")
 
+[node name="InfoCheck" type="HTTPRequest" parent="."]
+unique_name_in_owner = true
+download_chunk_size = 7986
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 74.0
 offset_top = 9.0
