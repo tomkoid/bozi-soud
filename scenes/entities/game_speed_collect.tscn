@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf1vlk4w6un8v"]
+[gd_scene load_steps=3 format=3 uid="uid://cyb06rtoow20g"]
 
 [ext_resource type="Script" path="res://scenes/game_speed_collect.gd" id="2_utwmb"]
 

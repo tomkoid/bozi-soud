@@ -32,6 +32,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	#print(%GameTimer.wait_time)
+	$TimerLabel.text = str(%GameTimer.wait_time)
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
 	
@@ -150,10 +151,14 @@ func _on_angel_animation_finished():
 @export var speed_collect_scene: PackedScene
 
 func _on_new_collect_timer_timeout() -> void:
+	if $Collectibles.get_child_count() != 0:
+		return
+	#if ($Collectibles.get_tree())
+	
 	var instance
 	var collect_type = randi_range(0,1)
 	instance = speed_collect_scene.instantiate()
-	instance.position.y = 200
+	instance.position.y = 100
 	instance.position.x = randi_range(400, 600)
 
 	if collect_type == 0:
