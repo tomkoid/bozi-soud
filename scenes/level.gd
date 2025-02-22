@@ -161,19 +161,22 @@ func _on_new_collect_timer_timeout() -> void:
 	instance.position.y = 100
 	instance.position.x = randi_range(400, 600)
 
+	var FastSprite = Sprite2D.new()
 	if collect_type == 0:
 		print("fast")
 		instance.set_meta("collect_type", "fast")
-		var FastSprite = Sprite2D.new()
 		FastSprite.texture = load("res://assets/sprites/sound-on.png")
-		instance.add_child(FastSprite)
 			
 	if collect_type == 1:
 		print("slow")
 		instance.set_meta("collect_type", "slow")
-		var FastSprite = Sprite2D.new()
 		FastSprite.texture = load("res://assets/sprites/sound-off.png")
-		instance.add_child(FastSprite)
+	
+	instance.add_child(FastSprite)
+	var despawn_timer = Timer.new()
+	despawn_timer.wait_time = 7.0
+	despawn_timer.name = "DespawnTimer"
+	instance.add_child(despawn_timer)
 		
 	$Collectibles.add_child(instance)
 	#await get_tree().create_timer(7.0).timeout
@@ -182,4 +185,3 @@ func _on_new_collect_timer_timeout() -> void:
 		#return
 	#else:
 		#
-	

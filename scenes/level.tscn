@@ -152,6 +152,7 @@ position = Vector2(580, 768)
 shape = SubResource("RectangleShape2D_y53im")
 
 [node name="Devil" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(280, 508)
 scale = Vector2(5.875, 5.875)
