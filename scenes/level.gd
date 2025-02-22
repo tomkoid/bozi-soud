@@ -20,12 +20,12 @@ func _ready() -> void:
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		game_data = file.get_var(true)
 		
-	$TimerLabel.text = str(%GameTimer.wait_time)
 	refresh_fail_count()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	#print(%GameTimer.wait_time)
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
 	
@@ -91,7 +91,6 @@ func _on_game_harderer_timer_timeout() -> void:
 	if %GameTimer.wait_time <= 0.3:
 		return
 		
-	$TimerLabel.text = str(%GameTimer.wait_time)
 	%GameTimer.wait_time = %GameTimer.wait_time - 0.1
 	%GameHardererTimer.wait_time = %GameHardererTimer.wait_time + 0.25
 
@@ -139,4 +138,24 @@ func _on_game_reset_fail_timeout() -> void:
 
 func _on_angel_animation_finished():
 	$Angel.play("idle")
+
+@export var speed_collect_scene: PackedScene
+
+func _on_new_collect_timer_timeout() -> void:
+	var instance
+	var collect_type = randi_range(0,1)
+	instance = speed_collect_scene.instantiate()
+	instance.position.y = 200
+	instance.position.x = randi_range(400, 600)
+
+	if collect_type == 0:
+		print("fast")
+		instance.set_meta("collect_type", "fast")
 	
+	if collect_type == 1:
+		print("slow")
+		instance.set_meta("collect_type", "slow")
+
+	$Collectibles.add_child(instance)
+	##await get_tree().create_timer(5.0).timeout
+	#instance.queue_free()
