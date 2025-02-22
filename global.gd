@@ -1,7 +1,7 @@
 extends Node
 
 var game_controller : GameController
-var game_version = "1.2"
+var game_version = "1.2.1"
 
 signal version_bad
 
