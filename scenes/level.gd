@@ -25,6 +25,8 @@ func _ready() -> void:
 		
 	$TimerLabel.text = str(%GameTimer.wait_time)
 	refresh_fail_count()
+	
+	_on_game_timer_timeout() # spawn first enemy right away
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
