@@ -16,6 +16,9 @@ func save():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# reset stats
+	stats.fail_count = 0
+	
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		game_data = file.get_var(true)
