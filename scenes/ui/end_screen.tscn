@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctqwgvoo3fbxr"]
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_21o4t"]
-[ext_resource type="Theme" uid="uid://cl4on37nchmy6" path="res://assets/styles/button-scroll.tres" id="2_gj68p"]
+[ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="2_gj68p"]
 [ext_resource type="Script" path="res://scenes/ui/end_screen.gd" id="2_oudwk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_216nh"]
