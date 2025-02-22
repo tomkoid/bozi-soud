@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_m1ibt"]
 [ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_w11xg"]
-[ext_resource type="Theme" uid="uid://cl4on37nchmy6" path="res://assets/styles/button-scroll.tres" id="5_ssxf2"]
+[ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="5_ssxf2"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -50,14 +50,27 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 alignment = 1
 
-[node name="Menu" type="Button" parent="VBoxContainer"]
+[node name="Continue" type="Button" parent="VBoxContainer"]
+z_index = 2
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_ssxf2")
-text = "Menu"
+text = "Pokračovat"
 
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 2
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("5_ssxf2")
+text = "Restartovat"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(0, 7)
 layout_mode = 2
@@ -70,32 +83,19 @@ theme = ExtResource("5_ssxf2")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Nastavení"
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(0, 7)
 layout_mode = 2
 
-[node name="Restart" type="Button" parent="VBoxContainer"]
+[node name="Menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_ssxf2")
-text = "Restartovat"
+text = "Menu"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 7)
-layout_mode = 2
-
-[node name="Continue" type="Button" parent="VBoxContainer"]
-z_index = 2
-layout_mode = 2
-size_flags_vertical = 3
-mouse_default_cursor_shape = 2
-theme = ExtResource("5_ssxf2")
-text = "Pokračovat"
-
-[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
