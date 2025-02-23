@@ -124,7 +124,6 @@ func killzone(body: CharacterBody2D, good_type: String):
 			
 		$Angel.play("cry")
 		
-		stats.score -= randi_range(400, 550)
 		stats.fail_count += 1
 	
 	get_node("UI/Control/VBOX/Control2/MoneyLabel").text = str(stats.score)
