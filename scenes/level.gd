@@ -18,6 +18,7 @@ func save():
 func _ready() -> void:
 	# reset stats
 	stats.fail_count = 0
+	stats.score = 0
 	
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
