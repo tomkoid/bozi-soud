@@ -9,6 +9,8 @@ var info_api_url = "https://bs.tomkoid.cz/api/v1/info"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	TransitionScreen.transition()
+	
 	$InfoButton.text = "O projektu"
 	$InfoButton.uri = "https://codeberg.org/dictator/bozi-soud"
 	if FileAccess.file_exists(save_path):
