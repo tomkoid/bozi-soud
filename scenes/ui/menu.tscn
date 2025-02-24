@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="10_7j05w"]
 [ext_resource type="AudioStream" uid="uid://qutw0cuhadu8" path="res://assets/sounds/ambient/menu_ambient.mp3" id="11_ersov"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dcq3"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_grc63"]
 atlas = ExtResource("3_kkovv")
 region = Rect2(96, 0, 32, 32)
@@ -100,10 +102,28 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dcq3"]
-
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_f4s0f")
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="Background-wip5-front" type="Sprite2D" parent="BG"]
+z_index = -9
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("10_7j05w")
+
+[node name="Background-wip5-back" type="Sprite2D" parent="BG"]
+z_index = -12
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("10_1liem")
+
+[node name="Background-wip5-window" type="Sprite2D" parent="BG"]
+z_index = -10
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = SubResource("CompressedTexture2D_5dcq3")
 
 [node name="InfoCheck" type="HTTPRequest" parent="."]
 unique_name_in_owner = true
@@ -232,24 +252,6 @@ theme_override_colors/font_outline_color = Color(0.14902, 0.0941176, 0, 1)
 theme_override_constants/outline_size = 6
 bbcode_enabled = true
 text = "By Dictator productions"
-
-[node name="Background-wip5-front" type="Sprite2D" parent="."]
-z_index = -9
-position = Vector2(576, 324)
-scale = Vector2(6, 6)
-texture = ExtResource("10_7j05w")
-
-[node name="Background-wip5-back" type="Sprite2D" parent="."]
-z_index = -12
-position = Vector2(576, 324)
-scale = Vector2(6, 6)
-texture = ExtResource("10_1liem")
-
-[node name="Background-wip5-window" type="Sprite2D" parent="."]
-z_index = -10
-position = Vector2(576, 324)
-scale = Vector2(6, 6)
-texture = SubResource("CompressedTexture2D_5dcq3")
 
 [node name="BestScoreLabel" type="Label" parent="."]
 offset_left = 249.0

@@ -14,10 +14,12 @@ func _ready() -> void:
 
 	ready_finished = true
 	
-	$MasterVolume/MasterVolumeSlider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
-	$MusicVolume/MusicVolumeSlider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
-	$SoundEffectVolume/SoundEffectVolumeSldier.value = db_to_linear(AudioServer.get_bus_volume_db(2))
+	$LeftCol/MasterVolume/MasterVolumeSlider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
+	$LeftCol/MusicVolume/MusicVolumeSlider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
+	$LeftCol/SoundEffectVolume/SoundEffectVolumeSldier.value = db_to_linear(AudioServer.get_bus_volume_db(2))
 
+	# update value of display in settings
+	_on_display_type_pressed()
 
 	
 func _physics_process(_delta):
@@ -69,28 +71,25 @@ func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 func _on_escape_button_pressed():
 	pass # Replace with function body.
 
-#change scale aspect on button
-var display_mode = "keep"
 
 func _on_display_type_pressed():
-	if display_mode == "keep":
+	var current_content_scale_aspect = get_tree().root.content_scale_aspect
+	if current_content_scale_aspect == Window.CONTENT_SCALE_ASPECT_KEEP:
 		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_IGNORE
-		display_mode = "ignore"
-		$DisplayType.text = "display type: ignore"
-	elif display_mode == "ignore":
+		$DisplayType.text = "Roztažení obrazovky: ANO"
+	elif current_content_scale_aspect == Window.CONTENT_SCALE_ASPECT_IGNORE:
 		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
-		display_mode = "keep"
-		$DisplayType.text = "display type: keep (might look wierd)"
+		$DisplayType.text = "Roztažení obrazovky: NE (doporučeno)"
 
 
 
 func _on_master_volume_slider_mouse_exited():
-	AudioServer.set_bus_volume_db(0, linear_to_db($MasterVolume/MasterVolumeSlider.value))
+	AudioServer.set_bus_volume_db(0, linear_to_db($LeftCol/MasterVolume/MasterVolumeSlider.value))
 
 
 func _on_music_volume_slider_mouse_exited():
-	AudioServer.set_bus_volume_db(1, linear_to_db($MusicVolume/MusicVolumeSlider.value))
+	AudioServer.set_bus_volume_db(1, linear_to_db($LeftCol/MusicVolume/MusicVolumeSlider.value))
 
 
 func _on_sound_effect_volume_sldier_mouse_exited():
-	AudioServer.set_bus_volume_db(2, linear_to_db($SoundEffectVolume/SoundEffectVolumeSldier.value))
+	AudioServer.set_bus_volume_db(2, linear_to_db($LeftCol/SoundEffectVolume/SoundEffectVolumeSldier.value))

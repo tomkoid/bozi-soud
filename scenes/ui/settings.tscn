@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfubsfvmjqgh8"]
+[gd_scene load_steps=11 format=3 uid="uid://bfubsfvmjqgh8"]
 
 [ext_resource type="Script" path="res://scenes/ui/settings.gd" id="1_bqfg6"]
+[ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="2_dsmqb"]
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="2_etyne"]
 [ext_resource type="Script" path="res://scenes/ui/escape_button_settings.gd" id="3_dhbw2"]
+[ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="3_ovyol"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="3_s6usk"]
-[ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="4_jeyjq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwshd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bav1n"]
 atlas = ExtResource("2_etyne")
@@ -22,14 +25,25 @@ region = Rect2(16, 0, 16, 16)
 process_mode = 3
 script = ExtResource("1_bqfg6")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = -2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_jeyjq")
+[node name="BG" type="Node2D" parent="."]
+
+[node name="Background-wip5-front" type="Sprite2D" parent="BG"]
+z_index = -9
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("2_dsmqb")
+
+[node name="Background-wip5-back" type="Sprite2D" parent="BG"]
+z_index = -12
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = ExtResource("3_ovyol")
+
+[node name="Background-wip5-window" type="Sprite2D" parent="BG"]
+z_index = -10
+position = Vector2(576, 324)
+scale = Vector2(6, 6)
+texture = SubResource("CompressedTexture2D_rwshd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -59,9 +73,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -237.0
-offset_top = -17.0
+offset_top = -9.0
 offset_right = 237.0
-offset_bottom = 177.0
+offset_bottom = 185.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.909804, 0.654902, 0.137255, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -74,6 +88,7 @@ text = "Nastavení"
 
 [node name="VsyncButton" type="Button" parent="."]
 process_mode = 3
+visible = false
 offset_left = 762.0
 offset_top = 145.0
 offset_right = 952.0
@@ -81,11 +96,11 @@ offset_bottom = 206.0
 text = "VSYNC: disabled"
 
 [node name="FullscreenButton" type="CheckButton" parent="."]
-offset_left = 771.0
-offset_top = 238.0
-offset_right = 938.0
-offset_bottom = 269.0
-text = "Fullscreen"
+offset_left = 703.0
+offset_top = 251.0
+offset_right = 917.0
+offset_bottom = 282.0
+text = "Režim celé obrazovky"
 
 [node name="EscapeButton" type="TextureButton" parent="."]
 offset_left = 1066.0
@@ -100,57 +115,55 @@ texture_hover = SubResource("AtlasTexture_62y5m")
 script = ExtResource("3_dhbw2")
 
 [node name="SoundLabel" type="Label" parent="."]
-offset_left = 50.0
+offset_left = 222.0
 offset_top = 169.0
-offset_right = 203.0
+offset_right = 346.0
 offset_bottom = 238.0
 theme_override_font_sizes/font_size = 50
-text = "Sound"
+text = "Zvuk"
 
-[node name="MasterVolume" type="Label" parent="."]
+[node name="LeftCol" type="VBoxContainer" parent="."]
+anchors_preset = -1
 offset_left = 48.0
-offset_top = 263.0
-offset_right = 317.0
-offset_bottom = 286.0
-text = "Master Volume"
+offset_top = 250.0
+offset_right = 255.0
+offset_bottom = 327.0
 
-[node name="MasterVolumeSlider" type="HSlider" parent="MasterVolume"]
+[node name="MasterVolume" type="Label" parent="LeftCol"]
+layout_mode = 2
+text = "Celková hlasitost"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="LeftCol/MasterVolume"]
 layout_mode = 0
-offset_left = 188.0
+offset_left = 216.0
 offset_top = -9.0
-offset_right = 468.0
+offset_right = 496.0
+offset_bottom = 19.0
+max_value = 3.0
+ticks_on_borders = true
+
+[node name="MusicVolume" type="Label" parent="LeftCol"]
+layout_mode = 2
+text = "Hlasitost hudby"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="LeftCol/MusicVolume"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = -9.0
+offset_right = 496.0
 offset_bottom = 19.0
 max_value = 3.0
 step = 0.05
 
-[node name="MusicVolume" type="Label" parent="."]
-offset_left = 48.0
-offset_top = 308.0
-offset_right = 317.0
-offset_bottom = 331.0
-text = "Music Volume"
+[node name="SoundEffectVolume" type="Label" parent="LeftCol"]
+layout_mode = 2
+text = "Hlasitost zvukových efektů"
 
-[node name="MusicVolumeSlider" type="HSlider" parent="MusicVolume"]
+[node name="SoundEffectVolumeSldier" type="HSlider" parent="LeftCol/SoundEffectVolume"]
 layout_mode = 0
-offset_left = 188.0
-offset_top = -9.0
-offset_right = 468.0
-offset_bottom = 19.0
-max_value = 3.0
-step = 0.05
-
-[node name="SoundEffectVolume" type="Label" parent="."]
-offset_left = 47.0
-offset_top = 346.0
-offset_right = 316.0
-offset_bottom = 369.0
-text = "Sound Effect Volume"
-
-[node name="SoundEffectVolumeSldier" type="HSlider" parent="SoundEffectVolume"]
-layout_mode = 0
-offset_left = 190.0
+offset_left = 218.0
 offset_top = -28.0
-offset_right = 470.0
+offset_right = 498.0
 offset_bottom = 52.0
 tooltip_text = "
 "
@@ -158,16 +171,16 @@ max_value = 3.0
 step = 0.05
 
 [node name="DisplayType" type="Button" parent="."]
-offset_left = 781.0
-offset_top = 296.0
-offset_right = 938.0
-offset_bottom = 332.0
+offset_left = 735.0
+offset_top = 303.0
+offset_right = 892.0
+offset_bottom = 339.0
 text = "display type: keep"
 
 [connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
-[connection signal="mouse_exited" from="MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_slider_mouse_exited"]
-[connection signal="mouse_exited" from="MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_mouse_exited"]
-[connection signal="mouse_exited" from="SoundEffectVolume/SoundEffectVolumeSldier" to="." method="_on_sound_effect_volume_sldier_mouse_exited"]
+[connection signal="mouse_exited" from="LeftCol/MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_slider_mouse_exited"]
+[connection signal="mouse_exited" from="LeftCol/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_mouse_exited"]
+[connection signal="mouse_exited" from="LeftCol/SoundEffectVolume/SoundEffectVolumeSldier" to="." method="_on_sound_effect_volume_sldier_mouse_exited"]
 [connection signal="pressed" from="DisplayType" to="." method="_on_display_type_pressed"]
