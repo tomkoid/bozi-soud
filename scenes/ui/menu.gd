@@ -11,6 +11,8 @@ var info_api_url = "https://bs.tomkoid.cz/api/v1/info"
 func _ready() -> void:
 	TransitionScreen.transition()
 	
+	$GameVersion.text += Global.game_version
+	$GameVersion.modulate.a = .7
 	$InfoButton.text = "O projektu"
 	$InfoButton.uri = "https://codeberg.org/dictator/bozi-soud"
 	if FileAccess.file_exists(save_path):

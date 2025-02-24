@@ -129,7 +129,7 @@ texture = SubResource("CompressedTexture2D_5dcq3")
 unique_name_in_owner = true
 download_chunk_size = 7986
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="GameTitle" type="RichTextLabel" parent="."]
 offset_left = 74.0
 offset_top = 9.0
 offset_right = 574.0
@@ -142,6 +142,20 @@ theme_override_constants/shadow_outline_size = 6
 theme_override_fonts/normal_font = ExtResource("2_rtghm")
 theme_override_font_sizes/normal_font_size = 150
 text = "Boží Soud"
+
+[node name="GameVersion" type="RichTextLabel" parent="."]
+show_behind_parent = true
+z_index = 5
+offset_left = 969.0
+offset_top = 6.0
+offset_right = 1148.0
+offset_bottom = 44.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 15
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]Verze: "
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
