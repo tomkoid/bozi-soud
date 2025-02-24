@@ -86,14 +86,16 @@ func _on_display_type_pressed():
 		$DisplayType.text = "Roztažení obrazovky: NE (doporučeno)"
 
 
+func change_bus_vol(val_changed: bool, bus: int, slider: Slider):
+	if not val_changed:
+		return
+	AudioServer.set_bus_volume_db(bus, linear_to_db(slider.value))
 
-func _on_master_volume_slider_mouse_exited():
-	AudioServer.set_bus_volume_db(0, linear_to_db(master_vol_slider.value))
+func _on_master_volume_slider_drag_ended(value_changed: bool) -> void:
+	change_bus_vol(value_changed, 0, master_vol_slider)
 
+func _on_music_volume_slider_drag_ended(value_changed: bool) -> void:
+	change_bus_vol(value_changed, 1, music_vol_slider)
 
-func _on_music_volume_slider_mouse_exited():
-	AudioServer.set_bus_volume_db(1, linear_to_db(music_vol_slider.value))
-
-
-func _on_sound_effect_volume_sldier_mouse_exited():
-	AudioServer.set_bus_volume_db(2, linear_to_db(sfx_vol_slider.value))
+func _on_sound_effect_volume_slider_drag_ended(value_changed: bool) -> void:
+	change_bus_vol(value_changed, 2, sfx_vol_slider)
