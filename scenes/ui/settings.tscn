@@ -50,10 +50,8 @@ z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 2.0
-offset_right = -2.0
-offset_bottom = 2.0
+offset_left = 67.0
+offset_right = 67.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.415686)
@@ -86,22 +84,6 @@ theme_override_fonts/font = ExtResource("3_s6usk")
 theme_override_font_sizes/font_size = 150
 text = "Nastavení"
 
-[node name="VsyncButton" type="Button" parent="."]
-process_mode = 3
-visible = false
-offset_left = 762.0
-offset_top = 145.0
-offset_right = 952.0
-offset_bottom = 206.0
-text = "VSYNC: disabled"
-
-[node name="FullscreenButton" type="CheckButton" parent="."]
-offset_left = 703.0
-offset_top = 251.0
-offset_right = 917.0
-offset_bottom = 282.0
-text = "Režim celé obrazovky"
-
 [node name="EscapeButton" type="TextureButton" parent="."]
 offset_left = 1066.0
 offset_top = 27.0
@@ -122,58 +104,81 @@ offset_bottom = 238.0
 theme_override_font_sizes/font_size = 50
 text = "Zvuk"
 
-[node name="SoundLeftCol" type="VBoxContainer" parent="."]
-offset_left = 115.0
+[node name="LeftCol" type="VBoxContainer" parent="."]
+offset_left = 181.0
 offset_top = 250.0
-offset_right = 322.0
-offset_bottom = 327.0
+offset_right = 443.0
+offset_bottom = 399.0
+theme_override_constants/separation = 20
 
-[node name="MasterVolume" type="Label" parent="SoundLeftCol"]
+[node name="MasterVolumeContainer" type="VBoxContainer" parent="LeftCol"]
 layout_mode = 2
+
+[node name="MasterVolume" type="Label" parent="LeftCol/MasterVolumeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Celková hlasitost"
 
-[node name="MusicVolume" type="Label" parent="SoundLeftCol"]
+[node name="MasterVolumeSlider" type="HSlider" parent="LeftCol/MasterVolumeContainer"]
 layout_mode = 2
+max_value = 3.0
+step = 0.05
+
+[node name="MusicVolumeContainer" type="VBoxContainer" parent="LeftCol"]
+layout_mode = 2
+
+[node name="MusicVolume" type="Label" parent="LeftCol/MusicVolumeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Hlasitost hudby"
 
-[node name="SoundEffectVolume" type="Label" parent="SoundLeftCol"]
+[node name="MusicVolumeSlider" type="HSlider" parent="LeftCol/MusicVolumeContainer"]
 layout_mode = 2
+max_value = 3.0
+step = 0.05
+
+[node name="SoundEffectVolumeContainer" type="VBoxContainer" parent="LeftCol"]
+layout_mode = 2
+
+[node name="SoundEffectVolume" type="Label" parent="LeftCol/SoundEffectVolumeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Hlasitost zvukových efektů"
 
-[node name="SoundRightCol" type="VBoxContainer" parent="."]
-offset_left = 328.0
-offset_top = 255.0
-offset_right = 535.0
-offset_bottom = 332.0
-theme_override_constants/separation = 11
-
-[node name="MasterVolumeSlider" type="HSlider" parent="SoundRightCol"]
-layout_mode = 2
-max_value = 3.0
-step = 0.05
-
-[node name="MusicVolumeSlider" type="HSlider" parent="SoundRightCol"]
-layout_mode = 2
-max_value = 3.0
-step = 0.05
-
-[node name="SoundEffectVolumeSlider" type="HSlider" parent="SoundRightCol"]
+[node name="SoundEffectVolumeSlider" type="HSlider" parent="LeftCol/SoundEffectVolumeContainer"]
 layout_mode = 2
 tooltip_text = "
 "
 max_value = 3.0
 step = 0.05
 
-[node name="DisplayType" type="Button" parent="."]
-offset_left = 709.0
-offset_top = 298.0
-offset_right = 909.0
-offset_bottom = 346.0
+[node name="RightCol" type="VBoxContainer" parent="."]
+anchors_preset = -1
+offset_left = 679.819
+offset_top = 313.961
+offset_right = 941.819
+offset_bottom = 360.961
+theme_override_constants/separation = 20
 
-[connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
-[connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
+[node name="VsyncButton" type="Button" parent="RightCol"]
+process_mode = 3
+visible = false
+layout_mode = 2
+text = "VSYNC: disabled"
+
+[node name="FullscreenButton" type="CheckButton" parent="RightCol"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Režim celé obrazovky"
+
+[node name="DisplayType" type="Button" parent="RightCol"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
-[connection signal="drag_ended" from="SoundRightCol/MasterVolumeSlider" to="." method="_on_master_volume_slider_drag_ended"]
-[connection signal="drag_ended" from="SoundRightCol/MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]
-[connection signal="drag_ended" from="SoundRightCol/SoundEffectVolumeSlider" to="." method="_on_sound_effect_volume_slider_drag_ended"]
-[connection signal="pressed" from="DisplayType" to="." method="_on_display_type_pressed"]
+[connection signal="drag_ended" from="LeftCol/MasterVolumeContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_drag_ended"]
+[connection signal="drag_ended" from="LeftCol/MusicVolumeContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]
+[connection signal="drag_ended" from="LeftCol/SoundEffectVolumeContainer/SoundEffectVolumeSlider" to="." method="_on_sound_effect_volume_slider_drag_ended"]
+[connection signal="pressed" from="RightCol/VsyncButton" to="." method="_on_vsync_button_pressed"]
+[connection signal="toggled" from="RightCol/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
+[connection signal="pressed" from="RightCol/DisplayType" to="." method="_on_display_type_pressed"]

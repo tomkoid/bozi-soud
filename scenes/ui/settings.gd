@@ -2,9 +2,10 @@ extends CanvasLayer
 
 @onready var pause_menu = get_node("../Game/PauseMenu")
 
-@onready var master_vol_slider = $SoundRightCol/MasterVolumeSlider
-@onready var music_vol_slider = $SoundRightCol/MusicVolumeSlider
-@onready var sfx_vol_slider = $SoundRightCol/SoundEffectVolumeSlider
+@onready var slider_folder = "LeftCol/"
+@onready var master_vol_slider = get_node(slider_folder + "MasterVolumeContainer/MasterVolumeSlider")
+@onready var music_vol_slider = get_node(slider_folder + "MusicVolumeContainer/MusicVolumeSlider")
+@onready var sfx_vol_slider = get_node(slider_folder + "SoundEffectVolumeContainer/SoundEffectVolumeSlider")
 
 var ready_finished = false
 
@@ -13,8 +14,8 @@ func _ready() -> void:
 	if pause_menu:
 		pause_menu.hide()
 		
-	$VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
-	$FullscreenButton.button_pressed = is_fullscreen(DisplayServer.window_get_mode())
+	$RightCol/VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
+	$RightCol/FullscreenButton.button_pressed = is_fullscreen(DisplayServer.window_get_mode())
 
 	ready_finished = true
 	
@@ -57,7 +58,7 @@ func _on_vsync_button_pressed() -> void:
 	if vsync_index == 3:
 		vsync_index = 0
 	
-	$VsyncButton.text = check_vsync_mode(vsync_index)
+	$RightCol/VsyncButton.text = check_vsync_mode(vsync_index)
 	DisplayServer.window_set_vsync_mode(vsync_index)
 	pass # Replace with function body.
 
@@ -81,11 +82,11 @@ func _on_display_type_pressed(change_aspect: bool = true):
 	if current_content_scale_aspect == Window.CONTENT_SCALE_ASPECT_KEEP:
 		if change_aspect:
 			get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_IGNORE
-		$DisplayType.text = "Roztažení obrazovky: ANO"
+		$RightCol/DisplayType.text = "Roztažení obrazovky: ANO"
 	elif current_content_scale_aspect == Window.CONTENT_SCALE_ASPECT_IGNORE:
 		if change_aspect:
 			get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
-		$DisplayType.text = "Roztažení obrazovky: NE (doporučeno)"
+		$RightCol/DisplayType.text = "Roztažení obrazovky: NE (doporučeno)"
 
 
 func change_bus_vol(val_changed: bool, bus: int, slider: Slider):
