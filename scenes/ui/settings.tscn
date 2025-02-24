@@ -115,72 +115,66 @@ texture_hover = SubResource("AtlasTexture_62y5m")
 script = ExtResource("3_dhbw2")
 
 [node name="SoundLabel" type="Label" parent="."]
-offset_left = 222.0
+offset_left = 263.0
 offset_top = 169.0
-offset_right = 346.0
+offset_right = 383.0
 offset_bottom = 238.0
 theme_override_font_sizes/font_size = 50
 text = "Zvuk"
 
-[node name="LeftCol" type="VBoxContainer" parent="."]
+[node name="SoundLeftCol" type="VBoxContainer" parent="."]
 anchors_preset = -1
-offset_left = 48.0
+offset_left = 115.0
 offset_top = 250.0
-offset_right = 255.0
+offset_right = 322.0
 offset_bottom = 327.0
 
-[node name="MasterVolume" type="Label" parent="LeftCol"]
+[node name="MasterVolume" type="Label" parent="SoundLeftCol"]
 layout_mode = 2
 text = "Celková hlasitost"
 
-[node name="MasterVolumeSlider" type="HSlider" parent="LeftCol/MasterVolume"]
-layout_mode = 0
-offset_left = 216.0
-offset_top = -9.0
-offset_right = 496.0
-offset_bottom = 19.0
-max_value = 3.0
-step = 0.05
-
-[node name="MusicVolume" type="Label" parent="LeftCol"]
+[node name="MusicVolume" type="Label" parent="SoundLeftCol"]
 layout_mode = 2
 text = "Hlasitost hudby"
 
-[node name="MusicVolumeSlider" type="HSlider" parent="LeftCol/MusicVolume"]
-layout_mode = 0
-offset_left = 216.0
-offset_top = -9.0
-offset_right = 496.0
-offset_bottom = 19.0
-max_value = 3.0
-step = 0.05
-
-[node name="SoundEffectVolume" type="Label" parent="LeftCol"]
+[node name="SoundEffectVolume" type="Label" parent="SoundLeftCol"]
 layout_mode = 2
 text = "Hlasitost zvukových efektů"
 
-[node name="SoundEffectVolumeSlider" type="HSlider" parent="LeftCol/SoundEffectVolume"]
-layout_mode = 0
-offset_left = 218.0
-offset_top = -28.0
-offset_right = 498.0
-offset_bottom = 52.0
+[node name="SoundRightCol" type="VBoxContainer" parent="."]
+offset_left = 328.0
+offset_top = 255.0
+offset_right = 535.0
+offset_bottom = 332.0
+theme_override_constants/separation = 11
+
+[node name="MasterVolumeSlider" type="HSlider" parent="SoundRightCol"]
+layout_mode = 2
+max_value = 3.0
+step = 0.05
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SoundRightCol"]
+layout_mode = 2
+max_value = 3.0
+step = 0.05
+
+[node name="SoundEffectVolumeSlider" type="HSlider" parent="SoundRightCol"]
+layout_mode = 2
 tooltip_text = "
 "
 max_value = 3.0
 step = 0.05
 
 [node name="DisplayType" type="Button" parent="."]
-offset_left = 735.0
-offset_top = 303.0
-offset_right = 892.0
-offset_bottom = 339.0
-text = "display type: keep"
+offset_left = 709.0
+offset_top = 298.0
+offset_right = 909.0
+offset_bottom = 346.0
 
 [connection signal="pressed" from="VsyncButton" to="." method="_on_vsync_button_pressed"]
 [connection signal="toggled" from="FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
-[connection signal="drag_ended" from="LeftCol/MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_slider_drag_ended"]
-[connection signal="drag_ended" from="LeftCol/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]
-[connection signal="drag_ended" from="LeftCol/SoundEffectVolume/SoundEffectVolumeSlider" to="." method="_on_sound_effect_volume_slider_drag_ended"]
+[connection signal="drag_ended" from="SoundRightCol/MasterVolumeSlider" to="." method="_on_master_volume_slider_drag_ended"]
+[connection signal="drag_ended" from="SoundRightCol/MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]
+[connection signal="drag_ended" from="SoundRightCol/SoundEffectVolumeSlider" to="." method="_on_sound_effect_volume_slider_drag_ended"]
 [connection signal="pressed" from="DisplayType" to="." method="_on_display_type_pressed"]

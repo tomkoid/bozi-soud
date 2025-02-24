@@ -2,9 +2,9 @@ extends CanvasLayer
 
 @onready var pause_menu = get_node("../Game/PauseMenu")
 
-@onready var master_vol_slider = $LeftCol/MasterVolume/MasterVolumeSlider
-@onready var music_vol_slider = $LeftCol/MusicVolume/MusicVolumeSlider
-@onready var sfx_vol_slider = $LeftCol/SoundEffectVolume/SoundEffectVolumeSlider
+@onready var master_vol_slider = $SoundRightCol/MasterVolumeSlider
+@onready var music_vol_slider = $SoundRightCol/MusicVolumeSlider
+@onready var sfx_vol_slider = $SoundRightCol/SoundEffectVolumeSlider
 
 var ready_finished = false
 
