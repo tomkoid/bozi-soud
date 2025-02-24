@@ -23,7 +23,7 @@ func _ready() -> void:
 	sfx_vol_slider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
 
 	# update value of display in settings
-	_on_display_type_pressed()
+	_on_display_type_pressed(false) # don't change aspect, just update the button text
 
 	
 func _physics_process(_delta):
@@ -76,13 +76,15 @@ func _on_escape_button_pressed():
 	pass # Replace with function body.
 
 
-func _on_display_type_pressed():
+func _on_display_type_pressed(change_aspect: bool = true):
 	var current_content_scale_aspect = get_tree().root.content_scale_aspect
 	if current_content_scale_aspect == Window.CONTENT_SCALE_ASPECT_KEEP:
-		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_IGNORE
+		if change_aspect:
+			get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_IGNORE
 		$DisplayType.text = "Roztažení obrazovky: ANO"
 	elif current_content_scale_aspect == Window.CONTENT_SCALE_ASPECT_IGNORE:
-		get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
+		if change_aspect:
+			get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
 		$DisplayType.text = "Roztažení obrazovky: NE (doporučeno)"
 
 
