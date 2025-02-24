@@ -32,7 +32,7 @@ enabled=PackedStringArray()
 
 [gui]
 
-theme/custom_font="res://assets/font/VCR_OSD_MONO_1.001.ttf"
+theme/custom_font="res://assets/fonts/Jersey15-Regular.ttf"
 
 [input]
 

@@ -232,13 +232,14 @@ text = "Stáhnout"
 
 [node name="ComingSoon" type="RichTextLabel" parent="."]
 z_index = 65
-offset_left = 667.0
-offset_top = 481.0
-offset_right = 864.0
-offset_bottom = 541.0
-scale = Vector2(1.555, 1.555)
+texture_filter = 2
+offset_left = 670.0
+offset_top = 610.0
+offset_right = 981.0
+offset_bottom = 670.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_constants/outline_size = 31
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "More maps coming soon."
 
@@ -248,20 +249,24 @@ offset_top = 176.0
 offset_right = 459.0
 offset_bottom = 236.0
 theme_override_colors/default_color = Color(0.980392, 0.729412, 0.278431, 1)
-theme_override_colors/font_outline_color = Color(0.14902, 0.0941176, 0, 1)
-theme_override_constants/outline_size = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = -75
+theme_override_font_sizes/normal_font_size = 19
 bbcode_enabled = true
 text = "By Dictator productions"
 
 [node name="BestScoreLabel" type="Label" parent="."]
-offset_left = 249.0
+offset_left = 158.0
 offset_top = 554.0
-offset_right = 396.0
+offset_right = 494.0
 offset_bottom = 577.0
 theme_override_colors/font_color = Color(0.980392, 0.729412, 0.278431, 1)
 theme_override_colors/font_outline_color = Color(0.14902, 0.0941176, 0, 1)
 theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 21
 text = "Tvé nejlepší skóre: "
+horizontal_alignment = 1
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_ersov")
