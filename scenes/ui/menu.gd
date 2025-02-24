@@ -19,7 +19,7 @@ func _ready() -> void:
 	# check info api
 	info_check.request_completed.connect(_on_info_check_request_completed)
 	print("info: requesting..")
-	info_check.request(info_api_url)
+	info_check.request(info_api_url, ["User-Agent: BS (%s)" % Global.game_version])
 	
 func _on_info_check_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	print("info: request done.")
