@@ -2,6 +2,10 @@ extends CanvasLayer
 
 @onready var pause_menu = get_node("../Game/PauseMenu")
 
+@onready var master_vol_slider = $LeftCol/MasterVolume/MasterVolumeSlider
+@onready var music_vol_slider = $LeftCol/MusicVolume/MusicVolumeSlider
+@onready var sfx_vol_slider = $LeftCol/SoundEffectVolume/SoundEffectVolumeSlider
+
 var ready_finished = false
 
 # Called when the node enters the scene tree for the first time.
@@ -14,9 +18,9 @@ func _ready() -> void:
 
 	ready_finished = true
 	
-	$LeftCol/MasterVolume/MasterVolumeSlider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
-	$LeftCol/MusicVolume/MusicVolumeSlider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
-	$LeftCol/SoundEffectVolume/SoundEffectVolumeSldier.value = db_to_linear(AudioServer.get_bus_volume_db(2))
+	master_vol_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
+	music_vol_slider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
+	sfx_vol_slider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
 
 	# update value of display in settings
 	_on_display_type_pressed()
@@ -84,12 +88,12 @@ func _on_display_type_pressed():
 
 
 func _on_master_volume_slider_mouse_exited():
-	AudioServer.set_bus_volume_db(0, linear_to_db($LeftCol/MasterVolume/MasterVolumeSlider.value))
+	AudioServer.set_bus_volume_db(0, linear_to_db(master_vol_slider.value))
 
 
 func _on_music_volume_slider_mouse_exited():
-	AudioServer.set_bus_volume_db(1, linear_to_db($LeftCol/MusicVolume/MusicVolumeSlider.value))
+	AudioServer.set_bus_volume_db(1, linear_to_db(music_vol_slider.value))
 
 
 func _on_sound_effect_volume_sldier_mouse_exited():
-	AudioServer.set_bus_volume_db(2, linear_to_db($LeftCol/SoundEffectVolume/SoundEffectVolumeSldier.value))
+	AudioServer.set_bus_volume_db(2, linear_to_db(sfx_vol_slider.value))

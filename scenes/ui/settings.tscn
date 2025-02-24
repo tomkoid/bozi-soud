@@ -159,7 +159,7 @@ step = 0.05
 layout_mode = 2
 text = "Hlasitost zvukových efektů"
 
-[node name="SoundEffectVolumeSldier" type="HSlider" parent="LeftCol/SoundEffectVolume"]
+[node name="SoundEffectVolumeSlider" type="HSlider" parent="LeftCol/SoundEffectVolume"]
 layout_mode = 0
 offset_left = 218.0
 offset_top = -28.0
@@ -182,5 +182,5 @@ text = "display type: keep"
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
 [connection signal="mouse_exited" from="LeftCol/MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_slider_mouse_exited"]
 [connection signal="mouse_exited" from="LeftCol/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_mouse_exited"]
-[connection signal="mouse_exited" from="LeftCol/SoundEffectVolume/SoundEffectVolumeSldier" to="." method="_on_sound_effect_volume_sldier_mouse_exited"]
+[connection signal="mouse_exited" from="LeftCol/SoundEffectVolume/SoundEffectVolumeSlider" to="." method="_on_sound_effect_volume_sldier_mouse_exited"]
 [connection signal="pressed" from="DisplayType" to="." method="_on_display_type_pressed"]
