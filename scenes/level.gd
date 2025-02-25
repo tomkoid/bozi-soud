@@ -42,8 +42,8 @@ func _process(_delta: float) -> void:
 
 			
 		%UI.hide()
-		get_node("EndScreen/ScoreLabel").text += str(stats.score)
-		get_node("EndScreen/BestScoreLabel").text += str(game_data.best_score)
+		get_node("EndScreen/ScoreContainer/ScoreLabel").text += str(stats.score)
+		get_node("EndScreen/ScoreContainer/BestScoreLabel").text += str(game_data.best_score)
 		get_node("EndScreen").show()
 		get_tree().paused = true
 
