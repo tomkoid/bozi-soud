@@ -113,7 +113,7 @@ func refresh_fail_count():
 	var suffix: String
 	
 	if stats.fail_count == MAX_DEATH_COUNT-1:
-		prefix = "[shake rate=40.0 level=5 connected=1]"
+		prefix = "[shake rate=80.0 level=10 connected=1]"
 		suffix = "[/shake]"
 	
 	
