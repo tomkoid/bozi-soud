@@ -9,6 +9,9 @@ var jump_velocity
 var count = 0
 @export var dir = 1
 
+@onready var player_as = get_node("../../Player/PlayerAS")
+@onready var guy_as = $AnimatedSprite2D
+
 
 func _ready() -> void:
 	var guy_type = get_meta("type")
@@ -28,15 +31,15 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	if is_on_floor() and $AnimatedSprite2D.animation == "jump":
-		$AnimatedSprite2D.stop()
-		$AnimatedSprite2D.play("run")
+	if is_on_floor() and guy_as.animation == "jump":
+		guy_as.stop()
+		guy_as.play("run")
 
 	# Handle jump.
 	if is_on_floor() and not first_jump:
 		if (dir == 1 and position.x >= jump_pos_x) or (dir == -1 and position.x <= jump_pos_x):
 			first_jump = true
-			$AnimatedSprite2D.play("jump")
+			guy_as.play("jump")
 			velocity.y = jump_velocity
 		
 
@@ -47,7 +50,7 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		get_node("../../BoingEffect").play()
-		$"../../Player/PlayerAS".stop()
+		player_as.stop()
 		velocity.y = -1500
-		$"../../Player/PlayerAS".play("bounce")
+		player_as.play("bounce")
 		
