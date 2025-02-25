@@ -32,8 +32,7 @@ func save_load():
 
 	# load window status
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if not s.fullscreen else DisplayServer.WINDOW_MODE_FULLSCREEN)
-	# DisplayServer.window_set_content_scale(s.content_scale)
-
+	Engine.get_main_loop().root.content_scale_aspect = s.content_scale
 
 func init() -> void:
 	save_load()

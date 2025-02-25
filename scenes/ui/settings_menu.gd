@@ -110,6 +110,7 @@ func _on_display_type_pressed(aspect: int = -1):
 			display_type_btn.text = aspect_ignore_msg
 		
 	get_tree().root.content_scale_aspect = apply_aspect
+	Global.settings.s.content_scale = apply_aspect
 
 func change_bus_vol(settings_property: String, val_changed: bool, bus: int, slider: Slider):
 	if not val_changed:
