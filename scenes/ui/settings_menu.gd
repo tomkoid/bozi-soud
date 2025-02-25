@@ -117,6 +117,7 @@ func change_bus_vol(settings_property: String, val_changed: bool, bus: int, slid
 		return
 	AudioServer.set_bus_volume_db(bus, linear_to_db(slider.value))
 	Global.settings.s[settings_property] = float(slider.value)
+	Global.settings.save()
 
 func _on_master_volume_slider_drag_ended(value_changed: bool) -> void:
 	change_bus_vol("master_volume", value_changed, 0, master_vol_slider)
