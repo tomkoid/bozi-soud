@@ -10,6 +10,7 @@ func _on_pressed() -> void:
 	get_node("../..").hide()
 	get_node("../../../PauseMenu").show()
 	get_tree().paused = true
+	Global.settings.save()
 
 var master_bus = AudioServer.get_bus_index("Master")
 
