@@ -7,6 +7,8 @@ extends CanvasLayer
 @onready var music_vol_slider = get_node(slider_folder + "MusicVolumeContainer/MusicVolumeSlider")
 @onready var sfx_vol_slider = get_node(slider_folder + "SoundEffectVolumeContainer/SoundEffectVolumeSlider")
 
+@onready var display_type_btn = $RightCol/DisplayType
+
 var ready_finished = false
 
 # Called when the node enters the scene tree for the first time.
@@ -24,7 +26,7 @@ func _ready() -> void:
 	sfx_vol_slider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
 
 	# update value of display in settings
-	_on_display_type_pressed(false) # don't change aspect, just update the button text
+	_on_display_type_pressed(get_tree().root.content_scale_aspect) # don't change aspect, just update the button text
 
 	
 func _physics_process(_delta):
@@ -76,18 +78,33 @@ func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 func _on_escape_button_pressed():
 	pass # Replace with function body.
 
-
-func _on_display_type_pressed(change_aspect: bool = true):
+# -1 = toggle between
+func _on_display_type_pressed(aspect: int = -1):
 	var current_content_scale_aspect = get_tree().root.content_scale_aspect
-	if current_content_scale_aspect == Window.CONTENT_SCALE_ASPECT_KEEP:
-		if change_aspect:
-			get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_IGNORE
-		$RightCol/DisplayType.text = "Roztažení obrazovky: ANO"
-	elif current_content_scale_aspect == Window.CONTENT_SCALE_ASPECT_IGNORE:
-		if change_aspect:
-			get_tree().root.content_scale_aspect = Window.CONTENT_SCALE_ASPECT_KEEP
-		$RightCol/DisplayType.text = "Roztažení obrazovky: NE (doporučeno)"
-
+		
+	var aspect_keep = Window.CONTENT_SCALE_ASPECT_KEEP
+	var aspect_ignore = Window.CONTENT_SCALE_ASPECT_IGNORE
+	
+	var aspect_keep_msg = "Roztažení obrazovky: NE (doporučeno)"
+	var aspect_ignore_msg = "Roztažení obrazovky: ANO"
+	
+	var apply_aspect: int
+	if aspect == -1:
+		if current_content_scale_aspect == aspect_keep:
+			apply_aspect = aspect_ignore
+			display_type_btn.text = aspect_ignore_msg
+		elif current_content_scale_aspect == aspect_ignore:
+			apply_aspect = aspect_keep
+			display_type_btn.text = aspect_keep_msg
+	else:
+		if aspect == aspect_keep:
+			apply_aspect = aspect_keep
+			display_type_btn.text = aspect_keep_msg
+		elif aspect == aspect_ignore:
+			apply_aspect = aspect_ignore
+			display_type_btn.text = aspect_ignore_msg
+		
+	get_tree().root.content_scale_aspect = apply_aspect
 
 func change_bus_vol(val_changed: bool, bus: int, slider: Slider):
 	if not val_changed:
