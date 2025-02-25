@@ -11,6 +11,7 @@ var jump_velocity
 var count = 0
 @export var dir = 1
 @export var tilt: bool = true
+@export var tilt_speed: float = 0.01
 
 @onready var player_as = get_node("../../Player/PlayerAS")
 @onready var guy_as = $AnimatedSprite2D
@@ -49,7 +50,7 @@ func _physics_process(delta):
 	# tilt fall guy a bit
 	if not is_on_floor() and bridge_jump:
 		theta = wrapf(atan2(0.0, 2.0) - 2.0, PI * dir, PI)
-		rotation += clamp(TAU * 0.015 * delta, 0, abs(theta)) * sign(theta)
+		rotation += clamp(TAU * tilt_speed * delta, 0, abs(theta)) * sign(theta)
 		
 
 
