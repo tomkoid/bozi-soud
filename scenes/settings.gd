@@ -13,7 +13,7 @@ var s = {
 
 var settings_save_path = "user://settings.save"
 
-func save_save():
+func save():
 	var file = FileAccess.open(settings_save_path, FileAccess.WRITE)
 	file.store_var(s)
 	
