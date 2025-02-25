@@ -19,6 +19,9 @@ func _ready() -> void:
 	$RightCol/VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
 	$RightCol/FullscreenButton.button_pressed = is_fullscreen(DisplayServer.window_get_mode())
 
+	if OS.get_name() == "Android" or OS.get_name() == "iOS":
+		$RightCol/FullscreenButton.hide()
+
 	ready_finished = true
 	
 	master_vol_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
