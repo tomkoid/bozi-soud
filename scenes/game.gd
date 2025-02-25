@@ -13,6 +13,7 @@ var current_gui_path
 func _ready() -> void:
 	Global.game_controller = self
 	change_gui_scene("res://scenes/ui/menu.tscn")
+	Global.settings.init()
 
 
 

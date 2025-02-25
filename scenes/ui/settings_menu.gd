@@ -34,6 +34,7 @@ func _physics_process(_delta):
 		if pause_menu:
 			pause_menu.show()
 		Global.game_controller.change_gui_prev()
+		Global.settings.save()
 		
 func check_vsync_mode(mode: int) -> String:
 	if mode == DisplayServer.VSYNC_DISABLED:
@@ -69,10 +70,14 @@ func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 	if not ready_finished:
 		return
 
+	var apply_mode
 	if toggled_on:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		apply_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		apply_mode = DisplayServer.WINDOW_MODE_WINDOWED
+
+	DisplayServer.window_set_mode(apply_mode)
+	Global.settings.s.fullscreen = toggled_on
 
 
 func _on_escape_button_pressed():
@@ -105,17 +110,20 @@ func _on_display_type_pressed(aspect: int = -1):
 			display_type_btn.text = aspect_ignore_msg
 		
 	get_tree().root.content_scale_aspect = apply_aspect
+	Global.settings.s.content_scale = apply_aspect
 
-func change_bus_vol(val_changed: bool, bus: int, slider: Slider):
+func change_bus_vol(settings_property: String, val_changed: bool, bus: int, slider: Slider):
 	if not val_changed:
 		return
 	AudioServer.set_bus_volume_db(bus, linear_to_db(slider.value))
+	Global.settings.s[settings_property] = float(slider.value)
+	Global.settings.save()
 
 func _on_master_volume_slider_drag_ended(value_changed: bool) -> void:
-	change_bus_vol(value_changed, 0, master_vol_slider)
+	change_bus_vol("master_volume", value_changed, 0, master_vol_slider)
 
 func _on_music_volume_slider_drag_ended(value_changed: bool) -> void:
-	change_bus_vol(value_changed, 1, music_vol_slider)
+	change_bus_vol("music_volume", value_changed, 1, music_vol_slider)
 
 func _on_sound_effect_volume_slider_drag_ended(value_changed: bool) -> void:
-	change_bus_vol(value_changed, 2, sfx_vol_slider)
+	change_bus_vol("sfx_volume", value_changed, 2, sfx_vol_slider)
