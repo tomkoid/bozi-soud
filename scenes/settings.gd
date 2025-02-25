@@ -30,6 +30,10 @@ func save_load():
 	AudioServer.set_bus_volume_db(1, linear_to_db(s.music_volume))
 	AudioServer.set_bus_volume_db(2, linear_to_db(s.sfx_volume))
 
+	# load window status
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if not s.fullscreen else DisplayServer.WINDOW_MODE_FULLSCREEN)
+	# DisplayServer.window_set_content_scale(s.content_scale)
+
 
 func init() -> void:
 	save_load()

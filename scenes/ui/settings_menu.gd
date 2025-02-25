@@ -70,10 +70,14 @@ func _on_fullscreen_button_toggled(toggled_on: bool) -> void:
 	if not ready_finished:
 		return
 
+	var apply_mode
 	if toggled_on:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		apply_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		apply_mode = DisplayServer.WINDOW_MODE_WINDOWED
+
+	DisplayServer.window_set_mode(apply_mode)
+	Global.settings.s.fullscreen = toggled_on
 
 
 func _on_escape_button_pressed():
