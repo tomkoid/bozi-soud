@@ -26,6 +26,8 @@ func save_load():
 		print("settings: no save file, using default")
 	
 	# load audio buses
+	if s.master_muted:
+		AudioServer.set_bus_mute(0, true)
 	AudioServer.set_bus_volume_db(0, linear_to_db(s.master_volume))
 	AudioServer.set_bus_volume_db(1, linear_to_db(s.music_volume))
 	AudioServer.set_bus_volume_db(2, linear_to_db(s.sfx_volume))
