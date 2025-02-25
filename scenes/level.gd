@@ -90,6 +90,9 @@ func _on_game_timer_timeout() -> void:
 		instance.get_node("AnimatedSprite2D").flip_h = true
 		instance.get_node("TypeMarker").position.x *= -1
 	
+	# enable fall guy tilt
+	instance.tilt = true
+	
 	$Guys.add_child(instance)
 
 

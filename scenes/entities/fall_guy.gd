@@ -2,12 +2,15 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
+var theta: float
 
 var jump_pos_x = randi_range(20,200)
 var first_jump = false
+var bridge_jump = false
 var jump_velocity
 var count = 0
 @export var dir = 1
+@export var tilt: bool = true
 
 @onready var player_as = get_node("../../Player/PlayerAS")
 @onready var guy_as = $AnimatedSprite2D
@@ -26,7 +29,7 @@ func _ready() -> void:
 	elif dir == -1:
 		jump_pos_x = randi_range(950, 1075)
 
-func _physics_process(delta):
+func _physics_process(delta):	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -41,7 +44,14 @@ func _physics_process(delta):
 			first_jump = true
 			guy_as.play("jump")
 			velocity.y = jump_velocity
+			bridge_jump = true
+	
+	# tilt fall guy a bit
+	if not is_on_floor() and bridge_jump:
+		theta = wrapf(atan2(0.0, 2.0) - 2.0, PI * dir, PI)
+		rotation += clamp(TAU * 0.015 * delta, 0, abs(theta)) * sign(theta)
 		
+
 
 	velocity.x = dir * SPEED
 	move_and_slide()
