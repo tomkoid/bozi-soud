@@ -191,7 +191,7 @@ texture = ExtResource("13_2m20h")
 
 [node name="BoingEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pum5f")
-bus = &"soundefects"
+bus = &"SFX"
 parameters/looping = false
 
 [node name="EndScreen" parent="." instance=ExtResource("15_h0ic7")]
