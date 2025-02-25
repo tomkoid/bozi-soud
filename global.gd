@@ -3,12 +3,15 @@ extends Node
 var game_controller : GameController
 var game_version = "1.2.1"
 
+var settings: GameSettings = GameSettings.new()
+
 signal version_bad
 
 @export var prev_scene = ""
 
 # Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
+func _ready() -> void:
+	settings.init()
 	#DiscordRPC.app_id = 1335673296359915610 # Application ID
 	#DiscordRPC.details = "Religious game about the day of judgement."
 	#DiscordRPC.state = "Playing"
