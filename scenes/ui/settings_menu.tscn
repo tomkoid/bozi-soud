@@ -1,29 +1,29 @@
 [gd_scene load_steps=11 format=3 uid="uid://bfubsfvmjqgh8"]
 
-[ext_resource type="Script" path="res://scenes/ui/settings.gd" id="1_bqfg6"]
-[ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="2_dsmqb"]
-[ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="2_etyne"]
-[ext_resource type="Script" path="res://scenes/ui/escape_button_settings.gd" id="3_dhbw2"]
-[ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="3_ovyol"]
-[ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="3_s6usk"]
+[ext_resource type="Script" path="res://scenes/ui/settings_menu.gd" id="1_p8u3i"]
+[ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="2_fi37o"]
+[ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="3_ukpq6"]
+[ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="4_vbqj3"]
+[ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="5_s6f4o"]
+[ext_resource type="Script" path="res://scenes/ui/escape_button_settings.gd" id="6_5kfsk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwshd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bav1n"]
-atlas = ExtResource("2_etyne")
+atlas = ExtResource("5_s6f4o")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2xta"]
-atlas = ExtResource("2_etyne")
+atlas = ExtResource("5_s6f4o")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_62y5m"]
-atlas = ExtResource("2_etyne")
+atlas = ExtResource("5_s6f4o")
 region = Rect2(16, 0, 16, 16)
 
 [node name="Settings" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_bqfg6")
+script = ExtResource("1_p8u3i")
 
 [node name="BG" type="Node2D" parent="."]
 
@@ -31,13 +31,13 @@ script = ExtResource("1_bqfg6")
 z_index = -9
 position = Vector2(576, 324)
 scale = Vector2(6, 6)
-texture = ExtResource("2_dsmqb")
+texture = ExtResource("2_fi37o")
 
 [node name="Background-wip5-back" type="Sprite2D" parent="BG"]
 z_index = -12
 position = Vector2(576, 324)
 scale = Vector2(6, 6)
-texture = ExtResource("3_ovyol")
+texture = ExtResource("3_ukpq6")
 
 [node name="Background-wip5-window" type="Sprite2D" parent="BG"]
 z_index = -10
@@ -80,7 +80,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -5
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("3_s6usk")
+theme_override_fonts/font = ExtResource("4_vbqj3")
 theme_override_font_sizes/font_size = 150
 text = "Nastavení"
 
@@ -94,7 +94,7 @@ mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_bav1n")
 texture_pressed = SubResource("AtlasTexture_t2xta")
 texture_hover = SubResource("AtlasTexture_62y5m")
-script = ExtResource("3_dhbw2")
+script = ExtResource("6_5kfsk")
 
 [node name="SoundLabel" type="Label" parent="."]
 offset_left = 263.0

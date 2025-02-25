@@ -21,4 +21,4 @@ func _on_restart_pressed():
 
 
 func _on_settings_pressed() -> void:
-	Global.game_controller.change_gui_scene("res://scenes/ui/settings.tscn", false, true)
+	Global.game_controller.change_gui_scene("res://scenes/ui/settings_menu.tscn", false, true)
