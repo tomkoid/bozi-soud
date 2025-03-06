@@ -15,6 +15,10 @@ func _ready() -> void:
 	change_gui_scene("res://scenes/ui/menu.tscn")
 	Global.settings.init()
 
+	# set automatically fullscreen for mobile
+	if OS.get_name() == "Android" or OS.get_name() == "iOS":
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
 
 
 func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
