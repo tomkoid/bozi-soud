@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_21o4t"]
 [ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="2_gj68p"]
-[ext_resource type="Script" path="res://scenes/ui/end_screen.gd" id="2_oudwk"]
+[ext_resource type="Script" uid="uid://bf4ii3i324rwv" path="res://scenes/ui/end_screen.gd" id="2_oudwk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_216nh"]
 

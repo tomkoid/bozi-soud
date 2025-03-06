@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://bfubsfvmjqgh8"]
 
-[ext_resource type="Script" path="res://scenes/ui/settings_menu.gd" id="1_p8u3i"]
+[ext_resource type="Script" uid="uid://bgtkqryvyenhu" path="res://scenes/ui/settings_menu.gd" id="1_p8u3i"]
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="2_fi37o"]
 [ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="3_ukpq6"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="4_vbqj3"]
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="5_s6f4o"]
-[ext_resource type="Script" path="res://scenes/ui/escape_button_settings.gd" id="6_5kfsk"]
+[ext_resource type="Script" uid="uid://b7vpvik3w1xh8" path="res://scenes/ui/escape_button_settings.gd" id="6_5kfsk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwshd"]
 

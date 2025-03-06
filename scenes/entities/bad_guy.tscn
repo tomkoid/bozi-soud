@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dmnwygan1kmer"]
 
-[ext_resource type="Script" path="res://scenes/entities/fall_guy.gd" id="1_0pkrl"]
+[ext_resource type="Script" uid="uid://cv8hbdtsnrfn1" path="res://scenes/entities/fall_guy.gd" id="1_0pkrl"]
 [ext_resource type="Texture2D" uid="uid://ce6yh7esty08v" path="res://assets/sprites/vrah-spritesheet5.png" id="2_6t7pa"]
 [ext_resource type="Texture2D" uid="uid://c8gm1h63n3hug" path="res://assets/sprites/type-marker3.png" id="3_lrfh3"]
 

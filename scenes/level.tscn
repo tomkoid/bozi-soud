@@ -1,8 +1,8 @@
 [gd_scene load_steps=26 format=3 uid="uid://dxr3tijaa52p5"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="1_f416g"]
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_ptexp"]
-[ext_resource type="Script" path="res://scenes/stats.gd" id="2_lw621"]
+[ext_resource type="Script" uid="uid://b3ectbbpkbdhg" path="res://scenes/level.gd" id="1_ptexp"]
+[ext_resource type="Script" uid="uid://bweigv0ub148" path="res://scenes/stats.gd" id="2_lw621"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/objects/platform.tscn" id="3_m4de3"]
 [ext_resource type="AudioStream" uid="uid://c7yk8wq4di6bg" path="res://assets/sounds/sound_effects/boing.mp3" id="4_pum5f"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwwaitliqbm1r"]
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_m1ibt"]
-[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_w11xg"]
+[ext_resource type="Script" uid="uid://dik58xs7hdkkq" path="res://scenes/ui/pause_menu.gd" id="1_w11xg"]
 [ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="5_ssxf2"]
 
 [node name="PauseMenu" type="CanvasLayer"]
