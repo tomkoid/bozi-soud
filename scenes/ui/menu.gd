@@ -13,8 +13,8 @@ func _ready() -> void:
 	
 	$GameVersion.text += Global.game_version
 	$GameVersion.modulate.a = .7
-	$InfoButton.text = "O projektu"
-	$InfoButton.uri = "https://codeberg.org/dictator/bozi-soud"
+	$InfoButton.text = "About the game"
+	$InfoButton.uri = "https://codeberg.org/dystopia/final-trial"
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		game_data = file.get_var(true)
@@ -34,7 +34,7 @@ func _on_info_check_request_completed(result: int, response_code: int, headers: 
 		_show_new_version_msg(data)
 
 func _show_new_version_msg(data):
-	$InfoButton.text = "Stáhnout novou verzi hry " + data.version
+	$InfoButton.text = "New version " + data.version + " available!"
 	$InfoButton.uri = data.redirect_url
 
 func _on_button_pressed() -> void:

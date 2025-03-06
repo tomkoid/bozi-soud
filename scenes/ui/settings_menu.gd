@@ -41,13 +41,13 @@ func _physics_process(_delta):
 		
 func check_vsync_mode(mode: int) -> String:
 	if mode == DisplayServer.VSYNC_DISABLED:
-		return "VSYNC: vypnuto"
+		return "VSYNC: off"
 	if mode == DisplayServer.VSYNC_ENABLED:
-		return "VSYNC: zapnuto"
+		return "VSYNC: on"
 	if mode == DisplayServer.VSYNC_ADAPTIVE:
-		return "VSYNC: adaptivní"
+		return "VSYNC: adaptive"
 
-	return "VSYNC: neznámý"
+	return "VSYNC: unknown"
 
 func is_fullscreen(mode: int) -> bool:
 	if mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
@@ -93,8 +93,8 @@ func _on_display_type_pressed(aspect: int = -1):
 	var aspect_keep = Window.CONTENT_SCALE_ASPECT_KEEP
 	var aspect_ignore = Window.CONTENT_SCALE_ASPECT_IGNORE
 	
-	var aspect_keep_msg = "Roztažení obrazovky: NE (doporučeno)"
-	var aspect_ignore_msg = "Roztažení obrazovky: ANO"
+	var aspect_keep_msg = "Stretch screen: off (recommended)"
+	var aspect_ignore_msg = "Strech screen: on"
 	
 	var apply_aspect: int
 	if aspect == -1:

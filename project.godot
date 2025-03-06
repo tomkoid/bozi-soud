@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Boží Soud"
+config/name="Final Trial"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/bg_color=Color(0.0313726, 0.0313726, 0.0313726, 1)

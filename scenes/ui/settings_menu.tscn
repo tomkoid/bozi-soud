@@ -68,10 +68,10 @@ grow_horizontal = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -237.0
-offset_top = -9.0
-offset_right = 237.0
-offset_bottom = 185.0
+offset_left = -196.5
+offset_top = -6.0
+offset_right = 196.5
+offset_bottom = 188.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.909804, 0.654902, 0.137255, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -80,7 +80,7 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("4_vbqj3")
 theme_override_font_sizes/font_size = 150
-text = "Nastavení"
+text = "Settings"
 
 [node name="EscapeButton" type="TextureButton" parent="."]
 offset_left = 1066.0
@@ -100,7 +100,7 @@ offset_top = 169.0
 offset_right = 383.0
 offset_bottom = 238.0
 theme_override_font_sizes/font_size = 50
-text = "Zvuk"
+text = "Sound"
 
 [node name="LeftCol" type="VBoxContainer" parent="."]
 offset_left = 181.0
@@ -115,7 +115,7 @@ layout_mode = 2
 [node name="MasterVolume" type="Label" parent="LeftCol/MasterVolumeContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Celková hlasitost"
+text = "Master volume"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="LeftCol/MasterVolumeContainer"]
 layout_mode = 2
@@ -128,7 +128,7 @@ layout_mode = 2
 [node name="MusicVolume" type="Label" parent="LeftCol/MusicVolumeContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Hlasitost hudby"
+text = "Music volume"
 
 [node name="MusicVolumeSlider" type="HSlider" parent="LeftCol/MusicVolumeContainer"]
 layout_mode = 2
@@ -141,7 +141,7 @@ layout_mode = 2
 [node name="SoundEffectVolume" type="Label" parent="LeftCol/SoundEffectVolumeContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Hlasitost zvukových efektů"
+text = "SFX volume"
 
 [node name="SoundEffectVolumeSlider" type="HSlider" parent="LeftCol/SoundEffectVolumeContainer"]
 layout_mode = 2
@@ -166,7 +166,7 @@ text = "VSYNC: disabled"
 [node name="FullscreenButton" type="CheckButton" parent="RightCol"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Režim celé obrazovky"
+text = "Fullscreen"
 
 [node name="DisplayType" type="Button" parent="RightCol"]
 layout_mode = 2

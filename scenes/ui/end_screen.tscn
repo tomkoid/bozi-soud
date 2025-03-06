@@ -33,7 +33,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -10
 theme_override_fonts/font = ExtResource("1_21o4t")
 theme_override_font_sizes/font_size = 250
-text = "Prohrál jsi!"
+text = "You lost!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -57,7 +57,7 @@ theme_override_colors/font_color = Color(1, 0.711069, 0.295411, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_font_sizes/font_size = 30
-text = "Skóre: "
+text = "Score: "
 vertical_alignment = 1
 
 [node name="BestScoreLabel" type="Label" parent="ScoreContainer"]
@@ -67,7 +67,7 @@ theme_override_colors/font_color = Color(1, 0.709804, 0.294118, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_font_sizes/font_size = 30
-text = "Tvé nejlepší skóre: "
+text = "Your best score: "
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
@@ -88,7 +88,7 @@ theme = ExtResource("2_gj68p")
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 36
 theme_override_styles/focus = SubResource("StyleBoxEmpty_216nh")
-text = "Nová hra"
+text = "New game"
 script = ExtResource("2_oudwk")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
