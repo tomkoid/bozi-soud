@@ -1,10 +1,30 @@
-[gd_scene load_steps=10 format=3 uid="uid://b277k7mqjh11t"]
+[gd_scene load_steps=11 format=3 uid="uid://b277k7mqjh11t"]
 
 [ext_resource type="Script" uid="uid://n11a3a81rp4a" path="res://scenes/player/cloud.gd" id="1_cww2n"]
 [ext_resource type="Texture2D" uid="uid://be85ixv2ffr6f" path="res://assets/sprites/cloud-spritesheet2.png" id="2_pviv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upinu"]
 size = Vector2(82.5, 18.5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dovo2"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 20, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 60.0
+emission_ring_radius = 35.85
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+spread = 0.0
+flatness = 1.0
+gravity = Vector3(0, 9.28, 0)
+linear_accel_min = 5.0
+linear_accel_max = 300.0
+radial_accel_min = -1.54
+radial_accel_max = 50.77
+scale_min = 5.0
+scale_max = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_645bp"]
 atlas = ExtResource("2_pviv3")
@@ -69,10 +89,24 @@ script = ExtResource("1_cww2n")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
-position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_upinu")
 one_way_collision = true
 one_way_collision_margin = 128.0
+
+[node name="HitParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 200
+lifetime = 5.76
+interp_to_end = 1.0
+one_shot = true
+speed_scale = 6.0
+explosiveness = 0.9
+randomness = 1.0
+fixed_fps = 480
+trail_lifetime = 0.02
+trail_sections = 32
+trail_section_subdivisions = 39
+process_material = SubResource("ParticleProcessMaterial_dovo2")
 
 [node name="PlayerAS" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

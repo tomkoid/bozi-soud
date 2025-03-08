@@ -7,6 +7,13 @@ const JUMP_VELOCITY = -1500
 
 var input = Vector2.ZERO
 
+func _ready():
+	Global.emit_player_particles.connect(hit_particles)
+
+func hit_particles():
+	$HitParticles.restart()
+	$HitParticles.emitting = true
+
 func _physics_process(delta):
 	player_movement(delta)
 	position.x = get_global_mouse_position().x

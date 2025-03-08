@@ -60,6 +60,8 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		Global.emit_player_particles.emit()
+
 		get_node("../../BoingEffect").play()
 		player_as.stop()
 		velocity.y = -1500
