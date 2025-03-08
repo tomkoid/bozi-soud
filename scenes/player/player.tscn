@@ -1,10 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://b277k7mqjh11t"]
+[gd_scene load_steps=13 format=3 uid="uid://b277k7mqjh11t"]
 
 [ext_resource type="Script" uid="uid://n11a3a81rp4a" path="res://scenes/player/cloud.gd" id="1_cww2n"]
 [ext_resource type="Texture2D" uid="uid://be85ixv2ffr6f" path="res://assets/sprites/cloud-spritesheet2.png" id="2_pviv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upinu"]
 size = Vector2(82.5, 18.5)
+
+[sub_resource type="Curve" id="Curve_dovo2"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.492647, 0.94382), 11.4607, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gmlin"]
+curve = SubResource("Curve_dovo2")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dovo2"]
 particle_flag_rotate_y = true
@@ -21,10 +29,11 @@ flatness = 1.0
 gravity = Vector3(0, 9.28, 0)
 linear_accel_min = 5.0
 linear_accel_max = 300.0
-radial_accel_min = -1.54
-radial_accel_max = 50.77
-scale_min = 5.0
-scale_max = 6.0
+radial_accel_min = 7.05
+radial_accel_max = 100.0
+scale_min = 4.0
+scale_max = 5.0
+scale_over_velocity_curve = SubResource("CurveTexture_gmlin")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_645bp"]
 atlas = ExtResource("2_pviv3")
@@ -95,12 +104,13 @@ one_way_collision_margin = 128.0
 
 [node name="HitParticles" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 200
+amount = 100
+amount_ratio = 0.9
 lifetime = 5.76
 interp_to_end = 1.0
 one_shot = true
 speed_scale = 6.0
-explosiveness = 0.9
+explosiveness = 1.0
 randomness = 1.0
 fixed_fps = 480
 trail_lifetime = 0.02
