@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=25 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" uid="uid://j3jpagdr86pf" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
@@ -12,6 +12,20 @@
 [ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="10_1liem"]
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="10_7j05w"]
 [ext_resource type="AudioStream" uid="uid://qutw0cuhadu8" path="res://assets/sounds/ambient/menu_ambient.mp3" id="11_ersov"]
+
+[sub_resource type="Environment" id="Environment_dnmb1"]
+background_mode = 3
+tonemap_mode = 1
+tonemap_exposure = 1.31
+tonemap_white = 0.85
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.15
+glow_strength = 0.95
+glow_bloom = 0.02
+glow_blend_mode = 1
+glow_hdr_threshold = 0.0
+glow_hdr_scale = 1.53
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dcq3"]
 
@@ -104,6 +118,10 @@ animations = [{
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_f4s0f")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+process_mode = 3
+environment = SubResource("Environment_dnmb1")
 
 [node name="BG" type="Node2D" parent="."]
 
