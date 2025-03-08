@@ -7,12 +7,25 @@ const JUMP_VELOCITY = -1500
 
 var input = Vector2.ZERO
 
-func _ready():
-	Global.emit_player_particles.connect(hit_particles)
+@onready var hit_particles = preload("res://scenes/misc/hit_particles.tscn")
+@onready var particles_container = get_node("../")
 
-func hit_particles():
-	$HitParticles.restart()
-	$HitParticles.emitting = true
+func _ready():
+	Global.emit_player_particles.connect(create_hit_particles)
+
+func create_hit_particles():
+	var hp_instance: GPUParticles2D = hit_particles.instantiate()
+	hp_instance.position.x = position.x
+	hp_instance.position.y = position.y
+	hp_instance.name = "HitParticle"
+	particles_container.add_child(hp_instance)
+	hp_instance.restart()
+	
+	hp_instance.finished.connect(remove_hit_particles.bind(hp_instance))
+
+func remove_hit_particles(hp_instance: GPUParticles2D):
+	print("removing")
+	particles_container.remove_child(hp_instance)
 
 func _physics_process(delta):
 	player_movement(delta)
