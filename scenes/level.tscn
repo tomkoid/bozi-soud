@@ -1,17 +1,20 @@
-[gd_scene load_steps=27 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=36 format=3 uid="uid://bcu25miko3ods"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="1_f416g"]
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_ptexp"]
-[ext_resource type="Script" path="res://scenes/stats.gd" id="2_lw621"]
+[ext_resource type="Script" uid="uid://b3ectbbpkbdhg" path="res://scenes/level.gd" id="1_ptexp"]
+[ext_resource type="Script" uid="uid://bweigv0ub148" path="res://scenes/stats.gd" id="2_lw621"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/objects/platform.tscn" id="3_m4de3"]
 [ext_resource type="AudioStream" uid="uid://c7yk8wq4di6bg" path="res://assets/sounds/sound_effects/boing.mp3" id="4_pum5f"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
 [ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="6_do7aq"]
 [ext_resource type="AudioStream" uid="uid://2l77r2p5jhds" path="res://assets/sounds/ambient/ml_sonata.mp3" id="6_gb1vr"]
+[ext_resource type="Shader" uid="uid://ny0nhfab6jj4" path="res://scenes/UI.gdshader" id="6_gunhw"]
+[ext_resource type="AudioStream" uid="uid://dd14shebotu33" path="res://assets/sounds/sound_effects/lifelost.mp3" id="9_8gofh"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
 [ext_resource type="Texture2D" uid="uid://qlgmrvbh6whx" path="res://assets/sprites/sun-spritesheet.png" id="10_6xhcb"]
+[ext_resource type="AudioStream" uid="uid://dt4wkthaiq0rl" path="res://assets/sounds/sound_effects/heartbeat.mp3" id="10_h6wmr"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/entities/angel.tscn" id="11_6e238"]
 [ext_resource type="Texture2D" uid="uid://3hy5yoojyuph" path="res://assets/sprites/cloud1.png" id="13_2m20h"]
@@ -23,7 +26,183 @@
 [sub_resource type="Resource" id="Resource_6wh4q"]
 script = ExtResource("2_lw621")
 score = 0
-fail_count = 0
+lives = 0
+
+[sub_resource type="Gradient" id="Gradient_82cfe"]
+colors = PackedColorArray(0.0253638, 0.0253638, 0.0253638, 1, 0.973535, 0.973535, 0.973535, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gunhw"]
+gradient = SubResource("Gradient_82cfe")
+
+[sub_resource type="Environment" id="Environment_82cfe"]
+background_mode = 3
+ambient_light_source = 2
+ambient_light_color = Color(0.713862, 0.340156, 0.676566, 1)
+tonemap_mode = 1
+ssr_fade_in = 0.204906
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.3
+glow_strength = 1.09
+glow_bloom = 0.02
+glow_blend_mode = 1
+glow_hdr_scale = 2.13
+adjustment_enabled = true
+adjustment_brightness = 1.05
+adjustment_contrast = 1.08
+adjustment_saturation = 1.02
+adjustment_color_correction = SubResource("GradientTexture2D_gunhw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gunhw"]
+shader = ExtResource("6_gunhw")
+shader_parameter/outerRadius = 0.886
+shader_parameter/MainAlpha = 0.675
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_8gofh"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Vignette:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Vignette:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Vignette:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Vignette:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MusicPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HeartbeatPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gunhw"]
+resource_name = "fade_inout"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Vignette:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Vignette:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Vignette:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Vignette:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.36, 2.5, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MusicPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -5, -0.25, 0, 0.25, 0, -5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.36, 2.5, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HeartbeatPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-500, -0.25, 0, 0.25, 0, 9.6, -0.25, 0, 0.25, 0, 9.6, -0.25, 0, 0.25, 0, -500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.03333, 2.73333, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6wmr"]
+_data = {
+&"RESET": SubResource("Animation_8gofh"),
+&"fade_inout": SubResource("Animation_gunhw")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
 size = Vector2(1904, 71)
@@ -83,6 +262,24 @@ script = ExtResource("1_ptexp")
 stats = SubResource("Resource_6wh4q")
 speed_collect_scene = ExtResource("19_tgteq")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_82cfe")
+
+[node name="Vignette" type="ColorRect" parent="."]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+z_index = 50
+material = SubResource("ShaderMaterial_gunhw")
+offset_left = -153.0
+offset_top = -52.0
+offset_right = 1401.0
+offset_bottom = 698.0
+
+[node name="VignettePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h6wmr")
+}
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
 
@@ -94,7 +291,9 @@ scale = Vector2(4.7743, 4)
 texture = ExtResource("2_nexhj")
 
 [node name="Player" parent="." instance=ExtResource("1_f416g")]
+z_index = 1
 position = Vector2(578, 446)
+scale = Vector2(2, 2)
 
 [node name="PlatformLeft" parent="." instance=ExtResource("3_m4de3")]
 position = Vector2(152, 330)
@@ -127,6 +326,16 @@ one_shot = true
 stream = ExtResource("6_gb1vr")
 autoplay = true
 bus = &"Music"
+parameters/looping = true
+
+[node name="LifeLostPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_8gofh")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="HeartbeatPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_h6wmr")
+volume_db = -500.0
 parameters/looping = true
 
 [node name="TimerLabel" type="Label" parent="."]
@@ -163,6 +372,7 @@ frame = 1
 frame_progress = 1.0
 
 [node name="Sun" type="AnimatedSprite2D" parent="."]
+modulate = Color(1.5, 1.5, 1.5, 1)
 z_index = -3
 position = Vector2(579.89, 73.407)
 scale = Vector2(7.813, 7.813)
@@ -209,6 +419,10 @@ wait_time = 10.0
 autostart = true
 
 [node name="Collectibles" type="Node2D" parent="."]
+
+[node name="Particles" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]

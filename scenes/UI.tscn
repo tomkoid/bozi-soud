@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dc2coaqu76bfd"]
+[gd_scene load_steps=14 format=3 uid="uid://dc2coaqu76bfd"]
 
-[ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="1_wnk3n"]
-[ext_resource type="Script" path="res://scenes/ui/escape_button.gd" id="2_1rrka"]
+[ext_resource type="Script" uid="uid://btnieqob7u125" path="res://scenes/ui/escape_button.gd" id="2_1rrka"]
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="2_k1ucb"]
 [ext_resource type="Texture2D" uid="uid://crpj1v0vajmno" path="res://assets/sprites/stats-icons.png" id="3_sqnw3"]
+[ext_resource type="FontFile" uid="uid://boxuef2owck6r" path="res://assets/fonts/Jersey15-Regular.ttf" id="4_mfcar"]
 [ext_resource type="Texture2D" uid="uid://cv3wspse2gwda" path="res://assets/sprites/sound_spritesheet1.png" id="5_7fd41"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7aphu"]
@@ -18,9 +18,13 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("2_k1ucb")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4motb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_75u2n"]
 atlas = ExtResource("3_sqnw3")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(16, 0, 16, 0)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlde"]
+atlas = SubResource("AtlasTexture_75u2n")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhed8"]
 atlas = ExtResource("3_sqnw3")
@@ -69,20 +73,20 @@ layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/VBOX/Control"]
 position = Vector2(72, 135)
-scale = Vector2(3.03125, 3.03125)
-texture = SubResource("AtlasTexture_4motb")
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_3wlde")
 
-[node name="FailCount" type="RichTextLabel" parent="Control/VBOX/Control"]
+[node name="LivesCount" type="RichTextLabel" parent="Control/VBOX/Control"]
 layout_mode = 2
 offset_left = 120.0
-offset_top = 111.0
+offset_top = 101.0
 offset_right = 489.0
-offset_bottom = 180.0
+offset_bottom = 172.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("1_wnk3n")
-theme_override_font_sizes/normal_font_size = 50
+theme_override_fonts/normal_font = ExtResource("4_mfcar")
+theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
-text = "0/0"
+text = "69"
 
 [node name="UntilReset" type="Label" parent="Control/VBOX/Control"]
 layout_mode = 0
@@ -91,8 +95,8 @@ offset_top = 164.0
 offset_right = 422.0
 offset_bottom = 233.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wnk3n")
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("4_mfcar")
+theme_override_font_sizes/font_size = 32
 text = "next reset:"
 
 [node name="Control2" type="Control" parent="Control/VBOX"]
@@ -106,12 +110,12 @@ texture = SubResource("AtlasTexture_hhed8")
 [node name="MoneyLabel" type="Label" parent="Control/VBOX/Control2"]
 layout_mode = 2
 offset_left = 120.0
-offset_top = 27.0
+offset_top = 16.0
 offset_right = 489.0
-offset_bottom = 71.0
+offset_bottom = 87.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wnk3n")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("4_mfcar")
+theme_override_font_sizes/font_size = 70
 text = "0"
 
 [node name="SoundMuteToggle" type="TextureButton" parent="Control"]

@@ -5,6 +5,8 @@ var s = {
 	"music_volume": 1.0,
 	"sfx_volume": 1.0,
 	
+	"rtx": true,
+	"particles": true,
 	"fullscreen": false,
 	"content_scale": Window.CONTENT_SCALE_ASPECT_KEEP,
 	
@@ -20,7 +22,11 @@ func save():
 func save_load():
 	if FileAccess.file_exists(settings_save_path):
 		var file = FileAccess.open(settings_save_path, FileAccess.READ)
-		s = file.get_var(true)
+		var s_stored = file.get_var(true)
+		for key in s_stored.keys():
+			s[key] = s_stored[key]
+		
+		
 		print("settings: loaded from save file")
 	else:
 		print("settings: no save file, using default")

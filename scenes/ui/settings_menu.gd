@@ -15,9 +15,14 @@ var ready_finished = false
 func _ready() -> void:
 	if pause_menu:
 		pause_menu.hide()
-		
+	
+	$RightCol/ParticlesButton.button_pressed = Global.settings.s["particles"]
+	$RightCol/RTXButton.button_pressed = Global.settings.s["rtx"]
 	$RightCol/VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
 	$RightCol/FullscreenButton.button_pressed = is_fullscreen(DisplayServer.window_get_mode())
+
+	if OS.get_name() == "Android" or OS.get_name() == "iOS":
+		$RightCol/FullscreenButton.hide()
 
 	ready_finished = true
 	
@@ -38,13 +43,13 @@ func _physics_process(_delta):
 		
 func check_vsync_mode(mode: int) -> String:
 	if mode == DisplayServer.VSYNC_DISABLED:
-		return "VSYNC: vypnuto"
+		return "VSYNC: off"
 	if mode == DisplayServer.VSYNC_ENABLED:
-		return "VSYNC: zapnuto"
+		return "VSYNC: on"
 	if mode == DisplayServer.VSYNC_ADAPTIVE:
-		return "VSYNC: adaptivní"
+		return "VSYNC: adaptive"
 
-	return "VSYNC: neznámý"
+	return "VSYNC: unknown"
 
 func is_fullscreen(mode: int) -> bool:
 	if mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
@@ -90,8 +95,8 @@ func _on_display_type_pressed(aspect: int = -1):
 	var aspect_keep = Window.CONTENT_SCALE_ASPECT_KEEP
 	var aspect_ignore = Window.CONTENT_SCALE_ASPECT_IGNORE
 	
-	var aspect_keep_msg = "Roztažení obrazovky: NE (doporučeno)"
-	var aspect_ignore_msg = "Roztažení obrazovky: ANO"
+	var aspect_keep_msg = "Stretch screen: off (recommended)"
+	var aspect_ignore_msg = "Strech screen: on"
 	
 	var apply_aspect: int
 	if aspect == -1:
@@ -127,3 +132,13 @@ func _on_music_volume_slider_drag_ended(value_changed: bool) -> void:
 
 func _on_sound_effect_volume_slider_drag_ended(value_changed: bool) -> void:
 	change_bus_vol("sfx_volume", value_changed, 2, sfx_vol_slider)
+
+
+func _on_particles_button_toggled(toggled_on: bool) -> void:
+	Global.settings.s["particles"] = toggled_on
+
+
+func _on_rtx_button_toggled(toggled_on: bool) -> void:
+	print("setting to: ", toggled_on)
+	Global.settings.s["rtx"] = toggled_on
+	Global.settings.save()
