@@ -1,4 +1,4 @@
-# Boží soud
+# Final Trial
 
 Spiritual game about the day of judgement. WORK IN PROGRESS
 <br>
@@ -21,15 +21,6 @@ Spiritual game about the day of judgement. WORK IN PROGRESS
 - [ ] translate the game to English
 
 
-## Roadmap for [1.0 release](https://codeberg.org/dictator/bozi-soud/releases/tag/1.0) (done)
+## [1.0 release](https://codeberg.org/dictator/bozi-soud/releases/tag/1.0)
 
-- [x] fyzika obláčku
-- [x] sprity
-	- [x] sprite boha 
-	- [x] sprite pozadí
-	- [x] sprite typku co budou padat
-	- [x] sprite platforem ze kterych budou padat
-- [x] animace
-- [x] menu
-- [x] pause scene
-- [x] hezky tlacitka
+

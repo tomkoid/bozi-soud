@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfubsfvmjqgh8"]
+[gd_scene load_steps=14 format=3 uid="uid://bfubsfvmjqgh8"]
 
-[ext_resource type="Script" path="res://scenes/ui/settings_menu.gd" id="1_p8u3i"]
+[ext_resource type="Script" uid="uid://bgtkqryvyenhu" path="res://scenes/ui/settings_menu.gd" id="1_p8u3i"]
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="2_fi37o"]
 [ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="3_ukpq6"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="4_vbqj3"]
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="5_s6f4o"]
-[ext_resource type="Script" path="res://scenes/ui/escape_button_settings.gd" id="6_5kfsk"]
+[ext_resource type="Script" uid="uid://b7vpvik3w1xh8" path="res://scenes/ui/escape_button_settings.gd" id="6_5kfsk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwshd"]
 
@@ -20,6 +20,19 @@ region = Rect2(16, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_62y5m"]
 atlas = ExtResource("5_s6f4o")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ywggk"]
+load_path = "res://.godot/imported/sound_spritesheet1.png-dfff062835f1c920ffa6f72e5edf5012.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngbvi"]
+atlas = SubResource("CompressedTexture2D_ywggk")
+region = Rect2(0, 0, 16, 0)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywggk"]
+atlas = SubResource("CompressedTexture2D_ywggk")
+region = Rect2(16, 0, 16, 0)
+filter_clip = true
 
 [node name="Settings" type="CanvasLayer"]
 process_mode = 3
@@ -50,8 +63,6 @@ z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 67.0
-offset_right = 67.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.415686)
@@ -70,10 +81,10 @@ grow_horizontal = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -237.0
-offset_top = -9.0
-offset_right = 237.0
-offset_bottom = 185.0
+offset_left = -196.5
+offset_top = -6.0
+offset_right = 196.5
+offset_bottom = 188.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.909804, 0.654902, 0.137255, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -82,7 +93,7 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("4_vbqj3")
 theme_override_font_sizes/font_size = 150
-text = "Nastavení"
+text = "Settings"
 
 [node name="EscapeButton" type="TextureButton" parent="."]
 offset_left = 1066.0
@@ -102,27 +113,51 @@ offset_top = 169.0
 offset_right = 383.0
 offset_bottom = 238.0
 theme_override_font_sizes/font_size = 50
-text = "Zvuk"
+text = "Sound"
+
+[node name="GraphicsLabel" type="Label" parent="."]
+offset_left = 731.0
+offset_top = 250.0
+offset_right = 893.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 50
+text = "Graphics"
 
 [node name="LeftCol" type="VBoxContainer" parent="."]
 offset_left = 181.0
 offset_top = 250.0
-offset_right = 443.0
-offset_bottom = 399.0
+offset_right = 451.0
+offset_bottom = 440.0
 theme_override_constants/separation = 20
 
 [node name="MasterVolumeContainer" type="VBoxContainer" parent="LeftCol"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="LeftCol/MasterVolumeContainer"]
+layout_mode = 2
+
+[node name="MasterVolumeMute" type="TextureButton" parent="LeftCol/MasterVolumeContainer/Control"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = -8.0
+offset_right = 291.0
+offset_bottom = 8.0
+scale = Vector2(3, 3)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ngbvi")
+texture_pressed = SubResource("AtlasTexture_ywggk")
 
 [node name="MasterVolume" type="Label" parent="LeftCol/MasterVolumeContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Celková hlasitost"
+text = "Master volume"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="LeftCol/MasterVolumeContainer"]
 layout_mode = 2
 max_value = 3.0
-step = 0.05
+step = 0.333
+tick_count = 10
 
 [node name="MusicVolumeContainer" type="VBoxContainer" parent="LeftCol"]
 layout_mode = 2
@@ -130,12 +165,13 @@ layout_mode = 2
 [node name="MusicVolume" type="Label" parent="LeftCol/MusicVolumeContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Hlasitost hudby"
+text = "Music volume"
 
 [node name="MusicVolumeSlider" type="HSlider" parent="LeftCol/MusicVolumeContainer"]
 layout_mode = 2
 max_value = 3.0
-step = 0.05
+step = 0.333
+tick_count = 10
 
 [node name="SoundEffectVolumeContainer" type="VBoxContainer" parent="LeftCol"]
 layout_mode = 2
@@ -143,20 +179,21 @@ layout_mode = 2
 [node name="SoundEffectVolume" type="Label" parent="LeftCol/SoundEffectVolumeContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Hlasitost zvukových efektů"
+text = "SFX volume"
 
 [node name="SoundEffectVolumeSlider" type="HSlider" parent="LeftCol/SoundEffectVolumeContainer"]
 layout_mode = 2
 tooltip_text = "
 "
 max_value = 3.0
-step = 0.05
+step = 0.333
+tick_count = 10
 
 [node name="RightCol" type="VBoxContainer" parent="."]
-offset_left = 679.819
+offset_left = 617.344
 offset_top = 313.961
-offset_right = 941.819
-offset_bottom = 360.961
+offset_right = 1008.93
+offset_bottom = 376.961
 theme_override_constants/separation = 20
 
 [node name="VsyncButton" type="Button" parent="RightCol"]
@@ -165,19 +202,26 @@ visible = false
 layout_mode = 2
 text = "VSYNC: disabled"
 
+[node name="ParticlesButton" type="CheckButton" parent="RightCol"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Enable Particles"
+
 [node name="FullscreenButton" type="CheckButton" parent="RightCol"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Režim celé obrazovky"
+text = "Fullscreen"
 
 [node name="DisplayType" type="Button" parent="RightCol"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
+[connection signal="toggled" from="LeftCol/MasterVolumeContainer/Control/MasterVolumeMute" to="." method="_on_master_volume_mute_toggled"]
 [connection signal="drag_ended" from="LeftCol/MasterVolumeContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_drag_ended"]
 [connection signal="drag_ended" from="LeftCol/MusicVolumeContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]
 [connection signal="drag_ended" from="LeftCol/SoundEffectVolumeContainer/SoundEffectVolumeSlider" to="." method="_on_sound_effect_volume_slider_drag_ended"]
 [connection signal="pressed" from="RightCol/VsyncButton" to="." method="_on_vsync_button_pressed"]
+[connection signal="toggled" from="RightCol/ParticlesButton" to="." method="_on_particles_button_toggled"]
 [connection signal="toggled" from="RightCol/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="RightCol/DisplayType" to="." method="_on_display_type_pressed"]
