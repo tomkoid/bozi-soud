@@ -176,18 +176,19 @@ func _on_new_collect_timer_timeout() -> void:
 	instance.position.y = 100
 	instance.position.x = randi_range(450, 700)
 
-	var FastSprite = Sprite2D.new()
+	var CollectSprite = Sprite2D.new()
 	if collect_type == 0:
 		print("fast")
 		instance.set_meta("collect_type", "fast")
-		FastSprite.texture = load("res://assets/sprites/sound-on.png")
+		CollectSprite.texture = load("res://assets/sprites/sound-on.png")
+		
 			
 	if collect_type == 1:
 		print("slow")
 		instance.set_meta("collect_type", "slow")
-		FastSprite.texture = load("res://assets/sprites/sound-off.png")
+		CollectSprite.texture = load("res://assets/sprites/sound-off.png")
 	
-	instance.add_child(FastSprite)
+	instance.add_child(CollectSprite)
 	var despawn_timer = Timer.new()
 	despawn_timer.wait_time = 7.0
 	despawn_timer.name = "DespawnTimer"
