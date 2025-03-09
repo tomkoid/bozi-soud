@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -1500
 var input = Vector2.ZERO
 
 @onready var hit_particles = preload("res://scenes/misc/hit_particles.tscn")
-@onready var particles_container = get_node("../")
+@onready var particles_container = get_node("../Particles")
 
 func _ready():
 	Global.emit_player_particles.connect(create_hit_particles)

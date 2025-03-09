@@ -233,6 +233,10 @@ visible = false
 unique_name_in_owner = true
 visible = false
 
+[node name="Particles" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
 [connection signal="timeout" from="GameResetFail" to="." method="_on_game_reset_fail_timeout"]
