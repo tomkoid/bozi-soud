@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bcu25miko3ods"]
+[gd_scene load_steps=36 format=3 uid="uid://bcu25miko3ods"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="1_f416g"]
 [ext_resource type="Script" uid="uid://b3ectbbpkbdhg" path="res://scenes/level.gd" id="1_ptexp"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
 [ext_resource type="Texture2D" uid="uid://qlgmrvbh6whx" path="res://assets/sprites/sun-spritesheet.png" id="10_6xhcb"]
+[ext_resource type="AudioStream" uid="uid://dt4wkthaiq0rl" path="res://assets/sounds/sound_effects/heartbeat.mp3" id="10_h6wmr"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
 [ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/entities/angel.tscn" id="11_6e238"]
 [ext_resource type="Texture2D" uid="uid://3hy5yoojyuph" path="res://assets/sprites/cloud1.png" id="13_2m20h"]
@@ -114,6 +115,17 @@ tracks/4/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HeartbeatPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_gunhw"]
 resource_name = "fade_inout"
@@ -172,6 +184,17 @@ tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -5, -0.25, 0, 0.25, 0, -5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.36, 2.5, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HeartbeatPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-500, -0.25, 0, 0.25, 0, 9.6, -0.25, 0, 0.25, 0, 9.6, -0.25, 0, 0.25, 0, -500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.03333, 2.73333, 3)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h6wmr"]
@@ -305,8 +328,13 @@ parameters/looping = true
 
 [node name="LifeLostPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_8gofh")
-volume_db = 1.182
+volume_db = -6.0
 bus = &"SFX"
+
+[node name="HeartbeatPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_h6wmr")
+volume_db = -500.0
+parameters/looping = true
 
 [node name="TimerLabel" type="Label" parent="."]
 visible = false

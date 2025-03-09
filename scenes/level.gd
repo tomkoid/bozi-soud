@@ -136,6 +136,9 @@ func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:
 		stats.score += randi_range(100, 110)
 	else:
+		$HeartbeatPlayer.stop()
+		$HeartbeatPlayer.play()
+		$LifeLostPlayer.stop()
 		$LifeLostPlayer.play()
 		$VignettePlayer.stop()
 		$VignettePlayer.play("fade_inout")
