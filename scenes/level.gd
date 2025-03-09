@@ -1,6 +1,6 @@
 extends Node2D
 
-var MAX_DEATH_COUNT = 3
+var LIVES_COUNT = 3
 
 @export var stats: Stats
 
@@ -17,7 +17,7 @@ func save():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# reset stats
-	stats.fail_count = 0
+	stats.lives = LIVES_COUNT
 	stats.score = 0
 	
 	if FileAccess.file_exists(save_path):
@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 		get_tree().reload_current_scene()
 
 
-	if stats.fail_count >= MAX_DEATH_COUNT:
+	if stats.lives <= 0:
 		if game_data.best_score < stats.score or game_data.best_score == 0:
 			game_data.best_score = stats.score
 			save()
@@ -48,7 +48,7 @@ func _process(_delta: float) -> void:
 		get_node("EndScreen").show()
 		get_tree().paused = true
 
-		stats.fail_count = 0
+		stats.lives = LIVES_COUNT
 		stats.score = 0
 	
 	if Input.is_action_just_pressed("escape"):
@@ -113,19 +113,21 @@ func _on_game_harderer_timer_timeout() -> void:
 	%GameHardererTimer.wait_time = %GameHardererTimer.wait_time + 0.25
 
 func refresh_fail_count():
-	var fc_node = get_node("UI/Control/VBOX/Control/FailCount")
-	var text_color = Color(stats.fail_count * 1.0/(MAX_DEATH_COUNT-1),0.0,0.0,1.0)
+	var fc_node = get_node("UI/Control/VBOX/Control/LivesCount")
+	# this function gives us the proper red color based on the lives count
+	# f(n) = 1.5 - 0.5n
+	var text_color = Color(1.5-0.5*stats.lives,0.0,0.0,1.0)
 	fc_node.set("theme_override_colors/default_color", text_color)
 	
 	var prefix: String
 	var suffix: String
 	
-	if stats.fail_count == MAX_DEATH_COUNT-1:
+	if stats.lives == 1:
 		prefix = "[shake rate=80.0 level=10 connected=1]"
 		suffix = "[/shake]"
 	
 	
-	fc_node.text = prefix + str(stats.fail_count) + "/" + str(MAX_DEATH_COUNT) + suffix
+	fc_node.text = prefix + str(stats.lives) + suffix
 
 func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:
@@ -136,7 +138,7 @@ func killzone(body: CharacterBody2D, good_type: String):
 			
 		$Angel.play("cry")
 		
-		stats.fail_count += 1
+		stats.lives -= 1
 	
 	get_node("UI/Control/VBOX/Control2/MoneyLabel").text = str(stats.score)
 	refresh_fail_count()
@@ -149,7 +151,7 @@ func _on_top_count_zone_body_entered(body):
 	killzone(body, "good")
 
 func _on_game_reset_fail_timeout() -> void:
-	stats.fail_count = 0
+	stats.lives = LIVES_COUNT
 	refresh_fail_count()
 	
 

@@ -22,7 +22,7 @@
 [sub_resource type="Resource" id="Resource_6wh4q"]
 script = ExtResource("2_lw621")
 score = 0
-fail_count = 0
+lives = 0
 
 [sub_resource type="Gradient" id="Gradient_82cfe"]
 colors = PackedColorArray(0.0253638, 0.0253638, 0.0253638, 1, 0.973535, 0.973535, 0.973535, 1)
