@@ -14,6 +14,9 @@ func _ready():
 	Global.emit_player_particles.connect(create_hit_particles)
 
 func create_hit_particles():
+	if Global.settings.s["particles"] == false:
+		return
+
 	var hp_instance: GPUParticles2D = hit_particles.instantiate()
 	hp_instance.position.x = position.x
 	hp_instance.position.y = position.y
