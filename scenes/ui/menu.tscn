@@ -148,6 +148,7 @@ unique_name_in_owner = true
 download_chunk_size = 7986
 
 [node name="GameTitle" type="RichTextLabel" parent="."]
+texture_filter = 6
 offset_left = 33.0
 offset_top = 9.0
 offset_right = 607.0
@@ -159,7 +160,8 @@ theme_override_constants/shadow_offset_x = -5
 theme_override_constants/shadow_outline_size = 6
 theme_override_fonts/normal_font = ExtResource("2_rtghm")
 theme_override_font_sizes/normal_font_size = 150
-text = "Final Trial"
+bbcode_enabled = true
+text = "[center][pulse freq=1.0 color=#ffffff90 ease=2.0]Final Trial[/pulse][/center]"
 
 [node name="GameVersion" type="RichTextLabel" parent="."]
 show_behind_parent = true
@@ -268,14 +270,14 @@ text = "---------"
 z_index = 65
 texture_filter = 2
 offset_left = 670.0
-offset_top = 610.0
+offset_top = 601.0
 offset_right = 981.0
-offset_bottom = 670.0
+offset_bottom = 661.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 31
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "More maps coming soon."
+text = "[center][wave amp=50.0 freq=5.0 connected=1]More maps coming soon.[/wave][/center]"
 
 [node name="CreatedByLabel" type="RichTextLabel" parent="."]
 offset_left = 272.0

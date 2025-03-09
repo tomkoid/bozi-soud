@@ -25,6 +25,16 @@ func _ready() -> void:
 	print("info: requesting..")
 	info_check.request(info_api_url, ["User-Agent: BS (%s)" % Global.game_version])
 	
+var rotation_accel = 0.45
+func _process(delta: float) -> void:
+	var gt_rot = $GameTitle.rotation_degrees
+	if gt_rot >= 1.5:
+		rotation_accel = -rotation_accel
+	elif gt_rot <= -2.5:
+		rotation_accel = -rotation_accel
+	print(rotation_accel)
+	$GameTitle.rotation_degrees += rotation_accel * delta
+	
 func _on_info_check_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	print("info: request done.")
 	print("info: request body: ", body.get_string_from_utf8())
