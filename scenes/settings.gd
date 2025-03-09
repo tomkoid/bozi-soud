@@ -5,6 +5,7 @@ var s = {
 	"music_volume": 1.0,
 	"sfx_volume": 1.0,
 	
+	"rtx": true,
 	"particles": true,
 	"fullscreen": false,
 	"content_scale": Window.CONTENT_SCALE_ASPECT_KEEP,

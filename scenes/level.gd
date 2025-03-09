@@ -34,7 +34,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
-	
+
+
 	if stats.fail_count >= MAX_DEATH_COUNT:
 		if game_data.best_score < stats.score or game_data.best_score == 0:
 			game_data.best_score = stats.score
@@ -61,6 +62,13 @@ func _process(_delta: float) -> void:
 		until_reset_node.text = "next reset: " + str(roundi($GameResetFail.time_left)) + "s"
 	else:
 		until_reset_node.hide()
+
+func _physics_process(_delta: float) -> void:
+	if Global.settings.s["rtx"] == false:
+		$WorldEnvironment.environment.background_mode = Environment.BG_SKY
+	else:
+		$WorldEnvironment.environment.background_mode = Environment.BG_CANVAS
+	
 
 var fall_guy_scene = load("res://scenes/entities/fall_guy.tscn")
 var bad_guy_scene = load("res://scenes/entities/bad_guy.tscn")

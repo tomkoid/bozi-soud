@@ -17,6 +17,7 @@ func _ready() -> void:
 		pause_menu.hide()
 	
 	$RightCol/ParticlesButton.button_pressed = Global.settings.s["particles"]
+	$RightCol/RTXButton.button_pressed = Global.settings.s["rtx"]
 	$RightCol/VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
 	$RightCol/FullscreenButton.button_pressed = is_fullscreen(DisplayServer.window_get_mode())
 
@@ -135,3 +136,9 @@ func _on_sound_effect_volume_slider_drag_ended(value_changed: bool) -> void:
 
 func _on_particles_button_toggled(toggled_on: bool) -> void:
 	Global.settings.s["particles"] = toggled_on
+
+
+func _on_rtx_button_toggled(toggled_on: bool) -> void:
+	print("setting to: ", toggled_on)
+	Global.settings.s["rtx"] = toggled_on
+	Global.settings.save()
