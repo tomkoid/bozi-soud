@@ -24,7 +24,6 @@ func create_hit_particles():
 	hp_instance.finished.connect(remove_hit_particles.bind(hp_instance))
 
 func remove_hit_particles(hp_instance: GPUParticles2D):
-	print("removing")
 	particles_container.remove_child(hp_instance)
 
 func _physics_process(delta):

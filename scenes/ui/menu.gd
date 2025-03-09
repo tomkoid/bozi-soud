@@ -32,7 +32,6 @@ func _process(delta: float) -> void:
 		rotation_accel = -rotation_accel
 	elif gt_rot <= -2.5:
 		rotation_accel = -rotation_accel
-	print(rotation_accel)
 	$GameTitle.rotation_degrees += rotation_accel * delta
 	
 func _on_info_check_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
