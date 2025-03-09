@@ -10,6 +10,8 @@ var game_data = {
 	"best_score": 0
 }
 
+var global_delta: float
+
 func save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	file.store_var(game_data)
@@ -32,6 +34,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	global_delta = _delta
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
 
@@ -133,6 +136,10 @@ func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:
 		stats.score += randi_range(100, 110)
 	else:
+		$LifeLostPlayer.play()
+		$VignettePlayer.stop()
+		$VignettePlayer.play("fade_inout")
+
 		if $GameResetFail.is_stopped():
 			$GameResetFail.start()
 			
@@ -143,6 +150,7 @@ func killzone(body: CharacterBody2D, good_type: String):
 	get_node("UI/Control/VBOX/Control2/MoneyLabel").text = str(stats.score)
 	refresh_fail_count()
 	body.queue_free()
+
 
 func _on_bottom_count_zone_body_entered(body):
 	killzone(body, "bad")
