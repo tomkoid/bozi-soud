@@ -230,6 +230,7 @@ scale = Vector2(6, 6)
 texture = ExtResource("4_vuo2u")
 
 [node name="Sun" type="AnimatedSprite2D" parent="."]
+modulate = Color(2, 2, 2, 1)
 z_index = -12
 position = Vector2(805, 235)
 scale = Vector2(10, 10)
