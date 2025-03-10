@@ -177,6 +177,7 @@ func _on_new_collect_timer_timeout() -> void:
 	instance.position.x = randi_range(450, 700)
 
 	var CollectSprite = Sprite2D.new()
+	CollectSprite.scale = Vector2(5,5)
 	if collect_type == 0:
 		print("fast")
 		instance.set_meta("collect_type", "fast")
