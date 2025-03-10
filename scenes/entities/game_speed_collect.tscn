@@ -6,7 +6,6 @@
 radius = 8.6209
 
 [node name="GameSpeedCollect" type="Sprite2D"]
-scale = Vector2(3, 3)
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("2_utwmb")
@@ -14,6 +13,7 @@ script = ExtResource("2_utwmb")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_tn7s4")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
