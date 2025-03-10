@@ -187,7 +187,7 @@ func _on_new_collect_timer_timeout() -> void:
 	if collect_type == 1:
 		print("slow")
 		instance.set_meta("collect_type", "slow")
-		CollectSprite.texture = load("res://assets/sprites/sound-off.png")
+		CollectSprite.texture = load("res://assets/sprites/clock-slow.png")
 	
 	instance.add_child(CollectSprite)
 	var despawn_timer = Timer.new()
