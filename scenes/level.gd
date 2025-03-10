@@ -186,7 +186,7 @@ func _on_new_collect_timer_timeout() -> void:
 	if collect_type == 0:
 		print("fast")
 		instance.set_meta("collect_type", "fast")
-		CollectSprite.texture = load("res://assets/sprites/sound-on.png")
+		CollectSprite.texture = load("res://assets/sprites/clock-small.png")
 		
 			
 	if collect_type == 1:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bcu25miko3ods"]
+[gd_scene load_steps=38 format=3 uid="uid://bcu25miko3ods"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="1_f416g"]
 [ext_resource type="Script" uid="uid://b3ectbbpkbdhg" path="res://scenes/level.gd" id="1_ptexp"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://ctqwgvoo3fbxr" path="res://scenes/ui/end_screen.tscn" id="15_h0ic7"]
 [ext_resource type="PackedScene" uid="uid://cwwaitliqbm1r" path="res://scenes/ui/pause_menu.tscn" id="16_867yn"]
 [ext_resource type="PackedScene" uid="uid://cyb06rtoow20g" path="res://scenes/entities/game_speed_collect.tscn" id="19_tgteq"]
+[ext_resource type="Texture2D" uid="uid://cddgcw3r4ywt" path="res://assets/sprites/clock-small.png" id="24_wu01b"]
 
 [sub_resource type="Resource" id="Resource_6wh4q"]
 script = ExtResource("2_lw621")
@@ -423,6 +424,12 @@ autostart = true
 [node name="Particles" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Clock-small" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(595, 87)
+scale = Vector2(5, 5)
+texture = ExtResource("24_wu01b")
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]
