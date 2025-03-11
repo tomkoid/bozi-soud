@@ -31,7 +31,16 @@ func remove_hit_particles(hp_instance: GPUParticles2D):
 
 func _physics_process(delta):
 	player_movement(delta)
-	position.x = get_global_mouse_position().x
+	var viewport_size = get_viewport().get_visible_rect().size
+	var next_position_x = get_global_mouse_position().x
+
+	var player_as_size:	int = 80
+	if next_position_x >= viewport_size.x - player_as_size:
+		next_position_x = viewport_size.x - player_as_size
+	elif next_position_x <= 0 + player_as_size:
+		next_position_x = 0 + player_as_size
+
+	position.x = next_position_x
 	position.y = 500
 
 #func get_input():
