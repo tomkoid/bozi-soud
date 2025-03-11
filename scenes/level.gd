@@ -42,9 +42,13 @@ func _process(_delta: float) -> void:
 	if stats.lives <= 0:
 		if game_data.best_score < stats.score or game_data.best_score == 0:
 			game_data.best_score = stats.score
-			save()
-
 			
+		save()
+		
+		Global.coins += stats.score
+		Global.settings.s.coins = Global.coins
+		Global.settings.save()
+		
 		%UI.hide()
 		get_node("EndScreen/ScoreContainer/ScoreLabel").text += str(stats.score)
 		get_node("EndScreen/ScoreContainer/BestScoreLabel").text += str(game_data.best_score)

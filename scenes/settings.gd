@@ -12,7 +12,9 @@ var s = {
 	
 	"master_muted": false,
 	
-	"current_map": 0
+	"current_map": 0,
+	
+	"coins": 0
 }
 
 var settings_save_path = "user://settings.save"
@@ -43,6 +45,8 @@ func save_load():
 	# load window status
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if not s.fullscreen else DisplayServer.WINDOW_MODE_FULLSCREEN)
 	Engine.get_main_loop().root.content_scale_aspect = s.content_scale
+	
+	Global.coins = Global.settings.s.coins
 
 func init() -> void:
 	save_load()

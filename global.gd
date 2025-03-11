@@ -4,12 +4,13 @@ var game_controller : GameController
 var game_version = "1.4.1"
 
 var settings: GameSettings = GameSettings.new()
-
+var coins: int = 0
 signal emit_player_particles
 
 signal version_bad
 
 @export var prev_scene = ""
+
 
 func _ready():
 	var ver1 = semver_parse("0.3.2.3")

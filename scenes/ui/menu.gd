@@ -39,7 +39,7 @@ func _ready() -> void:
 	get_node("BestScoreLabel").text += str(game_data.best_score)
 	$LevelLabel.text = levels_info[current_level_id].name
 	recover_current_map()
-	
+	$CoinLabel.text += str(Global.coins)
 	
 	# check info api
 	info_check.request_completed.connect(_on_info_check_request_completed)

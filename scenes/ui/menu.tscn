@@ -334,6 +334,14 @@ offset_bottom = 562.0
 theme_override_font_sizes/font_size = 70
 text = "-----"
 
+[node name="CoinLabel" type="Label" parent="."]
+offset_left = 679.0
+offset_top = 67.0
+offset_right = 1020.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 100
+text = "Coins: "
+
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_button_pressed"]

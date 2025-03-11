@@ -62,7 +62,7 @@ func _on_vsync_button_pressed() -> void:
 	vsync_index += 1
 
 	# reset vsync_index
-	if vsync_index == 3:
+	if vsync_index >= 3:
 		vsync_index = 0
 	
 	$RightCol/VsyncButton.text = check_vsync_mode(vsync_index)
