@@ -9,7 +9,6 @@ func _ready():
 	despawn_timer.start()
 
 func _on_despawn_timer():
-	print("!JK!JJL!JKLJKFHKLDHKLFHJKLDHKLDFHKLDFHKLdfjkldfhjklsh")
 	visible = false
 	$Area2D/CollisionShape2D.set_deferred("disabled",true)
 	await get_tree().create_timer(10.0).timeout
@@ -17,7 +16,6 @@ func _on_despawn_timer():
 	queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("ARTATAFFGDSDHJSDHKDHS")
 	if body.name == "FallGuy" or "BadGuy":
 		self.set_meta("started", "true")
 		var StartSpawnRate = GameTimer.wait_time
