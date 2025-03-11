@@ -102,11 +102,19 @@ offset_bottom = 238.0
 theme_override_font_sizes/font_size = 50
 text = "Sound"
 
+[node name="GraphicsLabel" type="Label" parent="."]
+offset_left = 731.0
+offset_top = 250.0
+offset_right = 893.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 50
+text = "Graphics"
+
 [node name="LeftCol" type="VBoxContainer" parent="."]
 offset_left = 181.0
 offset_top = 250.0
-offset_right = 443.0
-offset_bottom = 399.0
+offset_right = 451.0
+offset_bottom = 440.0
 theme_override_constants/separation = 20
 
 [node name="MasterVolumeContainer" type="VBoxContainer" parent="LeftCol"]
@@ -120,7 +128,8 @@ text = "Master volume"
 [node name="MasterVolumeSlider" type="HSlider" parent="LeftCol/MasterVolumeContainer"]
 layout_mode = 2
 max_value = 3.0
-step = 0.05
+step = 0.333
+tick_count = 10
 
 [node name="MusicVolumeContainer" type="VBoxContainer" parent="LeftCol"]
 layout_mode = 2
@@ -133,7 +142,8 @@ text = "Music volume"
 [node name="MusicVolumeSlider" type="HSlider" parent="LeftCol/MusicVolumeContainer"]
 layout_mode = 2
 max_value = 3.0
-step = 0.05
+step = 0.333
+tick_count = 10
 
 [node name="SoundEffectVolumeContainer" type="VBoxContainer" parent="LeftCol"]
 layout_mode = 2
@@ -148,7 +158,8 @@ layout_mode = 2
 tooltip_text = "
 "
 max_value = 3.0
-step = 0.05
+step = 0.333
+tick_count = 10
 
 [node name="RightCol" type="VBoxContainer" parent="."]
 offset_left = 617.344
@@ -162,6 +173,16 @@ process_mode = 3
 visible = false
 layout_mode = 2
 text = "VSYNC: disabled"
+
+[node name="ParticlesButton" type="CheckButton" parent="RightCol"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Enable Particles"
+
+[node name="RTXButton" type="CheckButton" parent="RightCol"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Enable RTX"
 
 [node name="FullscreenButton" type="CheckButton" parent="RightCol"]
 layout_mode = 2
@@ -177,5 +198,7 @@ theme_override_font_sizes/font_size = 26
 [connection signal="drag_ended" from="LeftCol/MusicVolumeContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]
 [connection signal="drag_ended" from="LeftCol/SoundEffectVolumeContainer/SoundEffectVolumeSlider" to="." method="_on_sound_effect_volume_slider_drag_ended"]
 [connection signal="pressed" from="RightCol/VsyncButton" to="." method="_on_vsync_button_pressed"]
+[connection signal="toggled" from="RightCol/ParticlesButton" to="." method="_on_particles_button_toggled"]
+[connection signal="toggled" from="RightCol/RTXButton" to="." method="_on_rtx_button_toggled"]
 [connection signal="toggled" from="RightCol/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="RightCol/DisplayType" to="." method="_on_display_type_pressed"]

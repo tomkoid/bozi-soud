@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dc2coaqu76bfd"]
+[gd_scene load_steps=14 format=3 uid="uid://dc2coaqu76bfd"]
 
 [ext_resource type="Script" uid="uid://btnieqob7u125" path="res://scenes/ui/escape_button.gd" id="2_1rrka"]
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="2_k1ucb"]
@@ -18,9 +18,13 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("2_k1ucb")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4motb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_75u2n"]
 atlas = ExtResource("3_sqnw3")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(16, 0, 16, 0)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlde"]
+atlas = SubResource("AtlasTexture_75u2n")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhed8"]
 atlas = ExtResource("3_sqnw3")
@@ -69,10 +73,10 @@ layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/VBOX/Control"]
 position = Vector2(72, 135)
-scale = Vector2(3.03125, 3.03125)
-texture = SubResource("AtlasTexture_4motb")
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_3wlde")
 
-[node name="FailCount" type="RichTextLabel" parent="Control/VBOX/Control"]
+[node name="LivesCount" type="RichTextLabel" parent="Control/VBOX/Control"]
 layout_mode = 2
 offset_left = 120.0
 offset_top = 101.0
@@ -82,7 +86,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_mfcar")
 theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
-text = "0/0"
+text = "69"
 
 [node name="UntilReset" type="Label" parent="Control/VBOX/Control"]
 layout_mode = 0

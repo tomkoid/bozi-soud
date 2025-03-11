@@ -12,8 +12,8 @@ var current_gui_path
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.game_controller = self
-	change_gui_scene("res://scenes/ui/menu.tscn")
 	Global.settings.init()
+	change_gui_scene("res://scenes/ui/menu.tscn")
 
 	# set automatically fullscreen for mobile
 	if OS.get_name() == "Android" or OS.get_name() == "iOS":

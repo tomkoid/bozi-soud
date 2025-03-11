@@ -14,6 +14,20 @@
 [ext_resource type="AudioStream" uid="uid://qutw0cuhadu8" path="res://assets/sounds/ambient/menu_ambient.mp3" id="11_ersov"]
 [ext_resource type="Texture2D" uid="uid://bqpake0ia34fj" path="res://assets/sprites/arrow_menu.png" id="12_bb6rx"]
 
+[sub_resource type="Environment" id="Environment_dnmb1"]
+background_mode = 3
+tonemap_mode = 1
+tonemap_exposure = 1.31
+tonemap_white = 0.85
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 0.15
+glow_strength = 0.95
+glow_bloom = 0.02
+glow_blend_mode = 1
+glow_hdr_threshold = 0.0
+glow_hdr_scale = 1.53
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dcq3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grc63"]
@@ -113,6 +127,10 @@ texture = ExtResource("12_bb6rx")
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_f4s0f")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+process_mode = 3
+environment = SubResource("Environment_dnmb1")
+
 [node name="BG" type="Node2D" parent="."]
 
 [node name="Background-wip5-front" type="Sprite2D" parent="BG"]
@@ -138,6 +156,7 @@ unique_name_in_owner = true
 download_chunk_size = 7986
 
 [node name="GameTitle" type="RichTextLabel" parent="."]
+texture_filter = 6
 offset_left = 33.0
 offset_top = 9.0
 offset_right = 607.0
@@ -149,7 +168,8 @@ theme_override_constants/shadow_offset_x = -5
 theme_override_constants/shadow_outline_size = 6
 theme_override_fonts/normal_font = ExtResource("2_rtghm")
 theme_override_font_sizes/normal_font_size = 150
-text = "Final Trial"
+bbcode_enabled = true
+text = "[center][pulse freq=1.0 color=#ffffff90 ease=2.0]Final Trial[/pulse][/center]"
 
 [node name="GameVersion" type="RichTextLabel" parent="."]
 show_behind_parent = true
@@ -215,6 +235,7 @@ autoplay = "run"
 frame_progress = 0.304969
 
 [node name="Sun" type="AnimatedSprite2D" parent="."]
+modulate = Color(2, 2, 2, 1)
 z_index = -12
 position = Vector2(805, 235)
 scale = Vector2(10, 10)
@@ -252,14 +273,14 @@ text = "---------"
 z_index = 65
 texture_filter = 2
 offset_left = 670.0
-offset_top = 610.0
+offset_top = 601.0
 offset_right = 981.0
-offset_bottom = 670.0
+offset_bottom = 661.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 31
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "More maps coming soon."
+text = "[center][wave amp=50.0 freq=5.0 connected=1]More maps coming soon.[/wave][/center]"
 
 [node name="CreatedByLabel" type="RichTextLabel" parent="."]
 offset_left = 272.0
