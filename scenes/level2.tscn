@@ -1,28 +1,182 @@
-[gd_scene load_steps=26 format=3 uid="uid://cclcrc10wkg6e"]
+[gd_scene load_steps=33 format=3 uid="uid://cclcrc10wkg6e"]
 
-[ext_resource type="Script" uid="uid://b3ectbbpkbdhg" path="res://scenes/level.gd" id="1_x7yqc"]
-[ext_resource type="Script" uid="uid://bweigv0ub148" path="res://scenes/stats.gd" id="2_3mnld"]
-[ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="3_4iiqu"]
-[ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="4_0508l"]
-[ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/objects/platform.tscn" id="5_u5dgg"]
-[ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="6_hg3ei"]
-[ext_resource type="AudioStream" uid="uid://2l77r2p5jhds" path="res://assets/sounds/ambient/ml_sonata.mp3" id="7_kro53"]
-[ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="8_8var2"]
-[ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_1f7mc"]
-[ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_xwi2w"]
-[ext_resource type="Texture2D" uid="uid://qlgmrvbh6whx" path="res://assets/sprites/sun-spritesheet.png" id="11_dy7r3"]
-[ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/entities/angel.tscn" id="12_8ku1y"]
-[ext_resource type="Texture2D" uid="uid://cxhikbvye1lwf" path="res://assets/sprites/jesus-2.png" id="13_ys6h1"]
-[ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="14_i6780"]
-[ext_resource type="Texture2D" uid="uid://3hy5yoojyuph" path="res://assets/sprites/cloud1.png" id="15_jd234"]
-[ext_resource type="AudioStream" uid="uid://c7yk8wq4di6bg" path="res://assets/sounds/sound_effects/boing.mp3" id="16_t7fds"]
-[ext_resource type="PackedScene" uid="uid://ctqwgvoo3fbxr" path="res://scenes/ui/end_screen.tscn" id="17_twedv"]
-[ext_resource type="PackedScene" uid="uid://cwwaitliqbm1r" path="res://scenes/ui/pause_menu.tscn" id="18_eq4qv"]
+[ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="1_f416g"]
+[ext_resource type="Script" uid="uid://b3ectbbpkbdhg" path="res://scenes/level.gd" id="1_ptexp"]
+[ext_resource type="Script" uid="uid://bweigv0ub148" path="res://scenes/stats.gd" id="2_lw621"]
+[ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
+[ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/objects/platform.tscn" id="3_m4de3"]
+[ext_resource type="AudioStream" uid="uid://c7yk8wq4di6bg" path="res://assets/sounds/sound_effects/boing.mp3" id="4_pum5f"]
+[ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
+[ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="6_do7aq"]
+[ext_resource type="AudioStream" uid="uid://2l77r2p5jhds" path="res://assets/sounds/ambient/ml_sonata.mp3" id="6_gb1vr"]
+[ext_resource type="Shader" uid="uid://ny0nhfab6jj4" path="res://scenes/UI.gdshader" id="6_gunhw"]
+[ext_resource type="AudioStream" uid="uid://dd14shebotu33" path="res://assets/sounds/sound_effects/lifelost.mp3" id="9_8gofh"]
+[ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="9_iyhw5"]
+[ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="10_5s47w"]
+[ext_resource type="Texture2D" uid="uid://qlgmrvbh6whx" path="res://assets/sprites/sun-spritesheet.png" id="10_6xhcb"]
+[ext_resource type="AudioStream" uid="uid://dt4wkthaiq0rl" path="res://assets/sounds/sound_effects/heartbeat.mp3" id="10_h6wmr"]
+[ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="10_ssgp3"]
+[ext_resource type="PackedScene" uid="uid://buyx0jwbc55xc" path="res://scenes/entities/angel.tscn" id="11_6e238"]
+[ext_resource type="Texture2D" uid="uid://3hy5yoojyuph" path="res://assets/sprites/cloud1.png" id="13_2m20h"]
+[ext_resource type="Texture2D" uid="uid://cxhikbvye1lwf" path="res://assets/sprites/jesus-2.png" id="14_atvas"]
+[ext_resource type="PackedScene" uid="uid://ctqwgvoo3fbxr" path="res://scenes/ui/end_screen.tscn" id="15_h0ic7"]
+[ext_resource type="PackedScene" uid="uid://cwwaitliqbm1r" path="res://scenes/ui/pause_menu.tscn" id="16_867yn"]
 
 [sub_resource type="Resource" id="Resource_6wh4q"]
-script = ExtResource("2_3mnld")
+script = ExtResource("2_lw621")
 score = 0
 lives = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gunhw"]
+shader = ExtResource("6_gunhw")
+shader_parameter/outerRadius = 0.886
+shader_parameter/MainAlpha = 0.675
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_8gofh"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Vignette:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Vignette:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Vignette:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Vignette:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MusicPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HeartbeatPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gunhw"]
+resource_name = "fade_inout"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Vignette:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Vignette:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Vignette:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Vignette:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.36, 2.5, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MusicPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -5, -0.25, 0, 0.25, 0, -5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.36, 2.5, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HeartbeatPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-500, -0.25, 0, 0.25, 0, 9.6, -0.25, 0, 0.25, 0, 9.6, -0.25, 0, 0.25, 0, -500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.03333, 2.73333, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6wmr"]
+_data = {
+&"RESET": SubResource("Animation_8gofh"),
+&"fade_inout": SubResource("Animation_gunhw")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
 size = Vector2(1904, 71)
@@ -31,10 +185,10 @@ size = Vector2(1904, 71)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_1f7mc")
+"texture": ExtResource("9_iyhw5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_xwi2w")
+"texture": ExtResource("10_ssgp3")
 }],
 "loop": true,
 "name": &"idle",
@@ -42,11 +196,11 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nm0w6"]
-atlas = ExtResource("11_dy7r3")
+atlas = ExtResource("10_6xhcb")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxn2x"]
-atlas = ExtResource("11_dy7r3")
+atlas = ExtResource("10_6xhcb")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_71rp8"]
@@ -67,10 +221,10 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_ys6h1")
+"texture": ExtResource("14_atvas")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_i6780")
+"texture": ExtResource("10_5s47w")
 }],
 "loop": true,
 "name": &"default",
@@ -78,8 +232,23 @@ animations = [{
 }]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_x7yqc")
+script = ExtResource("1_ptexp")
 stats = SubResource("Resource_6wh4q")
+
+[node name="Vignette" type="ColorRect" parent="."]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+z_index = 50
+material = SubResource("ShaderMaterial_gunhw")
+offset_left = -153.0
+offset_top = -52.0
+offset_right = 1401.0
+offset_bottom = 698.0
+
+[node name="VignettePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h6wmr")
+}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1
@@ -89,20 +258,22 @@ layer = -1
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(614.5, 324)
 scale = Vector2(4.7743, 4)
-texture = ExtResource("3_4iiqu")
+texture = ExtResource("2_nexhj")
 
-[node name="Player" parent="." instance=ExtResource("4_0508l")]
+[node name="Player" parent="." instance=ExtResource("1_f416g")]
+z_index = 1
 position = Vector2(578, 446)
+scale = Vector2(2, 2)
 
-[node name="PlatformLeft" parent="." instance=ExtResource("5_u5dgg")]
+[node name="PlatformLeft" parent="." instance=ExtResource("3_m4de3")]
 position = Vector2(152, 330)
 rotation = 0.0872665
 scale = Vector2(-1.3, 1.3)
 
-[node name="PlatformRight" parent="." instance=ExtResource("5_u5dgg")]
+[node name="PlatformRight" parent="." instance=ExtResource("3_m4de3")]
 position = Vector2(1000, 330)
 
-[node name="UI" parent="." instance=ExtResource("6_hg3ei")]
+[node name="UI" parent="." instance=ExtResource("5_3th8g")]
 unique_name_in_owner = true
 
 [node name="Guys" type="Node2D" parent="."]
@@ -122,9 +293,19 @@ wait_time = 10.0
 one_shot = true
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_kro53")
+stream = ExtResource("6_gb1vr")
 autoplay = true
 bus = &"Music"
+parameters/looping = true
+
+[node name="LifeLostPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_8gofh")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="HeartbeatPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_h6wmr")
+volume_db = -500.0
 parameters/looping = true
 
 [node name="TimerLabel" type="Label" parent="."]
@@ -134,7 +315,7 @@ offset_top = 21.0
 offset_right = 1134.0
 offset_bottom = 53.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("8_8var2")
+theme_override_fonts/font = ExtResource("6_do7aq")
 theme_override_font_sizes/font_size = 20
 text = "---UNKNOWN---"
 
@@ -161,14 +342,15 @@ frame = 1
 frame_progress = 1.0
 
 [node name="Sun" type="AnimatedSprite2D" parent="."]
+modulate = Color(1.5, 1.5, 1.5, 1)
 z_index = -3
-position = Vector2(579.89, 73.407)
+position = Vector2(330, 88)
 scale = Vector2(7.813, 7.813)
 sprite_frames = SubResource("SpriteFrames_71rp8")
 autoplay = "default"
 frame_progress = 0.0383685
 
-[node name="Angel" parent="." instance=ExtResource("12_8ku1y")]
+[node name="Angel" parent="." instance=ExtResource("11_6e238")]
 z_index = -1
 position = Vector2(908, 115)
 scale = Vector2(6.29688, 6.29688)
@@ -177,7 +359,7 @@ frame_progress = 0.0
 [node name="Jesus" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.803922)
 z_index = -2
-position = Vector2(769, 627)
+position = Vector2(330, 242)
 scale = Vector2(6.625, 6.625)
 sprite_frames = SubResource("SpriteFrames_avpj5")
 autoplay = "default"
@@ -187,19 +369,24 @@ frame_progress = 0.501013
 z_index = -4
 position = Vector2(-0.905656, 32.1509)
 scale = Vector2(0.603774, 0.603774)
-texture = ExtResource("15_jd234")
+texture = ExtResource("13_2m20h")
 
 [node name="BoingEffect" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_t7fds")
+stream = ExtResource("4_pum5f")
+bus = &"SFX"
 parameters/looping = false
 
-[node name="EndScreen" parent="." instance=ExtResource("17_twedv")]
+[node name="EndScreen" parent="." instance=ExtResource("15_h0ic7")]
 unique_name_in_owner = true
 visible = false
 
-[node name="PauseMenu" parent="." instance=ExtResource("18_eq4qv")]
+[node name="PauseMenu" parent="." instance=ExtResource("16_867yn")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Particles" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameHardererTimer" to="." method="_on_game_harderer_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=28 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" uid="uid://j3jpagdr86pf" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
