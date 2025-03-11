@@ -7,7 +7,22 @@ var game_data = {
 @onready var info_check = $InfoCheck
 var info_api_url = "https://bs.tomkoid.cz/api/v1/info"
 
-var level_ids = ["classic", "hell"]
+var levels_info = [
+	{
+		"name": "classic",
+		"path": "background_paralax_1.png"
+	},
+	{
+		"name": "hell",
+		"path": "background_hell_onlyfortest.png"
+	},
+	{
+		"name": "heaven",
+		"path": "background_heavenl_onlyfortest.png"
+	}
+]
+
+#var level_ids = ["background_paralax_1.png", "background_hell_onlyfortest.png"]
 var current_level_id = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +37,9 @@ func _ready() -> void:
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		game_data = file.get_var(true)
 	get_node("BestScoreLabel").text += str(game_data.best_score)
+	$LevelLabel.text = levels_info[current_level_id].name
+	recover_current_map()
+	
 	
 	# check info api
 	info_check.request_completed.connect(_on_info_check_request_completed)
@@ -69,14 +87,25 @@ func _on_settings_button_pressed():
 func _on_quit_button_pressed():
 	get_tree().quit()
 
+func recover_current_map():
+	var current_level_id = Global.settings.s.current_map
+	for i in range(len(levels_info)):
+		if current_level_id == int(i):
+			$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/" + levels_info[i].path)
+			$LevelLabel.text = levels_info[i].name
+
 
 func _on_switching_levels_button_right_pressed():
 	current_level_id += 1
-	if current_level_id > len(level_ids) - 1:
+	if current_level_id > len(levels_info) - 1:
 		current_level_id = 0
-	for i in range(len(level_ids)):
+	Global.settings.s.current_map = current_level_id
+	Global.settings.save()
+	for i in range(len(levels_info)):
 		if current_level_id == int(i):
-			$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/" + level_ids[i])
+			$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/" + levels_info[i].path)
+			$LevelLabel.text = levels_info[i].name
+			
 			
 	
 	#if current_level_id == 2:
@@ -92,10 +121,14 @@ func _on_switching_levels_button_right_pressed():
 func _on_switching_levels_button_left_pressed():
 	current_level_id -= 1
 	if current_level_id < 0:
-		current_level_id = len(level_ids) - 1
-	for i in range(len(level_ids)):
+		current_level_id = len(levels_info) - 1
+	Global.settings.s.current_map = current_level_id
+	Global.settings.save()
+	for i in range(len(levels_info)):
 		if current_level_id == int(i):
-			$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/" + level_ids[i])
+			$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/" + levels_info[i].path)
+			$LevelLabel.text = levels_info[i].name
+			
 	
 	#if current_level_id == 2:
 		#$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/background_heavenl_onlyfortest.png")

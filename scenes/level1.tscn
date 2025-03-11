@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://dxr3tijaa52p5"]
+[gd_scene load_steps=26 format=3 uid="uid://duki7feiyqmd4"]
 
-[ext_resource type="Script" path="res://scenes/level.gd" id="1_x7yqc"]
-[ext_resource type="Script" path="res://scenes/stats.gd" id="2_3mnld"]
+[ext_resource type="Script" uid="uid://b3ectbbpkbdhg" path="res://scenes/level.gd" id="1_x7yqc"]
+[ext_resource type="Script" uid="uid://bweigv0ub148" path="res://scenes/stats.gd" id="2_3mnld"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="3_4iiqu"]
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="4_0508l"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/objects/platform.tscn" id="5_u5dgg"]
@@ -22,7 +22,7 @@
 [sub_resource type="Resource" id="Resource_6wh4q"]
 script = ExtResource("2_3mnld")
 score = 0
-fail_count = 0
+lives = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y53im"]
 size = Vector2(1904, 71)
@@ -77,7 +77,7 @@ animations = [{
 "speed": 0.5
 }]
 
-[node name="Game" type="Node2D"]
+[node name="Game2" type="Node2D"]
 script = ExtResource("1_x7yqc")
 stats = SubResource("Resource_6wh4q")
 
@@ -191,7 +191,6 @@ texture = ExtResource("15_jd234")
 
 [node name="BoingEffect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_t7fds")
-bus = &"soundefects"
 parameters/looping = false
 
 [node name="EndScreen" parent="." instance=ExtResource("17_twedv")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=29 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" uid="uid://j3jpagdr86pf" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
@@ -343,6 +343,14 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_fyig4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fyig4")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fyig4")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fyig4")
+
+[node name="LevelLabel" type="Label" parent="."]
+offset_left = 742.0
+offset_top = 502.0
+offset_right = 873.0
+offset_bottom = 562.0
+theme_override_font_sizes/font_size = 70
+text = "-----"
 
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]

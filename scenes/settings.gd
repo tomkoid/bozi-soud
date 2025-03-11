@@ -10,7 +10,9 @@ var s = {
 	"fullscreen": false,
 	"content_scale": Window.CONTENT_SCALE_ASPECT_KEEP,
 	
-	"master_muted": false
+	"master_muted": false,
+	
+	"current_map": 0
 }
 
 var settings_save_path = "user://settings.save"
