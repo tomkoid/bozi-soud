@@ -55,12 +55,6 @@ func _process(delta: float) -> void:
 		rotation_accel = -rotation_accel
 	$GameTitle.rotation_degrees += rotation_accel * delta
 
-func _physics_process(_delta: float) -> void:
-	if Global.settings.s["rtx"] == false:
-		$WorldEnvironment.environment.background_mode = Environment.BG_SKY
-	else:
-		$WorldEnvironment.environment.background_mode = Environment.BG_CANVAS
-
 	
 func _on_info_check_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	print("info: request done.")

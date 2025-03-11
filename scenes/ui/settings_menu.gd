@@ -17,7 +17,6 @@ func _ready() -> void:
 		pause_menu.hide()
 	
 	$RightCol/ParticlesButton.button_pressed = Global.settings.s["particles"]
-	$RightCol/RTXButton.button_pressed = Global.settings.s["rtx"]
 	$RightCol/VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
 	$RightCol/FullscreenButton.button_pressed = is_fullscreen(DisplayServer.window_get_mode())
 

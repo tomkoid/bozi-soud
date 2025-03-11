@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bcu25miko3ods"]
+[gd_scene load_steps=33 format=3 uid="uid://bcu25miko3ods"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="1_f416g"]
 [ext_resource type="Script" uid="uid://b3ectbbpkbdhg" path="res://scenes/level.gd" id="1_ptexp"]
@@ -26,31 +26,6 @@
 script = ExtResource("2_3mm32")
 score = 0
 lives = 0
-
-[sub_resource type="Gradient" id="Gradient_82cfe"]
-colors = PackedColorArray(0.0253638, 0.0253638, 0.0253638, 1, 0.973535, 0.973535, 0.973535, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gunhw"]
-gradient = SubResource("Gradient_82cfe")
-
-[sub_resource type="Environment" id="Environment_82cfe"]
-background_mode = 3
-ambient_light_source = 2
-ambient_light_color = Color(0.713862, 0.340156, 0.676566, 1)
-tonemap_mode = 1
-ssr_fade_in = 0.204906
-glow_enabled = true
-glow_normalized = true
-glow_intensity = 0.3
-glow_strength = 1.09
-glow_bloom = 0.02
-glow_blend_mode = 1
-glow_hdr_scale = 2.13
-adjustment_enabled = true
-adjustment_brightness = 1.05
-adjustment_contrast = 1.08
-adjustment_saturation = 1.02
-adjustment_color_correction = SubResource("GradientTexture2D_gunhw")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gunhw"]
 shader = ExtResource("6_gunhw")
@@ -259,9 +234,6 @@ animations = [{
 [node name="Game" type="Node2D"]
 script = ExtResource("1_xfh14")
 stats = SubResource("Resource_6wh4q")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_82cfe")
 
 [node name="Vignette" type="ColorRect" parent="."]
 process_mode = 3

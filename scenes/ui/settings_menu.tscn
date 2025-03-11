@@ -179,11 +179,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Enable Particles"
 
-[node name="RTXButton" type="CheckButton" parent="RightCol"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 26
-text = "Enable RTX"
-
 [node name="FullscreenButton" type="CheckButton" parent="RightCol"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
@@ -199,6 +194,5 @@ theme_override_font_sizes/font_size = 26
 [connection signal="drag_ended" from="LeftCol/SoundEffectVolumeContainer/SoundEffectVolumeSlider" to="." method="_on_sound_effect_volume_slider_drag_ended"]
 [connection signal="pressed" from="RightCol/VsyncButton" to="." method="_on_vsync_button_pressed"]
 [connection signal="toggled" from="RightCol/ParticlesButton" to="." method="_on_particles_button_toggled"]
-[connection signal="toggled" from="RightCol/RTXButton" to="." method="_on_rtx_button_toggled"]
 [connection signal="toggled" from="RightCol/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="RightCol/DisplayType" to="." method="_on_display_type_pressed"]
