@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfubsfvmjqgh8"]
+[gd_scene load_steps=14 format=3 uid="uid://bfubsfvmjqgh8"]
 
 [ext_resource type="Script" uid="uid://bgtkqryvyenhu" path="res://scenes/ui/settings_menu.gd" id="1_p8u3i"]
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="2_fi37o"]
@@ -20,6 +20,19 @@ region = Rect2(16, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_62y5m"]
 atlas = ExtResource("5_s6f4o")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ywggk"]
+load_path = "res://.godot/imported/sound_spritesheet1.png-dfff062835f1c920ffa6f72e5edf5012.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngbvi"]
+atlas = SubResource("CompressedTexture2D_ywggk")
+region = Rect2(0, 0, 16, 0)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywggk"]
+atlas = SubResource("CompressedTexture2D_ywggk")
+region = Rect2(16, 0, 16, 0)
+filter_clip = true
 
 [node name="Settings" type="CanvasLayer"]
 process_mode = 3
@@ -119,6 +132,21 @@ theme_override_constants/separation = 20
 
 [node name="MasterVolumeContainer" type="VBoxContainer" parent="LeftCol"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="LeftCol/MasterVolumeContainer"]
+layout_mode = 2
+
+[node name="MasterVolumeMute" type="TextureButton" parent="LeftCol/MasterVolumeContainer/Control"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = -8.0
+offset_right = 291.0
+offset_bottom = 8.0
+scale = Vector2(3, 3)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ngbvi")
+texture_pressed = SubResource("AtlasTexture_ywggk")
 
 [node name="MasterVolume" type="Label" parent="LeftCol/MasterVolumeContainer"]
 layout_mode = 2
@@ -189,6 +217,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 26
 
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
+[connection signal="toggled" from="LeftCol/MasterVolumeContainer/Control/MasterVolumeMute" to="." method="_on_master_volume_mute_toggled"]
 [connection signal="drag_ended" from="LeftCol/MasterVolumeContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_drag_ended"]
 [connection signal="drag_ended" from="LeftCol/MusicVolumeContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]
 [connection signal="drag_ended" from="LeftCol/SoundEffectVolumeContainer/SoundEffectVolumeSlider" to="." method="_on_sound_effect_volume_slider_drag_ended"]
