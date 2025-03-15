@@ -67,12 +67,6 @@ func _process(_delta: float) -> void:
 	else:
 		until_reset_node.hide()
 
-func _physics_process(_delta: float) -> void:
-	if Global.settings.s["rtx"] == false:
-		$WorldEnvironment.environment.background_mode = Environment.BG_SKY
-	else:
-		$WorldEnvironment.environment.background_mode = Environment.BG_CANVAS
-	
 
 var fall_guy_scene = load("res://scenes/entities/fall_guy.tscn")
 var bad_guy_scene = load("res://scenes/entities/bad_guy.tscn")

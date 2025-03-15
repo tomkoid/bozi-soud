@@ -1,10 +1,19 @@
 extends TextureButton
 
+# TODO: refactor this code, split it correctly
+
 func _ready():
 	if Global.settings.s.master_muted:
 		set_pressed_no_signal(true)
 		if not AudioServer.is_bus_mute(master_bus):
 			toggle_master_mute()
+
+func _physics_process(delta: float) -> void:
+	if Global.settings.s.master_muted and AudioServer.is_bus_mute(master_bus) and not button_pressed:
+		set_pressed_no_signal(true)
+	elif not Global.settings.s.master_muted and not AudioServer.is_bus_mute(master_bus) and button_pressed:
+		set_pressed_no_signal(false)
+		
 
 func _on_pressed() -> void:
 	get_node("../..").hide()

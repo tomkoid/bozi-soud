@@ -4,6 +4,7 @@ extends CanvasLayer
 
 @onready var slider_folder = "LeftCol/"
 @onready var master_vol_slider = get_node(slider_folder + "MasterVolumeContainer/MasterVolumeSlider")
+@onready var master_mute_btn = get_node(slider_folder + "MasterVolumeContainer/Control/MasterVolumeMute")
 @onready var music_vol_slider = get_node(slider_folder + "MusicVolumeContainer/MusicVolumeSlider")
 @onready var sfx_vol_slider = get_node(slider_folder + "SoundEffectVolumeContainer/SoundEffectVolumeSlider")
 
@@ -17,7 +18,6 @@ func _ready() -> void:
 		pause_menu.hide()
 	
 	$RightCol/ParticlesButton.button_pressed = Global.settings.s["particles"]
-	$RightCol/RTXButton.button_pressed = Global.settings.s["rtx"]
 	$RightCol/VsyncButton.text = check_vsync_mode(DisplayServer.window_get_vsync_mode())
 	$RightCol/FullscreenButton.button_pressed = is_fullscreen(DisplayServer.window_get_mode())
 
@@ -29,6 +29,10 @@ func _ready() -> void:
 	master_vol_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
 	music_vol_slider.value = db_to_linear(AudioServer.get_bus_volume_db(1))
 	sfx_vol_slider.value = db_to_linear(AudioServer.get_bus_volume_db(2))
+	
+	master_mute_btn.set_pressed_no_signal(AudioServer.is_bus_mute(0))
+	manage_master_vol_slider()
+	
 
 	# update value of display in settings
 	_on_display_type_pressed(get_tree().root.content_scale_aspect) # don't change aspect, just update the button text
@@ -142,3 +146,15 @@ func _on_rtx_button_toggled(toggled_on: bool) -> void:
 	print("setting to: ", toggled_on)
 	Global.settings.s["rtx"] = toggled_on
 	Global.settings.save()
+
+func manage_master_vol_slider():
+	if not AudioServer.is_bus_mute(0):
+		master_vol_slider.editable = true
+	else:
+		master_vol_slider.editable = false
+
+func _on_master_volume_mute_toggled(toggled_on: bool) -> void:
+	AudioServer.set_bus_mute(0, toggled_on)
+	Global.settings.s["master_muted"] = toggled_on
+	Global.settings.save()
+	manage_master_vol_slider()
