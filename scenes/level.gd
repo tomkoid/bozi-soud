@@ -174,10 +174,15 @@ func _on_angel_animation_finished():
 func _on_new_collect_timer_timeout() -> void:
 	if $Collectibles.get_child_count() != 0:
 		return
-	#if ($Collectibles.get_tree())
+	
+	var collect_type = randi_range(0,1)
+	var SpawnRate = $GameTimer.wait_time
+	if SpawnRate <= 0.5:
+		collect_type = 1
+	if SpawnRate >= 1.7:
+		collect_type = 0
 	
 	var instance
-	var collect_type = randi_range(0,1)
 	instance = speed_collect_scene.instantiate()
 	instance.position.y = 100
 	instance.position.x = randi_range(450, 700)
