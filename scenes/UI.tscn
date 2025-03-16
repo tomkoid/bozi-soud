@@ -9,14 +9,17 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_7aphu"]
 atlas = ExtResource("2_k1ucb")
 region = Rect2(0, 0, 16, 16)
+filter_clip = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tl6v2"]
 atlas = ExtResource("2_k1ucb")
 region = Rect2(16, 0, 16, 16)
+filter_clip = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjbvh"]
 atlas = ExtResource("2_k1ucb")
 region = Rect2(16, 0, 16, 16)
+filter_clip = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75u2n"]
 atlas = ExtResource("3_sqnw3")
@@ -29,14 +32,17 @@ atlas = SubResource("AtlasTexture_75u2n")
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhed8"]
 atlas = ExtResource("3_sqnw3")
 region = Rect2(0, 0, 16, 16)
+filter_clip = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vwbix"]
 atlas = ExtResource("5_7fd41")
 region = Rect2(0, 0, 16, 16)
+filter_clip = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhby1"]
 atlas = ExtResource("5_7fd41")
 region = Rect2(16, 0, 16, 16)
+filter_clip = true
 
 [node name="UI" type="CanvasLayer"]
 
