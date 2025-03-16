@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene load_steps=28 format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" uid="uid://j3jpagdr86pf" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="11_0tyx3"]
 [ext_resource type="AudioStream" uid="uid://qutw0cuhadu8" path="res://assets/sounds/ambient/menu_ambient.mp3" id="11_ersov"]
 [ext_resource type="Texture2D" uid="uid://bqpake0ia34fj" path="res://assets/sprites/arrow_menu.png" id="12_bb6rx"]
-[ext_resource type="PackedScene" uid="uid://df8grfd2vfno0" path="res://scenes/ui/shop.tscn" id="14_y7dvm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dcq3"]
 
@@ -185,7 +184,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="Control"]
+[node name="ShopButton" type="Button" parent="Control"]
 layout_mode = 2
 offset_left = 161.0
 offset_top = 212.0
@@ -194,7 +193,7 @@ offset_bottom = 244.0
 scale = Vector2(3, 3)
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
-text = "Exit
+text = "Shop
 "
 
 [node name="PlayButton" type="Button" parent="Control"]
@@ -343,15 +342,8 @@ offset_bottom = 175.0
 theme_override_font_sizes/font_size = 100
 text = "Coins: "
 
-[node name="ShopButton" parent="." instance=ExtResource("14_y7dvm")]
-offset_left = 717.0
-offset_top = 244.0
-offset_right = 885.0
-offset_bottom = 327.0
-text = "----"
-
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SwitchingLevelsButtonRight" to="." method="_on_switching_levels_button_right_pressed"]
 [connection signal="pressed" from="SwitchingLevelsButtonLeft" to="." method="_on_switching_levels_button_left_pressed"]

@@ -78,8 +78,7 @@ func _on_settings_button_pressed():
 	Global.game_controller.change_gui_scene("res://scenes/ui/settings_menu.tscn", false, true)
 	
 	
-func _on_quit_button_pressed():
-	get_tree().quit()
+
 
 func recover_current_map():
 	var current_level_id = Global.settings.s.current_map
@@ -134,3 +133,8 @@ func _on_switching_levels_button_left_pressed():
 		#current_level_id = len(level_ids) - 1
 		#$MiniBackground.texture = ResourceLoader.load("res://assets/sprites/" + level_ids[len(level_ids) - 1] + ".png")
 		
+
+
+func _on_shop_button_pressed():
+	Global.game_controller.change_gui_scene("res://scenes/ui/shop.tscn", false, true)
+	
