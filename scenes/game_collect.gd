@@ -3,10 +3,13 @@ extends Sprite2D
 @onready var GameTimer = get_node("../../GameTimer")
 @onready var despawn_timer = $DespawnTimer
 
+@export var animation = ""
+
 func _ready():
 	despawn_timer.one_shot = true
 	despawn_timer.timeout.connect(_on_despawn_timer)
 	despawn_timer.start()
+	$CollectAnim.play(animation)
 
 func _on_despawn_timer():
 	visible = false

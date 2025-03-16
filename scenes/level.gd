@@ -181,29 +181,20 @@ func _on_new_collect_timer_timeout() -> void:
 	instance.position.y = 100
 	instance.position.x = randi_range(450, 700)
 
-	var CollectSprite = Sprite2D.new()
-	CollectSprite.scale = Vector2(5,5)
 	if collect_type == 0:
 		print("fast")
 		instance.set_meta("collect_type", "fast")
-		CollectSprite.texture = load("res://assets/sprites/clock-small.png")
+		instance.animation = "fast"
 		
 			
 	if collect_type == 1:
 		print("slow")
 		instance.set_meta("collect_type", "slow")
-		CollectSprite.texture = load("res://assets/sprites/clock-slow.png")
+		instance.animation = "slow"
 	
-	instance.add_child(CollectSprite)
 	var despawn_timer = Timer.new()
 	despawn_timer.wait_time = 7.0
 	despawn_timer.name = "DespawnTimer"
 	instance.add_child(despawn_timer)
 		
 	$Collectibles.add_child(instance)
-	#await get_tree().create_timer(7.0).timeout
-	#instance.queue_free()
-	#if $Collectibles/GameSpeedCollect.get_meta("started") == "true":
-		#return
-	#else:
-		#

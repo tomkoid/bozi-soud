@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cddgcw3r4ywt"
-path="res://.godot/imported/clock-small.png-38640849f88977c013aba7835cd700b2.ctex"
+uid="uid://cn3a7cvtwauds"
+path="res://.godot/imported/bubble_pink_sprite.png-5eaf44a50db1873c81e5a8d5e9221331.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/clock-small.png"
-dest_files=["res://.godot/imported/clock-small.png-38640849f88977c013aba7835cd700b2.ctex"]
+source_file="res://assets/sprites/bubble_pink_sprite.png"
+dest_files=["res://.godot/imported/bubble_pink_sprite.png-5eaf44a50db1873c81e5a8d5e9221331.ctex"]
 
 [params]
 
