@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfubsfvmjqgh8"]
+[gd_scene load_steps=15 format=3 uid="uid://bfubsfvmjqgh8"]
 
 [ext_resource type="Script" uid="uid://bgtkqryvyenhu" path="res://scenes/ui/settings_menu.gd" id="1_p8u3i"]
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="2_fi37o"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="4_vbqj3"]
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="5_s6f4o"]
 [ext_resource type="Script" uid="uid://b7vpvik3w1xh8" path="res://scenes/ui/escape_button_settings.gd" id="6_5kfsk"]
+[ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="7_ngbvi"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwshd"]
 
@@ -190,10 +191,10 @@ step = 0.333
 tick_count = 10
 
 [node name="RightCol" type="VBoxContainer" parent="."]
-offset_left = 617.344
-offset_top = 313.961
-offset_right = 1008.93
-offset_bottom = 376.961
+offset_left = 617.0
+offset_top = 314.0
+offset_right = 1009.0
+offset_bottom = 479.0
 theme_override_constants/separation = 20
 
 [node name="VsyncButton" type="Button" parent="RightCol"]
@@ -215,6 +216,16 @@ text = "Fullscreen"
 [node name="DisplayType" type="Button" parent="RightCol"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
+
+[node name="PrivacyPolicy" type="LinkButton" parent="RightCol"]
+z_index = 2
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("7_ngbvi")
+theme_override_font_sizes/font_size = 26
+text = "Privacy Policy"
+uri = "https://finaltrial.tomkoid.cz/privacy-policy.html"
 
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
 [connection signal="toggled" from="LeftCol/MasterVolumeContainer/Control/MasterVolumeMute" to="." method="_on_master_volume_mute_toggled"]
