@@ -301,6 +301,23 @@ position = Vector2(808.5, 434)
 scale = Vector2(1.6493, 2.64197)
 texture = ExtResource("11_0tyx3")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+offset_left = 560.0
+offset_top = 207.0
+offset_right = 1100.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 0.556863)
+
+[node name="BuyMapButton" type="Button" parent="."]
+offset_left = 723.0
+offset_top = 239.0
+offset_right = 892.0
+offset_bottom = 316.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 50
+text = "Cost: "
+
 [node name="SwitchingLevelsButtonRight" type="Button" parent="."]
 offset_left = 902.0
 offset_top = 384.0
@@ -345,5 +362,6 @@ text = "Coins: "
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BuyMapButton" to="." method="_on_buy_map_button_pressed"]
 [connection signal="pressed" from="SwitchingLevelsButtonRight" to="." method="_on_switching_levels_button_right_pressed"]
 [connection signal="pressed" from="SwitchingLevelsButtonLeft" to="." method="_on_switching_levels_button_left_pressed"]

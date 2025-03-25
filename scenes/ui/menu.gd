@@ -10,15 +10,21 @@ var info_api_url = "https://bs.tomkoid.cz/api/v1/info"
 var levels_info = [
 	{
 		"name": "classic",
-		"path": "background_paralax_1.png"
+		"path": "background_paralax_1.png",
+		"cost": 0,
+		"owning_status":  true
 	},
 	{
 		"name": "hell",
-		"path": "background_hell_onlyfortest.png"
+		"path": "background_hell_onlyfortest.png",
+		"cost": 10,
+		"owning_status":  false
 	},
 	{
 		"name": "heaven",
-		"path": "background_heavenl_onlyfortest.png"
+		"path": "background_heavenl_onlyfortest.png",
+		"cost": 50,
+		"owning_status":  false
 	}
 ]
 
@@ -27,6 +33,7 @@ var current_level_id = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(current_level_id)######BAD SAVING
 	TransitionScreen.transition()
 	
 	$GameVersion.text += Global.game_version
@@ -37,6 +44,7 @@ func _ready() -> void:
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		game_data = file.get_var(true)
 	get_node("BestScoreLabel").text += str(game_data.best_score)
+	current_level_id = Global.settings.s["current_map"]
 	$LevelLabel.text = levels_info[current_level_id].name
 	recover_current_map()
 	$CoinLabel.text += str(Global.coins)
@@ -54,6 +62,13 @@ func _process(delta: float) -> void:
 	elif gt_rot <= -2.5:
 		rotation_accel = -rotation_accel
 	$GameTitle.rotation_degrees += rotation_accel * delta
+	if levels_info[current_level_id].owning_status == true:
+		$BuyMapButton.hide()
+		$ColorRect.hide()
+	else:
+		$BuyMapButton.show()
+		$ColorRect.show()
+		$BuyMapButton.text = "Cost: " + str(levels_info[current_level_id].cost)
 
 	
 func _on_info_check_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
@@ -69,9 +84,12 @@ func _show_new_version_msg(data):
 	$InfoButton.uri = data.redirect_url
 
 func _on_button_pressed() -> void:
-	Global.game_controller.change_gui_scene("res://scenes/level" + str(current_level_id) + ".tscn")
-	TransitionScreen.transition()
-	await TransitionScreen.on_transition_finished
+	if levels_info[current_level_id].owning_status == true:
+		Global.game_controller.change_gui_scene("res://scenes/level" + str(current_level_id) + ".tscn")
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
+	else:
+		print("buy map first")
 
 
 func _on_settings_button_pressed():
@@ -92,6 +110,7 @@ func _on_switching_levels_button_right_pressed():
 	current_level_id += 1
 	if current_level_id > len(levels_info) - 1:
 		current_level_id = 0
+	print(current_level_id)	
 	Global.settings.s.current_map = current_level_id
 	Global.settings.save()
 	for i in range(len(levels_info)):
@@ -115,6 +134,7 @@ func _on_switching_levels_button_left_pressed():
 	current_level_id -= 1
 	if current_level_id < 0:
 		current_level_id = len(levels_info) - 1
+	print(current_level_id)	
 	Global.settings.s.current_map = current_level_id
 	Global.settings.save()
 	for i in range(len(levels_info)):
@@ -138,3 +158,12 @@ func _on_switching_levels_button_left_pressed():
 func _on_shop_button_pressed():
 	Global.game_controller.change_gui_scene("res://scenes/ui/shop.tscn", false, true)
 	
+
+
+func _on_buy_map_button_pressed():
+	if Global.coins >= levels_info[current_level_id].cost:
+		Global.coins -= levels_info[current_level_id].cost
+		levels_info[current_level_id].owning_status = true
+		$CoinLabel.text = "Coins: " + str(Global.coins)
+	else:
+		print("here SHAKe")
