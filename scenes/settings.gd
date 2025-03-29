@@ -14,7 +14,8 @@ var s = {
 	
 	"current_map": 0,
 	
-	"coins": 50000
+	"coins": 50000,
+	'owning_statuses': [true, false, false]
 }
 
 var settings_save_path = "user://settings.save"

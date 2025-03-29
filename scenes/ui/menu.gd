@@ -30,12 +30,11 @@ var levels_info = [
 
 #var level_ids = ["background_paralax_1.png", "background_hell_onlyfortest.png"]
 var current_level_id = 0
-
+var owning_statuses
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(current_level_id)######BAD SAVING
-	TransitionScreen.transition()
 	
+	TransitionScreen.transition()
 	$GameVersion.text += Global.game_version
 	$GameVersion.modulate.a = .7
 	$InfoButton.text = "About the game"
@@ -43,17 +42,19 @@ func _ready() -> void:
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		game_data = file.get_var(true)
+	
 	get_node("BestScoreLabel").text += str(game_data.best_score)
 	current_level_id = Global.settings.s["current_map"]
 	$LevelLabel.text = levels_info[current_level_id].name
 	recover_current_map()
 	$CoinLabel.text += str(Global.coins)
+	owning_statuses = Global.settings.s["owning_statuses"]
 	
 	# check info api
 	info_check.request_completed.connect(_on_info_check_request_completed)
 	print("info: requesting..")
 	info_check.request(info_api_url, ["User-Agent: BS (%s)" % Global.game_version])
-	
+	print('owning statuses' + str(owning_statuses))
 var rotation_accel = 0.45
 func _process(delta: float) -> void:
 	var gt_rot = $GameTitle.rotation_degrees
@@ -62,7 +63,8 @@ func _process(delta: float) -> void:
 	elif gt_rot <= -2.5:
 		rotation_accel = -rotation_accel
 	$GameTitle.rotation_degrees += rotation_accel * delta
-	if levels_info[current_level_id].owning_status == true:
+	
+	if owning_statuses[current_level_id] == true:
 		$BuyMapButton.hide()
 		$ColorRect.hide()
 	else:
@@ -84,7 +86,7 @@ func _show_new_version_msg(data):
 	$InfoButton.uri = data.redirect_url
 
 func _on_button_pressed() -> void:
-	if levels_info[current_level_id].owning_status == true:
+	if owning_statuses[current_level_id] == true:
 		Global.game_controller.change_gui_scene("res://scenes/level" + str(current_level_id) + ".tscn")
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
@@ -163,7 +165,8 @@ func _on_shop_button_pressed():
 func _on_buy_map_button_pressed():
 	if Global.coins >= levels_info[current_level_id].cost:
 		Global.coins -= levels_info[current_level_id].cost
-		levels_info[current_level_id].owning_status = true
+		owning_statuses[current_level_id] = true
+		print(owning_statuses)
 		$CoinLabel.text = "Coins: " + str(Global.coins)
 	else:
 		print("here SHAKe")
