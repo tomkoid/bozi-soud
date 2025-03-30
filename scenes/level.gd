@@ -45,6 +45,10 @@ func _process(_delta: float) -> void:
 			game_data.best_score = stats.score
 			save()
 
+
+		if Global.input_method == Global.INPUT_SCHEMES.CONTROLLER:
+			Input.stop_joy_vibration(0)
+			Input.start_joy_vibration(0, 1.0, 1.0, 0.7)
 			
 		%UI.hide()
 		get_node("EndScreen/ScoreContainer/ScoreLabel").text += str(stats.score)
@@ -131,6 +135,10 @@ func killzone(body: CharacterBody2D, good_type: String):
 	if body.get_meta("type") == good_type:
 		stats.score += randi_range(100, 110)
 	else:
+		# controller vibration
+		if Global.input_method == Global.INPUT_SCHEMES.CONTROLLER:
+			Input.start_joy_vibration(0, 0.5, 1.0, 0.4)
+
 		$HeartbeatPlayer.stop()
 		$HeartbeatPlayer.play()
 		$LifeLostPlayer.stop()

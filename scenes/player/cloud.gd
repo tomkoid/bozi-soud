@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const max_speed = 800
+const KC_SPEED = 48000
 const accel = 1000
 const friction = 2500
 const JUMP_VELOCITY = -1500
@@ -36,7 +36,7 @@ func remove_hit_particles(hp_instance: GPUParticles2D):
 	#input.x = int(Input.is_action_pressed("right_move")) - int(Input.is_action_pressed("left_move"))
 	#return input.normalized()
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var player_as_size:	int = 80
 	var viewport_size = get_viewport().get_visible_rect().size
 
@@ -52,11 +52,13 @@ func _physics_process(_delta: float) -> void:
 	
 
 	if Global.input_method == Global.INPUT_SCHEMES.KEYBOARD or Global.input_method == Global.INPUT_SCHEMES.CONTROLLER:
+		# automatically handles strength of input
 		var direction = Input.get_axis("left_move", "right_move")
+
 		if direction:
-			velocity.x = direction * max_speed 
+			velocity.x = direction * KC_SPEED * delta
 		else:
-			velocity.x = move_toward(velocity.x, 0, max_speed)
+			velocity.x = move_toward(velocity.x, 0, KC_SPEED)
 
 		if position.x >= viewport_size.x - player_as_size:
 			position.x = viewport_size.x - player_as_size
