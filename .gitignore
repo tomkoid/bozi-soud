@@ -21,3 +21,4 @@ android
 *.apk.idsig
 *.exe
 *.pck
+*.x86_64
