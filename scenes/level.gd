@@ -40,6 +40,11 @@ func _process(_delta: float) -> void:
 		get_tree().reload_current_scene()
 
 
+	if stats.lives == 1:
+		if Global.input_method == Global.INPUT_SCHEMES.CONTROLLER and Input.get_joy_vibration_duration(0) == 0.0:
+			Input.start_joy_vibration(0, 1.0, 1.0, 5)
+
+
 	if stats.lives <= 0:
 		if game_data.best_score < stats.score or game_data.best_score == 0:
 			game_data.best_score = stats.score
