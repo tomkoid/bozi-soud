@@ -29,37 +29,41 @@ func create_hit_particles():
 func remove_hit_particles(hp_instance: GPUParticles2D):
 	particles_container.remove_child(hp_instance)
 
-func _physics_process(delta):
-	player_movement(delta)
-	var viewport_size = get_viewport().get_visible_rect().size
-	var next_position_x = get_global_mouse_position().x
-
-	var player_as_size:	int = 80
-	if next_position_x >= viewport_size.x - player_as_size:
-		next_position_x = viewport_size.x - player_as_size
-	elif next_position_x <= 0 + player_as_size:
-		next_position_x = 0 + player_as_size
-
-	position.x = next_position_x
-	position.y = 500
+# func _physics_process(delta):
+# 	player_movement(delta)
 
 #func get_input():
 	#input.x = int(Input.is_action_pressed("right_move")) - int(Input.is_action_pressed("left_move"))
 	#return input.normalized()
 
-func player_movement(delta):
-	#input = get_input()
-	
-	
-	#if input == Vector2.ZERO:
-		#if velocity.length() > (friction * delta):
-			#velocity -= velocity.normalized() * (friction * delta)
-		#else:
-			#velocity = Vector2.ZERO
-	#else:		count += randi_range(100, 110)
+func _physics_process(_delta: float) -> void:
+	var player_as_size:	int = 80
+	var viewport_size = get_viewport().get_visible_rect().size
 
-		#velocity += (input * accel * delta)
-		#velocity = velocity.limit_length(max_speed)
+	if Global.input_method == Global.INPUT_SCHEMES.MOUSE:
+		var next_position_x = get_global_mouse_position().x
+
+		if next_position_x >= viewport_size.x - player_as_size:
+			next_position_x = viewport_size.x - player_as_size
+		elif next_position_x <= 0 + player_as_size:
+			next_position_x = 0 + player_as_size
+
+		position.x = next_position_x
+	
+
+	if Global.input_method == Global.INPUT_SCHEMES.KEYBOARD or Global.input_method == Global.INPUT_SCHEMES.CONTROLLER:
+		var direction = Input.get_axis("left_move", "right_move")
+		if direction:
+			velocity.x = direction * max_speed 
+		else:
+			velocity.x = move_toward(velocity.x, 0, max_speed)
+
+		if position.x >= viewport_size.x - player_as_size:
+			position.x = viewport_size.x - player_as_size
+		elif position.x <= 0 + player_as_size:
+			position.x = 0 + player_as_size
+
+	position.y = 500
 
 	move_and_slide()
 
