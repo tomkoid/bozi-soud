@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	var player_as_size:	int = 80
 	var viewport_size = get_viewport().get_visible_rect().size
 
-	if Global.input_method == Global.INPUT_SCHEMES.MOUSE:
+	if Global.input_method == Global.INPUT_SCHEMES.TOUCH_SCREEN:
 		var next_position_x = get_global_mouse_position().x
 
 		if next_position_x >= viewport_size.x - player_as_size:

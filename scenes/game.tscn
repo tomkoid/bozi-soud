@@ -15,3 +15,13 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="InputType" type="RichTextLabel" parent="GUI"]
+visible = false
+layout_mode = 0
+offset_left = 182.0
+offset_top = 60.0
+offset_right = 961.0
+offset_bottom = 145.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "input type: "
