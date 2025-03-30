@@ -21,6 +21,7 @@ func _ready() -> void:
 	# reset stats
 	stats.lives = LIVES_COUNT
 	stats.score = 0
+	stats.score = 0
 	
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)

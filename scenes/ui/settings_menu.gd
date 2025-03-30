@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-@onready var pause_menu = get_node("../Game/PauseMenu")
-
 @onready var slider_folder = "LeftCol/"
 @onready var master_vol_slider = get_node(slider_folder + "MasterVolumeContainer/MasterVolumeSlider")
 @onready var master_mute_btn = get_node(slider_folder + "MasterVolumeContainer/Control/MasterVolumeMute")
@@ -14,6 +12,7 @@ var ready_finished = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var pause_menu = get_node("../Game/PauseMenu")
 	if pause_menu:
 		pause_menu.hide()
 	
@@ -40,6 +39,7 @@ func _ready() -> void:
 	
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("escape"):
+		var pause_menu = get_node("../Game/PauseMenu")
 		if pause_menu:
 			pause_menu.show()
 		Global.game_controller.change_gui_prev()
