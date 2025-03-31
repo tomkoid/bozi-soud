@@ -37,7 +37,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	global_delta = _delta
 	if Input.is_action_pressed("reload"):
-		get_tree().reload_current_scene()
+		Global.game_controller.reload_current_scene()
 
 
 	if stats.lives == 1:
