@@ -22,15 +22,15 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouse:
 		input_method = INPUT_SCHEMES.TOUCH_SCREEN
 		mouse_mode = Input.MOUSE_MODE_VISIBLE
-		#print("mouse move detected, set input method to touch screen")
+		# print("mouse move detected, set input method to touch screen")
 	elif event is InputEventKey:
 		input_method = INPUT_SCHEMES.KEYBOARD
 		mouse_mode = Input.MOUSE_MODE_VISIBLE
-		#print("keyboard key detected, set input method to keyboard")
+		# print("keyboard key detected, set input method to keyboard")
 	elif event is InputEventJoypadButton or event is InputEventJoypadMotion:
 		input_method = INPUT_SCHEMES.CONTROLLER
 		mouse_mode = Input.MOUSE_MODE_HIDDEN
-		#print("controller button detected, set input method to controller")
+		# print("controller button detected, set input method to controller")
 	
 	if input_method != prev_input_method:
 		changed_input_method.emit()
