@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfubsfvmjqgh8"]
+[gd_scene load_steps=16 format=3 uid="uid://bfubsfvmjqgh8"]
 
 [ext_resource type="Script" uid="uid://bgtkqryvyenhu" path="res://scenes/ui/settings_menu.gd" id="1_p8u3i"]
 [ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="2_fi37o"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="5_s6f4o"]
 [ext_resource type="Script" uid="uid://b7vpvik3w1xh8" path="res://scenes/ui/escape_button_settings.gd" id="6_5kfsk"]
 [ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="7_ngbvi"]
+[ext_resource type="Script" uid="uid://dckl3sd1muq5c" path="res://scenes/ui/language_button.gd" id="8_mishw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwshd"]
 
@@ -94,7 +95,7 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("4_vbqj3")
 theme_override_font_sizes/font_size = 150
-text = "Settings"
+text = "SETTINGS"
 
 [node name="EscapeButton" type="TextureButton" parent="."]
 offset_left = 1066.0
@@ -114,7 +115,7 @@ offset_top = 169.0
 offset_right = 383.0
 offset_bottom = 238.0
 theme_override_font_sizes/font_size = 50
-text = "Sound"
+text = "SOUND"
 
 [node name="GraphicsLabel" type="Label" parent="."]
 offset_left = 731.0
@@ -122,7 +123,7 @@ offset_top = 250.0
 offset_right = 893.0
 offset_bottom = 319.0
 theme_override_font_sizes/font_size = 50
-text = "Graphics"
+text = "GRAPHICS"
 
 [node name="LeftCol" type="VBoxContainer" parent="."]
 offset_left = 181.0
@@ -152,7 +153,7 @@ texture_pressed = SubResource("AtlasTexture_ywggk")
 [node name="MasterVolume" type="Label" parent="LeftCol/MasterVolumeContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Master volume"
+text = "MASTERVOLUME"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="LeftCol/MasterVolumeContainer"]
 layout_mode = 2
@@ -166,7 +167,7 @@ layout_mode = 2
 [node name="MusicVolume" type="Label" parent="LeftCol/MusicVolumeContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Music volume"
+text = "MUSICVOLUME"
 
 [node name="MusicVolumeSlider" type="HSlider" parent="LeftCol/MusicVolumeContainer"]
 layout_mode = 2
@@ -180,7 +181,7 @@ layout_mode = 2
 [node name="SoundEffectVolume" type="Label" parent="LeftCol/SoundEffectVolumeContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "SFX volume"
+text = "SFXVOLUME"
 
 [node name="SoundEffectVolumeSlider" type="HSlider" parent="LeftCol/SoundEffectVolumeContainer"]
 layout_mode = 2
@@ -206,12 +207,12 @@ text = "VSYNC: disabled"
 [node name="ParticlesButton" type="CheckButton" parent="RightCol"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Enable Particles"
+text = "ENABLE PARTICLES"
 
 [node name="FullscreenButton" type="CheckButton" parent="RightCol"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Fullscreen"
+text = "FULLSCREEN"
 
 [node name="DisplayType" type="Button" parent="RightCol"]
 layout_mode = 2
@@ -224,8 +225,15 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 theme = ExtResource("7_ngbvi")
 theme_override_font_sizes/font_size = 26
-text = "Privacy Policy"
+text = "PRIVACY POLICY"
 uri = "https://finaltrial.tomkoid.cz/privacy-policy.html"
+
+[node name="LanguageButton" type="Button" parent="RightCol"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "LANGUAGE "
+alignment = 0
+script = ExtResource("8_mishw")
 
 [connection signal="pressed" from="EscapeButton" to="EscapeButton" method="_on_pressed"]
 [connection signal="toggled" from="LeftCol/MasterVolumeContainer/Control/MasterVolumeMute" to="." method="_on_master_volume_mute_toggled"]
@@ -236,3 +244,4 @@ uri = "https://finaltrial.tomkoid.cz/privacy-policy.html"
 [connection signal="toggled" from="RightCol/ParticlesButton" to="." method="_on_particles_button_toggled"]
 [connection signal="toggled" from="RightCol/FullscreenButton" to="." method="_on_fullscreen_button_toggled"]
 [connection signal="pressed" from="RightCol/DisplayType" to="." method="_on_display_type_pressed"]
+[connection signal="pressed" from="RightCol/LanguageButton" to="RightCol/LanguageButton" method="_on_pressed"]

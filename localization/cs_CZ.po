@@ -1,0 +1,123 @@
+# LANGUAGE translation for Final Trial for the following files:
+# res://scenes/level.tscn
+# res://scenes/ui/menu.tscn
+# res://scenes/ui/pause_menu.tscn
+# res://scenes/ui/settings_menu.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Final Trial\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: scenes/level.tscn
+msgid "---UNKNOWN---"
+msgstr ""
+
+#: scenes/ui/menu.tscn
+msgid ""
+"[center][pulse freq=1.0 color=#ffffff90 ease=2.0]Final Trial[/pulse][/center]"
+msgstr ""
+"[center][pulse freq=1.0 color=#ffffff90 ease=2.0]Boží Soud[/pulse][/center]"
+
+#: scenes/ui/menu.tscn
+msgid "[center]Version: "
+msgstr "[center]Verze: "
+
+#: scenes/ui/menu.tscn scenes/ui/pause_menu.tscn scenes/ui/settings_menu.tscn
+msgid "Settings"
+msgstr "Nastavení"
+
+#: scenes/ui/menu.tscn
+msgid "Exit\n"
+msgstr "Odejít\n"
+
+#: scenes/ui/menu.tscn
+msgid "Play"
+msgstr "Hrát"
+
+#: scenes/ui/menu.tscn
+msgid "---------"
+msgstr "---------"
+
+#: scenes/ui/menu.tscn
+msgid ""
+"[center][wave amp=50.0 freq=5.0 connected=1]More maps coming soon.[/wave][/"
+"center]"
+msgstr ""
+"[center][wave amp=50.0 freq=5.0 connected=1]Očekávejte další mapy.[/wave][/"
+"center]"
+
+#: scenes/ui/menu.tscn
+msgid "by Dystopia Bakery"
+msgstr "od Dystopia Bakery"
+
+#: scenes/ui/menu.tscn
+msgid "Your best score: "
+msgstr "Tvoje nejlepší skóre: "
+
+#: scenes/ui/pause_menu.tscn
+msgid "Paused"
+msgstr "Pauza"
+
+#: scenes/ui/pause_menu.tscn
+msgid "Resume"
+msgstr "Pokračovat"
+
+#: scenes/ui/pause_menu.tscn
+msgid "Restart"
+msgstr "Restartovat"
+
+#: scenes/ui/pause_menu.tscn
+msgid "Menu"
+msgstr "Menu"
+
+#: scenes/ui/settings_menu.tscn
+msgid "Sound"
+msgstr "Zvuky"
+
+#: scenes/ui/settings_menu.tscn
+msgid "Graphics"
+msgstr "Grafika"
+
+#: scenes/ui/settings_menu.tscn
+msgid "Master volume"
+msgstr "Celková hlasitost"
+
+#: scenes/ui/settings_menu.tscn
+msgid "Music volume"
+msgstr "Hlasitost hudby"
+
+#: scenes/ui/settings_menu.tscn
+msgid "SFX volume"
+msgstr "Hlasitost SFX"
+
+#: scenes/ui/settings_menu.tscn
+msgid "VSYNC: disabled"
+msgstr "VSYNC: vypnutý"
+
+#: scenes/ui/settings_menu.tscn
+msgid "Enable Particles"
+msgstr "Povolit Částice"
+
+#: scenes/ui/settings_menu.tscn
+msgid "Fullscreen"
+msgstr "Fullscreen"
+
+#: scenes/ui/settings_menu.tscn
+msgid "Privacy Policy"
+msgstr "Zásady ochrany osobních údajů"
+
+#: scenes/ui/settings_menu.tscn
+msgid "Language: "
+msgstr "Jazyk: "

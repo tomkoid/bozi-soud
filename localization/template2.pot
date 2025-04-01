@@ -1,0 +1,116 @@
+# LANGUAGE translation for Final Trial for the following files:
+# res://scenes/level.tscn
+# res://scenes/ui/menu.tscn
+# res://scenes/ui/pause_menu.tscn
+# res://scenes/ui/settings_menu.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Final Trial\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: scenes/level.tscn
+msgid "---UNKNOWN---"
+msgstr ""
+
+#: scenes/ui/menu.tscn
+msgid "[center][pulse freq=1.0 color=#ffffff90 ease=2.0]Final Trial[/pulse][/center]"
+msgstr ""
+
+#: scenes/ui/menu.tscn
+msgid "[center]Version: "
+msgstr ""
+
+#: scenes/ui/menu.tscn
+#: scenes/ui/pause_menu.tscn
+msgid "Settings"
+msgstr ""
+
+#: scenes/ui/menu.tscn
+msgid "Exit\n"
+msgstr ""
+
+#: scenes/ui/menu.tscn
+msgid "Play"
+msgstr ""
+
+#: scenes/ui/menu.tscn
+msgid "---------"
+msgstr ""
+
+#: scenes/ui/menu.tscn
+msgid "[center][wave amp=50.0 freq=5.0 connected=1]More maps coming soon.[/wave][/center]"
+msgstr ""
+
+#: scenes/ui/menu.tscn
+msgid "by Dystopia Bakery"
+msgstr ""
+
+#: scenes/ui/menu.tscn
+msgid "Your best score: "
+msgstr ""
+
+#: scenes/ui/pause_menu.tscn
+msgid "Paused"
+msgstr ""
+
+#: scenes/ui/pause_menu.tscn
+msgid "Resume"
+msgstr ""
+
+#: scenes/ui/pause_menu.tscn
+msgid "Restart"
+msgstr ""
+
+#: scenes/ui/pause_menu.tscn
+msgid "Menu"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "SETTINGS"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "SOUND"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "GRAPHICS"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "MASTERVOLUME"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "MUSICVOLUME"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "SFXVOLUME"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "VSYNC: disabled"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "ENABLE PARTICLES"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "FULLSCREEN"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "PRIVACY POLICY"
+msgstr ""
+
+#: scenes/ui/settings_menu.tscn
+msgid "LANGUAGE "
+msgstr ""
