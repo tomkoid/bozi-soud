@@ -22,7 +22,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "FallGuy" or "BadGuy":
 		self.set_meta("started", "true")
 		var StartSpawnRate = GameTimer.wait_time
-		$".".visible = false # instead of calling queue_free() we make the sprite invisible
+		$BubblePinkSprite.play("bubble_destroy")
+		$CollectAnim.visible = false # instead of calling queue_free() we make the sprite invisible
 		$Area2D/CollisionShape2D.set_deferred("disabled",true) # and disable the collision shape, otherwise the timer wouldn't work 
 		#$Area2D/CollisionShape2D.queue_free() 
 		
