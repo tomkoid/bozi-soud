@@ -12,10 +12,9 @@ func _ready():
 	$CollectAnim.play(animation)
 
 func _on_despawn_timer():
-	visible = false
 	$Area2D/CollisionShape2D.set_deferred("disabled",true)
+	$AnimationPlayer.play("fadeout")
 	await get_tree().create_timer(10.0).timeout
-	print("ENTITY DESPAWN")
 	queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
