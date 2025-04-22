@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://bonhk5qbv4l1a"]
+[gd_scene format=3 uid="uid://bonhk5qbv4l1a"]
 
 [node name="ShopButton" type="Control"]
 layout_mode = 3
