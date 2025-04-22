@@ -1,11 +1,9 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ddhhavwer07e5"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ddhhavwer07e5"]
 
 [ext_resource type="FontFile" uid="uid://boxuef2owck6r" path="res://assets/fonts/Jersey15-Regular.ttf" id="1_3bka6"]
 [ext_resource type="Texture2D" uid="uid://bvvk4bglbrcvq" path="res://assets/sprites/scroll-sh4.png" id="2_eb8m8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ge4et"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0vs2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyx42"]
 texture = ExtResource("2_eb8m8")
@@ -36,7 +34,7 @@ Button/constants/outline_size = 0
 Button/font_sizes/font_size = 12
 Button/fonts/font = ExtResource("1_3bka6")
 Button/styles/disabled = SubResource("StyleBoxEmpty_ge4et")
-Button/styles/focus = SubResource("StyleBoxEmpty_h0vs2")
+Button/styles/focus = SubResource("StyleBoxTexture_oyx42")
 Button/styles/hover = SubResource("StyleBoxTexture_oyx42")
 Button/styles/normal = SubResource("StyleBoxTexture_cukvn")
 Button/styles/pressed = SubResource("StyleBoxTexture_oyx42")
