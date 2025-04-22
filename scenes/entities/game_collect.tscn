@@ -286,9 +286,11 @@ autoplay = "fadein"
 [node name="SlowDownAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_0i3v7")
 volume_db = -2.0
+bus = &"SFX"
 
 [node name="SpeedUpAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_atiet")
 volume_db = -2.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
