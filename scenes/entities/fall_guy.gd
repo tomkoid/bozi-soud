@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+@export var SPEED = 300.0
 var theta: float
 
 var jump_pos_x = randi_range(20,200)
