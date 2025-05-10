@@ -1,7 +1,7 @@
 extends Node
 
 var game_controller : GameController
-var game_version = "1.4.1"
+var game_version = "1.5.0"
 
 var settings: GameSettings = GameSettings.new()
 
