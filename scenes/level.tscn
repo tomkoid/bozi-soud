@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://bweigv0ub148" path="res://scenes/stats.gd" id="2_lw621"]
 [ext_resource type="Texture2D" uid="uid://bkgvdpkhq78j6" path="res://assets/sprites/background_paralax_1.png" id="2_nexhj"]
 [ext_resource type="PackedScene" uid="uid://ka5w0vmbaw1e" path="res://scenes/objects/platform.tscn" id="3_m4de3"]
-[ext_resource type="AudioStream" uid="uid://c7yk8wq4di6bg" path="res://assets/sounds/sound_effects/boing.mp3" id="4_pum5f"]
 [ext_resource type="PackedScene" uid="uid://dc2coaqu76bfd" path="res://scenes/UI.tscn" id="5_3th8g"]
 [ext_resource type="FontFile" uid="uid://b848qq7fibpty" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="6_do7aq"]
 [ext_resource type="AudioStream" uid="uid://2l77r2p5jhds" path="res://assets/sounds/ambient/ml_sonata.mp3" id="6_gb1vr"]
@@ -23,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cwwaitliqbm1r" path="res://scenes/ui/pause_menu.tscn" id="16_867yn"]
 [ext_resource type="PackedScene" uid="uid://cyb06rtoow20g" path="res://scenes/entities/game_collect.tscn" id="19_tgteq"]
 [ext_resource type="Texture2D" uid="uid://dc0hjxl0saq0b" path="res://assets/sprites/cloud_sprite2.png" id="20_5k0ak"]
+[ext_resource type="AudioStream" uid="uid://6uw34452bonr" path="res://assets/sounds/sound_effects/bounce.mp3" id="21_5k0ak"]
 
 [sub_resource type="Resource" id="Resource_6wh4q"]
 script = ExtResource("2_lw621")
@@ -303,7 +303,7 @@ parameters/looping = true
 
 [node name="LifeLostPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_8gofh")
-volume_db = -6.0
+volume_db = -0.103
 bus = &"SFX"
 
 [node name="HeartbeatPlayer" type="AudioStreamPlayer2D" parent="."]
@@ -383,7 +383,8 @@ scale = Vector2(0.741717, 0.741717)
 texture = ExtResource("20_5k0ak")
 
 [node name="BoingEffect" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_pum5f")
+stream = ExtResource("21_5k0ak")
+volume_db = 8.041
 bus = &"SFX"
 parameters/looping = false
 
