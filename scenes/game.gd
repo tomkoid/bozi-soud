@@ -13,6 +13,8 @@ var current_gui_path
 func _ready() -> void:
 	Global.game_controller = self
 	Global.settings.init()
+	Global.changed_input_method.connect(update_input_type)
+	update_input_type()
 	change_gui_scene("res://scenes/ui/menu.tscn")
 
 	# set automatically fullscreen for mobile
@@ -20,6 +22,9 @@ func _ready() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 
+
+func update_input_type():
+	$GUI/InputType.text += str(Global.input_method) + " "
 
 func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
 	if current_gui != null:

@@ -262,7 +262,7 @@ texture = ExtResource("2_nexhj")
 
 [node name="Player" parent="." instance=ExtResource("1_f416g")]
 z_index = 1
-position = Vector2(578, 446)
+position = Vector2(578, 500)
 scale = Vector2(2, 2)
 
 [node name="PlatformLeft" parent="." instance=ExtResource("3_m4de3")]

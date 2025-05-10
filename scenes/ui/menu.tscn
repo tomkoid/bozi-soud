@@ -210,6 +210,7 @@ scale = Vector2(4, 4)
 focus_neighbor_top = NodePath("../SettingsButton")
 mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
+keep_pressed_outside = true
 text = "Play"
 script = ExtResource("6_ir0oc")
 

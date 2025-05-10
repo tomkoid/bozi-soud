@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ca5e0bfs2076p" path="res://scenes/game.gd" id="1_h14fn"]
 
 [node name="GameController" type="Node2D" node_paths=PackedStringArray("world", "gui")]
+process_mode = 3
 script = ExtResource("1_h14fn")
 world = NodePath("World")
 gui = NodePath("GUI")
@@ -10,8 +11,19 @@ gui = NodePath("GUI")
 [node name="World" type="Node2D" parent="."]
 
 [node name="GUI" type="Control" parent="."]
+process_mode = 1
 z_index = -2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="InputType" type="RichTextLabel" parent="GUI"]
+visible = false
+layout_mode = 0
+offset_left = 182.0
+offset_top = 60.0
+offset_right = 961.0
+offset_bottom = 145.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "input type: "

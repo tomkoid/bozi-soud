@@ -60,6 +60,10 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		# controller vibration
+		if Global.input_method == Global.INPUT_SCHEMES.CONTROLLER:
+			Input.start_joy_vibration(0, 0.5, 0.5, 0.1)
+
 		Global.emit_player_particles.emit()
 
 		get_node("../../BoingEffect").play()
