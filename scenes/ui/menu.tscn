@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="3_kkovv"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="4_vuo2u"]
 [ext_resource type="Texture2D" uid="uid://df1r05tlcm114" path="res://assets/sprites/sun-spritesheet1.png" id="5_17g22"]
-[ext_resource type="Script" uid="uid://drtfg7ndwhx6a" path="res://scenes/ui/play_button.gd" id="6_ir0oc"]
+[ext_resource type="Script" path="res://scenes/ui/play_button.gd" id="6_ir0oc"]
 [ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="6_wvaxu"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="7_s4v21"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="8_lp7x5"]
