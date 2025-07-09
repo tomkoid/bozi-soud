@@ -48,7 +48,7 @@ func _show_new_version_msg(data):
 	$InfoButton.uri = data.redirect_url
 
 func _on_button_pressed() -> void:
-	Global.game_controller.change_gui_scene("res://scenes/level.tscn")
+	Global.game_controller.change_gui_scene("res://scenes/level1.tscn")
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 
