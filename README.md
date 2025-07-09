@@ -11,6 +11,5 @@ Free and Open Source under MIT license.
 Try it [in browser](https://bozisoud.tomkoid.cz) or [download](https://codeberg.org/dystopia/final-trial/releases/latest/) it to your device!
 
 <h1>🎦 Screenshots</h1>
-<img src="./readme-screenshots/screen1.png" alt="Final Trial screenshot" width="1280" height="720"/>
-<img src="./readme-screenshots/screen2.png" alt="Final Trial screenshot" width="1280" height="720"/>
-<img src="./readme-screenshots/screen3.png" alt="Final Trial screenshot" width="1280" height="720"/>
+<img src="./readme-screenshots/screen1.png" alt="Final Trial screenshot" />
+<img src="./readme-screenshots/screen3.png" alt="Final Trial screenshot" />
