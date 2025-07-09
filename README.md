@@ -1,8 +1,14 @@
-# Final Trial
+<img src="./finaltrial-banner2.png" alt="Final Trial banner" />
 
-Spiritual game about the day of judgement. WORK IN PROGRESS
-<br>
-<br>
-<img src="./jesus-logo.png" alt="Ilumination" width="384"/>
-<br>
-***Illumination of Jesus Christ***
+<h1 align="center">Final Trial</h3>
+<p align=center><i>At the end of your life - you will go to Heaven or Hell. For now, judge others!</i></p>
+
+<h1>About</h1>
+A simple game made in Godot engine that runs on Android, PC and web. Your goal is to bounce the good guys to Heaven and let the bad ones fall to Hell.
+
+Free and Open Source under MIT license.
+
+Try it [in browser](https://bozisoud.tomkoid.cz) or [download](https://codeberg.org/dystopia/final-trial/releases/latest/) it to your device!
+
+<h1>Screenshots</h1>
+
