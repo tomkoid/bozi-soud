@@ -83,7 +83,7 @@ scale = Vector2(3.5, 3.5)
 texture = SubResource("AtlasTexture_3wlde")
 
 [node name="LivesCount" type="RichTextLabel" parent="Control/VBOX/Control"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 120.0
 offset_top = 101.0
 offset_right = 489.0
@@ -114,7 +114,7 @@ scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_hhed8")
 
 [node name="MoneyLabel" type="Label" parent="Control/VBOX/Control2"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 120.0
 offset_top = 16.0
 offset_right = 489.0
