@@ -40,9 +40,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#print(%GameTimer.wait_time)
 	$TimerLabel.text = str(%GameTimer.wait_time)
-	global_delta = _delta
 	if Input.is_action_pressed("reload"):
-		Global.game_controller.reload_currrent_scene()
+		get_tree().reload_current_scene()
 
 
 	if lives == 1:
