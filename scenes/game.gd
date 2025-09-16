@@ -15,7 +15,7 @@ func _ready() -> void:
 	Global.settings.init()
 	Global.changed_input_method.connect(update_input_type)
 	update_input_type()
-	change_gui_scene("res://scenes/ui/menu.tscn")
+	
 
 	# set automatically fullscreen for mobile
 	if OS.get_name() == "Android" or OS.get_name() == "iOS":

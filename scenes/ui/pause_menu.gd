@@ -11,14 +11,14 @@ func _on_continue_pressed():
 func _on_menu_pressed():
 	$".".hide()
 	get_tree().paused = false
-	Global.game_controller.change_gui_scene("res://scenes/ui/menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/menu.tscn")
 	
 
 func _on_restart_pressed():
 	get_tree().paused = false
-	Global.game_controller.reload_current_scene()
+	get_tree().reload_current_scene()
 	
 
 
 func _on_settings_pressed() -> void:
-	Global.game_controller.change_gui_scene("res://scenes/ui/settings_menu.tscn", false, true)
+	$Settings.show()

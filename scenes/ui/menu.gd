@@ -48,13 +48,13 @@ func _show_new_version_msg(data):
 	$InfoButton.uri = data.redirect_url
 
 func _on_button_pressed() -> void:
-	Global.game_controller.change_gui_scene("res://scenes/level1.tscn")
+	get_tree().change_scene_to_file("res://scenes/level1.tscn")
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 
 
 func _on_settings_button_pressed():
-	Global.game_controller.change_gui_scene("res://scenes/ui/settings_menu.tscn", false, true)
+	$Settings.show()
 	
 	
 func _on_quit_button_pressed():

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Final Trial"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="uid://cu3uhb23wp1gb"
 config/features=PackedStringArray("4.5", "Mobile")
 boot_splash/bg_color=Color(0.0313726, 0.0313726, 0.0313726, 1)
 boot_splash/image="res://assets/sprites/dictatorsplash.png"

@@ -42,7 +42,7 @@ func _physics_process(_delta):
 		var pause_menu = get_node("../Game/PauseMenu")
 		if pause_menu:
 			pause_menu.show()
-		Global.game_controller.change_gui_prev()
+		hide()
 		Global.settings.save()
 		
 func check_vsync_mode(mode: int) -> String:

@@ -1,14 +1,23 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfubsfvmjqgh8"]
+[gd_scene load_steps=12 format=3 uid="uid://bfubsfvmjqgh8"]
 
 [ext_resource type="Script" uid="uid://bgtkqryvyenhu" path="res://scenes/ui/settings_menu.gd" id="1_p8u3i"]
-[ext_resource type="Texture2D" uid="uid://ben18acog2c1f" path="res://assets/sprites/background-wip6-front.png" id="2_fi37o"]
-[ext_resource type="Texture2D" uid="uid://buu8yxisj2nxb" path="res://assets/sprites/background-wip8-back.png" id="3_ukpq6"]
-[ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="4_vbqj3"]
 [ext_resource type="Texture2D" uid="uid://7s8q5y3uj7ml" path="res://assets/sprites/book.png" id="5_s6f4o"]
 [ext_resource type="Script" uid="uid://b7vpvik3w1xh8" path="res://scenes/ui/escape_button_settings.gd" id="6_5kfsk"]
 [ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="7_ngbvi"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rwshd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b1cv"]
+bg_color = Color(0.40873867, 0.24748155, 4.813075e-08, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6600754, 0.52339506, 5.7756904e-07, 1)
+border_blend = true
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+corner_detail = 20
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bav1n"]
 atlas = ExtResource("5_s6f4o")
@@ -39,34 +48,21 @@ filter_clip = true
 process_mode = 3
 script = ExtResource("1_p8u3i")
 
-[node name="BG" type="Node2D" parent="."]
-
-[node name="Background-wip5-front" type="Sprite2D" parent="BG"]
-z_index = -9
-position = Vector2(576, 324)
-scale = Vector2(6, 6)
-texture = ExtResource("2_fi37o")
-
-[node name="Background-wip5-back" type="Sprite2D" parent="BG"]
-z_index = -12
-position = Vector2(576, 324)
-scale = Vector2(6, 6)
-texture = ExtResource("3_ukpq6")
-
-[node name="Background-wip5-window" type="Sprite2D" parent="BG"]
-z_index = -10
-position = Vector2(576, 324)
-scale = Vector2(6, 6)
-texture = SubResource("CompressedTexture2D_rwshd")
-
 [node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
+modulate = Color(1, 1, 1, 0.19900002)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.415686)
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 131.0
+offset_top = 134.0
+offset_right = 1075.0
+offset_bottom = 520.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0b1cv")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(0, 28)
@@ -78,29 +74,11 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -196.5
-offset_top = -6.0
-offset_right = 196.5
-offset_bottom = 188.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.909804, 0.654902, 0.137255, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = -5
-theme_override_constants/shadow_offset_y = 0
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("4_vbqj3")
-theme_override_font_sizes/font_size = 150
-text = "Settings"
-
 [node name="EscapeButton" type="TextureButton" parent="."]
-offset_left = 1066.0
-offset_top = 27.0
-offset_right = 1082.0
-offset_bottom = 43.0
+offset_left = 946.0
+offset_top = 161.0
+offset_right = 962.0
+offset_bottom = 177.0
 scale = Vector2(4, 4)
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_bav1n")
