@@ -38,16 +38,21 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	#print(%GameTimer.wait_time)
-	$TimerLabel.text = str(%GameTimer.wait_time)
 	if Input.is_action_pressed("reload"):
 		get_tree().reload_current_scene()
 
+	
+	if Input.is_action_just_pressed("escape"):
+		%UI.hide()
+		get_node("PauseMenu").show()
+		get_tree().paused = true
 
+		
+func _physics_process(_delta: float) -> void:
+	$TimerLabel.text = str(%GameTimer.wait_time)
 	if lives == 1:
 		if Global.input_method == Global.INPUT_SCHEMES.CONTROLLER and Input.get_joy_vibration_duration(0) == 0.0:
 			Input.start_joy_vibration(0, 1.0, 1.0, 5)
-
 
 	if lives <= 0:
 		if game_data.best_score < score or game_data.best_score == 0:
@@ -67,11 +72,6 @@ func _process(_delta: float) -> void:
 
 		lives = LIVES_COUNT
 		score = 0
-	
-	if Input.is_action_just_pressed("escape"):
-		%UI.hide()
-		get_node("PauseMenu").show()
-		get_tree().paused = true
 	
 	var until_reset_node = get_node("UI/Control/VBOX/Control/UntilReset")
 	if $GameResetFail.time_left != 0:
