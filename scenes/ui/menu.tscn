@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cu3uhb23wp1gb"]
+[gd_scene format=3 uid="uid://cu3uhb23wp1gb"]
 
 [ext_resource type="Script" uid="uid://j3jpagdr86pf" path="res://scenes/ui/menu.gd" id="1_f4s0f"]
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="2_rtghm"]
@@ -112,34 +112,34 @@ shader_parameter/outerRadius = 0.886
 shader_parameter/MainAlpha = 0.675
 shader_parameter/vignette_color = Color(0, 0, 0, 1)
 
-[node name="Menu" type="Node2D"]
+[node name="Menu" type="Node2D" unique_id=1702834385]
 script = ExtResource("1_f4s0f")
 
-[node name="BG" type="Node2D" parent="."]
+[node name="BG" type="Node2D" parent="." unique_id=1658424693]
 
-[node name="Background-wip5-front" type="Sprite2D" parent="BG"]
+[node name="Background-wip5-front" type="Sprite2D" parent="BG" unique_id=2057307210]
 z_index = -9
 position = Vector2(576, 324)
 scale = Vector2(6, 6)
 texture = ExtResource("10_7j05w")
 
-[node name="Background-wip5-back" type="Sprite2D" parent="BG"]
+[node name="Background-wip5-back" type="Sprite2D" parent="BG" unique_id=577674625]
 z_index = -12
 position = Vector2(576, 324)
 scale = Vector2(6, 6)
 texture = ExtResource("10_1liem")
 
-[node name="Background-wip5-window" type="Sprite2D" parent="BG"]
+[node name="Background-wip5-window" type="Sprite2D" parent="BG" unique_id=1760193840]
 z_index = -10
 position = Vector2(576, 324)
 scale = Vector2(6, 6)
 texture = SubResource("CompressedTexture2D_5dcq3")
 
-[node name="InfoCheck" type="HTTPRequest" parent="."]
+[node name="InfoCheck" type="HTTPRequest" parent="." unique_id=1484310996]
 unique_name_in_owner = true
 download_chunk_size = 7986
 
-[node name="GameTitle" type="RichTextLabel" parent="."]
+[node name="GameTitle" type="RichTextLabel" parent="." unique_id=2044433441]
 texture_filter = 6
 offset_left = 33.0
 offset_top = 9.0
@@ -155,7 +155,7 @@ theme_override_font_sizes/normal_font_size = 150
 bbcode_enabled = true
 text = "[center][pulse freq=1.0 color=#ffffff90 ease=2.0]Final Trial[/pulse][/center]"
 
-[node name="GameVersion" type="RichTextLabel" parent="."]
+[node name="GameVersion" type="RichTextLabel" parent="." unique_id=1153966604]
 show_behind_parent = true
 z_index = 5
 offset_left = 969.0
@@ -169,13 +169,13 @@ theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "[center]Version: "
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1027147230]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 51.0
 offset_bottom = 47.0
 
-[node name="SettingsButton" type="Button" parent="Control"]
+[node name="SettingsButton" type="Button" parent="Control" unique_id=155771400]
 layout_mode = 0
 offset_left = 161.0
 offset_top = 317.0
@@ -188,7 +188,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("6_wvaxu")
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="Control"]
+[node name="QuitButton" type="Button" parent="Control" unique_id=787842679]
 layout_mode = 0
 offset_left = 161.0
 offset_top = 212.0
@@ -201,7 +201,7 @@ theme = ExtResource("6_wvaxu")
 text = "Exit
 "
 
-[node name="PlayButton" type="Button" parent="Control"]
+[node name="PlayButton" type="Button" parent="Control" unique_id=75732708]
 layout_mode = 0
 offset_left = 111.0
 offset_top = 423.0
@@ -215,7 +215,7 @@ keep_pressed_outside = true
 text = "Play"
 script = ExtResource("6_ir0oc")
 
-[node name="Nun" type="AnimatedSprite2D" parent="."]
+[node name="Nun" type="AnimatedSprite2D" parent="." unique_id=1329779442]
 texture_filter = 1
 position = Vector2(65.47, 560)
 scale = Vector2(8, 8)
@@ -224,12 +224,12 @@ animation = &"run"
 autoplay = "run"
 frame_progress = 0.304969
 
-[node name="Jesus" type="Sprite2D" parent="."]
+[node name="Jesus" type="Sprite2D" parent="." unique_id=564838134]
 position = Vector2(812.22, 419.45)
 scale = Vector2(6, 6)
 texture = ExtResource("4_vuo2u")
 
-[node name="Sun" type="AnimatedSprite2D" parent="."]
+[node name="Sun" type="AnimatedSprite2D" parent="." unique_id=420991975]
 modulate = Color(2, 2, 2, 1)
 z_index = -12
 position = Vector2(805, 235)
@@ -238,7 +238,7 @@ sprite_frames = SubResource("SpriteFrames_t3tgu")
 autoplay = "default"
 frame_progress = 0.91244
 
-[node name="Devil" type="AnimatedSprite2D" parent="."]
+[node name="Devil" type="AnimatedSprite2D" parent="." unique_id=2129491935]
 z_index = -1
 position = Vector2(1085, 552)
 scale = Vector2(6, 6)
@@ -247,7 +247,7 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.528667
 
-[node name="InfoButton" type="LinkButton" parent="."]
+[node name="InfoButton" type="LinkButton" parent="." unique_id=1124850156]
 z_index = -5
 anchors_preset = 8
 anchor_left = 0.5
@@ -264,7 +264,7 @@ theme_override_fonts/font = ExtResource("9_juhmg")
 theme_override_font_sizes/font_size = 36
 text = "---------"
 
-[node name="ComingSoon" type="RichTextLabel" parent="."]
+[node name="ComingSoon" type="RichTextLabel" parent="." unique_id=2092125252]
 z_index = 65
 texture_filter = 2
 offset_left = 670.0
@@ -277,7 +277,7 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center][wave amp=50.0 freq=5.0 connected=1]More maps coming soon.[/wave][/center]"
 
-[node name="CreatedByLabel" type="RichTextLabel" parent="."]
+[node name="CreatedByLabel" type="RichTextLabel" parent="." unique_id=311186865]
 offset_left = 272.0
 offset_top = 176.0
 offset_right = 459.0
@@ -290,7 +290,7 @@ theme_override_font_sizes/normal_font_size = 19
 bbcode_enabled = true
 text = "by Dystopia Bakery"
 
-[node name="BestScoreLabel" type="Label" parent="."]
+[node name="BestScoreLabel" type="Label" parent="." unique_id=1941877776]
 offset_left = 158.0
 offset_top = 554.0
 offset_right = 494.0
@@ -302,16 +302,16 @@ theme_override_font_sizes/font_size = 21
 text = "Your best score: "
 horizontal_alignment = 1
 
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2015339793]
 stream = ExtResource("11_ersov")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[node name="CompilationCache" type="Node2D" parent="."]
+[node name="CompilationCache" type="Node2D" parent="." unique_id=114171186]
 visible = false
 
-[node name="Vignette" type="ColorRect" parent="CompilationCache"]
+[node name="Vignette" type="ColorRect" parent="CompilationCache" unique_id=468446702]
 process_mode = 3
 z_index = 50
 material = SubResource("ShaderMaterial_ir0oc")
@@ -320,9 +320,9 @@ offset_top = -52.0
 offset_right = 1401.0
 offset_bottom = 698.0
 
-[node name="HitParticles" parent="CompilationCache" instance=ExtResource("13_5j7hh")]
+[node name="HitParticles" parent="CompilationCache" unique_id=2147074891 instance=ExtResource("13_5j7hh")]
 
-[node name="Settings" parent="." instance=ExtResource("16_a7ikg")]
+[node name="Settings" parent="." unique_id=30354489 instance=ExtResource("16_a7ikg")]
 visible = false
 
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
