@@ -160,13 +160,9 @@ func killzone(body: CharacterBody2D, good_type: String):
 		lives -= 1
 	
 	var money_node = get_node("UI/Control/VBOX/Control2/MoneyLabel")
-
-	if killzone_tween and killzone_tween.is_running():
-		killzone_tween.kill()
-
-	killzone_tween = get_tree().create_tween()
-	killzone_tween.tween_property(money_node, "text", str(score), 0.6)
-	killzone_tween.tween_callback(body.queue_free)
+	money_node.text = str(score)
+	
+	body.queue_free()
 
 	refresh_fail_count()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bcu25miko3ods"]
+[gd_scene format=3 uid="uid://bcu25miko3ods"]
 
 [ext_resource type="PackedScene" uid="uid://b277k7mqjh11t" path="res://scenes/player/player.tscn" id="1_f416g"]
 [ext_resource type="Script" uid="uid://b3ectbbpkbdhg" path="res://scenes/level.gd" id="1_ptexp"]
@@ -226,11 +226,11 @@ animations = [{
 "speed": 0.5
 }]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=821141105]
 script = ExtResource("1_ptexp")
 speed_collect_scene = ExtResource("3_1ooyw")
 
-[node name="Vignette" type="ColorRect" parent="."]
+[node name="Vignette" type="ColorRect" parent="." unique_id=1444229308]
 process_mode = 3
 modulate = Color(1, 1, 1, 0)
 z_index = 50
@@ -240,70 +240,68 @@ offset_top = -52.0
 offset_right = 1401.0
 offset_bottom = 698.0
 
-[node name="VignettePlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_h6wmr")
-}
+[node name="VignettePlayer" type="AnimationPlayer" parent="." unique_id=1571138287]
+libraries/ = SubResource("AnimationLibrary_h6wmr")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=87914249]
 layer = -1
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2029404562]
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=576535324]
 position = Vector2(614.5, 324)
 scale = Vector2(4.7743, 4)
 texture = ExtResource("2_nexhj")
 
-[node name="Player" parent="." instance=ExtResource("1_f416g")]
+[node name="Player" parent="." unique_id=1244531855 instance=ExtResource("1_f416g")]
 z_index = 1
 position = Vector2(578, 446)
 scale = Vector2(2, 2)
 
-[node name="PlatformLeft" parent="." instance=ExtResource("3_m4de3")]
+[node name="PlatformLeft" parent="." unique_id=602300404 instance=ExtResource("3_m4de3")]
 position = Vector2(152, 330)
 rotation = 0.0872665
 scale = Vector2(-1.3, 1.3)
 
-[node name="PlatformRight" parent="." instance=ExtResource("3_m4de3")]
+[node name="PlatformRight" parent="." unique_id=589872135 instance=ExtResource("3_m4de3")]
 position = Vector2(1000, 330)
 
-[node name="UI" parent="." instance=ExtResource("5_3th8g")]
+[node name="UI" parent="." unique_id=865385797 instance=ExtResource("5_3th8g")]
 unique_name_in_owner = true
 
-[node name="Guys" type="Node2D" parent="."]
+[node name="Guys" type="Node2D" parent="." unique_id=20669091]
 
-[node name="GameTimer" type="Timer" parent="."]
+[node name="GameTimer" type="Timer" parent="." unique_id=1722571319]
 unique_name_in_owner = true
 wait_time = 2.0
 autostart = true
 
-[node name="GameHardererTimer" type="Timer" parent="."]
+[node name="GameHardererTimer" type="Timer" parent="." unique_id=1311864358]
 unique_name_in_owner = true
 wait_time = 5.0
 autostart = true
 
-[node name="GameResetFail" type="Timer" parent="."]
+[node name="GameResetFail" type="Timer" parent="." unique_id=1580360069]
 wait_time = 10.0
 one_shot = true
 
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=76370580]
 stream = ExtResource("6_gb1vr")
 autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[node name="LifeLostPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="LifeLostPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1460037324]
 stream = ExtResource("9_8gofh")
 volume_db = -0.103
 bus = &"SFX"
 
-[node name="HeartbeatPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="HeartbeatPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1531405636]
 stream = ExtResource("10_h6wmr")
 volume_db = -500.0
 parameters/looping = true
 
-[node name="TimerLabel" type="Label" parent="."]
+[node name="TimerLabel" type="Label" parent="." unique_id=1980063167]
 visible = false
 offset_left = 973.0
 offset_top = 21.0
@@ -314,19 +312,19 @@ theme_override_fonts/font = ExtResource("6_do7aq")
 theme_override_font_sizes/font_size = 20
 text = "---UNKNOWN---"
 
-[node name="TopCountZone" type="Area2D" parent="."]
+[node name="TopCountZone" type="Area2D" parent="." unique_id=1580784742]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCountZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCountZone" unique_id=682584956]
 position = Vector2(605, -200)
 shape = SubResource("RectangleShape2D_y53im")
 
-[node name="BottomCountZone" type="Area2D" parent="."]
+[node name="BottomCountZone" type="Area2D" parent="." unique_id=802294876]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCountZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCountZone" unique_id=260746226]
 position = Vector2(580, 768)
 shape = SubResource("RectangleShape2D_y53im")
 
-[node name="Devil" type="AnimatedSprite2D" parent="."]
+[node name="Devil" type="AnimatedSprite2D" parent="." unique_id=630714523]
 z_index = -1
 position = Vector2(280, 508)
 scale = Vector2(5.875, 5.875)
@@ -336,7 +334,7 @@ autoplay = "idle"
 frame = 1
 frame_progress = 1.0
 
-[node name="Sun" type="AnimatedSprite2D" parent="."]
+[node name="Sun" type="AnimatedSprite2D" parent="." unique_id=1276654069]
 modulate = Color(1.5, 1.5, 1.5, 1)
 z_index = -3
 position = Vector2(579.89, 73.407)
@@ -345,13 +343,13 @@ sprite_frames = SubResource("SpriteFrames_71rp8")
 autoplay = "default"
 frame_progress = 0.0383685
 
-[node name="Angel" parent="." instance=ExtResource("11_6e238")]
+[node name="Angel" parent="." unique_id=518353757 instance=ExtResource("11_6e238")]
 z_index = -1
 position = Vector2(881, 137)
 scale = Vector2(4.64844, 4.64844)
 frame_progress = 0.0
 
-[node name="Jesus" type="AnimatedSprite2D" parent="."]
+[node name="Jesus" type="AnimatedSprite2D" parent="." unique_id=1128145766]
 modulate = Color(1, 1, 1, 0.803922)
 z_index = -2
 position = Vector2(583, 186)
@@ -360,42 +358,42 @@ sprite_frames = SubResource("SpriteFrames_avpj5")
 autoplay = "default"
 frame_progress = 0.501013
 
-[node name="Cloud2" type="Sprite2D" parent="Jesus"]
+[node name="Cloud2" type="Sprite2D" parent="Jesus" unique_id=224558619]
 visible = false
 z_index = -4
 position = Vector2(-0.905656, 32.1509)
 scale = Vector2(0.603774, 0.603774)
 texture = ExtResource("13_2m20h")
 
-[node name="CloudSprite2" type="Sprite2D" parent="Jesus"]
+[node name="CloudSprite2" type="Sprite2D" parent="Jesus" unique_id=545614384]
 z_index = -12
 position = Vector2(2.85225, 26.621)
 scale = Vector2(0.741717, 0.741717)
 texture = ExtResource("20_ai3nx")
 
-[node name="BoingEffect" type="AudioStreamPlayer2D" parent="."]
+[node name="BoingEffect" type="AudioStreamPlayer2D" parent="." unique_id=1331867669]
 volume_db = 8.041
 bus = &"SFX"
 
-[node name="EndScreen" parent="." instance=ExtResource("15_h0ic7")]
+[node name="EndScreen" parent="." unique_id=1669486414 instance=ExtResource("15_h0ic7")]
 unique_name_in_owner = true
 visible = false
 
-[node name="PauseMenu" parent="." instance=ExtResource("16_867yn")]
+[node name="PauseMenu" parent="." unique_id=1303895530 instance=ExtResource("16_867yn")]
 unique_name_in_owner = true
 visible = false
 
-[node name="NewCollectTimer" type="Timer" parent="."]
+[node name="NewCollectTimer" type="Timer" parent="." unique_id=1653679294]
 wait_time = 3.0
 autostart = true
 
-[node name="Collectibles" type="Node2D" parent="."]
+[node name="Collectibles" type="Node2D" parent="." unique_id=198049019]
 
-[node name="Particles" type="Control" parent="."]
+[node name="Particles" type="Control" parent="." unique_id=600491006]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Clock-small" type="Sprite2D" parent="."]
+[node name="Clock-small" type="Sprite2D" parent="." unique_id=1958221052]
 visible = false
 position = Vector2(595, 87)
 scale = Vector2(5, 5)
