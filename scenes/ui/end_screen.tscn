@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctqwgvoo3fbxr"]
+[gd_scene format=3 uid="uid://ctqwgvoo3fbxr"]
 
 [ext_resource type="FontFile" uid="uid://bgdrs10x0o12h" path="res://assets/fonts/AnglicanText.ttf" id="1_21o4t"]
 [ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="2_gj68p"]
@@ -6,17 +6,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_216nh"]
 
-[node name="EndScreen" type="CanvasLayer"]
+[node name="EndScreen" type="CanvasLayer" unique_id=553838128]
 process_mode = 3
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1317659154]
 offset_left = -759.0
 offset_top = -420.0
 offset_right = 1686.0
 offset_bottom = 841.0
 color = Color(0, 0, 0, 0.470588)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1201473740]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -37,7 +37,7 @@ text = "You lost!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreContainer" type="VBoxContainer" parent="."]
+[node name="ScoreContainer" type="VBoxContainer" parent="." unique_id=231305268]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -50,7 +50,7 @@ offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScoreLabel" type="Label" parent="ScoreContainer"]
+[node name="ScoreLabel" type="Label" parent="ScoreContainer" unique_id=979698723]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.711069, 0.295411, 1)
@@ -60,7 +60,7 @@ theme_override_font_sizes/font_size = 30
 text = "Score: "
 vertical_alignment = 1
 
-[node name="BestScoreLabel" type="Label" parent="ScoreContainer"]
+[node name="BestScoreLabel" type="Label" parent="ScoreContainer" unique_id=606774468]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.709804, 0.294118, 1)
@@ -70,7 +70,7 @@ theme_override_font_sizes/font_size = 30
 text = "Your best score: "
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=64189139]
 process_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
