@@ -13,6 +13,8 @@ var count = 0
 @export var tilt: bool = true
 @export var tilt_speed: float = 0.01
 
+var bounced = false  # Track if fall guy just bounced
+
 @onready var player_as = get_node("../../Player/PlayerAS")
 @onready var guy_as = $AnimatedSprite2D
 
@@ -53,8 +55,13 @@ func _physics_process(delta):
 		rotation += clamp(TAU * tilt_speed * delta, 0, abs(theta)) * sign(theta)
 		
 
-
-	velocity.x = dir * SPEED
+	# Only set velocity.x if not bounced, or if back on floor
+	if is_on_floor():
+		bounced = false
+	
+	if not bounced:
+		velocity.x = dir * SPEED
+	
 	move_and_slide()
 
 
@@ -68,6 +75,30 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 		get_node("../../BoingEffect").play()
 		player_as.stop()
+		
+		# Apply bounce with player's momentum
+		var player_velocity_x = 0
+		if "last_velocity" in body:
+			player_velocity_x = body.last_velocity.x
+		
+		# Set bounced flag to prevent velocity override
+		bounced = true
+		
+		# Base upward velocity
 		velocity.y = -1500
+		
+		# Player's direction always takes priority
+		if abs(player_velocity_x) > 50:
+			# Player is moving - use their direction
+			velocity.x = player_velocity_x * 0.8
+			
+			# If player direction is opposite to fall guy's direction, change the fall guy's permanent direction
+			if sign(player_velocity_x) != 0 and sign(player_velocity_x) != dir:
+				dir = sign(player_velocity_x)
+				guy_as.flip_h = (dir == -1)
+		else:
+			# Player is stationary - weak bounce in current direction
+			velocity.x = dir * SPEED * 0.3
+		
 		player_as.play("bounce")
 		

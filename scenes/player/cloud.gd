@@ -6,6 +6,7 @@ const friction = 2500
 const JUMP_VELOCITY = -1500
 
 var input = Vector2.ZERO
+var last_velocity = Vector2.ZERO  # Track player movement for bounce physics
 
 @onready var hit_particles = preload("res://scenes/misc/hit_particles.tscn")
 @onready var particles_container = get_node("../Particles")
@@ -39,6 +40,9 @@ func remove_hit_particles(hp_instance: GPUParticles2D):
 func _physics_process(delta: float) -> void:
 	var player_as_size:	int = 80
 	var viewport_size = get_viewport().get_visible_rect().size
+	
+	# Store old position to calculate velocity
+	var old_x = position.x
 
 	if Global.input_method == Global.INPUT_SCHEMES.TOUCH_SCREEN:
 		var next_position_x = get_global_mouse_position().x
@@ -66,6 +70,12 @@ func _physics_process(delta: float) -> void:
 			position.x = 0 + player_as_size
 
 	position.y = 500
+	
+	# Calculate actual velocity for touch screen mode
+	if Global.input_method == Global.INPUT_SCHEMES.TOUCH_SCREEN:
+		last_velocity.x = (position.x - old_x) / delta if delta > 0 else 0
+	else:
+		last_velocity = velocity
 
 	move_and_slide()
 
