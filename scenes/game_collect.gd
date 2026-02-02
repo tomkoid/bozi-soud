@@ -14,28 +14,28 @@ func _ready():
 func _on_despawn_timer():
 	$Area2D/CollisionShape2D.set_deferred("disabled",true)
 	$AnimationPlayer.play("fadeout")
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(10.0, true, false, true).timeout
 	queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "FallGuy" or "BadGuy":
 		self.set_meta("started", "true")
-		var StartSpawnRate = GameTimer.wait_time
 		
 		$BubblePinkSprite.play("bubble_destroy")
 		$CollectAnim.visible = false # instead of calling queue_free() we make the sprite invisible
 		$Area2D/CollisionShape2D.set_deferred("disabled",true) # and disable the collision shape, otherwise the timer wouldn't work 
 		#$Area2D/CollisionShape2D.queue_free() 
 		
-		var wait_timer = get_tree().create_timer(5.0)
+		# timer that ignores time scale
+		var wait_timer = get_tree().create_timer(3.0, true, false, true)
 		if self.get_meta("collect_type") == "fast":
-			GameTimer.wait_time /= 2
+			Engine.time_scale = 1.5
 			$SpeedUpAudio.play()
 			
 		if self.get_meta("collect_type") == "slow":
-			GameTimer.wait_time *= 2
+			Engine.time_scale = 0.5
 			$SlowDownAudio.play()
 
 		await wait_timer.timeout
-		GameTimer.wait_time = StartSpawnRate
+		Engine.time_scale = 1.0
 		queue_free()

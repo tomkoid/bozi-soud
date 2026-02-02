@@ -191,7 +191,7 @@ func _on_new_collect_timer_timeout() -> void:
 	var SpawnRate = $GameTimer.wait_time
 	if SpawnRate <= 0.5:
 		collect_type = 1
-	if SpawnRate >= 1.7:
+	if SpawnRate >= 1.4:
 		collect_type = 0
 	
 	var instance

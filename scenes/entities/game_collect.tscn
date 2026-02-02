@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cyb06rtoow20g"]
+[gd_scene format=3 uid="uid://cyb06rtoow20g"]
 
 [ext_resource type="Texture2D" uid="uid://cuacmcbrtv7lt" path="res://assets/sprites/bubble.png" id="2_8bh3p"]
 [ext_resource type="Texture2D" uid="uid://bejr2emo4ky2v" path="res://assets/sprites/bubble-spritesheet.png" id="2_ay1x1"]
@@ -255,40 +255,38 @@ _data = {
 &"fadeout": SubResource("Animation_atiet")
 }
 
-[node name="GameSpeedCollect" type="Sprite2D"]
+[node name="GameSpeedCollect" type="Sprite2D" unique_id=1066873884]
 script = ExtResource("2_utwmb")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1402615744]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1361791305]
 scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_tn7s4")
 
-[node name="BubblePinkSprite" type="AnimatedSprite2D" parent="."]
+[node name="BubblePinkSprite" type="AnimatedSprite2D" parent="." unique_id=1617198408]
 modulate = Color(1, 1, 1, 0)
 scale = Vector2(3.39, 3.39)
 sprite_frames = SubResource("SpriteFrames_hnwr3")
 autoplay = "default"
 
-[node name="CollectAnim" type="AnimatedSprite2D" parent="."]
+[node name="CollectAnim" type="AnimatedSprite2D" parent="." unique_id=2101262596]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
 scale = Vector2(3.53, 3.53)
 sprite_frames = SubResource("SpriteFrames_15jsf")
 animation = &"slow"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_atiet")
-}
-autoplay = "fadein"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1865160876]
+libraries/ = SubResource("AnimationLibrary_atiet")
+autoplay = &"fadein"
 
-[node name="SlowDownAudio" type="AudioStreamPlayer2D" parent="."]
+[node name="SlowDownAudio" type="AudioStreamPlayer2D" parent="." unique_id=250401840]
 stream = ExtResource("6_0i3v7")
 volume_db = -4.68
 bus = &"SFX"
 
-[node name="SpeedUpAudio" type="AudioStreamPlayer2D" parent="."]
+[node name="SpeedUpAudio" type="AudioStreamPlayer2D" parent="." unique_id=1157961709]
 stream = ExtResource("6_atiet")
 volume_db = -4.68
 bus = &"SFX"
