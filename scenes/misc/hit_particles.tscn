@@ -29,16 +29,19 @@ scale_min = 4.0
 scale_max = 5.0
 scale_over_velocity_curve = SubResource("CurveTexture_gmlin")
 
-[node name="HitParticles" type="GPUParticles2D" unique_id=1439917421]
+[node name="HitParticles" type="GPUParticles2D"]
 z_index = 50
 emitting = false
-amount = 8
-amount_ratio = 0.8
-lifetime = 0.8
+amount = 25
+amount_ratio = 0.9
+lifetime = 3.0
 interp_to_end = 1.0
 one_shot = true
 speed_scale = 4.5
 explosiveness = 1.0
 randomness = 1.0
-fixed_fps = 30
+fixed_fps = 165
+trail_lifetime = 0.02
+trail_sections = 32
+trail_section_subdivisions = 39
 process_material = SubResource("ParticleProcessMaterial_dovo2")
