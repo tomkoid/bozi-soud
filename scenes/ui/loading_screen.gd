@@ -12,6 +12,8 @@ var progress = 0.0
 var _cached_resources: Array = []
 # Audio players kept alive to prevent re-buffering
 var _audio_players: Array = []
+# Menu scene stored separately for change_scene_to_packed()
+var _menu_scene: PackedScene
 
 func _ready() -> void:
 	# Create a hidden SubViewport for all precompilation rendering
@@ -107,8 +109,16 @@ func _start_precompilation() -> void:
 	# Clean up precompile scene before transition
 	_cleanup_precompile()
 	
-	# Go to main menu
-	get_tree().change_scene_to_file("res://scenes/ui/menu.tscn")
+	# Fade to black before scene change to hide the transition
+	TransitionScreen.color_rect.visible = true
+	TransitionScreen.color_rect.modulate = Color(1, 1, 1, 0)
+	
+	var tween = create_tween()
+	tween.tween_property(TransitionScreen.color_rect, "modulate", Color(1, 1, 1, 1), 0.3)
+	await tween.finished
+	
+	# Change scene while screen is black (no gray flash visible)
+	get_tree().change_scene_to_packed(_menu_scene)
 
 func _precompile_shaders() -> void:
 	# Load and compile the vignette shader by creating a ColorRect with it
@@ -441,9 +451,13 @@ func _precompile_time_scale() -> void:
 	await get_tree().create_timer(0.1, true, false, true).timeout
 
 func _preload_scenes() -> void:
-	# Preload critical scenes to cache them
+	# Preload menu scene first and store it for change_scene_to_packed()
+	_menu_scene = load("res://scenes/ui/menu.tscn")
+	_cached_resources.append(_menu_scene)
+	await get_tree().process_frame
+	
+	# Preload other critical scenes to cache them
 	var scenes_to_preload = [
-		"res://scenes/ui/menu.tscn",
 		"res://scenes/level1.tscn",
 		"res://scenes/objects/platform.tscn",
 	]
