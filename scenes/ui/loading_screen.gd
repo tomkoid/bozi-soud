@@ -3,6 +3,7 @@ extends Control
 @onready var progress_bar = $VBoxContainer/ProgressBar
 @onready var status_label = $VBoxContainer/StatusLabel
 
+var precompile_viewport: SubViewport
 var precompile_scene: Node2D
 var precompile_canvas: CanvasLayer
 var progress = 0.0
@@ -13,15 +14,21 @@ var _cached_resources: Array = []
 var _audio_players: Array = []
 
 func _ready() -> void:
-	# Create an invisible precompile scene
-	precompile_scene = Node2D.new()
-	add_child(precompile_scene)
-	precompile_scene.position = Vector2(-10000, -10000)  # Far offscreen
+	# Create a hidden SubViewport for all precompilation rendering
+	precompile_viewport = SubViewport.new()
+	precompile_viewport.size = Vector2i(100, 100)
+	precompile_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	precompile_viewport.disable_3d = true
+	add_child(precompile_viewport)
+	# Note: SubViewport is never displayed, so nothing renders to screen
 	
-	# Create a canvas layer for UI shader precompilation
+	# Create an invisible precompile scene inside the viewport
+	precompile_scene = Node2D.new()
+	precompile_viewport.add_child(precompile_scene)
+	
+	# Create a canvas layer for UI shader precompilation inside viewport
 	precompile_canvas = CanvasLayer.new()
-	precompile_canvas.layer = -100
-	add_child(precompile_canvas)
+	precompile_viewport.add_child(precompile_canvas)
 	
 	# Start precompilation process
 	await get_tree().process_frame
@@ -458,12 +465,20 @@ func _final_warmup() -> void:
 
 func _cleanup_precompile() -> void:
 	# Clean up any remaining children in precompile_scene
-	for child in precompile_scene.get_children():
-		child.queue_free()
+	if precompile_scene:
+		for child in precompile_scene.get_children():
+			child.queue_free()
+		precompile_scene.queue_free()
 	
 	# Clean up canvas layer children
-	for child in precompile_canvas.get_children():
-		child.queue_free()
+	if precompile_canvas:
+		for child in precompile_canvas.get_children():
+			child.queue_free()
+		precompile_canvas.queue_free()
+	
+	# Clean up the viewport itself
+	if precompile_viewport:
+		precompile_viewport.queue_free()
 	
 	# Clean up audio players
 	for player in _audio_players:
