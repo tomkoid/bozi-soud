@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dfko05eevp2st" path="res://scenes/ui/loading_screen.gd" id="1_loading"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_rqdcv"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_q4fso"]
+font_size = 28
+
 [node name="LoadingScreen" type="Control" unique_id=194937046]
 layout_mode = 3
 anchors_preset = 15
@@ -37,6 +43,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=528629626]
 layout_mode = 2
 text = "Loading..."
+label_settings = SubResource("LabelSettings_rqdcv")
 horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=20874276]
@@ -46,4 +53,5 @@ show_percentage = false
 [node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=1182039434]
 layout_mode = 2
 text = "Preparing shaders..."
+label_settings = SubResource("LabelSettings_q4fso")
 horizontal_alignment = 1
