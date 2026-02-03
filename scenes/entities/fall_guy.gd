@@ -32,13 +32,10 @@ func _ready() -> void:
 	elif dir == -1:
 		jump_pos_x = randi_range(950, 1075)
 
-func _physics_process(delta):
-	# Apply game speed multiplier to delta for smooth speed changes
-	var adjusted_delta = delta * Global.game_speed_multiplier
-	
+func _physics_process(delta):	
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * adjusted_delta
+		velocity += get_gravity() * delta
 		
 	if is_on_floor() and guy_as.animation == "jump":
 		guy_as.stop()
@@ -55,7 +52,7 @@ func _physics_process(delta):
 	# tilt fall guy a bit
 	if not is_on_floor() and bridge_jump:
 		theta = wrapf(atan2(0.0, 2.0) - 2.0, PI * dir, PI)
-		rotation += clamp(TAU * tilt_speed * adjusted_delta, 0, abs(theta)) * sign(theta)
+		rotation += clamp(TAU * tilt_speed * delta, 0, abs(theta)) * sign(theta)
 		
 
 	# Only set velocity.x if not bounced, or if back on floor

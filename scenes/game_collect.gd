@@ -5,8 +5,6 @@ extends Sprite2D
 
 @export var animation = ""
 
-var speed_multiplier = 1.0  # Local speed multiplier instead of Engine.time_scale
-
 func _ready():
 	despawn_timer.one_shot = true
 	despawn_timer.timeout.connect(_on_despawn_timer)
@@ -24,31 +22,20 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		self.set_meta("started", "true")
 		
 		$BubblePinkSprite.play("bubble_destroy")
-		$CollectAnim.visible = false
-		$Area2D/CollisionShape2D.set_deferred("disabled",true)
+		$CollectAnim.visible = false # instead of calling queue_free() we make the sprite invisible
+		$Area2D/CollisionShape2D.set_deferred("disabled",true) # and disable the collision shape, otherwise the timer wouldn't work 
+		#$Area2D/CollisionShape2D.queue_free() 
 		
+		# timer that ignores time scale
 		var wait_timer = get_tree().create_timer(3.0, true, false, true)
 		if self.get_meta("collect_type") == "fast":
-			speed_multiplier = 1.5
-			_apply_speed_effect(speed_multiplier)
+			Engine.time_scale = 1.5
 			$SpeedUpAudio.play()
 			
 		if self.get_meta("collect_type") == "slow":
-			speed_multiplier = 0.5
-			_apply_speed_effect(speed_multiplier)
+			Engine.time_scale = 0.5
 			$SlowDownAudio.play()
 
 		await wait_timer.timeout
-		_apply_speed_effect(1.0)
+		Engine.time_scale = 1.0
 		queue_free()
-
-func _apply_speed_effect(multiplier: float) -> void:
-	# Apply speed to all fall guys via Global signal
-	Global.game_speed_multiplier = multiplier
-	
-	# Speed up animations
-	var guys_node = get_node("../../Guys")
-	if guys_node:
-		for guy in guys_node.get_children():
-			if guy.has_node("AnimatedSprite2D"):
-				guy.get_node("AnimatedSprite2D").speed_scale = multiplier
