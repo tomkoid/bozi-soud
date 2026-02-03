@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Final Trial"
-run/main_scene="uid://cu3uhb23wp1gb"
+run/main_scene="res://scenes/ui/loading_screen.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/bg_color=Color(0.0313726, 0.0313726, 0.0313726, 1)
 boot_splash/image="res://assets/sprites/dictatorsplash.png"
@@ -68,6 +68,10 @@ escape={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[physics]
+
+2d/physics_engine="GodotPhysics2D"
 
 [rendering]
 

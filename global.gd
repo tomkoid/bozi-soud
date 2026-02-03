@@ -9,6 +9,9 @@ enum INPUT_SCHEMES {TOUCH_SCREEN, KEYBOARD, CONTROLLER}
 var input_method: INPUT_SCHEMES = INPUT_SCHEMES.TOUCH_SCREEN
 var mouse_mode: Input.MouseMode = Input.MOUSE_MODE_VISIBLE
 
+# Game speed multiplier for collectibles (1.0 = normal speed)
+var game_speed_multiplier: float = 1.0
+
 signal changed_input_method
 signal emit_player_particles
 
