@@ -48,9 +48,22 @@ func _show_new_version_msg(data):
 	$InfoButton.uri = data.redirect_url
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/level1.tscn")
+	$LevelSelect.show()
+	$Control.hide()
+
+func _change_level(level_path: String) -> void:
+	get_tree().change_scene_to_file(level_path)
 	TransitionScreen.transition()
-	await TransitionScreen.on_transition_finished
+
+func _on_level1_button_pressed() -> void:
+	_change_level("res://scenes/level1.tscn")
+
+func _on_level2_button_pressed() -> void:
+	_change_level("res://scenes/level2.tscn")
+
+func _on_back_button_pressed() -> void:
+	$LevelSelect.hide()
+	$Control.show()
 
 
 func _on_settings_button_pressed():

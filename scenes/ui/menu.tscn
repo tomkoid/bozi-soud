@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dw8f3r2op42pi" path="res://assets/sprites/jeptiska-spritesheet4.png" id="3_kkovv"]
 [ext_resource type="Texture2D" uid="uid://dhei58hi67ecv" path="res://assets/sprites/jesus.png" id="4_vuo2u"]
 [ext_resource type="Texture2D" uid="uid://df1r05tlcm114" path="res://assets/sprites/sun-spritesheet1.png" id="5_17g22"]
-[ext_resource type="Script" path="res://scenes/ui/play_button.gd" id="6_ir0oc"]
+[ext_resource type="Script" uid="uid://drtfg7ndwhx6a" path="res://scenes/ui/play_button.gd" id="6_ir0oc"]
 [ext_resource type="Theme" uid="uid://ddhhavwer07e5" path="res://assets/styles/button-scroll.tres" id="6_wvaxu"]
 [ext_resource type="Texture2D" uid="uid://bpo578uowxxw8" path="res://assets/sprites/devil_sprite.png" id="7_s4v21"]
 [ext_resource type="Texture2D" uid="uid://b0dpyvili7ls8" path="res://assets/sprites/devil_sprite_2.png" id="8_lp7x5"]
@@ -325,6 +325,62 @@ offset_bottom = 698.0
 [node name="Settings" parent="." unique_id=30354489 instance=ExtResource("16_a7ikg")]
 visible = false
 
+[node name="LevelSelect" type="Control" parent="." unique_id=103542779]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 51.0
+offset_bottom = 47.0
+
+[node name="LevelSelectLabel" type="Label" parent="LevelSelect" unique_id=1507405537]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 220.0
+offset_right = 485.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0.980392, 0.729412, 0.278431, 1)
+theme_override_colors/font_outline_color = Color(0.14902, 0.0941176, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 42
+text = "Select Level"
+horizontal_alignment = 1
+
+[node name="Level1Button" type="Button" parent="LevelSelect" unique_id=1597226524]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 317.0
+offset_right = 269.0
+offset_bottom = 349.0
+scale = Vector2(3, 3)
+mouse_default_cursor_shape = 2
+theme = ExtResource("6_wvaxu")
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="LevelSelect" unique_id=1163673132]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 423.0
+offset_right = 269.0
+offset_bottom = 455.0
+scale = Vector2(3, 3)
+mouse_default_cursor_shape = 2
+theme = ExtResource("6_wvaxu")
+text = "Level 2"
+
+[node name="BackButton" type="Button" parent="LevelSelect" unique_id=195802430]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 529.0
+offset_right = 269.0
+offset_bottom = 561.0
+scale = Vector2(3, 3)
+mouse_default_cursor_shape = 2
+theme = ExtResource("6_wvaxu")
+text = "Back"
+
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="LevelSelect/Level1Button" to="." method="_on_level1_button_pressed"]
+[connection signal="pressed" from="LevelSelect/Level2Button" to="." method="_on_level2_button_pressed"]
+[connection signal="pressed" from="LevelSelect/BackButton" to="." method="_on_back_button_pressed"]
